@@ -19,7 +19,7 @@ test('Version 4: jeder Level-1-Schritt migriert verlustfrei; Abschluss öffnet L
  const old={...last,version:4};delete old.case;
  const next=step(validateState(old),'CASE_START');assert.equal(next.stage,'case-opening');assert.deepEqual(history(next),history(last));
  assert.deepEqual(step(initialState(),'CASE_START'),initialState());
- assert.throws(()=>validateState({...next,version:4}));assert.equal(VERSION,5);
+ assert.throws(()=>validateState({...next,version:4}));assert.equal(VERSION,6);
 });
 
 test('Alle 16 Kombinationen alter und neuer Entscheidungen: jede Handlung speicherbar und abgeschlossene Vergangenheit unverändert',()=>{

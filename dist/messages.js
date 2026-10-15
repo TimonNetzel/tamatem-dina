@@ -1,4 +1,5 @@
 export const MESSAGES={
+ "Der Umweltfall überspringt eine notwendige Handlung.":{"en":"The river investigation skips a required action.","ar-EG":"حالة تحقيق النهر بتعدّي خطوة لازمة."},
   "Deutsch": {
     "en": "German",
     "ar-EG": "ألماني"

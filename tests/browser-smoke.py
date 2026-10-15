@@ -379,7 +379,7 @@ with sync_playwright() as playwright:
         assert case_payload['state'] == end_case
         page.locator('#menu-button').click()
         action(page, 'import')
-        page.locator('#import-file').set_input_files({'name': 'case-v5.json', 'mimeType': 'application/json', 'buffer': json.dumps(case_payload).encode()})
+        page.locator('#import-file').set_input_files({'name': 'case-v5.json', 'mimeType': 'application/json', 'buffer': json.dumps({**case_payload,'state':{k:(5 if k=='version' else v) for k,v in case_payload['state'].items() if k!='eco'}}).encode()})
         action(page, 'confirm-import')
         assert saved(page) == end_case
         # Keep the original Level 1 export for the existing migration checks below.

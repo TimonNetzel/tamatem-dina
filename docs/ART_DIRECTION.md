@@ -84,3 +84,7 @@ Rückweg als angehaltene Montage mit bestehender Waldillustration und Regenebene
 ## Level 2 · Die verschwundenen Stimmen
 
 Zwei neue referenzgestützte Illustrationen: case-library.png und case-courtyard.png. Tamatem ist acht und bleibt sichtbar ein Kind; Dina behält ihre bestätigten Merkmale und ihr Alter. Realistische Kleinstadt, Backstein, Papierweiß und Petrol, keine magischen Effekte. Bibliothek als Recherche-/Redaktionsmontage, Hof als Gesprächsbild; exakte Dokumente und Beschriftungen stehen im HTML. Prompts und Referenzfolge: art/prompts/06-missing-voices.md.
+
+## Level 3 · Der kranke Fluss
+
+Referenzgestützte Flussrecherche mit zehnjährigem Tamatem, Dina und Neri (eco-river.png); eigenständige Dina-Recherche am Depot (eco-depot.png). Moosgrün, Türkis und Rostorange, kräftige Tuschekonturen und Schraffuren. Beide tatsächlich als Bilder geöffnet und auf Figurenkontinuität geprüft. Szenenmontagen: genaue Probenorte, Messwerte und Quellzustände als übersetzbarer HTML-Text, nicht aus dekorativen Bilddetails ableiten. Vollständige Prompts und Grenzen: art/prompts/07-sick-river.md. Neues Tamatem-Porträt als Ausschnitt desselben Flussbilds; CSS-Referenz im Offline-Export eingebettet.

@@ -31,3 +31,11 @@ Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen geh�
 - Dina entscheidet über freigegebene Nennung und Umgang mit Widerruf; beide Varianten bleiben abschließbar und in den Fallnotizen sichtbar. Emils zurückgezogene Aussage erscheint nie im Artikel. Seine freiwillige Eingangsnummer ist nur Suchhilfe; der öffentliche Registereintrag trägt den Beleg.
 - Tamatems falsche Suchspur und Dinas voreilige Überschrift werden ausdrücklich korrigiert. Gedruckt werden geprüfte Daten, die widersprechenden Stellungnahmen und offene Fragen. Mieten und Eigentumsverhältnisse ändern sich nicht durch den Druckknopf.
 - Version 5 ergänzt einen eigenen Fallzustand und lässt die gesamte Level-1-Vergangenheit bestehen. Level 2 beginnt ausschließlich ab level-complete, Level 3 später ab case-complete. Episodenplan: episodes/02-verschwundene-stimmen.md.
+
+## Level 3 · Der kranke Fluss (0.6)
+
+- Vergleichbare Orte und Zeiten statt Farbraten: fiktiver Laborindex unabhängig vom sichtbaren Pigment. Hoftor-Schließung ist kein Nachweis für ein geschlossenes Ablaufventil. Fehlanschluss wird belegt, Absicht bleibt offen.
+- Zwei verbundene Ursachen und zwei notwendige Eingriffe: reale Belastungslogik plus fantastisch geschwächter Quellgarten. Weder Neris Wissen noch Quellenöffnung ersetzt die Betriebsrecherche oder den Einleitungsstopp. Fortschritt und Nachkontrolle bleiben getrennt, Heilung braucht Zeit.
+- Tamatems voreilige öffentliche Beschuldigung hat eine konkrete Folge: Salma sperrt ihren Zugang. Nach belegbarer öffentlicher Richtigstellung ist seine eigene Entschuldigung nötig; Vertrauen wird nicht als sofort gewonnen behauptet.
+- Dina steuert eine eigene Recherche und die Maßnahmenkoordination; Warnmeldung zuerst oder Behördentermin zuerst bleibt als Entscheidung erhalten. Beide Varianten informieren Redaktion und Wasserteam.
+- Version 6 ergänzt eco ohne Änderung früherer Entscheidungen. An case-complete direkt fortsetzen; nach Level 3 bleibt eco-complete für Level 4 erhalten. Alle alten Notizbucheinträge bleiben auch in der neuen Episode sichtbar.

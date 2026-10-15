@@ -28,8 +28,10 @@ Fiktive Lichtapparatur, notwendige spielbare Dina-Beobachtung und Stabilitätsbe
 
 „Die verschwundenen Stimmen“ ist dreisprachig spielbar. Der konkrete Zwölf-Stationen-Plan steht in episodes/02-verschwundene-stimmen.md; STATUS.md dokumentiert die tatsächlichen Prüfungen.
 
-## 8. Episoden 3–7 — nächster Chat für Level 3
+## 8. Level 3 — umgesetzt
 
-Je Episode erst den relevanten Handlungsbogen und die konkreten Rätsel ausarbeiten, dann umsetzen und prüfen. Themen und Altersfolge stehen im CANON, ausführliche Entwürfe in GAME_DESIGN.md. Kein gleichzeitiger vollständiger Neubau aller Episoden.
+„Der kranke Fluss“ ist dreisprachig spielbar: Ursachenvergleich, eigenständige Dina-Recherche, notwendige Richtigstellung, Einleitungsstopp, Quellenöffnung und getrennte Nachprüfungen. Konkrete zwölf Stationen: episodes/03-kranker-fluss.md. Kein Neustart ab case-complete, gespeicherter Abschluss eco-complete. Prüfgrenzen in STATUS.md.
 
-Vor Level 3 neuer Chat nach CODEX_STARTPROMPT.md; unabhängige Geräte-, Sprach- und Spieldauerabnahme bleibt separat.
+## 9. Episoden 4–7 — nächster Chat für Level 4
+
+Je Episode erst den relevanten Handlungsbogen und die konkreten Rätsel ausarbeiten, dann umsetzen und prüfen. Themen und Altersfolge stehen im CANON, Entwürfe in GAME_DESIGN.md. Vor „Das gestohlene Morgen“ neuer Chat nach CODEX_STARTPROMPT.md. Unabhängige Geräte-, Sprach-, Einzeldatei- und Spieldauerabnahme bleibt separat.

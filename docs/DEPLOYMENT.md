@@ -59,3 +59,7 @@ Dies ist ein dokumentierter Workaround für die damalige Umgebung, keine allgeme
 ## Veröffentlichung prüfen
 
 Nach einer echten Änderung an der Site den Zugriff privat belassen, sofern der Nutzer keine andere Freigabe wünscht. Erfolg erst nach einem bestätigten Abschluss mit URL melden. Offene visuelle oder echte Geräteprüfungen getrennt ausweisen.
+
+## Entwicklungsfassung 0.6
+
+Level 3 wurde auf Basis von GitHub-main 77176b6 entwickelt. GitHub-Sicherung des abgeschlossenen Pakets und Sites-Veröffentlichung bleiben getrennt. In diesem Level-3-Paket wurde keine neue Sites-Version gespeichert oder veröffentlicht. Die oben bestätigte private 0.5-Veröffentlichung mit Level 1 und 2 bleibt maßgeblich; .openai/hosting.json wurde nicht geändert.

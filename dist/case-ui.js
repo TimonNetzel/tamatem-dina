@@ -1,3 +1,4 @@
+import {ecoText} from './eco-ui.js';
 import {CASE_COPY} from './case-copy.js';
 import {getLanguage,t} from './i18n.js';
 import {CASE_STAGES,RECORD_IDS,TIMELINE} from './case-state.js';
@@ -34,20 +35,20 @@ export function caseView(s,h){
  case 'case-print':
   story=`<article class="case-article"><p class="eyebrow">${C('title')}</p><h2>${C('articleTitle')}</h2>${p(c.consent==='name'?'articleNamed':'articleAnonymous')}${p('articleBody')}${p('articleSources')}${p('correctionNote')}</article>`;
   panel=p(c.withdrawal==='omit'?'omitText':'documentText')+b('case-finish','afterPrint');break;
- case 'case-complete':story=p('ending')+p('finalTalk');panel=p('endNote')+b('notebook','caseNotes')+button('export',t('Spielstand als Datei sichern'),'button secondary wide');break;
+ case 'case-complete':story=p('ending')+p('finalTalk');panel=button('eco-start',ecoText('start'),'button wide')+b('notebook','caseNotes')+button('export',t('Spielstand als Datei sichern'),'button secondary wide');break;
  }
  const m=caseMeta(s.stage),courtyard=['case-interviews','case-response'].includes(s.stage);
  return `<div class="chapter-heading"><div><p class="eyebrow">${C('age')}</p><h1>${m[1]}</h1></div><span class="chapter-progress">${m[0]}<span> / 08</span></span></div><div class="game-grid case-game"><section class="stage-column">${actor()}${scene(courtyard?'case-courtyard':'case-library',C(courtyard?'courtyardAlt':'libraryAlt'))}<div class="scene-tools">${button('hint',t('Hinweis'),'tool-button')}</div><div class="case-story">${story}</div></section><aside class="paper-panel"><p class="chapter-label">${C('title')}</p>${panel}${feedback?`<p class="feedback" role="status">${esc(feedback)}</p>`:''}</aside></div>`;
 }
 export function caseNotebook(s,esc){
- if(!CASE_STAGES.includes(s.stage))return '';
+ if(!CASE_STAGES.includes(s.stage)&&!s.case.published)return '';
  const C=caseText,c=s.case,entry=(title,body)=>`<article><h3>${esc(title)}</h3><p>${esc(body)}</p></article>`;
  let text=`<h2>${C('caseNotes')}</h2>`+entry(C('hypothesis'),C('hypothesisText'));
  for(const id of c.read)text+=entry(C('observation')+' · '+caseDocument(id).title,caseDocument(id).text);
  if(c.addressChecked)text+=entry(C('confirmed'),C('addressGood'));
  if(c.nora)text+=entry(C(c.consent==='name'?'named':'anonymous'),C('noraText'));
  if(c.withdrawal)text+=entry(C('interviews'),C(c.withdrawal==='omit'?'omitText':'documentText'));
- if(CASE_STAGES.indexOf(s.stage)>=3)text+=entry(C('complaintTitle'),C('complaintText'));
+ if(CASE_STAGES.indexOf(s.stage)>=3||c.published)text+=entry(C('complaintTitle'),C('complaintText'));
  if(c.linked)text+=entry(C('confirmed'),C('timelineGood'));
  for(const id of c.responses)text+=entry(caseDocument(id).title,caseDocument(id).text);
  if(c.corrected)text+=entry(C('correct'),C('correction'));

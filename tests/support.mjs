@@ -23,3 +23,20 @@ export function finishCase(s,consent='anonymous',withdrawal='omit',observe=()=>{
  if(has('case-editor')){for(const [id,value] of Object.entries({abduction:'false',complaints:'verified',motive:'open'}))act({type:'CASE_CLAIM',id,value});act('CASE_CHECK');act('CASE_CORRECT');act('CASE_PRINT');}
  if(has('case-print'))act('CASE_FINISH');return s;
 }
+export function finishEco(s,reflection='error',approach='warning',observe=()=>{}){
+ const act=a=>{s=reduce(s,typeof a==='string'?{type:a}:a);observe(s);};
+ const at=stage=>s.stage==='eco-'+stage,pick=(id,value)=>act({type:'ECO_PICK',id,value});
+ if(s.stage==='case-complete')act('ECO_START');
+ if(at('opening')){act('ECO_BRIEF');act('ECO_BEGIN');}
+ if(at('spark')){act('ECO_SAMPLE');act('ECO_ACCUSE');}
+ if(at('keeper')){act({type:'ECO_REFLECT',id:reflection});act('ECO_COMPARE_START');}
+ if(at('samples')){for(const id of ['a6','b6','c6','a8','b8','c8'])act({type:'ECO_READ',id});pick('rise','b');pick('window','morning');act('ECO_COMPARE');act('ECO_INTERVIEWS');}
+ if(at('interviews')){for(const id of ['dyer','gate','valve'])act({type:'ECO_READ',id});pick('contradiction','valve');act('ECO_CHECK_INTERVIEW');act('ECO_MEET');}
+ if(at('model')){for(const [id,value] of Object.entries({load:'depot',mist:'source',blue:'unproven'}))pick(id,value);act('ECO_LINK');act('ECO_CORRECTION');}
+ if(at('correction')){pick('replacement','evidence');act('ECO_REPOST');act('ECO_APOLOGIZE');act('ECO_RESPONSE');}
+ if(at('response')){for(const id of ['depot','salma'])act({type:'ECO_READ',id});pick('approach',approach);act('ECO_STOP_START');}
+ if(at('stop')){for(const [index,id] of ['close','hold','test'].entries())act({type:'ECO_ORDER',index,id});act('ECO_STOP');act('ECO_SOURCE');}
+ if(at('source')){act('ECO_INSPECT');act('ECO_CLEAR');pick('inlet','clean');act('ECO_RESTORE');act('ECO_VERIFY');}
+ if(at('verify')){for(const id of ['water','roots'])act({type:'ECO_READ',id});act('ECO_PUBLISH');act('ECO_FINISH');}
+ return s;
+}

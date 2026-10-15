@@ -125,6 +125,8 @@ In Entwicklungsfassung 0.5 umgesetzt; konkreter Zwölf-Stationen-Plan, Rätsel u
 
 ### Level 3 · 10 Jahre · Der kranke Fluss
 
+In 0.6 spielbar umgesetzt; konkrete zwölf Stationen, Beleggrenzen und Rätsel: [03-kranker-fluss.md](episodes/03-kranker-fluss.md). Die folgenden Punkte bleiben der übergeordnete Entwurfsbogen.
+
 Ökologisches Abenteuer mit realer Ursachenlogik und fantastischen Flusswesen. Farben: Moosgrün, Türkis, Rostorange.
 
 1. Menschen und Tiere erkranken am erfundenen Silberatem. Dina berichtet über den Fluss.

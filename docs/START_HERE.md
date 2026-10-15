@@ -6,7 +6,7 @@ Das vorhandene farbige Comic-Adventure für Erwachsene weiterentwickeln. Sprache
 
 ## Stand
 
-Version 0.5 enthält Level 1 vollständig: dreisprachiger Prolog, Fluss, Quellgarten, Blütenkammer, Rückweg und gemeinsames Heilungsfinale mit spielbarer Dina. Neu: Level 2 „Die verschwundenen Stimmen“ ist vollständig dreisprachig spielbar, mit Adressvergleich, Interviews als Dina, Zeitachse und redaktioneller Korrektur. Anschluss an level-complete ohne Neustart. Die bestehende private Spieladresse enthält seit 15. Oktober 2026 ebenfalls Version 0.5 mit beiden Leveln. Details und offene Prüfungen stehen in STATUS.md.
+Version 0.6 enthält drei vollständige dreisprachige Level: „Die Lumenblüte“, „Die verschwundenen Stimmen“ und „Der kranke Fluss“. Level 3 verbindet Vergleichsproben und Dinas eigenständige Betriebsrecherche mit einer fantastischen Quelle und Tamatems spielbarer Fehlerkorrektur. Anschluss ab case-complete ohne Neustart, Abschluss eco-complete. Die bestehende private Site zeigt weiterhin 0.5 mit Level 1 und 2; 0.6 wurde nicht veröffentlicht. Details und tatsächliche Prüfgrenzen: STATUS.md.
 
 ## Gezielt nachlesen
 
@@ -16,13 +16,14 @@ Version 0.5 enthält Level 1 vollständig: dreisprachiger Prolog, Fluss, Quellga
 | Figuren, Dialoge, neue Szenen | CANON.md; bei Bildern ART_DIRECTION.md und art/references/character-sheet-v1.png |
 | Level 1 fortsetzen | episodes/01-lumenbluete.md, betroffene dist/*.js und ARCHITECTURE.md |
 | Level 2 ändern | episodes/02-verschwundene-stimmen.md und dist/case-*.js |
+| Level 3 ändern | episodes/03-kranker-fluss.md und dist/eco-*.js |
 | Gesamtbogen oder spätere Episode | GAME_DESIGN.md, CANON.md und ROADMAP.md |
 | Spielstände oder Offline | dist/state.js, dist/sw.js, tests und ARCHITECTURE.md |
 | GitHub oder Veröffentlichung | DEPLOYMENT.md und .openai/hosting.json |
 
 ## Nächste Aufgabe
 
-Vor Level 3 einen neuen Chat beginnen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Beide bestehenden Level, alle drei Sprachen und Spielstände der Versionen 1–5 erhalten. Level 3 zuerst anhand von CANON und den relevanten GAME_DESIGN-Abschnitten ausarbeiten; an case-complete anschließen. Echte iPhone-Prüfung, unabhängige Zeitmessung und muttersprachliche arabische Prüfung stehen aus.
+Vor Level 4 einen neuen Chat beginnen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Alle drei bisherigen Level, Sprachen und Spielstände 1–6 erhalten. „Das gestohlene Morgen“ gezielt aus CANON und GAME_DESIGN ausarbeiten; an eco-complete anschließen. Echte iPhone-Prüfung, unabhängige Zeitmessung, direkte Einzeldateiprüfung und muttersprachliche arabische Prüfung bleiben offen.
 
 ## Priorität der Unterlagen
 
