@@ -1,23 +1,25 @@
+import {EDITION_STAGES,initialEdition,reduceEdition,validateEdition} from './edition-state.js';
 import {HEALING_STAGES,initialHealing,reduceHealing,validateHealing} from './healing-state.js';
 import {MASK_STAGES,initialMask,reduceMask,validateMask} from './mask-state.js';
 import {MORNING_STAGES,initialMorning,reduceMorning,validateMorning} from './morning-state.js';
 import {ECO_STAGES,initialEco,reduceEco,validateEco} from './eco-state.js';
 import {CASE_STAGES,initialCase,reduceCase,validateCase} from './case-state.js';
 import {CHANNEL_START,CHANNEL_SOLUTION,validChannels,traceChannels} from './channels.js';
-export const VERSION=9;
+export const VERSION=10;
 export const SOURCE_IDS=['field','travel','drawing','advert'];
 export const ITEM_IDS=['lens','lantern','sling','glass'];
 export const ANSWERS={property:'field',place:'travel',identity:'drawing'};
-export const STAGES=['intro','research','illness','resolve','pack','threshold','river','river-crossing','river-complete','garden','garden-complete','chamber','return','apparatus','dina','finale','healing','level-complete',...CASE_STAGES,...ECO_STAGES,...MORNING_STAGES,...MASK_STAGES,...HEALING_STAGES];
+export const STAGES=['intro','research','illness','resolve','pack','threshold','river','river-crossing','river-complete','garden','garden-complete','chamber','return','apparatus','dina','finale','healing','level-complete',...CASE_STAGES,...ECO_STAGES,...MORNING_STAGES,...MASK_STAGES,...HEALING_STAGES,...EDITION_STAGES];
 const riverState=()=>({inspected:false,farBankChecked:false,slingSelected:false,loopAttached:false,secured:false,crossingPanel:0});
 const gardenState=()=>({metGuardian:false,inspected:false,rotations:[...CHANNEL_START],tested:false,solutionPreview:false,watered:false});
 const bloomState=()=>({identified:false,collected:false,guardianTalked:false});
 const finaleState=()=>({inserted:false,collected:false,bound:false,lanternOn:false,attempted:false,stable:false,dinaObservation:'none',dinaReported:false,dinaConfirmed:false});
-export function initialState(){return {version:VERSION,stage:'intro',read:[],assign:{property:null,place:null,identity:null},committed:false,talked:[],choice:null,noteTaken:false,packed:[],owlChoice:null,hints:{},river:riverState(),garden:gardenState(),bloom:bloomState(),journey:{protected:false},finale:finaleState(),case:initialCase(),eco:initialEco(),morning:initialMorning(),mask:initialMask(),healing:initialHealing()}}
+export function initialState(){return {version:VERSION,stage:'intro',read:[],assign:{property:null,place:null,identity:null},committed:false,talked:[],choice:null,noteTaken:false,packed:[],owlChoice:null,hints:{},river:riverState(),garden:gardenState(),bloom:bloomState(),journey:{protected:false},finale:finaleState(),case:initialCase(),eco:initialEco(),morning:initialMorning(),mask:initialMask(),healing:initialHealing(),edition:initialEdition()}}
 export const correctResearch=s=>Object.entries(ANSWERS).every(([k,v])=>s.assign[k]===v);
 export const readyToLeave=s=>s.noteTaken&&ITEM_IDS.every(k=>s.packed.includes(k));
 export const heardEssentials=s=>['dina','doctor'].every(k=>s.talked.includes(k));
 export function reduce(s,a){
+ if(a.type.startsWith('EDITION_')||(a.type==='HINT'&&EDITION_STAGES.includes(s.stage)))return reduceEdition(s,a);
  if(a.type.startsWith('HEALING_')||(a.type==='HINT'&&HEALING_STAGES.includes(s.stage)))return reduceHealing(s,a);
  if(a.type.startsWith('MASK_')||(a.type==='HINT'&&MASK_STAGES.includes(s.stage)))return reduceMask(s,a);
  if(a.type.startsWith('MORNING_')||(a.type==='HINT'&&MORNING_STAGES.includes(s.stage)))return reduceMorning(s,a);
@@ -75,7 +77,7 @@ export function reduce(s,a){
  return n;
 }
 export function validateState(input){
- if(!input||![1,2,3,4,5,6,7,8,VERSION].includes(input.version)||(input.version===1&&!['intro','research','illness','resolve','pack','threshold','complete'].includes(input.stage)))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
+ if(!input||![1,2,3,4,5,6,7,8,9,VERSION].includes(input.version)||(input.version===1&&!['intro','research','illness','resolve','pack','threshold','complete'].includes(input.stage)))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
  // Version 1 ended at Oris. Continue at the river without losing decisions or equipment.
  const legacy=input.version===1?{...input,stage:input.stage==='complete'?'river':input.stage,river:riverState()}:input;
  if(input.version===2&&!STAGES.slice(0,9).includes(input.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
@@ -91,7 +93,9 @@ export function validateState(input){
  if(input.version<8&&MASK_STAGES.includes(input.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
  const maskLegacy=input.version<8?{...morningLegacy,version:VERSION,mask:initialMask()}:morningLegacy;
  if(input.version<9&&HEALING_STAGES.includes(input.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
- const x=input.version<9?{...maskLegacy,version:VERSION,healing:initialHealing()}:maskLegacy;
+ const healingLegacy=input.version<9?{...maskLegacy,version:VERSION,healing:initialHealing()}:maskLegacy;
+ if(input.version<10&&EDITION_STAGES.includes(input.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
+ const x=input.version<10?{...healingLegacy,version:VERSION,edition:initialEdition()}:healingLegacy;
  if(!STAGES.includes(x.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
  const s=initialState();s.stage=x.stage;
  for(const [key,allowed] of [['read',SOURCE_IDS],['packed',ITEM_IDS],['talked',['dina','doctor','hand']]]){if(!Array.isArray(x[key])||x[key].some(v=>!allowed.includes(v)))throw Error('Der Spielstand enthält ungültige Einträge.');s[key]=[...new Set(x[key])];}
@@ -129,10 +133,11 @@ export function validateState(input){
  const b=s.bloom,f=s.finale,j=s.journey;
  if((stageIndex<11&&Object.values(b).some(Boolean))||(b.collected&&!b.identified)||(stageIndex>=12&&!b.collected)||(j.protected&&stageIndex<12)||(stageIndex>=13&&!j.protected))throw Error('Der Zustand der Lumenblüte überspringt eine notwendige Handlung.');
  if((f.lanternOn&&!b.collected)||(b.collected&&!f.bound&&!f.lanternOn)||(stageIndex<13&&Object.entries(f).some(([k,v])=>k!=='lanternOn'&&k!=='dinaObservation'&&v))||(f.inserted&&stageIndex<13)||(f.collected&&!f.inserted)||(f.bound&&!f.collected)||(f.attempted&&!f.bound)||(f.stable&&(!f.attempted||f.lanternOn))||(f.dinaObservation!=='none'&&!f.attempted)||(f.dinaObservation==='steady'&&!f.stable)||(f.dinaReported&&f.dinaObservation==='none')||(f.dinaConfirmed&&(!f.stable||f.dinaObservation!=='steady'||!f.dinaReported))||(stageIndex<14&&f.attempted)||(stageIndex>=14&&!f.attempted)||(stageIndex>=15&&!f.dinaReported)||(stageIndex>=16&&(!f.stable||!f.dinaConfirmed))||(s.stage==='finale'&&f.stable&&!f.dinaConfirmed))throw Error('Der Finalzustand überspringt eine notwendige Handlung.');
- s.case=validateCase(x.case,(ECO_STAGES.includes(s.stage)||MORNING_STAGES.includes(s.stage)||MASK_STAGES.includes(s.stage)||HEALING_STAGES.includes(s.stage))?'case-complete':s.stage);
- s.eco=validateEco(x.eco,(MORNING_STAGES.includes(s.stage)||MASK_STAGES.includes(s.stage)||HEALING_STAGES.includes(s.stage))?'eco-complete':s.stage);
- s.morning=validateMorning(x.morning,(MASK_STAGES.includes(s.stage)||HEALING_STAGES.includes(s.stage))?'morning-complete':s.stage);
- s.mask=validateMask(x.mask,HEALING_STAGES.includes(s.stage)?'mask-complete':s.stage);
- s.healing=validateHealing(x.healing,s.stage);
+ s.case=validateCase(x.case,(ECO_STAGES.includes(s.stage)||MORNING_STAGES.includes(s.stage)||MASK_STAGES.includes(s.stage)||HEALING_STAGES.includes(s.stage)||EDITION_STAGES.includes(s.stage))?'case-complete':s.stage);
+ s.eco=validateEco(x.eco,(MORNING_STAGES.includes(s.stage)||MASK_STAGES.includes(s.stage)||HEALING_STAGES.includes(s.stage)||EDITION_STAGES.includes(s.stage))?'eco-complete':s.stage);
+ s.morning=validateMorning(x.morning,(MASK_STAGES.includes(s.stage)||HEALING_STAGES.includes(s.stage)||EDITION_STAGES.includes(s.stage))?'morning-complete':s.stage);
+ s.mask=validateMask(x.mask,(HEALING_STAGES.includes(s.stage)||EDITION_STAGES.includes(s.stage))?'mask-complete':s.stage);
+ s.healing=validateHealing(x.healing,EDITION_STAGES.includes(s.stage)?'healing-complete':s.stage);
+ s.edition=validateEdition(x.edition,s.stage,s);
  return s;
 }

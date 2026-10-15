@@ -23,7 +23,7 @@ test('Version 8 exact field sets migrate after every old action without reset, i
  const states=[initialState()],collect=s=>states.push(s);
  const oldEnd=finishMask(finishMorning(finishEco(finishCase(levelOne('research','directions',collect),'anonymous','document',collect),'doubt','visit',collect),'direct','anonymous',collect),'quiet','name','talk',collect);
  for(const s of states){const old=structuredClone(s);old.version=8;delete old.healing;const copy=structuredClone(old);assert.deepEqual(validateState(old),s);assert.deepEqual(old,copy);}
- const old={...oldEnd,version:8};delete old.healing;const next=step(validateState(old),'HEALING_START');assert.equal(next.stage,'healing-opening');assert.deepEqual(history(next),history(old));assert.equal(VERSION,9);
+ const old={...oldEnd,version:8};delete old.healing;const next=step(validateState(old),'HEALING_START');assert.equal(next.stage,'healing-opening');assert.deepEqual(history(next),history(old));assert.equal(VERSION,10);
  assert.deepEqual(step(initialState(),'HEALING_START'),initialState());
  for(const version of [1,2,3,4,5,6,7,8])for(const stage of HEALING_STAGES)assert.throws(()=>validateState({...end,version,stage}));
 });

@@ -44,6 +44,10 @@ Fiktive Lichtapparatur, notwendige spielbare Dina-Beobachtung und Stabilitätsbe
 
 „Der Preis der Heilung“ ist dreisprachig spielbar: absolute/relative Studienwirkung, Unsicherheit, Qualitätsstatus/Reservierung, wirksamer Vertragsnachtrag und Finanzierungslücke. Dina prüft Herkunft, respektiert den Zitatwiderruf, bespricht Quellenschutz und verantwortet die Ausgabe. Tamatem ersetzt seine eigene Heilungsbehauptung sichtbar. Direkter Einstieg ab mask-complete, Abschluss healing-complete. Zwölf Stationen mit Primärquellen: episodes/06-preis-der-heilung.md. Prüfgrenzen in STATUS.md.
 
-## 12. Level 7 — nächster Chat
+## 12. Level 7 — umgesetzt
 
-„Die letzte Ausgabe“ mit achtzehnjährigem Tamatem und weiterhin eigenständiger Dina planen und implementieren. Frühere Entscheidungen sollen erkennbare Folgen haben, ohne eine allwissende Verschwörung zu erfinden. Themen im CANON, Entwurf in GAME_DESIGN.md. Vor Beginn neuer Chat nach CODEX_STARTPROMPT.md. Alle sechs Level und Spielstände 1–9 erhalten. Unabhängige Geräte-, Sprach-, Einzeldatei-, Fach- und Spieldauerabnahme bleibt separat.
+„Die letzte Ausgabe“: achtzehnjähriger Tamatem und eigenständige Dina, konkrete R7-Belegkette, drei von früheren Entscheidungen abhängige Kontaktwege, Dinas Archivprojekt, Tamatems Berufsweg und sichtbare eigene Berichtigung. Einstieg ab healing-complete, Abschluss edition-complete. Alle sechs Level und Spielstände 1–9 erhalten. Zwölf Stationen: episodes/07-letzte-ausgabe.md.
+
+## 13. Gesamtabnahme — neuer Chat
+
+Alle sieben Level gemeinsam prüfen, alternative Schlussvarianten und alte Spielstände. Offene echte Geräte-, Muttersprach-, direkte Einzeldatei-, unabhängige Fach- und Spieldauerabnahmen anhand ACCEPTANCE.md ehrlich fortführen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Sites-Veröffentlichung bleibt getrennt.

@@ -96,3 +96,7 @@ Ein neues referenzgestütztes Jugendhausbild mit zwölfjährigem Tamatem, Dina u
 ## Level 5 · Die Stadt der Masken
 
 mask-city.png: tatsächlich geöffnetes Figurenblatt als Identitätsreferenz, vierzehnjähriger Tamatem mit längeren Jugendproportionen und braunen Augenbrauen, Dina weiterhin ungefähr dreißig, ältere Archivarin Leila. Ergebnis tatsächlich geöffnet und geprüft. Magenta/Nachtblau, gebrochenes Gold und Papierarchitektur; Bild als Szenenmontage. Präzise Bildbelege, Ausschnitt, Seitenansicht und Papierstege als lokales HTML/SVG mit gleichwertigen deutschen/englischen/ägyptisch-arabischen Texten. Vollständiger Originalprompt samt Namensänderung der Archivarin: art/prompts/09-city-of-masks.md. Porträt als CSS-Ausschnitt; Einzeldatei bettet es ein.
+
+## Level 7 · Die letzte Ausgabe
+
+edition-newsroom.png zeigt den achtzehnjährigen Tamatem und Dina ungefähr dreißig als eigenständige Journalisten. Figurenblatt vor Erzeugung und Ergebnis danach geöffnet; braune Augenbrauen trotz sehr blonder Haare erhalten. Morgengrau, warmes Papier, Petrol und Bernstein; Pflanze und Eulenobjekt nur als Erinnerungen, keine magische Beweisfunktion. Redaktionsmontage für zwölf Stationen, Dokumente und Korrektur als skalierbarer dreisprachiger Text. Vollständiger Prompt: art/prompts/11-last-edition.md. Neues Erwachsenenporträt als CSS-Ausschnitt; auch in Einzeldatei eingebettet.

@@ -6,7 +6,7 @@ Das vorhandene farbige Comic-Adventure für Erwachsene weiterentwickeln. Sprache
 
 ## Stand
 
-Version 0.9 enthält sechs vollständige dreisprachige Level. Neu: „Der Preis der Heilung“ mit sechzehnjährigem Tamatem und eigenständig spielbarer Dina; medizinische Studiengrenzen, Lieferstatus, Vertragsnachtrag, Finanzierung und Quellenschutz haben getrennte Belegregeln. Direkter Anschluss ab mask-complete, Abschluss healing-complete. Alle fünf vorherigen Level und Spielstände 1–8 bleiben erhalten; aktuelles Format 9. Die private Site zeigt weiterhin 0.8. Tatsächliche Prüfungen und Grenzen: STATUS.md.
+Version 0.10 enthält alle sieben vollständigen dreisprachigen Level. Neu: „Die letzte Ausgabe“ mit achtzehnjährigem Tamatem und eigenständig spielbarer Dina. Zwölf realistische Stationen, drei historienabhängige Kontaktwege, sichtbare eigene Berichtigung und unabhängig gewählte Zukunftspläne. Einstieg ab healing-complete, Abschluss edition-complete. Alle sechs bisherigen Level und Spielstände 1–9 bleiben erhalten; aktuelles Format 10. Die private Site zeigt weiterhin 0.8. Tatsächliche Prüfungen und Grenzen: STATUS.md.
 
 ## Gezielt nachlesen
 
@@ -18,6 +18,7 @@ Version 0.9 enthält sechs vollständige dreisprachige Level. Neu: „Der Preis 
 | Level 2 ändern | episodes/02-verschwundene-stimmen.md und dist/case-*.js |
 | Level 3 ändern | episodes/03-kranker-fluss.md und dist/eco-*.js |
 | Level 4 ändern | episodes/04-gestohlenes-morgen.md und dist/morning-*.js |
+| Level 7 ändern | episodes/07-letzte-ausgabe.md und dist/edition-*.js |
 | Level 6 ändern | episodes/06-preis-der-heilung.md und dist/healing-*.js |
 | Level 5 ändern | episodes/05-stadt-der-masken.md und dist/mask-*.js |
 | Gesamtbogen oder spätere Episode | GAME_DESIGN.md, CANON.md und ROADMAP.md |
@@ -26,7 +27,7 @@ Version 0.9 enthält sechs vollständige dreisprachige Level. Neu: „Der Preis 
 
 ## Nächste Aufgabe
 
-Vor Level 7 einen neuen Chat beginnen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Alle sechs bisherigen Level, Sprachen und Spielstände 1–9 erhalten. „Die letzte Ausgabe“ anhand CANON und gezielt GAME_DESIGN ausarbeiten; an healing-complete anschließen. Eigenständigkeit beider Figuren, frühere Entscheidungen und nachprüfbare Aussagen tragen das Finale; keine magische Fallauflösung. Echte iPhone-, muttersprachliche, direkte Einzeldatei-, unabhängige Fach- und Zeitprüfungen bleiben offen.
+Neuen Chat zur Gesamtabnahme öffnen; kopierfertiger Auftrag in ../CODEX_STARTPROMPT.md. Alle sieben Level und Spielstände 1–10 erhalten. Technische Gesamtkampagne und offene echte iPhone-, muttersprachliche, direkte Einzeldatei-, Fach- und unabhängige Zeitprüfungen anhand ACCEPTANCE.md fortführen. Sites-Veröffentlichung bleibt ein gesonderter Auftrag.
 
 ## Priorität der Unterlagen
 

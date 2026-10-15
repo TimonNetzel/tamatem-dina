@@ -190,7 +190,7 @@ Entwicklung: Verantwortung bedeutet, eine wirksame Handlung zu wählen und ihre 
 5. Eine belastbare Geschichte liegt vor. Der letzte Rückweg ist die Auseinandersetzung darüber, wie beide weiter zusammenarbeiten wollen.
 6. Sie verantworten die Veröffentlichung und ihre Grenzen. Tamatem trifft eine eigene Zukunftsentscheidung. Die Schlussvarianten spiegeln Zusammenarbeit, geschützte Menschen und korrigierte Irrtümer.
 
-Entwicklung: Selbstständig sein und verbunden bleiben. Dina muss nicht besiegt oder gerettet werden, damit Tamatem erwachsen sein darf.
+Entwicklung: Selbstständig sein und verbunden bleiben. Dina muss nicht besiegt oder gerettet werden, damit Tamatem erwachsen sein darf. In 0.10 mit zwölf konkreten Stationen umgesetzt: episodes/07-letzte-ausgabe.md. R7-Konflikt statt Gesamtverschwörung, drei historienabhängige Kontaktwege und unabhängig gewählte Zukunftspläne. Tatsächliche Prüfungen und Grenzen in STATUS.md.
 
 ## 7. Visuelle Leitlinien
 

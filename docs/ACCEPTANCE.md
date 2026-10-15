@@ -1,0 +1,14 @@
+# Gesamtabnahme · 0.10 / sieben Level
+
+Technische Nachweise und ihr Stand: STATUS.md. Diese Liste bereitet externe Prüfungen vor; kein Eintrag wird durch Simulation oder diese Dokumentation als bestanden markiert.
+
+| Offene Abnahme | Konkreter Auftrag | Nachweis für Abschluss |
+|---|---|---|
+| Echtes iPhone/Safari | Alle Sprachen im Hochformat; Home-Bildschirm-Installation; vollständigen Download abwarten, Flugmodus, App schließen/neu öffnen, spielen, Datei sichern/laden. Besonders Level-7-Radios, Reihenfolge und lange Schlussnotizen. | Gerät, iOS/Safari-Version, Datum, geprüfter Commit, Schritte und Ergebnis; keine Ersetzung durch Chromium-Emulation. |
+| Ägyptisch-arabische Muttersprachprüfung | Alle sieben Level samt Hilfen, Rückmeldungen, Belegen, Offline-Texten, Notizen und dynamischen Enden lesen/spielen. Natürliche Dialoge, juristische/medizinische Grenzen und RTL prüfen. | Rückmeldung einer muttersprachlichen Person, konkrete Textstellen, behobene/noch offene Punkte. Ein KI-Lauf ist keine Abnahme. |
+| Direkte Einzeldatei | `node make-offline.mjs /absoluter/pfad/spiel.html`; Datei auf freigegebenem Laptop-Browser direkt öffnen, Netz aus, alle Sprachen, v9→v10 importieren, Finale spielen, exportieren/importieren und neu laden. | Tatsächlicher file://-Durchlauf mit Browser/Version. Lokaler HTTP-Server, VM und Service Worker zählen dafür nicht. Richtlinienblockaden dokumentieren, nicht umgehen. |
+| Fach-/Betroffenenprüfung | Journalistische Quellen- und Korrekturregeln übergreifend; Level 3 ökologisch, Level 6 medizinisch/wirtschaftlich, Level 7 Vertrags-/Frist-/Einwilligungslogik juristisch und journalistisch; dramaturgisch/psychologisch beide Figuren und Erwachsene als Zielgruppe. | Unabhängige qualifizierte Rückmeldung mit Namen/Rolle soweit erlaubt, Quellen, Prüfgegenstand und Grenzen; Recherche des Entwicklers reicht nicht. |
+| Unabhängige Zeitprüfung | Unvorbereitete erwachsene Spielende je Level ohne Lösungswissen. Start/Ende, Hilfen, Unterbrechungen und Sprache erfassen. Ziel 15–30 Minuten pro Level. | Menschlich gemessene Netto-/Bruttozeiten, Stichprobe und Beobachtungen. Automatisierte Laufzeit nicht als Spielzeit ausgeben. |
+| Gesamtkampagne | Eine neue Partie über alle sieben Level, ergänzend alternative Entscheidungen; Canon/Alter 6–18, Figuren, Gegenstände, Notizbücher, Beziehungen, Grenzen und Schluss vergleichen. | Tatsächlicher Durchlauf am geprüften Commit, dokumentierte Varianten/Fehler und erneute Prüfung von Korrekturen. Bisherige technische Episodenläufe separat halten. |
+
+Für jede Rückmeldung festhalten: Sprache, Commit, Gerät/Browser, Ausgangsspielstand und genaue Handlung, Erwartung und Beobachtung. Keine Zugangstoken oder privaten Nutzerdaten in Prüfprotokolle übernehmen. GitHub-Push veröffentlicht Sites nicht; die private Site ist separat auf 0.8 dokumentiert.

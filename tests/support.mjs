@@ -1,3 +1,4 @@
+import {EDITION_PHASES,EDITION_DOCS,EDITION_ORDER,editionSolutions} from '../dist/edition-state.js';
 import {HEALING_PHASES,HEALING_DOCS,HEALING_SOLUTIONS,HEALING_ORDER} from '../dist/healing-state.js';
 import {initialState,reduce,ITEM_IDS} from '../dist/state.js';
 import {CHANNEL_SOLUTION} from '../dist/channels.js';
@@ -87,6 +88,21 @@ export function finishHealing(s,approach='doubt',responseMode='written',observe=
   act('HEALING_CHECK');
   for(const [phase,action] of [['protect','HEALING_PROTECT'],['chain','HEALING_MEET'],['revise','HEALING_REVISE'],['publish','HEALING_APPROVE'],['publish','HEALING_PUBLISH']])if(p===phase)act(action);
   act('HEALING_NEXT');
+ }
+ return s;
+}
+
+export function finishEdition(s,choices={},observe=()=>{}){
+ const act=a=>{s=reduce(s,typeof a==='string'?{type:a}:a);observe(s);};
+ if(s.stage==='healing-complete')act('EDITION_START');
+ for(const p of EDITION_PHASES){
+  if(s.stage!=='edition-'+p)continue;
+  for(const id of EDITION_DOCS[p])act({type:'EDITION_READ',id});
+  for(const [id,v] of Object.entries(editionSolutions(s,p)))act({type:'EDITION_PICK',id,value:choices[id]??(Array.isArray(v)?v[0]:v)});
+  if(p==='chain')for(const [index,id] of EDITION_ORDER.entries())act({type:'EDITION_ORDER',index,id});
+  act('EDITION_CHECK');
+  for(const [phase,action] of [['sources','PROTECT'],['chain','MEET'],['agreement','SIGN'],['future','AUTHOR'],['publish','APPROVE'],['publish','PUBLISH']])if(p===phase)act('EDITION_'+action);
+  act('EDITION_NEXT');
  }
  return s;
 }

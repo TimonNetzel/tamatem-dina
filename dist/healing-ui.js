@@ -1,3 +1,4 @@
+import {editionText} from './edition-ui.js';
 import {HEALING_STAGES,HEALING_DOCS,HEALING_OPTIONS,HEALING_ORDER,healingReady} from './healing-state.js';
 import {HEALING_COPY} from './healing-copy.js';
 import {getLanguage,t} from './i18n.js';
@@ -17,7 +18,7 @@ export function healingView(s,h){
  if(p==='supply')story+=`<div class="healing-numbers" dir="ltr"><bdi>120 − 20 − 60 = ?</bdi></div>`;
  if(p==='contract')story+=`<div class="healing-numbers" dir="ltr"><bdi>40 × (100 + 20 + 80) − 4800 = ?</bdi></div>`;
  if(p==='revise')story+=`<article class="case-article healing-correction"><h2>${C('draftTitle')}</h2><p>${c.revised?`<del>${esc(C('old'))}</del>`:esc(C('old'))}</p>${c.revised?para('correction'):''}</article>`;
- if(p==='complete')panel+=para('endNote')+button('notebook',C('notes'),'button wide')+button('export',t('Spielstand als Datei sichern'),'button secondary wide');
+ if(p==='complete')panel+=para('endNote')+button('edition-start',esc(editionText('title')),'button wide')+button('notebook',C('notes'),'button wide')+button('export',t('Spielstand als Datei sichern'),'button secondary wide');
  else{
   panel+=b('check','check',!done)+(done?`<p class="success-line" role="status">${esc(C('good'))}</p>`:'');
   for(const [phase,action,flag,key] of [['protect','protect','protected','protectAction'],['chain','meet','met','meet'],['revise','revise','revised','reviseAction'],['publish','approve','approved','approve']])if(p===phase)panel+=b(action,key,done&&!c[flag]);
