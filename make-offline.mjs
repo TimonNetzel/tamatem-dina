@@ -5,16 +5,16 @@ const output=process.argv[2];
 if(!output||!path.isAbsolute(output))throw Error('Absoluten Ausgabepfad angeben.');
 const read=async name=>readFile(path.join(root,name),'utf8');
 const assets={};
-for(const name of ['workroom.png','characters.png','illness.png','threshold.png','river.png','garden-dry.png','garden-wet.png','chamber.png','morning.png'])assets[name]='data:image/png;base64,'+(await readFile(path.join(root,'assets',name))).toString('base64');
+for(const name of ['workroom.png','characters.png','illness.png','threshold.png','river.png','garden-dry.png','garden-wet.png','chamber.png','morning.png','case-library.png','case-courtyard.png'])assets[name]='data:image/png;base64,'+(await readFile(path.join(root,'assets',name))).toString('base64');
 const icon='data:image/svg+xml;base64,'+(await readFile(path.join(root,'assets/icon.svg'))).toString('base64');
 const css=(await read('style.css')).replaceAll("url('./assets/characters.png')",`url('${assets['characters.png']}')`);
 // Give each ES module its own scope, including import aliases. All modules are local;
 // the generated file needs no network imports, fetches or extra runtime packages.
 let script='const __TD_MODULES=Object.create(null);\n';
-for(const name of ['channels.js','state.js','data.js','messages.js','i18n.js','app.js']){
+for(const name of ['channels.js','case-state.js','state.js','data.js','messages.js','i18n.js','case-copy.js','case-ui.js','app.js']){
  let code=await read(name);
  const exported=[...code.matchAll(/^export (?:const|function) (\w+)/gm)].map(match=>match[1]);
- code=code.replace(/^import \{([^}]+)\} from '\.\/(\w+\.js)';\r?\n/gm,(_,bindings,dependency)=>`const {${bindings.replace(/\s+as\s+/g,':')}}=__TD_MODULES[${JSON.stringify(dependency)}];\n`).replace(/^export /gm,'');
+ code=code.replace(/^import \{([^}]+)\} from '\.\/([\w-]+\.js)';\r?\n/gm,(_,bindings,dependency)=>`const {${bindings.replace(/\s+as\s+/g,':')}}=__TD_MODULES[${JSON.stringify(dependency)}];\n`).replace(/^export /gm,'');
  script+=`__TD_MODULES[${JSON.stringify(name)}]=(()=>{\n${code}\nreturn {${exported.join(',')}};\n})();\n`;
 }
 let html=await read('index.html');

@@ -24,6 +24,12 @@ Identifikation anhand der Recherchekarte, Lichtstaub sammeln, Pflanze erhalten. 
 
 Fiktive Lichtapparatur, notwendige spielbare Dina-Beobachtung und Stabilitätsbestätigung, beide Laternenwege, Nacht und Morgen sind umgesetzt. Level 1 endet mit level-complete und dem Brief als Ausblick auf Level 2. Zielzeit für das volle Level: 15–30 Minuten, durch tatsächlichen Spieldurchlauf prüfen.
 
-## 7. Episoden 2–7 — nächster Chat für Level 2
+## 7. Level 2 — umgesetzt
+
+„Die verschwundenen Stimmen“ ist dreisprachig spielbar. Der konkrete Zwölf-Stationen-Plan steht in episodes/02-verschwundene-stimmen.md; STATUS.md dokumentiert die tatsächlichen Prüfungen.
+
+## 8. Episoden 3–7 — nächster Chat für Level 3
 
 Je Episode erst den relevanten Handlungsbogen und die konkreten Rätsel ausarbeiten, dann umsetzen und prüfen. Themen und Altersfolge stehen im CANON, ausführliche Entwürfe in GAME_DESIGN.md. Kein gleichzeitiger vollständiger Neubau aller Episoden.
+
+Vor Level 3 neuer Chat nach CODEX_STARTPROMPT.md; unabhängige Geräte-, Sprach- und Spieldauerabnahme bleibt separat.

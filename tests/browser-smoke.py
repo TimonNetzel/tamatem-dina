@@ -4,19 +4,25 @@ No Playwright package is needed by the game itself. Screenshots/downloads stay i
 """
 import json
 import os
+import subprocess
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 BASE = os.environ.get('TD_TEST_URL', 'http://127.0.0.1:4173')
 GAME_KEY = 'tamatem-dina-prolog-v1'
 CATALOG = json.loads(Path('dist/messages.js').read_text().split('export const MESSAGES=')[1].rstrip(';\n'))
+CASE_COPY = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', "import {CASE_COPY} from './dist/case-copy.js'; console.log(JSON.stringify(CASE_COPY))"]))
+CATALOG.update({entry[0]: {'en': entry[1], 'ar-EG': entry[2]} for entry in CASE_COPY.values()})
 
 
 def action(page, name, item=None):
     selector = f'[data-action="{name}"]'
     if item:
         selector += f'[data-id="{item}"]'
-    page.locator(selector).last.click()
+    if page.evaluate('navigator.maxTouchPoints > 0'):
+        page.locator(selector).last.tap()
+    else:
+        page.locator(selector).last.click()
 
 
 def saved(page):
@@ -25,6 +31,8 @@ def saved(page):
 
 def layout(page):
     assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'), 'Horizontal overflow'
+    for rect in page.locator('.case-radio, .case-order select, .case-game .choice, .case-game .conversation').evaluate_all('(els)=>els.map(e=>e.getBoundingClientRect().height)'):
+        assert rect >= 44, 'Touch target smaller than 44 CSS pixels'
     # Visible German source strings must not remain in translated UI or accessibility labels.
     if page.locator('html').get_attribute('lang') != 'de':
         visible = page.locator('body').inner_text().splitlines()
@@ -40,7 +48,7 @@ def layout(page):
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch(executable_path=os.environ.get('TD_CHROMIUM', '/usr/bin/chromium'), headless=True, args=['--no-sandbox'])
     for locale, width in [('de', 1440), ('en', 390), ('ar-EG', 390)]:
-        context = browser.new_context(viewport={'width': width, 'height': 900}, accept_downloads=True, reduced_motion='reduce' if locale == 'ar-EG' else 'no-preference')
+        context = browser.new_context(viewport={'width': width, 'height': 900}, accept_downloads=True, has_touch=locale != 'de', reduced_motion='reduce' if locale == 'ar-EG' else 'no-preference')
         page = context.new_page()
         errors = []
         page.on('pageerror', lambda error: errors.append(str(error)))
@@ -188,6 +196,7 @@ with sync_playwright() as playwright:
         action(page, 'garden-test')
         assert saved(page)['stage'] == 'garden-complete'
         assert saved(page)['garden']['watered'] is True
+        assert page.locator('[data-action="case-start"]').count() == 0
         assert page.locator('button.channel-tile:disabled').count() == 6
         assert page.locator('.channel-water').count() == 6
         assert page.locator('img[src$="garden-wet.png"]').count() == 1
@@ -275,6 +284,109 @@ with sync_playwright() as playwright:
         action(page, 'morning')
         assert saved(page)['stage'] == 'level-complete'
         checkpoint_scene('morning')
+        # Version 4 end-of-level import resumes directly; no new game is needed.
+        level_one_end = saved(page)
+        old_v4 = {**level_one_end, 'version': 4}
+        del old_v4['case']
+        page.locator('#menu-button').click()
+        action(page, 'import')
+        page.locator('#import-file').set_input_files({'name': 'level-one-v4.json', 'mimeType': 'application/json', 'buffer': json.dumps({'game': 'tamatem-dina-prolog', 'state': old_v4}).encode()})
+        action(page, 'confirm-import')
+        assert saved(page)['stage'] == 'level-complete'
+        action(page, 'case-start')
+        checkpoint_scene('case-opening')
+        if locale == 'de':
+            action(page, 'case-begin')
+        else:
+            page.locator('[data-action="case-begin"]').tap()
+        action(page, 'case-address')
+        assert saved(page)['case']['addressChecked'] is False
+        assert page.locator('.feedback').inner_text()
+        for item in ['missing', 'letter', 'address', 'sale']:
+            action(page, 'case-read', item)
+            layout(page)
+            action(page, 'case-select', item)
+        action(page, 'case-address')
+        assert saved(page)['case']['addressChecked'] is False
+        action(page, 'case-read', 'missing')
+        action(page, 'case-select', 'missing')
+        checkpoint_scene('case-records')
+        action(page, 'case-address')
+        action(page, 'case-interviews')
+        assert page.locator('[data-action="case-nora"]').is_disabled()
+        assert page.locator('[data-action="case-meet"]').is_disabled()
+        action(page, 'case-consent', 'name' if locale == 'de' else 'anonymous')
+        action(page, 'case-nora')
+        layout(page)
+        page.keyboard.press('Escape')
+        checkpoint_scene('case-consent')
+        action(page, 'case-emil')
+        checkpoint_scene('case-withdrawal-pending')
+        action(page, 'case-withdraw', 'document' if locale == 'en' else 'omit')
+        checkpoint_scene('case-interviews')
+        action(page, 'case-meet')
+        action(page, 'case-link')
+        assert page.locator('.feedback').inner_text()
+        page.locator('[data-action="case-order"][data-index="0"]').select_option('complaint')
+        checkpoint_scene('case-partial-order')
+        for index, item in enumerate(['sale', 'rent', 'complaint']):
+            page.locator(f'[data-action="case-order"][data-index="{index}"]').select_option(item)
+        checkpoint_scene('case-timeline')
+        action(page, 'case-link')
+        action(page, 'case-response-start')
+        action(page, 'case-read', 'office')
+        layout(page)
+        page.keyboard.press('Escape')
+        assert page.locator('[data-action="case-editor"]').is_disabled()
+        checkpoint_scene('case-one-response')
+        action(page, 'case-read', 'owner')
+        page.keyboard.press('Escape')
+        action(page, 'case-editor')
+        assert page.locator('[data-action="case-print"]').is_disabled()
+        action(page, 'case-check')
+        assert page.locator('.feedback').inner_text()
+        page.locator('[data-action="case-claim"][data-id="abduction"][value="verified"]').check()
+        checkpoint_scene('case-partial-editor')
+        for item, value in [('abduction', 'false'), ('complaints', 'verified'), ('motive', 'open')]:
+            page.locator(f'[data-action="case-claim"][data-id="{item}"][value="{value}"]').check()
+        for _ in range(3):
+            action(page, 'hint')
+            layout(page)
+        page.keyboard.press('Escape')
+        checkpoint_scene('case-editor')
+        action(page, 'case-check')
+        assert page.locator('[data-action="case-print"]').is_disabled()
+        action(page, 'case-correct')
+        checkpoint_scene('case-corrected')
+        action(page, 'case-print')
+        checkpoint_scene('case-print')
+        if locale != 'de':
+            assert 'Nora' not in page.locator('.case-article').inner_text()
+            assert 'نورا' not in page.locator('.case-article').inner_text()
+        page.locator('#notebook-button').click()
+        layout(page)
+        page.keyboard.press('Escape')
+        action(page, 'case-finish')
+        checkpoint_scene('case-complete')
+        end_case = saved(page)
+        for key in level_one_end:
+            if key not in ['stage', 'case', 'hints']:
+                assert end_case[key] == level_one_end[key], key
+        with page.expect_download() as case_download:
+            action(page, 'export')
+        case_download.value.save_as(f'/tmp/tamatem-case-save-{locale}.json')
+        case_payload = json.loads(Path(f'/tmp/tamatem-case-save-{locale}.json').read_text())
+        assert case_payload['state'] == end_case
+        page.locator('#menu-button').click()
+        action(page, 'import')
+        page.locator('#import-file').set_input_files({'name': 'case-v5.json', 'mimeType': 'application/json', 'buffer': json.dumps(case_payload).encode()})
+        action(page, 'confirm-import')
+        assert saved(page) == end_case
+        # Keep the original Level 1 export for the existing migration checks below.
+        page.locator('#menu-button').click()
+        action(page, 'import')
+        page.locator('#import-file').set_input_files({'name': 'level-one.json', 'mimeType': 'application/json', 'buffer': json.dumps({'game': 'tamatem-dina-prolog', 'state': level_one_end}).encode()})
+        action(page, 'confirm-import')
         action(page, 'notebook')
         layout(page)
         page.keyboard.press('Escape')
@@ -323,7 +435,7 @@ with sync_playwright() as playwright:
         assert saved(page)['choice'] == original['choice']
         assert not errors, errors
         context.close()
-        print(f'PASS {locale}: full Level 1, regular/early lantern solution, necessary Dina contribution, mobile RTL/LTR, offline reloads, v1/v2/v3/v4 import', flush=True)
+        print(f'PASS {locale}: full Levels 1 + 2, regular/early lantern, Dina interviews, attribution/withdrawal paths, mobile RTL/LTR, offline reloads, v1–v5 imports', flush=True)
     context = browser.new_context(viewport={'width': 390, 'height': 844})
     context.add_init_script("Storage.prototype.getItem=function(){throw Error('Storage unavailable')};Storage.prototype.setItem=function(){throw Error('Storage unavailable')}")
     page = context.new_page()

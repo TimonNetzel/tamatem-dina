@@ -13,6 +13,9 @@ Die Dateien in dist sind direkt gepflegter Quellcode und zugleich die veröffent
 | dist/i18n.js | Sprachwahl, Textübersetzung und Lokalisierung der Spieldaten |
 | dist/channels.js | Physisches Kanalmodell, Vierteldrehungen und berechneter Wasserlauf |
 | dist/state.js | Zustandsübergänge, Fortschrittsbedingungen, Spielstandvalidierung |
+| dist/case-state.js | Level-2-Zustand, Fortschrittsbedingungen und Validierung |
+| dist/case-copy.js | Level-2-Texte als vollständige de/en/ar-EG-Tripel |
+| dist/case-ui.js | Level-2-Szenen, Dokumente, Notizbuch und Hilfen |
 | dist/app.js | Darstellung, Klickaktionen, Dialoge, Speichern, Import/Export |
 | dist/sw.js | Offline-Cache, Navigation ohne Netz, Vollständigkeitsmeldung |
 | dist/manifest.webmanifest | Installierbare Web-App |
@@ -24,9 +27,9 @@ Die Offline-Datei wird aus dem Quellstand neu erzeugt. Änderungen an ihrer Kopi
 
 ## Spielzustände
 
-Aktuelle Abschnitte: intro → research → illness → resolve → pack → threshold → river → river-crossing → river-complete → garden → garden-complete → chamber → return → apparatus → dina/finale → healing → level-complete. Dina und Tamatem wechseln während der letzten Prüfung die Perspektive; level-complete ist der Abschluss von Level 1.
+Aktuelle Abschnitte: intro → research → illness → resolve → pack → threshold → river → river-crossing → river-complete → garden → garden-complete → chamber → return → apparatus → dina/finale → healing → level-complete. Dina und Tamatem wechseln während der letzten Prüfung die Perspektive; level-complete ist der Abschluss von Level 1 und bietet den optionalen Einstieg in Level 2. Danach: case-opening → case-records → case-interviews → case-timeline → case-response → case-editor → case-print → case-complete.
 
-state.js definiert VERSION=4. Der lokale Speicherschlüssel bleibt tamatem-dina-prolog-v1; die Dateisicherung behält die Kennung tamatem-dina-prolog. validateState akzeptiert Versionen 1–4. Das Version-1-Ende complete wird zu river migriert. Version-2-Spielstände bleiben an ihrem bisherigen Abschnitt; für Versionen 1/2 wird ein frischer Gartenzustand ergänzt. Version 3 behält auch den Garten vollständig. Für alle Altversionen werden ausschließlich die neuen Blüten-, Rückweg- und Finalzustände ergänzt. Frühere Abschnitte, Inventar und Entscheidungen bleiben erhalten. Unbekannte Versionen und unmögliche Fortschritte werden abgelehnt. Ein altes garden-complete bietet die Handlung zum Betreten der Kammer.
+state.js definiert VERSION=5. Der lokale Speicherschlüssel bleibt tamatem-dina-prolog-v1; die Dateisicherung behält die Kennung tamatem-dina-prolog. validateState akzeptiert Versionen 1–5. Das Version-1-Ende complete wird zu river migriert. Version-2-Spielstände bleiben an ihrem bisherigen Abschnitt; für Versionen 1/2 wird ein frischer Gartenzustand ergänzt. Version 3 behält auch den Garten vollständig. Für Versionen 1–3 werden Blüten-, Rückweg- und Finalzustände ergänzt. Versionen 1–4 erhalten zusätzlich einen leeren Fallzustand case. Version 4 darf nur die ursprünglichen 18 Level-1-Abschnitte enthalten; ein alter level-complete bleibt dort und bietet direkt den Einstieg in Level 2. Frühere Abschnitte, Inventar und Entscheidungen bleiben erhalten. Unbekannte Versionen und unmögliche Fortschritte werden abgelehnt. Ein altes garden-complete bietet die Handlung zum Betreten der Kammer.
 
 river speichert Untersuchung, Prüfung der Gegenseite, Auswahl der Stoffschlinge, Verbindung zur Halteschlaufe, Sicherung an der Öse und das aktuelle Überquerungspanel. Die Schlinge bleibt als mitgenommener Gegenstand dokumentiert, ist nach Sicherung jedoch am Stamm gebunden und nicht nochmals verwendbar.
 
@@ -38,7 +41,7 @@ html.lang und html.dir sowie die Oberfläche werden beim Wechsel aktualisiert. B
 
 ## Bilder
 
-characters.png: Figurenblatt als Porträtreferenz; workroom.png: Arbeitstisch; illness.png: Dinas Zimmer; threshold.png: Waldrand mit Oris; river.png: Fluss, Stamm, Schlaufe, Öse und Oris; garden-dry.png und garden-wet.png: derselbe Garten vor/nach der Bewässerung; chamber.png: lebende Blüte und erloschenes Blatt; morning.png: gemeinsame Erholung am Morgen. Neue Bilder werden im verfügbaren Bildwerkzeug anhand des Figurenblatts erstellt. Hinweise und Dialoge bleiben skalierbarer Text; notwendiger Inhalt wird nicht nur in eine Illustration eingebrannt.
+characters.png: Figurenblatt als Porträtreferenz; workroom.png: Arbeitstisch; illness.png: Dinas Zimmer; threshold.png: Waldrand mit Oris; river.png: Fluss, Stamm, Schlaufe, Öse und Oris; garden-dry.png und garden-wet.png: derselbe Garten vor/nach der Bewässerung; chamber.png: lebende Blüte und erloschenes Blatt; morning.png: gemeinsame Erholung am Morgen; case-library.png: Recherche des achtjährigen Tamatem mit Dina und Eva; case-courtyard.png: Dinas Gespräch mit Nora. Neue Bilder werden im verfügbaren Bildwerkzeug anhand des Figurenblatts erstellt. Hinweise und Dialoge bleiben skalierbarer Text; notwendiger Inhalt wird nicht nur in eine Illustration eingebrannt.
 
 ## Offline und Veröffentlichungen
 
@@ -46,7 +49,7 @@ Alle benötigten Dateien stehen in der CORE-Liste von sw.js. Bei neuen Szenen di
 
 Die Browser-Anwendung lädt keine externen Schriftdateien. Bei künftigen Medien auch notwendige Töne lokal beilegen. npm test prüft Spielregeln, Migration, Übersetzungsvollständigkeit, simuliertes Cache-Verhalten und den Offline-Export. python tests/browser-smoke.py führt mit installiertem Python-Playwright und Chromium gegen den laufenden lokalen Server zusätzliche Browserdurchläufe aus. Es ist ein optionales Entwicklungswerkzeug, keine Laufzeitabhängigkeit des Spiels.
 
-make-offline.mjs bettet neun Bilder und alle Sprachmodule ein. Die Module erhalten getrennte Bereiche, damit Import-Aliase und gleichnamige Variablen korrekt funktionieren. Die Web-App legt Bilder und beide Sprachmodule im Service-Worker-Cache ab. Bei geänderten Dateien die Cache-Version erhöhen.
+make-offline.mjs bettet elf Bilder und alle Sprachmodule ein. Die Module erhalten getrennte Bereiche, damit Import-Aliase und gleichnamige Variablen korrekt funktionieren. Die Web-App legt Bilder und beide Sprachmodule im Service-Worker-Cache ab. Bei geänderten Dateien die Cache-Version erhöhen.
 
 ## Quellgarten und Kanäle
 
@@ -64,4 +67,16 @@ finale speichert inserted, collected, bound, lanternOn, attempted, stable, dinaO
 
 Die aktive Figur wird aus dem Abschnitt bestimmt: Dina im Prolog und im Abschnitt dina; Tamatem in den übrigen Spielszenen. Notizbuch, Hinweise und Darstellung verwenden diese gespeicherten Zustände. Die dritte Apparaturhilfe benennt den nächsten gültigen Schritt; bereits abgeschlossene Kammer-/Sturmaufgaben verweisen zum Übergang. Laternen-, Faden- und Spiegelanzeigen verwenden lokale HTML/SVG-Symbole und Text. Animationen sind rein visuell.
 
-Die Zustandsraumprüfung in tests/finale.test.mjs prüft jeden erreichbaren Zustand ab dem Gartenabschluss für alle vier Kombinationen der frühen Entscheidungen: Speicherung/Validierung, Erhalt der Vergangenheit und Erreichbarkeit des Endes. Der Browser-Smoke-Test spielt das gesamte Level offline weiter, prüft Neuladen/Sprachwechsel in den neuen Szenen und importiert Spielstände der Versionen 1–4. Der Exporttest verwendet asynchronen Prozessaufruf und vm.Script für die Syntax des eingebetteten Skripts; damit ist kein synchroner Kindprozess für die Syntaxprüfung erforderlich.
+Die Zustandsraumprüfung in tests/finale.test.mjs prüft jeden erreichbaren Zustand ab dem Gartenabschluss für alle vier Kombinationen der frühen Entscheidungen: Speicherung/Validierung, Erhalt der Vergangenheit und Erreichbarkeit des Endes. Der Browser-Smoke-Test spielt das gesamte Level offline weiter, prüft Neuladen/Sprachwechsel in den neuen Szenen und importiert Spielstände der Versionen 1–5. Der Exporttest verwendet asynchronen Prozessaufruf und vm.Script für die Syntax des eingebetteten Skripts; damit ist kein synchroner Kindprozess für die Syntaxprüfung erforderlich.
+
+## Level 2 · realistischer Fall
+
+case-state.js verwaltet ausgewählte/gelesene Adresskarten, Adressprüfung, Noras Nennungsfreigabe (name/anonymous), Interview, Emils Widerruf und Dinas Reaktion (omit/document), drei explizit nummerierte Zeitachsenpositionen, beide Stellungnahmen, drei redaktionelle Einstufungen, ausdrückliche Überschriftenkorrektur und Veröffentlichung. Kein Level-1-Feld wird beim Einstieg gelöscht oder neu gesetzt. case-complete ist der gespeicherte Level-2-Abschluss.
+
+Dina spielt Eröffnung, Interviews, Stellungnahmen, Redaktion und Druck; Tamatem spielt Adressvergleich, gemeinsame Zeitachse und Rückkehr. Die Fallnotizen ergänzen das bestehende Notizbuch. Ein Treffen am Lesetisch teilt die getrennten Funde, bevor die gemeinsame Zeitachse verfügbar wird. Die ursprüngliche Vermutung bleibt als solche bezeichnet; Bestätigung und Korrektur sind getrennte Einträge.
+
+case-copy.js nutzt stabile Textkennungen mit je drei vollständigen Fassungen. case-ui.js wählt über dieselbe getrennt gespeicherte Sprachpräferenz wie i18n.js; Sprachwechsel verändert keinen Fallzustand. Die Fehlermeldung der Validierung steht im bisherigen messages.js-Katalog. Tests prüfen alle Tripel, Platzhalter, dynamischen Ansichten und Hilfen. Für neue Texte dieses Moduls immer alle drei Einträge pflegen.
+
+case-state.js kennt keine Magie und keine verbrauchten Ressourcen. Falsche Prüfungen ändern keine Bestätigungen. Vor Weitergabe änderbare Auswahlen, danach feste Interviewentscheidungen; beide Widerrufswege erhalten den öffentlichen Registerbeleg. Veröffentlichte Zitate schließen Emils zurückgezogene Aussage aus. Die anonyme Ausgabe enthält auch in der Korrektur keinen Namen der Mieterin. Ein Artikel endet mit belegtem Widerspruch und offenen Motiven, nicht mit einer automatischen Lösung der Wohnungsfrage.
+
+Die Offline-CORE-Liste enthält 25 Einträge. Der Einzeldatei-Export bettet auch die drei Fallmodule ein und löst lokale Modulnamen mit Bindestrichen auf. tests/case.test.mjs prüft alle 16 Kombinationen alter/neuer Entscheidungen, jeden Schritt eines vollständigen Level-1-Durchlaufs als Version-4-Migration, 16 Adressauswahlen, 34 partielle Zeitachsen und 64 Einstufungen samt Fortsetzbarkeit. Der Browser-Smoke-Test spielt beide Level bei abgeschaltetem Netz; tests/browser-standalone.py prüft die erzeugte Einzeldatei direkt, sofern die Browserrichtlinie file:// erlaubt. Ergebnisse und Grenzen stehen in STATUS.md.

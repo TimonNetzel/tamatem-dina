@@ -2306,5 +2306,9 @@ export const MESSAGES={
   "Das Glas ist geschützt. Folge Oris zu den Dorflichtern.": {
     "en": "The jar is protected. Follow Oris to the village lights.",
     "ar-EG": "البرطمان في أمان. امشي ورا أوريس لأنوار القرية."
+  },
+  "Der Fallzustand überspringt eine notwendige Handlung.": {
+    "en": "The case progress skips a required action.",
+    "ar-EG": "تقدم القضية بيتخطّى خطوة لازمة."
   }
 };

@@ -28,3 +28,19 @@ html[dir=rtl]{--serif:Tahoma,Arial,sans-serif;--sans:Tahoma,Arial,sans-serif}htm
 @keyframes light-pulse{50%{opacity:.55}}
 @media(prefers-reduced-motion:reduce){.flickering .light-vessel .icon{animation:none}}
 @media(max-width:480px){.light-display{gap:.5rem;padding:1.2rem .5rem;font-size:.85rem}.light-display .icon{width:56px;height:70px}}
+
+/* Episode 2: documents and choices stay readable without hover or dragging. */
+.case-story{background:var(--paper,#f5eedf);padding:22px 26px;border:1px solid #c9bca2;margin-top:16px;font-size:1rem;line-height:1.8}
+.case-story p+p{margin-top:18px}.case-game .paper-panel>.button{margin-top:14px}
+.case-game .conversation{width:100%;text-align:start;min-height:52px}.case-game .conversation span{white-space:normal}
+.case-order{display:grid;gap:16px;margin:20px 0}.case-order label{display:grid;gap:7px}
+.case-order select{width:100%;min-width:0;min-height:48px;font:inherit;padding:10px;color:#172b30;background:#fffcf5;border:1px solid #9d927d}
+.case-claims fieldset{min-width:0;margin:20px 0;padding:12px;border:1px solid #b4a78d}
+.case-claims legend{font-weight:600;padding:0 6px;line-height:1.6}
+.case-radio{display:flex;align-items:center;gap:12px;min-height:48px;cursor:pointer;padding:6px}
+.case-radio input{width:20px;height:20px;flex-shrink:0;accent-color:#315e61}
+.case-article h2{font-size:1.8rem;line-height:1.3}.case-article p:last-child{font-style:italic}
+.case-game .choice{min-height:48px;text-align:start}.case-game .choice:disabled{opacity:.8}
+@media(max-width:600px){.case-story{padding:18px}.case-game .paper-panel{padding:20px}.case-article h2{font-size:1.5rem}}
+
+.chapter-progress{direction:ltr;unicode-bidi:isolate}

@@ -80,3 +80,7 @@ Die Konzeptbilder wurden mit der integrierten Bildgenerierung erstellt. Die voll
 Kammer und Morgen in dist/assets/chamber.png und morning.png führen Figurenblatt, Garten und Dinas Zimmer fort. Das abgefallene Blatt in der Kammer ist erloschen; die lebende Blüte besitzt fünf goldene Blütenblätter und einen dunklen Ring. Die zunächst ausgeschaltete Laterne wird beim Sammeln spielmechanisch angezündet. Das Morgenbild zeigt Besserung und Ruhebedarf. Prompts und Korrekturen: art/prompts/05-level-one-finale.md.
 
 Rückweg als angehaltene Montage mit bestehender Waldillustration und Regenebene. Apparatur, Lichtzustände und Spiegel sind echte skalierbare HTML/SVG-Elemente mit lokalisierten Beschriftungen. Kein Hinweis hängt ausschließlich an Animation oder Farbe.
+
+## Level 2 · Die verschwundenen Stimmen
+
+Zwei neue referenzgestützte Illustrationen: case-library.png und case-courtyard.png. Tamatem ist acht und bleibt sichtbar ein Kind; Dina behält ihre bestätigten Merkmale und ihr Alter. Realistische Kleinstadt, Backstein, Papierweiß und Petrol, keine magischen Effekte. Bibliothek als Recherche-/Redaktionsmontage, Hof als Gesprächsbild; exakte Dokumente und Beschriftungen stehen im HTML. Prompts und Referenzfolge: art/prompts/06-missing-voices.md.

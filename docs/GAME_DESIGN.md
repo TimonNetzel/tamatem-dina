@@ -121,6 +121,8 @@ Vollständig realistischer Kleinstadtfall. Helle Fassaden und freundliche Gespr�
 
 Entwicklung: Zuhören, ohne die Geschichte eines anderen Menschen vorschnell zu erklären. Dina ist in den Interviews die zentrale Spielfigur.
 
+In Entwicklungsfassung 0.5 umgesetzt; konkreter Zwölf-Stationen-Plan, Rätsel und Speicherentscheidungen: [episodes/02-verschwundene-stimmen.md](episodes/02-verschwundene-stimmen.md). Aktuelle Prüfungen stehen in STATUS.md.
+
 ### Level 3 · 10 Jahre · Der kranke Fluss
 
 Ökologisches Abenteuer mit realer Ursachenlogik und fantastischen Flusswesen. Farben: Moosgrün, Türkis, Rostorange.
