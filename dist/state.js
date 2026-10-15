@@ -1,10 +1,12 @@
-export const VERSION=2;
+import {CHANNEL_START,CHANNEL_SOLUTION,validChannels,traceChannels} from './channels.js';
+export const VERSION=3;
 export const SOURCE_IDS=['field','travel','drawing','advert'];
 export const ITEM_IDS=['lens','lantern','sling','glass'];
 export const ANSWERS={property:'field',place:'travel',identity:'drawing'};
-export const STAGES=['intro','research','illness','resolve','pack','threshold','river','river-crossing','river-complete'];
+export const STAGES=['intro','research','illness','resolve','pack','threshold','river','river-crossing','river-complete','garden','garden-complete'];
 const riverState=()=>({inspected:false,farBankChecked:false,slingSelected:false,loopAttached:false,secured:false,crossingPanel:0});
-export function initialState(){return {version:VERSION,stage:'intro',read:[],assign:{property:null,place:null,identity:null},committed:false,talked:[],choice:null,noteTaken:false,packed:[],owlChoice:null,hints:{},river:riverState()}}
+const gardenState=()=>({metGuardian:false,inspected:false,rotations:[...CHANNEL_START],tested:false,solutionPreview:false,watered:false});
+export function initialState(){return {version:VERSION,stage:'intro',read:[],assign:{property:null,place:null,identity:null},committed:false,talked:[],choice:null,noteTaken:false,packed:[],owlChoice:null,hints:{},river:riverState(),garden:gardenState()}}
 export const correctResearch=s=>Object.entries(ANSWERS).every(([k,v])=>s.assign[k]===v);
 export const readyToLeave=s=>s.noteTaken&&ITEM_IDS.every(k=>s.packed.includes(k));
 export const heardEssentials=s=>['dina','doctor'].every(k=>s.talked.includes(k));
@@ -32,14 +34,24 @@ export function reduce(s,a){
  case 'RIVER_ANCHOR':if(s.stage==='river'&&s.river.loopAttached){n.river.secured=true;n.river.slingSelected=false;}break;
  case 'RIVER_CROSS':if(s.stage==='river'&&s.river.secured)n.stage='river-crossing';break;
  case 'RIVER_PANEL':if(s.stage==='river-crossing'){if(s.river.crossingPanel===0)n.river.crossingPanel=1;else n.stage='river-complete';}break;
- case 'HINT':if(['research','illness','resolve','pack','threshold','river'].includes(s.stage))n.hints[s.stage]=Math.min(3,(s.hints[s.stage]||0)+1);break;
+ case 'GARDEN_START':if(s.stage==='river-complete')n.stage='garden';break;
+ case 'GARDEN_TALK':if(s.stage==='garden')n.garden.metGuardian=true;break;
+ case 'GARDEN_INSPECT':if(s.stage==='garden')n.garden.inspected=true;break;
+ case 'GARDEN_ROTATE':if(s.stage==='garden'&&s.garden.metGuardian&&s.garden.inspected&&Number.isInteger(a.index)&&a.index>=0&&a.index<6){n.garden.rotations[a.index]=(s.garden.rotations[a.index]+1)%4;n.garden.tested=false;}break;
+ case 'GARDEN_TEST':if(s.stage==='garden'&&s.garden.metGuardian&&s.garden.inspected){n.garden.tested=true;if(traceChannels(s.garden.rotations).solved){n.garden.watered=true;n.garden.solutionPreview=false;n.stage='garden-complete';}}break;
+ case 'GARDEN_PREVIEW':if(s.stage==='garden'&&(s.hints.garden||0)>=3)n.garden.solutionPreview=true;break;
+ case 'GARDEN_HIDE_PREVIEW':if(s.stage==='garden')n.garden.solutionPreview=false;break;
+ case 'GARDEN_APPLY_PREVIEW':if(s.stage==='garden'&&s.garden.solutionPreview&&s.garden.metGuardian&&s.garden.inspected){n.garden.rotations=[...CHANNEL_SOLUTION];n.garden.solutionPreview=false;n.garden.tested=false;}break;
+ case 'HINT':if(['research','illness','resolve','pack','threshold','river','garden'].includes(s.stage))n.hints[s.stage]=Math.min(3,(s.hints[s.stage]||0)+1);break;
  }
  return n;
 }
 export function validateState(input){
- if(!input||![1,VERSION].includes(input.version)||(input.version===1&&!['intro','research','illness','resolve','pack','threshold','complete'].includes(input.stage)))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
+ if(!input||![1,2,VERSION].includes(input.version)||(input.version===1&&!['intro','research','illness','resolve','pack','threshold','complete'].includes(input.stage)))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
  // Version 1 ended at Oris. Continue at the river without losing decisions or equipment.
- const x=input.version===1?{...input,version:VERSION,stage:input.stage==='complete'?'river':input.stage,river:riverState()}:input;
+ const legacy=input.version===1?{...input,stage:input.stage==='complete'?'river':input.stage,river:riverState()}:input;
+ if(input.version===2&&!STAGES.slice(0,9).includes(input.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
+ const x=input.version<3?{...legacy,version:VERSION,garden:gardenState()}:input;
  if(!STAGES.includes(x.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
  const s=initialState();s.stage=x.stage;
  for(const [key,allowed] of [['read',SOURCE_IDS],['packed',ITEM_IDS],['talked',['dina','doctor','hand']]]){if(!Array.isArray(x[key])||x[key].some(v=>!allowed.includes(v)))throw Error('Der Spielstand enthält ungültige Einträge.');s[key]=[...new Set(x[key])];}
@@ -60,6 +72,11 @@ export function validateState(input){
  for(const key of ['inspected','farBankChecked','slingSelected','loopAttached','secured']){if(typeof x.river[key]!=='boolean')throw Error('Ungültiger Flusszustand.');s.river[key]=x.river[key];}
  if(![0,1].includes(x.river.crossingPanel))throw Error('Ungültiger Flusszustand.');s.river.crossingPanel=x.river.crossingPanel;
  const r=s.river;
- if((r.loopAttached&&(!r.inspected||!r.farBankChecked))||(r.secured&&(!r.loopAttached||r.slingSelected))||(r.loopAttached&&!r.secured&&!r.slingSelected)||(stageIndex>=7&&!r.secured)||(stageIndex<6&&Object.values(r).some(Boolean))||(s.stage==='river'&&r.crossingPanel!==0)||(s.stage==='river-complete'&&r.crossingPanel!==1))throw Error('Der Flusszustand überspringt eine notwendige Handlung.');
+ if((r.loopAttached&&(!r.inspected||!r.farBankChecked))||(r.secured&&(!r.loopAttached||r.slingSelected))||(r.loopAttached&&!r.secured&&!r.slingSelected)||(stageIndex>=7&&!r.secured)||(stageIndex<6&&Object.values(r).some(Boolean))||(s.stage==='river'&&r.crossingPanel!==0)||(stageIndex>=8&&r.crossingPanel!==1))throw Error('Der Flusszustand überspringt eine notwendige Handlung.');
+ if(!x.garden||typeof x.garden!=='object')throw Error('Der Gartenzustand fehlt.');
+ for(const key of ['metGuardian','inspected','tested','solutionPreview','watered']){if(typeof x.garden[key]!=='boolean')throw Error('Ungültiger Gartenzustand.');s.garden[key]=x.garden[key];}
+ if(!validChannels(x.garden.rotations))throw Error('Ungültige Kanalstellungen.');s.garden.rotations=[...x.garden.rotations];
+ const g=s.garden,changed=g.rotations.some((value,index)=>value!==CHANNEL_START[index]);
+ if((stageIndex<9&&(changed||g.metGuardian||g.inspected||g.tested||g.solutionPreview||g.watered))||((changed||g.tested)&&(!g.metGuardian||!g.inspected))||(g.solutionPreview&&(s.hints.garden||0)<3)||(g.watered&&(!g.tested||!traceChannels(g.rotations).solved))||(g.tested&&traceChannels(g.rotations).solved&&!g.watered)||(g.watered&&s.stage!=='garden-complete')||(s.stage==='garden-complete'&&(!g.watered||g.solutionPreview)))throw Error('Der Gartenzustand überspringt eine notwendige Handlung.');
  return s;
 }

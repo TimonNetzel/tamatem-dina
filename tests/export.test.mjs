@@ -16,7 +16,7 @@ test('Offline-Einzeldatei enth√§lt alle Bilder und Sprachmodule in getrennten g√
   const html=await readFile(output,'utf8');
   assert.ok(!/<script[^>]+src=/.test(html));
   assert.ok(!/<link[^>]+rel="(?:stylesheet|manifest)"/.test(html));
-  for(const name of ['workroom','characters','illness','threshold','river']){
+  for(const name of ['workroom','characters','illness','threshold','river','garden-dry','garden-wet']){
    const encoded=(await readFile(path.join(cwd,'dist/assets',name+'.png'))).toString('base64');
    assert.ok(html.includes('data:image/png;base64,'+encoded),name);
   }
@@ -24,7 +24,7 @@ test('Offline-Einzeldatei enth√§lt alle Bilder und Sprachmodule in getrennten g√
   assert.equal(scripts.length,1);
   const script=scripts[0][1];
   assert.ok(!/^import /m.test(script));assert.ok(!/^export /m.test(script));
-  for(const module of ['state.js','data.js','messages.js','i18n.js','app.js'])assert.ok(script.includes('__TD_MODULES["'+module+'"]'));
+  for(const module of ['channels.js','state.js','data.js','messages.js','i18n.js','app.js'])assert.ok(script.includes('__TD_MODULES["'+module+'"]'));
   const result=spawnSync(process.execPath,['--input-type=module','--check'],{input:script,encoding:'utf8',maxBuffer:1024*1024});
   assert.equal(result.status,0,result.stderr);
   // Execute the actual embedded modules against a minimal document. This checks

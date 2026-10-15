@@ -40,7 +40,7 @@ def layout(page):
 with sync_playwright() as playwright:
     browser = playwright.chromium.launch(executable_path=os.environ.get('TD_CHROMIUM', '/usr/bin/chromium'), headless=True, args=['--no-sandbox'])
     for locale, width in [('de', 1440), ('en', 390), ('ar-EG', 390)]:
-        context = browser.new_context(viewport={'width': width, 'height': 900}, accept_downloads=True)
+        context = browser.new_context(viewport={'width': width, 'height': 900}, accept_downloads=True, reduced_motion='reduce' if locale == 'ar-EG' else 'no-preference')
         page = context.new_page()
         errors = []
         page.on('pageerror', lambda error: errors.append(str(error)))
@@ -127,6 +127,78 @@ with sync_playwright() as playwright:
         action(page, 'river-panel')
         assert saved(page)['stage'] == 'river-complete'
         layout(page)
+        river_checkpoint = saved(page)
+        action(page, 'garden-start')
+        assert saved(page)['stage'] == 'garden'
+        assert page.locator('button.channel-tile:disabled').count() == 6
+        action(page, 'garden-lens')
+        action(page, 'garden-guardian')
+        layout(page)
+        page.keyboard.press('Escape')
+        assert page.locator('button.channel-tile:disabled').count() == 0
+        assert page.locator('.channel-grid').evaluate('(element)=>getComputedStyle(element).direction') == 'ltr'
+        for narrow in [320, 390]:
+            page.set_viewport_size({'width': narrow, 'height': 844})
+            layout(page)
+            tiles = page.locator('button.channel-tile')
+            assert tiles.nth(0).bounding_box()['width'] >= 44
+            assert tiles.nth(0).bounding_box()['x'] < tiles.nth(1).bounding_box()['x']
+            assert abs(tiles.nth(0).bounding_box()['x'] - tiles.nth(3).bounding_box()['x']) < 1
+        page.set_viewport_size({'width': width, 'height': 900})
+        page.locator('#main').focus()
+        page.evaluate('scrollTo({top:0,behavior:"instant"})')
+        page.screenshot(path=f'/tmp/tamatem-garden-dry-{locale}.png', full_page=True)
+        action(page, 'garden-test')
+        assert saved(page)['garden']['watered'] is False
+        assert page.locator('.channel-break').count() == 1
+        if locale == 'en':
+            before_preview = saved(page)['garden']['rotations']
+            for _ in range(3):
+                action(page, 'hint')
+            action(page, 'garden-preview')
+            assert saved(page)['garden']['rotations'] == before_preview
+            assert page.locator('.channel-preview').count() == 1
+            action(page, 'garden-hide-preview')
+            assert saved(page)['garden']['solutionPreview'] is False
+            action(page, 'hint')
+            action(page, 'garden-preview')
+            action(page, 'garden-apply-preview')
+            assert saved(page)['stage'] == 'garden'
+            assert saved(page)['garden']['watered'] is False
+        else:
+            # Test a visible partial water path, then solve by clicking each tile.
+            action(page, 'garden-rotate', '0')
+            action(page, 'garden-test')
+            assert page.locator('.channel-water').count() == 2
+            assert page.locator('.channel-break').count() == 1
+            if locale == 'ar-EG':
+                assert page.locator('.channel-water').first.evaluate('(element)=>getComputedStyle(element).animationName') == 'none'
+            target = [1, 1, 2, 1, 1, 3]
+            for index, value in enumerate(target):
+                while saved(page)['garden']['rotations'][index] != value:
+                    action(page, 'garden-rotate', str(index))
+                if index == 2:
+                    checkpoint = saved(page)
+                    page.reload()
+                    assert saved(page) == checkpoint
+                    page.locator('.language-select').select_option('en')
+                    assert saved(page) == checkpoint
+                    page.locator('.language-select').select_option(locale)
+                    layout(page)
+        action(page, 'garden-test')
+        assert saved(page)['stage'] == 'garden-complete'
+        assert saved(page)['garden']['watered'] is True
+        assert page.locator('button.channel-tile:disabled').count() == 6
+        assert page.locator('.channel-water').count() == 6
+        assert page.locator('img[src$="garden-wet.png"]').count() == 1
+        complete = saved(page)
+        page.reload()
+        assert saved(page) == complete
+        layout(page)
+        page.locator('#main').focus()
+        page.evaluate('scrollTo({top:0,behavior:"instant"})')
+        page.evaluate('Promise.all(document.getAnimations().map(animation=>animation.finished.catch(()=>{})))')
+        page.screenshot(path=f'/tmp/tamatem-garden-wet-{locale}.png', full_page=True)
         action(page, 'notebook')
         layout(page)
         page.keyboard.press('Escape')
@@ -135,11 +207,12 @@ with sync_playwright() as playwright:
         exported = f'/tmp/tamatem-save-{locale}.json'
         download.value.save_as(exported)
         payload = json.loads(Path(exported).read_text())
-        assert payload['state']['stage'] == 'river-complete'
+        assert payload['state']['stage'] == 'garden-complete'
         assert payload['state']['owlChoice'] == original['owlChoice']
         # Import a genuine old-format completed prologue using the existing confirmation flow.
         legacy = {**original, 'version': 1, 'stage': 'complete'}
         del legacy['river']
+        del legacy['garden']
         page.locator('#menu-button').click()
         action(page, 'import')
         page.locator('#import-file').set_input_files({'name': 'legacy.json', 'mimeType': 'application/json', 'buffer': json.dumps({'game': 'tamatem-dina-prolog', 'state': legacy}).encode()})
@@ -149,9 +222,20 @@ with sync_playwright() as playwright:
         page.reload()
         assert saved(page)['stage'] == 'river'
         assert page.locator('html').get_attribute('lang') == locale
+        # A v2 save resumes at the old river checkpoint and retains both decisions.
+        legacy_river = {**river_checkpoint, 'version': 2}
+        del legacy_river['garden']
+        page.locator('#menu-button').click()
+        action(page, 'import')
+        page.locator('#import-file').set_input_files({'name': 'river-v2.json', 'mimeType': 'application/json', 'buffer': json.dumps({'game': 'tamatem-dina-prolog', 'state': legacy_river}).encode()})
+        action(page, 'confirm-import')
+        assert saved(page)['stage'] == 'river-complete'
+        action(page, 'garden-start')
+        assert saved(page)['stage'] == 'garden'
+        assert saved(page)['choice'] == original['choice']
         assert not errors, errors
         context.close()
-        print(f'PASS {locale}: full prologue + river, narrow layouts, real offline reload/play, export/import, migration', flush=True)
+        print(f'PASS {locale}: full prologue + river + garden, manual/assisted solution, RTL geometry, offline play, v1/v2 migration', flush=True)
     context = browser.new_context(viewport={'width': 390, 'height': 844})
     context.add_init_script("Storage.prototype.getItem=function(){throw Error('Storage unavailable')};Storage.prototype.setItem=function(){throw Error('Storage unavailable')}")
     page = context.new_page()

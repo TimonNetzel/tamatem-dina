@@ -11,6 +11,7 @@ Die Dateien in dist sind direkt gepflegter Quellcode und zugleich die veröffent
 | dist/data.js | Deutsche Ausgangstexte für Quellen, Dialoge, Gegenstände und Hinweise |
 | dist/messages.js | Vollständiger englischer und ägyptisch-arabischer Textkatalog; deutsche Ausgangstexte als Schlüssel |
 | dist/i18n.js | Sprachwahl, Textübersetzung und Lokalisierung der Spieldaten |
+| dist/channels.js | Physisches Kanalmodell, Vierteldrehungen und berechneter Wasserlauf |
 | dist/state.js | Zustandsübergänge, Fortschrittsbedingungen, Spielstandvalidierung |
 | dist/app.js | Darstellung, Klickaktionen, Dialoge, Speichern, Import/Export |
 | dist/sw.js | Offline-Cache, Navigation ohne Netz, Vollständigkeitsmeldung |
@@ -23,9 +24,9 @@ Die Offline-Datei wird aus dem Quellstand neu erzeugt. Änderungen an ihrer Kopi
 
 ## Spielzustände
 
-Aktuelle Abschnitte: intro → research → illness → resolve → pack → threshold → river → river-crossing → river-complete. Der letzte Abschnitt ist der aktuelle Entwicklungsabschluss nach dem Fluss, nicht das Ende von Level 1.
+Aktuelle Abschnitte: intro → research → illness → resolve → pack → threshold → river → river-crossing → river-complete → garden → garden-complete. Der letzte Abschnitt ist der aktuelle Entwicklungsabschluss nach dem Quellgarten, nicht das Ende von Level 1.
 
-state.js definiert VERSION=2. Der lokale Speicherschlüssel bleibt tamatem-dina-prolog-v1; die Dateisicherung behält die Kennung tamatem-dina-prolog. validateState akzeptiert Version 1 und migriert deren complete-Abschnitt zu river. Frühere Abschnitte, Inventar und Entscheidungen bleiben erhalten. Unbekannte Versionen und unmögliche Flusszustände werden abgelehnt.
+state.js definiert VERSION=3. Der lokale Speicherschlüssel bleibt tamatem-dina-prolog-v1; die Dateisicherung behält die Kennung tamatem-dina-prolog. validateState akzeptiert Version 1 und 2. Das Version-1-Ende complete wird zu river migriert. Version-2-Spielstände bleiben an ihrem bisherigen Abschnitt; river-complete bietet den Weg zum Garten. Bei beiden Altversionen wird ein frischer Gartenzustand ergänzt. Frühere Abschnitte, Inventar und Entscheidungen bleiben erhalten. Unbekannte Versionen und unmögliche Flusszustände werden abgelehnt.
 
 river speichert Untersuchung, Prüfung der Gegenseite, Auswahl der Stoffschlinge, Verbindung zur Halteschlaufe, Sicherung an der Öse und das aktuelle Überquerungspanel. Die Schlinge bleibt als mitgenommener Gegenstand dokumentiert, ist nach Sicherung jedoch am Stamm gebunden und nicht nochmals verwendbar.
 
@@ -37,7 +38,7 @@ html.lang und html.dir sowie die Oberfläche werden beim Wechsel aktualisiert. B
 
 ## Bilder
 
-characters.png: Figurenblatt als Porträtreferenz; workroom.png: Arbeitstisch; illness.png: Dinas Zimmer; threshold.png: Waldrand mit Oris; river.png: Fluss, Stamm, Schlaufe, Öse und Oris. Neue Bilder werden im verfügbaren Bildwerkzeug anhand des Figurenblatts erstellt. Hinweise und Dialoge bleiben skalierbarer Text; notwendiger Inhalt wird nicht nur in eine Illustration eingebrannt.
+characters.png: Figurenblatt als Porträtreferenz; workroom.png: Arbeitstisch; illness.png: Dinas Zimmer; threshold.png: Waldrand mit Oris; river.png: Fluss, Stamm, Schlaufe, Öse und Oris; garden-dry.png und garden-wet.png: derselbe Garten vor/nach der Bewässerung. Neue Bilder werden im verfügbaren Bildwerkzeug anhand des Figurenblatts erstellt. Hinweise und Dialoge bleiben skalierbarer Text; notwendiger Inhalt wird nicht nur in eine Illustration eingebrannt.
 
 ## Offline und Veröffentlichungen
 
@@ -45,4 +46,12 @@ Alle benötigten Dateien stehen in der CORE-Liste von sw.js. Bei neuen Szenen di
 
 Die Browser-Anwendung lädt keine externen Schriftdateien. Bei künftigen Medien auch notwendige Töne lokal beilegen. npm test prüft Spielregeln, Migration, Übersetzungsvollständigkeit, simuliertes Cache-Verhalten und den Offline-Export. python tests/browser-smoke.py führt mit installiertem Python-Playwright und Chromium gegen den laufenden lokalen Server zusätzliche Browserdurchläufe aus. Es ist ein optionales Entwicklungswerkzeug, keine Laufzeitabhängigkeit des Spiels.
 
-make-offline.mjs bettet fünf Bilder und alle Sprachmodule ein. Die Module erhalten getrennte Bereiche, damit Import-Aliase und gleichnamige Variablen korrekt funktionieren. Die Web-App legt Bilder und beide Sprachmodule im Service-Worker-Cache ab. Bei geänderten Dateien die Cache-Version erhöhen.
+make-offline.mjs bettet sieben Bilder und alle Sprachmodule ein. Die Module erhalten getrennte Bereiche, damit Import-Aliase und gleichnamige Variablen korrekt funktionieren. Die Web-App legt Bilder und beide Sprachmodule im Service-Worker-Cache ab. Bei geänderten Dateien die Cache-Version erhöhen.
+
+## Quellgarten und Kanäle
+
+garden speichert metGuardian, inspected, sechs rotations (Ganzzahlen 0–3), tested, solutionPreview und watered. Erst Gespräch und Untersuchung schalten die Drehung/Wasserprüfung frei. Drehen verwirft die vorherige Wasserprüfung. Ein Fehlschlag verbraucht nichts; der neue Teilweg wird aus den Stellungen berechnet. Erfolg setzt garden-complete und sperrt weitere Drehungen.
+
+channels.js verwendet eine physisch unveränderte Matrix mit drei Spalten und zwei Reihen. Richtungen 0–3 sind oben, rechts, unten, links. Kanaltypen und Startstellungen entsprechen dem Episodenplan. traceChannels verfolgt den Weg vom linken Einlass der ersten Platte bis zum unteren Auslass der vierten. Nur ein durchgängiger Weg über alle sechs Platten gilt als gelöst. Gerade Platten haben zwei geometrisch gleiche Rotationsstellungen; diese werden beide akzeptiert. Die Quelle/Wurzelbecken-Markierungen, Fließrichtung und Unterbrechung sind auch in RTL dieselben.
+
+Nach der dritten Hilfe kann der Nutzer eine getrennte Lösungsvorschau öffnen. Sie verändert die eigenen Stellungen nicht. Erst „Vorschau übernehmen“ setzt die Platten; danach muss das Wasser weiterhin ausdrücklich geprüft werden. Der Zustand und die Vorschau überstehen Speichern/Laden. Animationen haben keine spielmechanische Zeitbedingung und werden bei prefers-reduced-motion abgeschaltet.

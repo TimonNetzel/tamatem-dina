@@ -12,11 +12,11 @@ Dreisprachiger Prolog und Fluss wurden in Chromium durchgespielt: Sprachwechsel,
 
 Tamatem und Oris erreichen den unsicheren Stamm. Spielbare Untersuchung, Erkundung der Gegenseite durch Oris und Verwendung der Stoffschlinge. Weitergehen erst bei gesichertem Übergang. Vorhandene Prolog-Spielstände anschließen. Details: episodes/01-lumenbluete.md, Station 6 und Rätsel B.
 
-## 4. Quellgarten — nächster Inhaltsabschnitt
+## 4. Quellgarten — umgesetzt
 
-Hüter, sechs drehbare Kanalstücke, sichtbarer Wasserweg und Erfolgsszene. Geplante Lösung: Quelle → A → B → C → F → E → D → Wurzelbecken. Kein verbrauchbarer Wasservorrat oder unsichtbarer Countdown. Details im Episodendokument.
+Hüter, sechs drehbare Kanalstücke, sichtbarer Wasserweg, Lösungsvorschau und Erfolgsszene sind umgesetzt. Lösung: Quelle → A → B → C → F → E → D → Wurzelbecken. Kein verbrauchbarer Wasservorrat oder unsichtbarer Countdown. Details im Episodendokument.
 
-## 5. Blüte und Rückweg
+## 5. Blüte und Rückweg — nächster Chat
 
 Identifikation anhand der Recherchekarte, Lichtstaub sammeln, Pflanze erhalten. Regel des Laternenlichts sichtbar einführen; Sturm als angehaltene interaktive Panels ohne Reflexzwang.
 

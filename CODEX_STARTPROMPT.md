@@ -1,19 +1,15 @@
-# Startprompt für den ersten Codex-Projektchat
+# Neuer Chat: Level 1 abschließen
 
-Den folgenden Text in einem neuen Chat verwenden, der diesen Ordner als primären lokalen Projektordner nutzt.
+Repository: TimonNetzel/tamatem-dina. Verwende den aktuellen gesicherten main-Stand und diesen Prompt:
 
----
+```text
+Entwickle „Tamatem & Dina“ weiter. Prolog, Fluss und Quellgarten sind dreisprachig spielbar. Setze jetzt Blütenkammer, Rückweg und gemeinsames Finale von Level 1 um; schließe an garden-complete an.
 
-Übernimm die Weiterentwicklung des vorhandenen Spiels „Tamatem & Dina – Zwischen den Zeilen“. Dies ist die Übergabe eines bereits spielbaren dreisprachigen Prologs mit Flussübergang, kein Auftrag für einen Neubau.
+Lies AGENTS.md, docs/START_HERE.md, docs/STATUS.md und docs/WORKFLOW.md. Nutze den lokalen Projektskill. Lies im Episodenplan die Stationen 9–12 und Aufgaben D/E sowie passende Abschnitte von CANON und ARCHITECTURE.
 
-Lies AGENTS.md, docs/START_HERE.md, docs/STATUS.md und docs/WORKFLOW.md. Lies anschließend nur die weiteren Dateien, die für die konkrete Aufgabe nötig sind. Verwende den lokalen Projektskill unter .agents/skills/tamatem-dina-entwicklung/SKILL.md, wenn er verfügbar ist. Verbindliche Figuren- und Weltvorgaben stehen in docs/CANON.md.
+Erhalte Figuren, Gestaltung, Entscheidungen und Spielstände der Versionen 1–3. Alle neuen Inhalte müssen Deutsch, Englisch und natürliches ägyptisches Arabisch unterstützen, einschließlich RTL, Hilfen, Notizbuch und Offline-Fassungen. Neue Bilder anhand der vorhandenen Referenzen erstellen.
 
-Das private GitHub-Repository https://github.com/TimonNetzel/tamatem-dina ist eingerichtet; verwende den vorhandenen Projektordner oder einen Klon davon. Prüfe den Git-Status und origin. Ausgangspunkt ist der aktuelle gesicherte Stand auf main; bestehende lokale Nutzeränderungen erhalten. Führe die 20 automatischen Prüfungen mit npm test aus und prüfe die lokale Startfähigkeit. Die Übergabe-Momentaufnahme lässt sich vor Änderungen zusätzlich mit node scripts/verify-handoff.mjs prüfen; nach absichtlicher Weiterentwicklung können die dokumentierten Hashes abweichen. Der richtige Arbeitsordner ist die Wurzel dieses Spielrepositories.
+Dina braucht einen notwendigen spielbaren Beitrag im Finale. Akzeptiere eine früh erkannte richtige Laternenlösung. Kein Reflexzwang und kein versteckter Countdown.
 
-Erhalte die bestätigten Figuren, Bilder, Texte auf Deutsch, Englisch und ägyptischem Arabisch sowie vorhandenen Spielstände. Die bestehende private Sites-ID in .openai/hosting.json bleibt erhalten; Details stehen in docs/DEPLOYMENT.md. Falls benötigte Werkzeuge fehlen, benenne die konkrete Grenze und arbeite an den unabhängigen Teilen weiter.
-
-Prüfe vor Änderungen den aktuellen Stand mit npm test und lies die tatsächlich offenen Prüfungen in docs/STATUS.md. Der nächste inhaltliche Schritt ist der Quellgarten mit Hüter und sechs Kanalplatten nach docs/episodes/01-lumenbluete.md, Stationen 7–8 und Rätsel C. Schließe an das vorhandene Flussende an und erhalte Version-1- und Version-2-Spielstände. Neue Inhalte in allen drei Sprachen ergänzen. Setze den konkreten Nutzerauftrag um und aktualisiere docs/STATUS.md mit den tatsächlich ausgeführten Prüfungen. Sichere das abgeschlossene Paket mit Commit und Push. Nach dem Quellgarten empfehle einen neuen Chat für Blütenkammer, Rückweg und Finale; aktualisiere dafür diese Promptdatei und gib den neuen Prompt im Abschluss direkt aus.
-
----
-
-Die Übernahme verändert noch keine Inhalte der veröffentlichten Spielversion und erfordert keinen Zugriff auf den alten Chat. Modellvorschlag des bisherigen Nutzers: GPT-6.1 Sol, Denkintensität Hoch.
+Prüfe mit npm test und passenden Browserdurchläufen einschließlich Speichern/Laden und tatsächlichem Offline-Spiel. Beachte die offenen Prüfgrenzen in STATUS.md. Aktualisiere die Dokumentation, committe das abgeschlossene Paket und pushe ohne Force nach main. GitHub-Push und Sites-Veröffentlichung bleiben getrennte Schritte. Bereite vor Level 2 wieder einen neuen Chat samt Prompt vor.
+```

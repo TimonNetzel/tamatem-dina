@@ -1,6 +1,6 @@
 # Level 1 – Die Lumenblüte
 
-Vollständiger Episodenentwurf. Der Prolog und der Flussübergang mit Oris sind dreisprachig implementiert; Garten und Heilungsfinale sind noch geplant. Aktueller Nachweis: [STATUS.md](../STATUS.md).
+Vollständiger Episodenentwurf. Prolog, Flussübergang und Quellgarten mit Kanalrätsel sind dreisprachig implementiert; Blütenkammer, Rückweg und Heilungsfinale sind noch geplant. Aktueller Nachweis: [STATUS.md](../STATUS.md).
 
 Ausgearbeiteter Ablauf und Rätselentwurf, Version 0.1 · 15. Oktober 2026
 

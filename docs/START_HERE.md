@@ -6,7 +6,7 @@ Das vorhandene farbige Comic-Adventure für Erwachsene weiterentwickeln. Sprache
 
 ## Stand
 
-Version 0.2 enthält den dreisprachigen Prolog und den Flussübergang mit Oris. Die frühere private Veröffentlichung enthält noch Prolog 0.1; die Erweiterung wurde hier nicht veröffentlicht. Weiterer Spielinhalt ist geplant. Details und offene Prüfungen stehen in STATUS.md.
+Version 0.3 enthält den dreisprachigen Prolog, den Flussübergang mit Oris und den Quellgarten mit Kanalrätsel und geöffneter Kammer. Die frühere private Veröffentlichung enthält noch Prolog 0.1; die Erweiterung wurde hier nicht veröffentlicht. Weiterer Spielinhalt ist geplant. Details und offene Prüfungen stehen in STATUS.md.
 
 ## Gezielt nachlesen
 
@@ -21,7 +21,7 @@ Version 0.2 enthält den dreisprachigen Prolog und den Flussübergang mit Oris. 
 
 ## Nächste Aufgabe
 
-Als Nächstes den Quellgarten mit Hüter und sechs Kanalplatten umsetzen; Details im Episodendokument, Stationen 7–8 und Rätsel C. Den bisherigen Flussabschluss als Übergang anschließen und Spielstände erhalten. Neue Texte in allen drei Sprachen ergänzen. Browserdurchläufe für Prolog und Fluss sind vorhanden; echte iPhone-Prüfung und muttersprachliche arabische Prüfung stehen aus.
+Jetzt einen neuen Chat für Blütenkammer, Rückweg und gemeinsames Finale von Level 1 beginnen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Details im Episodendokument, Stationen 9–12 und Aufgaben D/E. An garden-complete anschließen und Spielstände der Versionen 1, 2 und 3 erhalten. Neue Texte in allen drei Sprachen ergänzen. Echte iPhone-Prüfung und muttersprachliche arabische Prüfung stehen aus.
 
 ## Priorität der Unterlagen
 

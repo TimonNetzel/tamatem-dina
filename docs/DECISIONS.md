@@ -18,5 +18,7 @@
 | Natürliches ägyptisches Arabisch für Dialoge und Erzähltexte, arabische Schrift | Explizite Nutzerantwort; vor Freigabe muttersprachliche Prüfung sinnvoll |
 | Sprache getrennt vom Spielstand speichern | Wechsel ohne Verlust des Fortschritts; dieselben Rätselkennungen und Entscheidungen in allen Sprachen |
 | Version-1-Prologende automatisch zum Fluss migrieren | Bestehende Durchläufe ohne Neustart fortsetzen; Speicherschlüssel und Exportkennung beibehalten |
+| Kanalrätsel berechnet Verbindungen statt nur eine Stellungsliste zu vergleichen | Alle sechs Platten müssen verbunden sein; auch gleichwertige 180°-Stellungen gerader Kanäle gelten |
+| Lösungsvorschau separat, Übernahme ausdrücklich, danach Wasser prüfen | Dreistufige Hilfe unterstützt ohne unbeabsichtigtes automatisches Lösen |
 
 Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen gehören in Git und den aktuellen Status.

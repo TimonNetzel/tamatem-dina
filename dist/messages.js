@@ -1471,5 +1471,261 @@ export const MESSAGES={
   "Oris prüft noch einmal: „Die Auflage hält. Und deine Schlinge auch.“": {
     "en": "Oris checks again: “The support holds. And so does your sling.”",
     "ar-EG": "أوريس بتبصّ تاني: «السند ثابت. والشريط بتاعك كمان.»"
+  },
+  "Hüter": {
+    "en": "Guardian",
+    "ar-EG": "الحارس"
+  },
+  "Der Garten ohne Wasser": {
+    "en": "The garden without water",
+    "ar-EG": "الجنينة من غير ميّه"
+  },
+  "Die Quelle wieder verbinden": {
+    "en": "Reconnect the spring",
+    "ar-EG": "وصّل النبع من جديد"
+  },
+  "Abschnitt {number} von 8": {
+    "en": "Section {number} of 8",
+    "ar-EG": "الجزء {number} من 8"
+  },
+  "Prolog, Fluss und Quellgarten · Level 1 in Entwicklung": {
+    "en": "Prologue, river and Spring Garden · Level 1 in development",
+    "ar-EG": "البداية والنهر وجنينة النبع · المستوى الأول لسه بيتطوّر"
+  },
+  "Der Hüter des Glasbergs wartet auf euch.": {
+    "en": "The guardian of Glass Mountain awaits you.",
+    "ar-EG": "حارس جبل الإزاز مستنّيكم."
+  },
+  "Zum Quellgarten": {
+    "en": "Go to the Spring Garden",
+    "ar-EG": "روح لجنينة النبع"
+  },
+  "Oben": {
+    "en": "Up",
+    "ar-EG": "فوق"
+  },
+  "Rechts": {
+    "en": "Right",
+    "ar-EG": "يمين"
+  },
+  "Unten": {
+    "en": "Down",
+    "ar-EG": "تحت"
+  },
+  "Links": {
+    "en": "Left",
+    "ar-EG": "شمال"
+  },
+  "Kanalplatte {number}: {openings}.": {
+    "en": "Channel tile {number}: {openings}.",
+    "ar-EG": "بلاطة المجرى {number}: {openings}."
+  },
+  "Eine Vierteldrehung im Uhrzeigersinn.": {
+    "en": "One quarter-turn clockwise.",
+    "ar-EG": "ربع لفة مع عقارب الساعة."
+  },
+  "Vorschau des vollständigen Wasserwegs.": {
+    "en": "Preview of the complete water path.",
+    "ar-EG": "معاينة لمسار الميّه كامل."
+  },
+  "Quelle": {
+    "en": "Spring",
+    "ar-EG": "النبع"
+  },
+  "Wurzelbecken": {
+    "en": "Root basin",
+    "ar-EG": "حوض الجذور"
+  },
+  "Mit dem Hüter sprechen": {
+    "en": "Talk to the guardian",
+    "ar-EG": "اتكلم مع الحارس"
+  },
+  "Wasseranlage untersuchen": {
+    "en": "Examine the waterworks",
+    "ar-EG": "افحص نظام الميّه"
+  },
+  "Die Quelle fließt. Der Garten bleibt trocken.": {
+    "en": "The spring flows. The garden stays dry.",
+    "ar-EG": "النبع شغّال. والجنينة لسه ناشفة."
+  },
+  "„Verbinde die Quelle mit dem Wurzelbecken. Die Blüten können nur leben, wenn ihre Wurzeln Wasser bekommen.“": {
+    "en": "“Connect the spring to the root basin. The flowers can only live if their roots receive water.”",
+    "ar-EG": "«وصّل النبع بحوض الجذور. الزهور مش هتعيش غير لما الميّه توصل لجذورها.»"
+  },
+  "„Ihr nennt es Hilfe, wenn ihr etwas mitnehmt.“": {
+    "en": "“You call it helping when you take something away.”",
+    "ar-EG": "«بتسمّوها مساعدة لما تاخدوا حاجة معاكم.»"
+  },
+  "Das Wasser ist da. Nur sein Weg ist unterbrochen.": {
+    "en": "The water is here. Only its path is broken.",
+    "ar-EG": "الميّه موجودة. بس طريقها مقطوع."
+  },
+  "Dann zeig mir, was hier fehlt.": {
+    "en": "Then show me what’s missing here.",
+    "ar-EG": "طيب ورّيني إيه اللي ناقص هنا."
+  },
+  "Noch einmal mit dem Hüter sprechen": {
+    "en": "Talk to the guardian again",
+    "ar-EG": "اتكلم مع الحارس تاني"
+  },
+  "Mit der Lupe nach Spuren suchen": {
+    "en": "Look for traces with the magnifier",
+    "ar-EG": "دوّر على آثار بالعدسة"
+  },
+  "Feuchte Spuren enden an den verdrehten Kanälen. Der letzte Abfluss liegt über den trockenen Wurzeln.": {
+    "en": "Damp traces end at the twisted channels. The final outlet sits above the dry roots.",
+    "ar-EG": "آثار الرطوبة بتقف عند المجاري الملفوفة. آخر فتحة تصريف فوق الجذور الناشفة."
+  },
+  "Sechs Kanäle": {
+    "en": "Six channels",
+    "ar-EG": "ست مجاري"
+  },
+  "Ein Garten braucht mehr als eine Blüte.": {
+    "en": "A garden needs more than a blossom.",
+    "ar-EG": "الجنينة محتاجة أكتر من زهرة."
+  },
+  "Verbinde die Quelle links oben mit dem Becken unter der linken unteren Platte. Jede Platte dreht sich pro Antippen um eine Vierteldrehung.": {
+    "en": "Connect the spring at the upper left to the basin below the lower-left tile. Each tap rotates a tile a quarter-turn.",
+    "ar-EG": "وصّل النبع اللي فوق على الشمال بالحوض تحت البلاطة اللي تحت على الشمال. كل ضغطة بتلفّ البلاطة ربع لفة."
+  },
+  "Sprich mit dem Hüter und untersuche die Wasseranlage. Danach kannst du die Platten drehen.": {
+    "en": "Talk to the guardian and examine the waterworks. Then you can rotate the tiles.",
+    "ar-EG": "اتكلم مع الحارس وافحص نظام الميّه. بعدها تقدر تلفّ البلاطات."
+  },
+  "Die kleinen Zahlen bezeichnen die sechs Platten. Die Anordnung bleibt in jeder Sprache gleich.": {
+    "en": "The small numbers identify the six tiles. Their positions stay the same in every language.",
+    "ar-EG": "الأرقام الصغيرة بتميّز الست بلاطات. ترتيبهم ثابت في كل اللغات."
+  },
+  "Das Wasser erreicht {count} von 6 Platten. Unterbrechung an Platte {number}.": {
+    "en": "Water reaches {count} of 6 tiles. The break is at tile {number}.",
+    "ar-EG": "الميّه وصلت لـ{count} من 6 بلاطات. المسار مقطوع عند البلاطة {number}."
+  },
+  "Wasser freigeben und prüfen": {
+    "en": "Release water and test",
+    "ar-EG": "افتح الميّه وجرّب"
+  },
+  "Kein Wasserverbrauch, kein Zeitlimit. Du kannst jede Verbindung beliebig oft prüfen.": {
+    "en": "No water is used up, and there’s no time limit. Test every connection as often as you like.",
+    "ar-EG": "الميّه مش بتخلص، ومفيش وقت محدّد. جرّب كل وصلة براحتك قدّ ما تحب."
+  },
+  "Lösungsvorschau": {
+    "en": "Solution preview",
+    "ar-EG": "معاينة الحل"
+  },
+  "Diese Vorschau verändert deine Platten noch nicht.": {
+    "en": "This preview does not change your tiles yet.",
+    "ar-EG": "المعاينة دي مش بتغيّر بلاطاتك لسه."
+  },
+  "Vorschau übernehmen": {
+    "en": "Apply the preview",
+    "ar-EG": "طبّق المعاينة"
+  },
+  "Vorschau schließen": {
+    "en": "Close preview",
+    "ar-EG": "اقفل المعاينة"
+  },
+  "Was der Hüter beschützt": {
+    "en": "What the guardian protects",
+    "ar-EG": "اللي الحارس بيحميه"
+  },
+  "Zurück zum Garten": {
+    "en": "Return to the garden",
+    "ar-EG": "ارجع للجنينة"
+  },
+  "Wasser erreicht die Wurzeln. Der Hüter öffnet die Kammer.": {
+    "en": "Water reaches the roots. The guardian opens the chamber.",
+    "ar-EG": "الميّه وصلت للجذور. والحارس فتح الأوضة."
+  },
+  "Der Garten lebt wieder": {
+    "en": "The garden lives again",
+    "ar-EG": "الجنينة رجعت للحياة"
+  },
+  "Helfen heißt auch: etwas erhalten.": {
+    "en": "Helping also means preserving.",
+    "ar-EG": "المساعدة كمان إننا نحافظ على اللي موجود."
+  },
+  "Wasser rinnt durch alle sechs Kanäle. Blätter richten sich auf, und der Hüter nimmt den Arm von der Tür.": {
+    "en": "Water runs through all six channels. Leaves rise, and the guardian moves his arm away from the door.",
+    "ar-EG": "الميّه ماشية في الست مجاري. الورق بيفرد تاني، والحارس بيبعد دراعه عن الباب."
+  },
+  "„Du hast dem Garten etwas zurückgegeben. Die Kammer steht dir offen.“": {
+    "en": "“You have given something back to the garden. The chamber is open to you.”",
+    "ar-EG": "«إنت رجّعت للجنينة حاجة. الأوضة مفتوحة ليك.»"
+  },
+  "Tamatem nimmt Dinas Recherchekarte zur Hand. Hinter der offenen Tür wartet die lebende Lumenblüte.": {
+    "en": "Tamatem takes out Dina’s research card. Beyond the open door, the living Lumen Blossom awaits.",
+    "ar-EG": "تماتم بيطلّع ورقة بحث دينا. ورا الباب المفتوح، زهرة النور عايشة ومستنيّاه."
+  },
+  "Die Blütenkammer": {
+    "en": "The blossom chamber",
+    "ar-EG": "أوضة الزهرة"
+  },
+  "Der vollständige Wasserweg": {
+    "en": "The complete water path",
+    "ar-EG": "مسار الميّه الكامل"
+  },
+  "Garten bewässert · Kammer geöffnet": {
+    "en": "Garden watered · chamber opened",
+    "ar-EG": "الجنينة اتروت · الأوضة اتفتحت"
+  },
+  "Alle sechs Kanäle versorgen die Wurzeln. Der Hüter hat die Kammer geöffnet.": {
+    "en": "All six channels feed the roots. The guardian has opened the chamber.",
+    "ar-EG": "الست مجاري بيوصّلوا الميّه للجذور. الحارس فتح الأوضة."
+  },
+  "Das Wasser muss von der Quelle durch sechs Platten zum Wurzelbecken fließen.": {
+    "en": "Water must flow from the spring through six tiles to the root basin.",
+    "ar-EG": "الميّه لازم تمشي من النبع في الست بلاطات لحد حوض الجذور."
+  },
+  "Lösungsvorschau ansehen": {
+    "en": "View solution preview",
+    "ar-EG": "شوف معاينة الحل"
+  },
+  "Tamatem & Dina – ein farbiges Comic-Adventure. Spiele den Prolog, den Fluss und den Quellgarten.": {
+    "en": "Tamatem & Dina — a colourful comic adventure. Play the prologue, river and Spring Garden.",
+    "ar-EG": "تماتم ودينا — مغامرة مصوّرة بالألوان. العب البداية والنهر وجنينة النبع."
+  },
+  "Ihr nennt es Hilfe, wenn ihr etwas mitnehmt.": {
+    "en": "You call it helping when you take something away.",
+    "ar-EG": "بتسمّوها مساعدة لما تاخدوا حاجة معاكم."
+  },
+  "Dina ist krank. Ich suche die Lumenblüte.": {
+    "en": "Dina is ill. I’m looking for the Lumen Blossom.",
+    "ar-EG": "دينا عيّانة. بدوّر على زهرة النور."
+  },
+  "Und wer sorgt für die Wurzeln, wenn jeder nur die Blüten will? Die Quelle fließt. Aber ihr Wasser erreicht den Garten nicht.": {
+    "en": "And who tends the roots when everyone only wants the flowers? The spring flows. But its water never reaches the garden.",
+    "ar-EG": "ومين يهتم بالجذور لما الكل عايز الزهور وبس؟ النبع شغّال. بس ميّته مش بتوصل للجنينة."
+  },
+  "Verbinde die Quelle mit dem Wurzelbecken. Alle sechs Platten gehören zum alten Wasserweg. Du darfst das Wasser so oft prüfen, wie du willst.": {
+    "en": "Connect the spring to the root basin. All six tiles belong to the old waterway. You may test the water as often as you like.",
+    "ar-EG": "وصّل النبع بحوض الجذور. الست بلاطات جزء من مجرى الميّه القديم. جرّب الميّه قدّ ما تحب."
+  },
+  "Beginne an der Quelle. Welche Öffnung muss die erste Platte erreichen?": {
+    "en": "Start at the spring. Which opening does the first tile need?",
+    "ar-EG": "ابدأ عند النبع. أول بلاطة محتاجة فتحة من أنهي ناحية؟"
+  },
+  "Das Wasser muss oben nach rechts und unten wieder nach links zum Wurzelbecken fließen. Prüfe die Verbindung zwischen den Reihen.": {
+    "en": "Water must flow right along the top, then left along the bottom to the root basin. Check the connection between the rows.",
+    "ar-EG": "الميّه تمشي فوق لليمين، وبعدين تحت ترجع للشمال لحوض الجذور. راجع الوصلة بين الصفّين."
+  },
+  "Der vollständige Weg führt oben von links nach rechts, dann nach unten und unten zurück zum Becken. Du kannst dir eine Vorschau ansehen und sie auf Wunsch übernehmen.": {
+    "en": "The complete path runs left to right across the top, then down and back along the bottom to the basin. You can view a preview and apply it if you wish.",
+    "ar-EG": "المسار الكامل بيمشي فوق من الشمال لليمين، وبعدين لتحت، ويرجع تحت للحوض. تقدر تشوف معاينة وتطبّقها لو حبيت."
+  },
+  "Der Gartenzustand fehlt.": {
+    "en": "The garden state is missing.",
+    "ar-EG": "حالة الجنينة ناقصة."
+  },
+  "Ungültiger Gartenzustand.": {
+    "en": "Invalid garden state.",
+    "ar-EG": "حالة الجنينة مش صحيحة."
+  },
+  "Ungültige Kanalstellungen.": {
+    "en": "Invalid channel orientations.",
+    "ar-EG": "اتجاهات المجاري مش صحيحة."
+  },
+  "Der Gartenzustand überspringt eine notwendige Handlung.": {
+    "en": "The garden state skips a required action.",
+    "ar-EG": "حالة الجنينة بتتخطّى خطوة ضرورية."
   }
 };

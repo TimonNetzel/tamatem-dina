@@ -47,6 +47,10 @@ Für die spätere Interaktion relevante Bildbereiche sind Quellenmappe, Reiseauf
 
 `dist/assets/river.png` ergänzt den vorhandenen Stil. Öse, Halteschlaufe, Stamm und Oris sind getrennt anwählbar. Eine SVG-Ebene zeigt die Befestigung; Text und Rätselzustand sind nicht in das Bild eingebrannt. Referenzen und vollständiger Prompt: `art/prompts/03-river-crossing.md`.
 
+## Neue Szene: Quellgarten
+
+`dist/assets/garden-dry.png` und `garden-wet.png` zeigen denselben Schauplatz vor/nach der Bewässerung. Figuren, Architektur und Perspektive bleiben erhalten; Pflanzen, Wasser und geöffnete Tür zeigen den Erfolg. Das exakte Sechs-Platten-Rätsel bleibt getrenntes HTML/SVG mit übersetzbaren Texten. Prompt und Referenzen: `art/prompts/04-spring-garden.md`.
+
 ## Übertragung in die Spieloberfläche
 
 - Dialoge werden als echter, skalierbarer Text über oder neben den Bildern angezeigt.
