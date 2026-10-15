@@ -6,7 +6,7 @@ Das vorhandene farbige Comic-Adventure für Erwachsene weiterentwickeln. Sprache
 
 ## Stand
 
-Version 0.10 enthält alle sieben vollständigen dreisprachigen Level. Neu: „Die letzte Ausgabe“ mit achtzehnjährigem Tamatem und eigenständig spielbarer Dina. Zwölf realistische Stationen, drei historienabhängige Kontaktwege, sichtbare eigene Berichtigung und unabhängig gewählte Zukunftspläne. Einstieg ab healing-complete, Abschluss edition-complete. Alle sechs bisherigen Level und Spielstände 1–9 bleiben erhalten; aktuelles Format 10. Die private Site zeigt weiterhin 0.8. Tatsächliche Prüfungen und Grenzen: STATUS.md.
+Version 0.10 enthält alle sieben vollständigen dreisprachigen Level. Neu: „Die letzte Ausgabe“ mit achtzehnjährigem Tamatem und eigenständig spielbarer Dina. Zwölf realistische Stationen, drei historienabhängige Kontaktwege, sichtbare eigene Berichtigung und unabhängig gewählte Zukunftspläne. Einstieg ab healing-complete, Abschluss edition-complete. Alle sechs bisherigen Level und Spielstände 1–9 bleiben erhalten; aktuelles Format 10. Die öffentliche Site zeigt seit der gesonderten Veröffentlichung 0.10; die angeforderte Öffentlichkeit des GitHub-Repositories bleibt wegen Forbidden offen. Tatsächliche Prüfungen und Grenzen: STATUS.md.
 
 ## Gezielt nachlesen
 
@@ -27,7 +27,7 @@ Version 0.10 enthält alle sieben vollständigen dreisprachigen Level. Neu: „D
 
 ## Nächste Aufgabe
 
-Technische Gesamtabnahme und behobener 320-Pixel-Fehler: [ACCEPTANCE_REPORT.md](ACCEPTANCE_REPORT.md). Offene echte iPhone-/Safari-, muttersprachliche, direkte Einzeldatei-, unabhängige Fach- und menschliche Zeitprüfungen anhand ACCEPTANCE.md fortführen. Vorlagen und genaue Prüfgrenzen dort lesen; Ziel 15–30 Minuten je Level bleibt menschlich zu messen. Kopierfertiger Folgeauftrag in ../CODEX_STARTPROMPT.md. Alle sieben Level und Spielstände 1–10 erhalten; keine Sites-Veröffentlichung, private Site weiterhin 0.8.
+Technische Gesamtabnahme und behobener 320-Pixel-Fehler: [ACCEPTANCE_REPORT.md](ACCEPTANCE_REPORT.md). Offene echte iPhone-/Safari-, muttersprachliche, direkte Einzeldatei-, unabhängige Fach- und menschliche Zeitprüfungen anhand ACCEPTANCE.md fortführen. Vorlagen und genaue Prüfgrenzen dort lesen; Ziel 15–30 Minuten je Level bleibt menschlich zu messen. Kopierfertiger Folgeauftrag in ../CODEX_STARTPROMPT.md. Alle sieben Level und Spielstände 1–10 erhalten; öffentliche Site auf 0.10 erhalten; GitHub-Repository derzeit weiterhin privat, Eigentümerschritt in DEPLOYMENT.md.
 
 ## Priorität der Unterlagen
 

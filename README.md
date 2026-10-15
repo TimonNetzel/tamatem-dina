@@ -24,9 +24,9 @@ Das Projekt ist lokal bereits vollständig vorhanden und hat ein eigenes Git-Rep
 
 ## Vorhandene Spielversion
 
-[Private Spieladresse](https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site)
+[Öffentlich spielen](https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site)
 
-Die private Adresse enthält seit 15. Oktober 2026 Version 0.8 mit allen fünf vollständigen dreisprachigen Leveln. Der veröffentlichte Spielcode entspricht dem geprüften GitHub-Stand d9a7f72. Alle bisherigen Inhalte und Spielstände bleiben erhalten. GitHub und Sites bleiben getrennte Schritte. Die Entwicklung enthält zusätzlich Level 6 und 7 (0.10), noch nicht bei Sites veröffentlicht. Ergebnisse der technischen Gesamtabnahme stehen in docs/ACCEPTANCE_REPORT.md; offene externe Abnahmen in docs/ACCEPTANCE.md. Eine unabhängige Zeitmessung liegt nicht vor.
+Die öffentliche Spieladresse enthält seit 15. Oktober 2026 Version 0.10 mit allen sieben vollständigen dreisprachigen Leveln. Der veröffentlichte Spielcode entspricht dem geprüften GitHub-Stand c18e48e. Alle bisherigen Inhalte und Spielstände bleiben erhalten. GitHub und Sites bleiben getrennte Schritte. Das GitHub-Repository ist trotz angeforderter Umstellung weiterhin privat, weil der verfügbare Verwaltungszugang die Änderung mit Forbidden abgewiesen hat; Details in docs/DEPLOYMENT.md. Ergebnisse der technischen Gesamtabnahme stehen in docs/ACCEPTANCE_REPORT.md; offene externe Abnahmen in docs/ACCEPTANCE.md. Eine unabhängige Zeitmessung liegt nicht vor.
 
 ## Lokal ausführen
 

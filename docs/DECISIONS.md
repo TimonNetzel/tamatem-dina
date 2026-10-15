@@ -81,3 +81,8 @@ Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen geh�
 - Episodenimporte werden durch einen durchgängigen Browserlauf ab neuer Partie ergänzt. Vor Spielbeginn Netz aus; alte Geschichten nach jedem Level eingefroren und verglichen, eigene Exportdateien bestätigt wieder importiert. Gekreuzte Vorgeschichten prüfen Kontaktbedingungen unabhängig voneinander.
 - Konkrete 320-Pixel-Korrektur am frühen Quellenraster, keine Änderung von Spieltexten, Bildern oder Speicherformat. Cachekennung für die aktualisierte Oberfläche erhöht.
 - Technische Ergebnisse in ACCEPTANCE_REPORT.md; externe Geräte-, Muttersprach-, Fach- und Zeitnachweise separat offen. Leere Zeitvorlage statt erfundener Messwerte. Direkter Dateiaufruf weiterhin durch beobachtete Browserrichtlinie blockiert. Kein Sites-Auftrag.
+
+## Veröffentlichung 0.10 und Öffentlichkeit
+
+- Auf neuen ausdrücklichen Auftrag bestehende Site auf den geprüften GitHub-Spielstand c18e48e aktualisiert und öffentlich freigegeben. Identität, alte Spielstände und beide Git-Historien erhalten; Sites-Version 4 nativ erfolgreich, Zugriff public erneut bestätigt.
+- GitHub-Repository-Sichtbarkeit getrennt behandelt: Änderungsversuch vom Verwaltungszugang mit Forbidden abgewiesen, weiterhin privat bestätigt. Keine Umstellung behaupten; Eigentümerschritt in DEPLOYMENT.md offenhalten. Externe Abnahmen bleiben unverändert offen.

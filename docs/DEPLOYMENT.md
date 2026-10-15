@@ -1,10 +1,23 @@
 # GitHub, Sites und Herkunft
 
-## Entwicklungsstand und getrennte Veröffentlichung
+## Aktueller Veröffentlichungsstand 0.10 · öffentlich
 
-GitHub-Entwicklung 0.10 enthält sieben vollständige Level. Die bestehende private Site bleibt auf Version 0.8 mit fünf Leveln, gesondert beauftragt und am 15. Oktober 2026 erfolgreich veröffentlicht. Die Level-6- und Level-7-Pakete wurden nicht bei Sites veröffentlicht. Künftige GitHub-Pushes veröffentlichen die Site weiterhin nicht automatisch.
+Am 15. Oktober 2026 ausdrücklich beauftragt: Spiel aktualisieren und GitHub-Repository öffentlich schalten. Die bestehende Spielseite wurde auf 0.10 aktualisiert und öffentlich freigegeben. Die Änderung der GitHub-Repository-Sichtbarkeit wurde dagegen vom verfügbaren Verwaltungszugang mit **Forbidden** abgewiesen; anschließender GitHub-API-Abruf bestätigt weiterhin `private: true`, `visibility: private`. GitHub und Spielseitenzugriff sind getrennte Einstellungen. Für das Repository bleibt ein Eigentümerschritt in GitHub Settings → General → Danger Zone → Change repository visibility → Public offen.
 
-## Aktueller Veröffentlichungsstand 0.8
+- Spielversion: **0.10, alle sieben Level**, einschließlich der geprüften 320-Pixel-Korrektur.
+- Öffentliche Spieladresse: https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site
+- Bestehende Site-ID unverändert: **appgprj_6ad06b66e5dc8191b14285faeba4d396**.
+- Geprüfter GitHub-Quellstand: **c18e48e9691b0750f2afdbcb3eeb9c4c48037917**. Remote vor Veröffentlichung unverändert, Arbeitsbaum sauber.
+- Gepushter Sites-Quellcommit: **44f96dda88be3507857e821e811afc33f05fdb05**. Vollständiger Quellbaum identisch mit GitHub c18e48e: **9dd89d40f1f1bbbee46abd63780abbcccb469258**.
+- Beide Git-Historien erhalten, kein Force-Push. Alle **47 Archivdateien** aus `.openai/hosting.json` und `dist` bytegenau gegen den gepushten Sites-Commit geprüft. Spielcode unverändert gegenüber den zwölf bestandenen Testdateien und den drei vollständigen Offline-Kampagnen aus ACCEPTANCE_REPORT.md; keine unnötige Wiederholung unveränderter Prüfungen.
+- Gespeicherte Sites-Version: **4**, **appgprj_6ad06b66e5dc8191b14285faeba4d396~appgver_364243aadee08191a31e0fee67b56791**.
+- Bereitstellung: **appgdep_6ad1231f587c8191945edb9ca21ab008**, native Antwort **succeeded** mit obiger URL am **15. Oktober 2026, 21:02 Uhr Europe/Berlin**.
+- Erst Aktualisierung auf der bestätigten Eigentümer-Site, anschließend Zugriff auf **public** umgestellt. Erneutes `get_site` bestätigt `access_mode: public`, Revision **2**, Version **4** und dieselbe Live-URL. Keine externen Einzelpersonen eingeladen, keine weiteren Editoren hinzugefügt.
+- Sites-Plugin-Skripte waren in dieser Umgebung nicht installiert/lesbar; Quellabgleich, Commit/Push und Archivierung deshalb mit vorhandenem Git und kurzlebiger Sites-Schreibberechtigung über verdecktes stdin durchgeführt. Token nur im Sitzungsspeicher, nicht in Dateien, Argumenten oder Git. Ein vorübergehender HTTP-500-Fehler beim ersten Quellenabruf war beim erneuten Abruf behoben.
+- Öffentliche Adresse zum Öffnen im Codex-Browser übergeben (Rückgabe: queued); dies ist keine bestätigte Browseransicht, keine zusätzliche Browserabnahme und kein echtes iPhone. Offene muttersprachliche, Geräte-, Fach-, direkte Einzeldatei- und menschliche Zeitprüfungen bleiben unverändert offen.
+- Nachfolgende Dokumentationspflege auf GitHub ändert den veröffentlichten Laufzeitcode nicht. Künftige GitHub-Pushes veröffentlichen die Site weiterhin nicht automatisch.
+
+## Frühere Veröffentlichung 0.8 · damals privat
 
 - Spielversion: **0.8, Level 1–5 vollständig dreisprachig**.
 - Private Spieladresse: https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site
@@ -75,7 +88,7 @@ Dies ist ein dokumentierter Workaround für die damalige Umgebung, keine allgeme
 
 ## Veröffentlichung prüfen
 
-Nach einer echten Änderung an der Site den Zugriff privat belassen, sofern der Nutzer keine andere Freigabe wünscht. Erfolg erst nach einem bestätigten Abschluss mit URL melden. Offene visuelle oder echte Geräteprüfungen getrennt ausweisen.
+Bei künftigen Änderungen die bestätigte Öffentlichkeit der Spielseite erhalten, sofern der Nutzer keine andere Freigabe wünscht. Erfolg erst nach einem bestätigten Abschluss mit URL melden. Offene visuelle oder echte Geräteprüfungen getrennt ausweisen.
 
 ## Entwicklungsfassung 0.6
 
