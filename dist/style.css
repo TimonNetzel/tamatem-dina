@@ -84,3 +84,6 @@ body:has(.morning-game) .portrait.tamatem{background-image:url('./assets/morning
 .mask-evidence p{margin:12px 0 0}.mask-map-labels{display:flex;justify-content:space-around;gap:8px;flex-wrap:wrap}.mask-map-labels bdi{font-size:14px}
 .mask-preview{padding:14px;border:1px dashed #76516b}.mask-old{border-inline-start:4px solid #a04755;padding-inline-start:12px}
 body:has(.mask-game) .portrait.tamatem{background-image:url('./assets/mask-city.png');background-size:400%;background-position:12% 23%}
+
+/* Level 6: fixed arithmetic direction; text and controls follow the selected language. */
+.healing-options{border:1px solid #b6ac94;padding:12px;margin:16px 0;min-width:0}.healing-options legend{padding:0 7px;font-weight:600}.healing-options .case-radio{min-height:44px}.healing-numbers{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;background:#eee4d3;border:1px solid #a99b80;padding:16px;margin:18px 0;font-size:18px}.healing-article p,.healing-correction p{white-space:pre-line}.healing-game .portrait.tamatem{background-image:url('./assets/healing-clinic.png');background-size:290px 163px;background-position:-68px -16px}.healing-game .case-radio span{overflow-wrap:anywhere}

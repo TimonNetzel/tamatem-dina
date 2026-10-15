@@ -2,7 +2,7 @@
 
 ## Entwicklungsstand und getrennte Veröffentlichung
 
-GitHub und die bestehende private Site enthalten Version 0.8 mit fünf vollständigen Leveln. Die Aktualisierung wurde am 15. Oktober 2026 gesondert beauftragt und erfolgreich veröffentlicht. Künftige GitHub-Pushes veröffentlichen die Site weiterhin nicht automatisch.
+GitHub-Entwicklung 0.9 enthält sechs vollständige Level. Die bestehende private Site bleibt auf Version 0.8 mit fünf Leveln, gesondert beauftragt und am 15. Oktober 2026 erfolgreich veröffentlicht. Das Level-6-Paket wurde nicht bei Sites veröffentlicht. Künftige GitHub-Pushes veröffentlichen die Site weiterhin nicht automatisch.
 
 ## Aktueller Veröffentlichungsstand 0.8
 

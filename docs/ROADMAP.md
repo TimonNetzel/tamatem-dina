@@ -40,6 +40,10 @@ Fiktive Lichtapparatur, notwendige spielbare Dina-Beobachtung und Stabilitätsbe
 
 „Die Stadt der Masken“ ist dreisprachig spielbar: Ausschnitt, Standort und begrenzte Bildunterschrift verändern Papierwege. Eigene Falschdarstellung, sichtbare Kiosk-Korrektur und getrennte Zustellung; Dina prüft Herkunft und Verbreitung und korrigiert ihre eigene Alleinretterinnen-Erzählung. Direkter Einstieg ab morning-complete, Abschluss mask-complete. Zwölf konkrete Stationen: episodes/05-stadt-der-masken.md. Prüfgrenzen in STATUS.md.
 
-## 11. Episoden 6–7 — nächster Chat für Level 6
+## 11. Level 6 — umgesetzt
 
-Je Episode den relevanten Handlungsbogen und konkrete Rätsel ausarbeiten, dann umsetzen und prüfen. Themen und Altersfolge im CANON, Entwürfe in GAME_DESIGN.md. Vor „Der Preis der Heilung“ neuer Chat nach CODEX_STARTPROMPT.md. Medizinische und wirtschaftliche Zusammenhänge fachlich recherchieren. Unabhängige Geräte-, Sprach-, Einzeldatei- und Spieldauerabnahme bleibt separat.
+„Der Preis der Heilung“ ist dreisprachig spielbar: absolute/relative Studienwirkung, Unsicherheit, Qualitätsstatus/Reservierung, wirksamer Vertragsnachtrag und Finanzierungslücke. Dina prüft Herkunft, respektiert den Zitatwiderruf, bespricht Quellenschutz und verantwortet die Ausgabe. Tamatem ersetzt seine eigene Heilungsbehauptung sichtbar. Direkter Einstieg ab mask-complete, Abschluss healing-complete. Zwölf Stationen mit Primärquellen: episodes/06-preis-der-heilung.md. Prüfgrenzen in STATUS.md.
+
+## 12. Level 7 — nächster Chat
+
+„Die letzte Ausgabe“ mit achtzehnjährigem Tamatem und weiterhin eigenständiger Dina planen und implementieren. Frühere Entscheidungen sollen erkennbare Folgen haben, ohne eine allwissende Verschwörung zu erfinden. Themen im CANON, Entwurf in GAME_DESIGN.md. Vor Beginn neuer Chat nach CODEX_STARTPROMPT.md. Alle sechs Level und Spielstände 1–9 erhalten. Unabhängige Geräte-, Sprach-, Einzeldatei-, Fach- und Spieldauerabnahme bleibt separat.

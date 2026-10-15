@@ -23,7 +23,7 @@ test('Version 7 exact historical fields migrate at every old action; morning-com
  const oldStates=[initialState()],collect=s=>oldStates.push(s);
  const end=finishMorning(finishEco(finishCase(levelOne('research','directions',collect),'anonymous','document',collect),'doubt','visit',collect),'direct','anonymous',collect);
  for(const s of oldStates){const old={...s,version:7};delete old.mask;const copy=structuredClone(old);assert.deepEqual(validateState(old),s);assert.deepEqual(old,copy);}
- const old={...end,version:7};delete old.mask;const next=step(validateState(old),'MASK_START');assert.equal(next.stage,'mask-opening');assert.deepEqual(history(next),history(old));assert.equal(VERSION,8);
+ const old={...end,version:7};delete old.mask;const next=step(validateState(old),'MASK_START');assert.equal(next.stage,'mask-opening');assert.deepEqual(history(next),history(old));assert.equal(VERSION,9);
  assert.deepEqual(step(finishEco(finishCase(levelOne())),'MASK_START'),finishEco(finishCase(levelOne())));
  for(const version of [1,2,3,4,5,6,7])for(const stage of MASK_STAGES)assert.throws(()=>validateState({...at('complete'),stage,version}));
 });

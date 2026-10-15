@@ -6,7 +6,7 @@ Das vorhandene farbige Comic-Adventure für Erwachsene weiterentwickeln. Sprache
 
 ## Stand
 
-Version 0.8 enthält fünf vollständige dreisprachige Level. Neu: „Die Stadt der Masken“ mit vierzehnjährigem Tamatem und eigenständig spielbarer Dina, festen Regeln für Bildausschnitt/Perspektive/Bildunterschrift und sichtbarer Berichtigung seines eigenen verbreiteten Fehlers. Direkter Anschluss ab morning-complete, Abschluss mask-complete. Alle vier vorherigen Level und Spielstände 1–7 bleiben erhalten; aktuelles Format 8. Die private Site enthält seit 15. Oktober 2026 ebenfalls Version 0.8 mit allen fünf Leveln. Tatsächliche Prüfungen und Grenzen: STATUS.md.
+Version 0.9 enthält sechs vollständige dreisprachige Level. Neu: „Der Preis der Heilung“ mit sechzehnjährigem Tamatem und eigenständig spielbarer Dina; medizinische Studiengrenzen, Lieferstatus, Vertragsnachtrag, Finanzierung und Quellenschutz haben getrennte Belegregeln. Direkter Anschluss ab mask-complete, Abschluss healing-complete. Alle fünf vorherigen Level und Spielstände 1–8 bleiben erhalten; aktuelles Format 9. Die private Site zeigt weiterhin 0.8. Tatsächliche Prüfungen und Grenzen: STATUS.md.
 
 ## Gezielt nachlesen
 
@@ -18,6 +18,7 @@ Version 0.8 enthält fünf vollständige dreisprachige Level. Neu: „Die Stadt 
 | Level 2 ändern | episodes/02-verschwundene-stimmen.md und dist/case-*.js |
 | Level 3 ändern | episodes/03-kranker-fluss.md und dist/eco-*.js |
 | Level 4 ändern | episodes/04-gestohlenes-morgen.md und dist/morning-*.js |
+| Level 6 ändern | episodes/06-preis-der-heilung.md und dist/healing-*.js |
 | Level 5 ändern | episodes/05-stadt-der-masken.md und dist/mask-*.js |
 | Gesamtbogen oder spätere Episode | GAME_DESIGN.md, CANON.md und ROADMAP.md |
 | Spielstände oder Offline | dist/state.js, dist/sw.js, tests und ARCHITECTURE.md |
@@ -25,7 +26,7 @@ Version 0.8 enthält fünf vollständige dreisprachige Level. Neu: „Die Stadt 
 
 ## Nächste Aufgabe
 
-Vor Level 6 einen neuen Chat beginnen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Alle fünf bisherigen Level, Sprachen und Spielstände 1–8 erhalten. „Der Preis der Heilung“ anhand CANON und gezielt GAME_DESIGN ausarbeiten; an mask-complete anschließen. Realitätsnah ohne magische Beweisführung; medizinische und wirtschaftliche Zusammenhänge fachlich recherchieren. Echte iPhone-, muttersprachliche, direkte Einzeldatei- und unabhängige Zeitprüfung bleiben offen.
+Vor Level 7 einen neuen Chat beginnen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Alle sechs bisherigen Level, Sprachen und Spielstände 1–9 erhalten. „Die letzte Ausgabe“ anhand CANON und gezielt GAME_DESIGN ausarbeiten; an healing-complete anschließen. Eigenständigkeit beider Figuren, frühere Entscheidungen und nachprüfbare Aussagen tragen das Finale; keine magische Fallauflösung. Echte iPhone-, muttersprachliche, direkte Einzeldatei-, unabhängige Fach- und Zeitprüfungen bleiben offen.
 
 ## Priorität der Unterlagen
 

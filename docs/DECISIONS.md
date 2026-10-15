@@ -57,3 +57,13 @@ Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen geh�
 - Dina prüft eigene Quellen, Standort, Verbreitung und Publikation. Ihre verlockende Alleinretterinnen-Erzählung muss sie selbst durch die dokumentierte gemeinsame Arbeit ersetzen. Sie ist keine bloße Begleitfigur.
 - Netzwerkkette belegt arbeitsteilige Zuspitzung und wirtschaftlichen Anreiz; ein zentraler Gesamtauftraggeber wird nicht erfunden. Bild zeigt Handlung, Dokumente belegen Weitergabe, Gesamtsteuerung bleibt offen.
 - Format 8 ergänzt mask, erhält 1–7 und alle Notizbücher. Optionaler Einstieg ab morning-complete; mask-complete als Anschluss für Level 6. GitHub-Push bleibt getrennt von Sites.
+
+
+## Level 6 · Der Preis der Heilung (0.9)
+
+- Aschenpuls und AP-17 bleiben erfunden. Randomisierter Zwölfwochenvergleich bei Erwachsenen trägt begrenzte Schubreduktion, keine Heilung. Absolute/relative Differenz, Unsicherheitsbereich und schwere unerwünschte Ereignisse werden gemeinsam berichtet. Fachpersonen behandeln; Journalisten geben keine Medikamente frei.
+- Gleicher Auftrag, Produkt, Charge, Empfänger und Menge verbinden Lieferbelege. Eingang ist nicht Qualitätsfreigabe; Freigabe ist nicht Verfügbarkeit. Quarantäne bleibt bestehen. C24/N2/Bestellung/Zahlung belegen 3.200 fehlende Vorabsicherheit, keinen Gewinn oder Bestechung. Nachtrag muss vor Bestellung wirksam sein.
+- Dina hat notwendige eigenständige Handlungen: Herkunft/Erlaubnis, Zitatwiderruf, identifizierende Merkmalskombinationen, ausdrückliches Schutzgespräch, Stellungnahmen und getrennte Freigabe/Veröffentlichung. Öffentliche Unterlagen tragen die Ausgabe ohne interne Originaldatei. Kein absolutes Anonymitätsversprechen. Keine Patientendaten nötig.
+- Tamatems Heilungsbehauptung war eigener unveröffentlichter Entwurf. Er ersetzt sie sichtbar und übernimmt die Korrektur; keine rückwirkend erfundene öffentliche Falschmeldung. Zweifel benennen/Gegenprüfung und schriftliche/betreute Rücksprache bleiben vier abschließbare Wege mit Ergebnisnotizen.
+- Dokumentierte Überbrückungsvereinbarung und neue Lieferquittung verbessern Zugang. Kein Artikel heilt Menschen automatisch. Nachkontrolle verlangt Lieferung und Genesung auseinanderzuhalten; Quelle bleibt schutzbedürftig. Kein neuer Gesamtauftraggeber früherer Level.
+- Format 9 ergänzt healing, erhält 1–8 und sämtliche früheren Notizbücher. Einstieg ab mask-complete, Abschluss healing-complete. Neue Illustration am tatsächlich geöffneten Figurenblatt ausgerichtet. Recherchebelege und zwölf Stationen in episodes/06-preis-der-heilung.md. GitHub-Push bleibt getrennt von Sites; vor Level 7 neuer Chat.

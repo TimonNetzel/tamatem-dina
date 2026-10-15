@@ -10,7 +10,7 @@ from playwright.sync_api import sync_playwright
 GAME_KEY = 'tamatem-dina-prolog-v1'
 STANDALONE = os.environ.get('TD_STANDALONE') == '1'
 BASE = Path('/tmp/tamatem-dina-offline.html').as_uri() if STANDALONE else 'http://127.0.0.1:4173'
-seed = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', "import {levelOne,finishCase,finishEco} from './tests/support.mjs';const state=finishEco(finishCase(levelOne('research','directions'),'anonymous','document'),'doubt','visit');state.version=6;delete state.morning;console.log(JSON.stringify({game:'tamatem-dina-prolog',state}));"]))
+seed = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', "import {levelOne,finishCase,finishEco} from './tests/support.mjs';const state=finishEco(finishCase(levelOne('research','directions'),'anonymous','document'),'doubt','visit');state.version=6;delete state.morning;delete state.mask;delete state.healing;console.log(JSON.stringify({game:'tamatem-dina-prolog',state}));"]))
 copy = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', "import {MORNING_COPY} from './dist/morning-copy.js';console.log(JSON.stringify(MORNING_COPY));"]))
 
 with sync_playwright() as p:
@@ -103,7 +103,7 @@ with sync_playwright() as p:
         action('import')
         page.locator('#import-file').set_input_files({'name': 'river-v6.json', 'mimeType': 'application/json', 'buffer': json.dumps(seed).encode()})
         action('confirm-import')
-        assert state()['version'] == 8 and state()['stage'] == 'eco-complete'
+        assert state()['version'] == 9 and state()['stage'] == 'eco-complete'
         previous = {key: value for key, value in state().items() if key not in ['morning', 'stage', 'hints', 'version']}
         if not STANDALONE:
             page.wait_for_function('document.querySelector("#offline-status").classList.contains("ready")')
@@ -229,6 +229,6 @@ with sync_playwright() as p:
         assert state() == end
         assert not errors, errors
         assert not external, external
-        print(f'PASS {locale}: Level 4, actual {"file" if STANDALONE else "service-worker"} offline, v6 import, v8 export/import, all puzzles, disclosure, touch 320/390, RTL, reloads', flush=True)
+        print(f'PASS {locale}: Level 4, actual {"file" if STANDALONE else "service-worker"} offline, v6 import, v9 export/import, all puzzles, disclosure, touch 320/390, RTL, reloads', flush=True)
         context.close()
     browser.close()

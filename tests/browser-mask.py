@@ -10,7 +10,7 @@ from playwright.sync_api import sync_playwright
 GAME_KEY = 'tamatem-dina-prolog-v1'
 STANDALONE = os.environ.get('TD_STANDALONE') == '1'
 BASE = Path('/tmp/tamatem-dina-offline.html').as_uri() if STANDALONE else 'http://127.0.0.1:4173'
-seed = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', "import {levelOne,finishCase,finishEco,finishMorning} from './tests/support.mjs';const state=finishMorning(finishEco(finishCase(levelOne('research','directions'),'anonymous','document'),'doubt','visit'),'direct','anonymous');state.version=7;delete state.mask;console.log(JSON.stringify({game:'tamatem-dina-prolog',state}));"]))
+seed = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', "import {levelOne,finishCase,finishEco,finishMorning} from './tests/support.mjs';const state=finishMorning(finishEco(finishCase(levelOne('research','directions'),'anonymous','document'),'doubt','visit'),'direct','anonymous');state.version=7;delete state.mask;delete state.healing;console.log(JSON.stringify({game:'tamatem-dina-prolog',state}));"]))
 copy = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', "import {MASK_COPY} from './dist/mask-copy.js';console.log(JSON.stringify(MASK_COPY));"]))
 
 with sync_playwright() as p:
@@ -102,7 +102,7 @@ with sync_playwright() as p:
         action('import')
         page.locator('#import-file').set_input_files({'name': 'morning-v7.json', 'mimeType': 'application/json', 'buffer': json.dumps(seed).encode()})
         action('confirm-import')
-        assert state()['version'] == 8 and state()['stage'] == 'morning-complete'
+        assert state()['version'] == 9 and state()['stage'] == 'morning-complete'
         previous = {key: value for key, value in state().items() if key not in ['mask', 'stage', 'hints', 'version']}
         if not STANDALONE:
             page.wait_for_function('document.querySelector("#offline-status").classList.contains("ready")')
@@ -254,6 +254,6 @@ with sync_playwright() as p:
         assert state() == end
         assert not errors, errors
         assert not external, external
-        print(f'PASS {locale}: Level 5, actual {"file" if STANDALONE else "service-worker"} offline, v7 import, v8 export/import, image rules, visible correction, independent Dina, touch 320/390, RTL, reloads', flush=True)
+        print(f'PASS {locale}: Level 5, actual {"file" if STANDALONE else "service-worker"} offline, v7 import, v9 export/import, image rules, visible correction, independent Dina, touch 320/390, RTL, reloads', flush=True)
         context.close()
     browser.close()

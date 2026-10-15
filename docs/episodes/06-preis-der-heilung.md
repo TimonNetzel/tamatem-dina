@@ -1,0 +1,50 @@
+# Level 6 · Der Preis der Heilung
+
+Tamatem 16, Dina ungefähr 30. Realistischer Medizin- und Wirtschaftsthriller; zwölf Stationen der Heldenreise, ohne objektive Magie. Direkter optionaler Anschluss an mask-complete, Abschluss healing-complete. Ziel 15–30 Minuten, noch nicht unabhängig gemessen. Alle unten benannten Handlungen laufen ausschließlich in der lokalen Fiktion ab.
+
+## Fall und Belegvertrag
+
+Aschenpuls, Mittel AP-17, Klinik, Lieferant Vela und Vertragsstelle sind erfunden. Aschenpuls verursacht belastende Schübe mit Erschöpfung; keine Gleichsetzung mit einer realen Diagnose. Keine Dosierungen, Selbstbehandlung oder eigenmächtige Arzneimittelfreigabe. Ärztliche Behandlung bleibt bei Fachpersonen. Dina erinnert sich an ihre frühere Erkrankung, erkrankt hier aber nicht als Rettungsanlass erneut.
+
+Die Quelle kennt einen internen Auszug, erlaubt vertrauliche Prüfung, widerruft später die Erlaubnis zum wörtlichen Zitieren. Dina respektiert das. Öffentlich unabhängig erhaltene Unterlagen tragen die veröffentlichte Geschichte; ein Leak, Hash, Stempel oder bloßes Zitat genügt nie. Die Redaktion prüft Herkunft und Übereinstimmung getrennt. Keine Aussage über den Gesamtauftraggeber früherer Episoden.
+
+- Medizin: randomisierte fiktive Studie, 200 Erwachsene je Gruppe, zusätzlich gleiche Standardversorgung, 12 Wochen. Schub mit Klinikaufnahme: 40/200 gegen 20/200; 20 % gegen 10 %, Differenz 10 Prozentpunkte, relative Verringerung 50 %. Grobes 95%-Intervall der Risikodifferenz 3–17 Prozentpunkte. Schwere unerwünschte Ereignisse 6/200 gegen 10/200; Zusammenhang unklar, Studie nicht für seltene Risiken ausgelegt. Keine Heilungs-, Dauerwirkungs-, Kinder- oder Einzelpatientengarantie. Fachliche Einordnung und Studienprotokoll erforderlich, Werbeblatt zählt nicht als unabhängige Bestätigung.
+- Lieferung: Charge B41, Produkt AP-17, Auftrag C24, gleicher Empfänger und Mengenbezug. Wareneingang 120 Packungen, 20 in Quarantäne nach Temperaturabweichung, 100 qualitätsseitig freigegeben, davon 60 für andere vertragliche Empfänger reserviert, 40 für Klinik K bestellbar. Kein Schluss von Lagerbestand auf sichere/verfügbare Abgabe; 20 Packungen dürfen nicht journalistisch freigegeben werden.
+- Wirtschaft: C24 vom 3. Mai: 100 Rechnungseinheiten pro Packung plus 20 gekühlte Lieferung. Nachtrag N2, wirksam 12. Mai: zusätzlich 80 vorab zu hinterlegende, später rückzahlbare Sicherheit je Packung. Anforderung Klinik K vom 14. Mai: 40 Packungen; Budgetfreigabe vom 15. Mai: 4.800; Anforderung und bestätigter Zahlungseingang vom 16. Mai: insgesamt 8.000 nötig, nur 4.800 eingegangen, 3.200 fehlen. 200 pro Packung kurzfristiger Finanzierungsbedarf, nicht 200 endgültiger Arzneipreis und kein Gewinnnachweis. Währung abstrakt; keine Aussage über reale Rechtsordnung. Vertrag, gültiger Nachtrag, Bestell-/Zahlungsbezug und Stellungnahmen zusammen tragen die konkrete Hürde. Hoher Preis oder zeitliche Nähe allein beweist keine Bestechung.
+- Schutz: Namen zu schwärzen reicht nicht, wenn Schichtcode, genaue Exportzeit, Dateiautor und seltene Formulierungen identifizieren. Private Originale bleiben redaktionell zugangsbeschränkt außerhalb der publizierten Mappe, keine Patientendaten im Spiel. Öffentliche C24/N2-Referenzen und überprüfbare Rechenwege bleiben in der Ausgabe. Kein Versprechen absoluter Anonymität oder juristischer Unangreifbarkeit.
+
+## Zwölf Stationen und Rätsel
+
+Jede Station beginnt mit ungelesenen lokalen Dokumentkarten. Quellen bleiben erneut lesbar und im Notizbuch. Auswahlen sind vor Prüfung änderbar, danach gesperrt. Fehlversuche kosten keine Ressourcen; ohne vollständige Quellen bleibt die Prüfung offen. Jede Station hat drei verfasste Hilfen: Denkansatz, konkreter Belegbezug, vollständige Handlung. Sprache und physische Reihenfolge sind unabhängig; kein Ziehen, Hover, Zeitlimit oder Farbzwang.
+
+| Nr. / Heldenreise | Figur / Ort / Konflikt | Dokumente und gültige Lösung | Speicherung / Ausgang |
+|---|---|---|---|
+| 1 Gewohnte Welt | Dina, Klinik-Wartebereich: eine leere Abholtasche | Klinikbrief und Quellenanfrage lesen; prüfen und Auftrag annehmen | opening bestätigt; keine Diagnose aus Wartezimmerbild |
+| 2 Ruf und Widerstand | Tamatem, Redaktion: „Dann ist es doch eine Heilung!“ | Entwurf und Patientenwunsch lesen; Entscheidung: offen Zweifel benennen oder gemeinsam gegenprüfen; beide Wege gültig | approach; Wortlaut im Ergebnis und Notizbuch |
+| 3 Begegnung mit Fachwissen | Tamatem, Studienraum mit Dr. Hala | Protokoll und Ergebnistabelle lesen; 10 Prozentpunkte, nur untersuchte Erwachsene/12 Wochen, Risiken unklar statt harmlos | benefit, scope, safety; kein Heilungsbeweis |
+| 4 Schwelle | Dina, geschützter Kontakt | Erlaubnis und Herkunftsprüfung lesen; begrenzte Einsicht und Register-Gegenprüfung statt Original öffentlich versenden | access, provenance; Quelle nicht unfehlbar |
+| 5 Prüfungen | Tamatem, Lieferregister | Eingang, Qualitätsentscheid und Reservierungen zusammenführen; Auftrag C24/B41, 40 verfügbare Packungen, Quarantäne belassen | batch, available, hold; keine Arzneimittelbedienung |
+| 6 Annäherung | Tamatem, Vertragsarchiv | C24, gültiges N2, Bestellung und Zahlung lesen; 200 kurzfristig, 3.200 Finanzierungslücke, rückzahlbare Sicherheit getrennt | cash, gap, cost; Preis ≠ Gewinn |
+| 7 Zentrale Prüfung | Dina, Redaktionsraum | Widerruf und Gefährdungsanalyse lesen; drei Ausgabeteile prüfen: interne Datei weglassen, seltene Dienstmerkmale weglassen, öffentliche Vertragsbelege behalten. Quelle ausdrücklich über Grenze informieren | private, fingerprint, public; zusätzlich protected notwendig |
+| 8 Belohnung | Tamatem, gemeinsamer Tisch | öffentlich beschaffte Registerkopie und unabhängige Prüfnotiz lesen; vier eindeutig nummerierte Karten: N2 wirksam → Klinik bestellt → Zahlung reicht nicht → Versorgung wartet. Erst Treffen teilt Dinas Befunde | order; meet notwendig; kein bloßes Sortieren ohne Quellen |
+| 9 Rückweg | Dina, Redaktion unter rechtlichem Druck | Antworten von Vela, Vertragsstelle und Klinik lesen; Lieferung dokumentiert, Finanzierungsbarriere dokumentiert, Absicht offen; Wahl schriftliche Gegendarstellung oder betreutes Gespräch | responses, intent, responseMode; Druck liefert keinen Schuldbeweis |
+| 10 Erneuerung | Tamatem, eigener Entwurf | Fachprüfung lesen; alte Heilungszeile sichtbar durch begrenzte Aussage ersetzen, eigene Korrektur ausdrücklich übernehmen | revised; alter Satz bleibt durchgestrichen |
+| 11 Bewährung und Ausgabe | Dina, Schlussredaktion | Abnahme lesen, Prüfen → redaktionelle Freigabe → Veröffentlichung getrennt | approved und published notwendig; Ausgabe ohne Quellenidentifikatoren |
+| 12 Rückkehr mit dem Elixier | Tamatem, Kliniknachkontrolle | Lieferquittung und Follow-up lesen; 40 Packungen angekommen, Behandlungszugang verbessert, Heilung unbewiesen. Abschluss erst nach Prüfung | followup; healing-complete; keine sofortige Gesundheit aller |
+
+Artikel und Quellenverzeichnis zeigen Nutzen/Grenzen, Rechnung, Lieferstatus, Stellungnahmen und offene Absicht. Klinik und Stelle vereinbaren im Nachgang eine dokumentierte Überbrückung der Sicherheit; das ist eine konkrete neue Entscheidung, keine automatische Wirkung der Publikation. Behandelte Personen bleiben unter Beobachtung. Dina: „Du hast die Kosten nicht verschwinden lassen.“ Tamatem: „Ich habe aufgehört, sie jemand anderem zu versprechen.“
+
+## Technischer Vertrag
+
+Eigenes Feld healing, Format 9. Versionen 1–8 erhalten leeren Zustand und bleiben in ihrer Phase. Neue Abschnitte erfordern validierten Abschluss sämtlicher früherer Level. validateHealing prüft Lesemengen, Typen, Auswahlbereiche, früheste Phase, eindeutige Reihenfolge, Voraussetzungen aller Bestätigungen und getrennte Schutz-/Treffen-/Korrektur-/Publikationshandlungen. Vergangenheit und Notizbücher bleiben erhalten. Alle Inhalte de/en/ar-EG, einschließlich 36 Hilfen und vollständiger Offline-Fassungen.
+
+## Fachliche Grundlage und Prüfgrenzen
+
+Recherche 15. Oktober 2026, Primärquellen über Webzugang geöffnet. Folgende Aussagen sind paraphrasiert; alle Fallzahlen bleiben eigene Fiktion.
+
+- [Cochrane Handbook, Kapitel 15](https://www.cochrane.org/authors/handbooks-and-manuals/handbook/current/chapter-15), Fassung 6.5 (2024), Kapitelstand August 2023: absolute und relative Effekte, Unsicherheit, Übertragbarkeit sowie Nutzen und Schäden getrennt darstellen. Daraus folgt die begrenzte Studienaufgabe, keine individuelle Therapieempfehlung.
+- [WHO TRS 1025, Annex 7 (2020)](https://www.who.int/publications/m/item/trs-1025-annex-7): Risiken über mehrere Lager-/Transportstufen, nachvollziehbare Dokumentation und Qualitätsstatus. [WHO-Originaltext als PDF bei PrepWatch](https://www.prepwatch.org/wp-content/uploads/2023/08/Good-storage-and-distribution-practices-for-medical-products.pdf), gezielt Abschnitte 12.10–12.17 (Abgleich, Quarantäne, Temperaturprüfung und autorisierte Freigabe), 17.6/17.10 (nachvollziehbare Aufzeichnungen) und 18.14 (Produkt-/Chargenidentität) gelesen. Daraus folgt der Abgleich von Charge, Eingang und gesonderter Qualitätsentscheidung. Die fiktiven Zahlen/Temperaturabweichung sind keine reale Produktspezifikation.
+- [Open Contracting Global Principles](https://www.open-contracting.org/what-is-open-contracting/global-principles/) und [OCDS Release Reference](https://standard.open-contracting.org/latest/en/schema/reference/): Verträge samt Nachträgen, Leistungsstand, Zahlungsdaten und Verantwortlichkeiten zusammen betrachten. Daraus folgt C24/N2/Bestellung/Zahlung als Belegkette. Keine Behauptung, ein realer Vertrag sei rechtswidrig.
+- [CPJ, Protecting Confidential Sources (2021)](https://cpj.org/2021/11/digital-physical-safety-protecting-confidential-sources/): Einwilligung, Bedrohungslage, Metadaten und publizierte Details prüfen; länderspezifische Grenzen beachten. Daraus folgt Dinas notwendige Auswahl samt Rücksprache und Verzicht auf das widerrufene Zitat.
+
+Recherche ersetzt keine unabhängige medizinische, wirtschaftliche, journalistische oder juristische Fachabnahme. Diese sowie echte Geräte-, muttersprachliche und Zeitprüfungen stehen in STATUS.md offen.

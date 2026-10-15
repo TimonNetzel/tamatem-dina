@@ -20,7 +20,7 @@ const product=(values,count)=>count?product(values,count-1).flatMap(t=>values.ma
 test('Version 6 migration at every old action preserves all three levels; eco-complete continues without restart',()=>{
  const states=[initialState()],end=finishEco(finishCase(levelOne('research','directions',s=>states.push(s)),'name','document',s=>states.push(s)),'doubt','visit',s=>states.push(s));
  for(const s of states){const old={...s,version:6};delete old.morning;const before=structuredClone(old);assert.deepEqual(validateState(old),s);assert.deepEqual(old,before);}
- const old={...end,version:6};delete old.morning;const next=step(validateState(old),'MORNING_START');assert.equal(next.stage,'morning-opening');assert.deepEqual(history(next),history(old));assert.equal(VERSION,8);
+ const old={...end,version:6};delete old.morning;const next=step(validateState(old),'MORNING_START');assert.equal(next.stage,'morning-opening');assert.deepEqual(history(next),history(old));assert.equal(VERSION,9);
  assert.deepEqual(step(finishCase(levelOne()),'MORNING_START'),finishCase(levelOne()));
  for(const version of [1,2,3,4,5,6])for(const stage of MORNING_STAGES)assert.throws(()=>validateState({...at('complete'),stage,version}));
 });

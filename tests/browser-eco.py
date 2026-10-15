@@ -10,7 +10,7 @@ from playwright.sync_api import sync_playwright
 GAME_KEY = 'tamatem-dina-prolog-v1'
 STANDALONE = os.environ.get('TD_STANDALONE') == '1'
 BASE = Path('/tmp/tamatem-dina-offline.html').as_uri() if STANDALONE else 'http://127.0.0.1:4173'
-seed = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', "import {levelOne,finishCase} from './tests/support.mjs'; const state=finishCase(levelOne('research','directions'),'anonymous','document');state.version=5;delete state.eco;console.log(JSON.stringify({game:'tamatem-dina-prolog',state}));"]))
+seed = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', "import {levelOne,finishCase} from './tests/support.mjs'; const state=finishCase(levelOne('research','directions'),'anonymous','document');state.version=5;delete state.eco;delete state.morning;delete state.mask;delete state.healing;console.log(JSON.stringify({game:'tamatem-dina-prolog',state}));"]))
 copy = json.loads(subprocess.check_output(['node', '--input-type=module', '-e', "import {ECO_COPY} from './dist/eco-copy.js'; console.log(JSON.stringify(ECO_COPY));"]))
 
 with sync_playwright() as p:
@@ -91,7 +91,7 @@ with sync_playwright() as p:
         action('import')
         page.locator('#import-file').set_input_files({'name': 'case-v5.json', 'mimeType': 'application/json', 'buffer': json.dumps(seed).encode()})
         action('confirm-import')
-        assert state()['version'] == 8 and state()['stage'] == 'case-complete'
+        assert state()['version'] == 9 and state()['stage'] == 'case-complete'
         previous = {key: value for key, value in state().items() if key not in ['eco', 'stage', 'hints', 'version']}
         if not STANDALONE:
             page.wait_for_function('document.querySelector("#offline-status").classList.contains("ready")')
@@ -207,6 +207,6 @@ with sync_playwright() as p:
         assert state() == end
         assert not errors, errors
         assert not external, external
-        print(f'PASS {locale}: Level 3, actual {"file" if STANDALONE else "service-worker"} offline, v5 import, v8 export/import, both repairs, correction, touch 320/390, RTL/LTR, reload every phase', flush=True)
+        print(f'PASS {locale}: Level 3, actual {"file" if STANDALONE else "service-worker"} offline, v5 import, v9 export/import, both repairs, correction, touch 320/390, RTL/LTR, reload every phase', flush=True)
         context.close()
     browser.close()

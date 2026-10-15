@@ -1,3 +1,4 @@
+import {HEALING_PHASES,HEALING_DOCS,HEALING_SOLUTIONS,HEALING_ORDER} from '../dist/healing-state.js';
 import {initialState,reduce,ITEM_IDS} from '../dist/state.js';
 import {CHANNEL_SOLUTION} from '../dist/channels.js';
 export function levelOne(choice='fear',owlChoice='ask',observe=()=>{}){
@@ -72,5 +73,20 @@ export function finishMask(s,approach='public',naming='role',crowd='boundary',ob
  if(at('mirror')){read('offer');read('authorship');pick('credit','shared');check();next();}
  if(at('return')){read('crowdNote');pick('crowd',crowd);pick('kit','evidence');check();next();}
  if(at('publish')){read('response');for(const [id,value] of Object.entries({image:'observed',chain:'documented',master:'open'}))pick(id,value);check();act('MASK_APPROVE');act('MASK_PUBLISH');next();}
+ return s;
+}
+
+export function finishHealing(s,approach='doubt',responseMode='written',observe=()=>{}){
+ const act=a=>{s=reduce(s,typeof a==='string'?{type:a}:a);observe(s);};
+ if(s.stage==='mask-complete')act('HEALING_START');
+ for(const p of HEALING_PHASES){
+  if(s.stage!=='healing-'+p)continue;
+  for(const id of HEALING_DOCS[p])act({type:'HEALING_READ',id});
+  for(const [id,value] of Object.entries(HEALING_SOLUTIONS[p]||{}))act({type:'HEALING_PICK',id,value:id==='approach'?approach:id==='responseMode'?responseMode:value});
+  if(p==='chain')for(const [index,id] of HEALING_ORDER.entries())act({type:'HEALING_ORDER',index,id});
+  act('HEALING_CHECK');
+  for(const [phase,action] of [['protect','HEALING_PROTECT'],['chain','HEALING_MEET'],['revise','HEALING_REVISE'],['publish','HEALING_APPROVE'],['publish','HEALING_PUBLISH']])if(p===phase)act(action);
+  act('HEALING_NEXT');
+ }
  return s;
 }

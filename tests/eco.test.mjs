@@ -17,7 +17,7 @@ test('Version 5: every previous scene migrates without mutation; completed case 
  const snapshots=[initialState()];const end=levelOne('research','directions',s=>snapshots.push(s));finishCase(end,'name','document',s=>snapshots.push(s));
  for(const s of snapshots){const legacy={...s,version:5};delete legacy.eco;const original=structuredClone(legacy);assert.deepEqual(validateState(legacy),s);assert.deepEqual(legacy,original);}
  const old={...finishCase(end),version:5};delete old.eco;
- const next=step(validateState(old),'ECO_START');assert.equal(next.stage,'eco-opening');assert.deepEqual(history(next),history(old));assert.equal(VERSION,8);
+ const next=step(validateState(old),'ECO_START');assert.equal(next.stage,'eco-opening');assert.deepEqual(history(next),history(old));assert.equal(VERSION,9);
  assert.deepEqual(step(levelOne(),'ECO_START'),levelOne());
  for(const stage of ECO_STAGES)assert.throws(()=>validateState({...at('complete'),stage,version:5}));
 });

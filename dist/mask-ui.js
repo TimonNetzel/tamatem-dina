@@ -1,3 +1,4 @@
+import {healingText} from './healing-ui.js';
 import {MASK_STAGES,MASK_DOCS,MASK_ORDER,MASK_CLAIMS,maskReady} from './mask-state.js';
 import {MASK_COPY} from './mask-copy.js';
 import {getLanguage,t} from './i18n.js';
@@ -42,14 +43,14 @@ export function maskView(s,h){
  case 'mirror':panel+=opts('credit','creditQuestion',[['alone','alone'],['shared','shared']],c.credit,ready);if(ready)story+=para('mirrorResult');break;
  case 'return':panel+=opts('crowd','crowdQuestion',[['talk','talk'],['boundary','boundary']],c.crowd,ready)+opts('kit','kitQuestion',[['crown','crown'],['evidence','evidence']],c.kit,ready);if(ready)story+=para(c.crowd+'Result');break;
  case 'publish':panel+=Object.keys(MASK_CLAIMS).map(id=>opts(id,id,[['observed','observed'],['documented','documented'],['open','open']],c.claims[id],c.publishChecked)).join('')+b('check','check',!c.publishChecked)+(c.publishChecked?para('good'):'')+b('approve','approve',c.publishChecked&&!c.approved)+(c.approved?para('approved'):'')+b('publish','release',c.approved&&!c.published)+(c.published?para('published'):'');story+=`<article class="case-article">${esc(maskArticle(c))}</article>`;break;
- case 'complete':story+=para('finalTalk')+`<article class="case-article"><h2>${C('newLabel')}</h2><p>${esc(maskCorrection(c))}</p><p>${esc(maskArticle(c))}</p></article>`;panel+=para('endNote')+button('notebook',C('notes'),'button wide')+button('export',t('Spielstand als Datei sichern'),'button secondary wide');break;
+ case 'complete':story+=para('finalTalk')+`<article class="case-article"><h2>${C('newLabel')}</h2><p>${esc(maskCorrection(c))}</p><p>${esc(maskArticle(c))}</p></article>`;panel+=button('healing-start',healingText('start'),'button wide')+button('notebook',C('notes'),'button wide')+button('export',t('Spielstand als Datei sichern'),'button secondary wide');break;
  }
  if(['archive','crop','perspective','caption','network','mirror','return'].includes(p))panel+=b('check','check',!ready)+(ready?`<p class="success-line" role="status">${esc(C('good'))}</p>`:'');
  if(p!=='complete')panel+=b('next','next',ready);
  return `<div class="chapter-heading"><div><p class="eyebrow">${C('age')}</p><h1>${m[1]}</h1></div><span class="chapter-progress"><bdi>${m[0]} / 12</bdi></span></div><div class="game-grid mask-game"><section class="stage-column">${actor()}${scene('mask-city',C('alt'))}<div class="scene-tools">${button('hint',t('Hinweis'),'tool-button')}</div><div class="case-story">${story}</div></section><aside class="paper-panel"><p class="chapter-label">${C('title')}</p>${panel}${feedback?`<p class="feedback" role="status">${esc(feedback)}</p>`:''}</aside></div>`;
 }
 export function maskNotebook(s,esc){
- if(!MASK_STAGES.includes(s.stage))return '';
+ if(!MASK_STAGES.includes(s.stage)&&!s.mask.published)return '';
  const c=s.mask,C=maskText,entry=(title,text)=>`<article><h3>${esc(title)}</h3><p>${esc(text)}</p></article>`;
  let out=`<h2>${C('notes')}</h2>`;
  for(const id of c.read){const d=maskDocument(id);out+=entry(d.title,d.text);}

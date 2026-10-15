@@ -1,8 +1,8 @@
 # Tamatem & Dina – Zwischen den Zeilen
 
-Entwicklungsfassung 0.8 · 15. Oktober 2026 · Level 1–5 vollständig spielbar
+Entwicklungsfassung 0.9 · 15. Oktober 2026 · Level 1–6 vollständig spielbar
 
-Ein Comic- und Point-and-Click-Abenteuer für Erwachsene, wahlweise auf Deutsch, Englisch und ägyptischem Arabisch. Geplant sind sieben Episoden von Tamatems sechstem bis achtzehntem Lebensjahr. Level 1 ist vom gemeinsamen Arbeitstisch bis zum Heilungsfinale vollständig spielbar. Level 2 schließt ohne Neustart an: ein realistischer journalistischer Kleinstadtfall mit dem achtjährigen Tamatem und spielbarer Dina. Level 3 ergänzt Umweltrecherche mit dem zehnjährigen Tamatem, fantastischer Quelle und spielbarer Korrektur seiner öffentlichen Beschuldigung. Level 4 führt als realistischer Recherchethriller mit zwölfjährigem Tamatem und eigenständiger Dina-Recherche über falsche Beschuldigung, Uhrvergleich, Gruppendruck und begrenzte Veröffentlichung weiter. Level 5 führt durch eine surreale Papierstadt mit vierzehnjährigem Tamatem, eigenständiger Dina-Recherche und spielbaren Bildregeln bis zur sichtbaren Korrektur des eigenen Beitrags.
+Ein Comic- und Point-and-Click-Abenteuer für Erwachsene, wahlweise auf Deutsch, Englisch und ägyptischem Arabisch. Geplant sind sieben Episoden von Tamatems sechstem bis achtzehntem Lebensjahr. Level 1 ist vom gemeinsamen Arbeitstisch bis zum Heilungsfinale vollständig spielbar. Level 2 schließt ohne Neustart an: ein realistischer journalistischer Kleinstadtfall mit dem achtjährigen Tamatem und spielbarer Dina. Level 3 ergänzt Umweltrecherche mit dem zehnjährigen Tamatem, fantastischer Quelle und spielbarer Korrektur seiner öffentlichen Beschuldigung. Level 4 führt als realistischer Recherchethriller mit zwölfjährigem Tamatem und eigenständiger Dina-Recherche über falsche Beschuldigung, Uhrvergleich, Gruppendruck und begrenzte Veröffentlichung weiter. Level 5 führt durch eine surreale Papierstadt mit vierzehnjährigem Tamatem, eigenständiger Dina-Recherche und spielbaren Bildregeln bis zur sichtbaren Korrektur des eigenen Beitrags. Level 6 verbindet mit sechzehnjährigem Tamatem medizinische Studiengrenzen und nachvollziehbare Liefer-/Vertragsbelege; Dina schützt eigenständig eine Quelle und verantwortet die begrenzte Ausgabe.
 
 Private Entwicklungsablage: [TimonNetzel/tamatem-dina](https://github.com/TimonNetzel/tamatem-dina). Hauptzweig: main. Die bestehende Sites-Adresse bleibt der Veröffentlichungsweg.
 
@@ -26,7 +26,7 @@ Das Projekt ist lokal bereits vollständig vorhanden und hat ein eigenes Git-Rep
 
 [Private Spieladresse](https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site)
 
-Die private Adresse enthält seit 15. Oktober 2026 Version 0.8 mit allen fünf vollständigen dreisprachigen Leveln. Der veröffentlichte Spielcode entspricht dem geprüften GitHub-Stand d9a7f72. Alle bisherigen Inhalte und Spielstände bleiben erhalten. GitHub und Sites bleiben getrennte Schritte. Level 6–7 sind Konzeptentwürfe. Eine unabhängige Zeitmessung liegt nicht vor.
+Die private Adresse enthält seit 15. Oktober 2026 Version 0.8 mit allen fünf vollständigen dreisprachigen Leveln. Der veröffentlichte Spielcode entspricht dem geprüften GitHub-Stand d9a7f72. Alle bisherigen Inhalte und Spielstände bleiben erhalten. GitHub und Sites bleiben getrennte Schritte. Die Entwicklung enthält zusätzlich Level 6 (0.9), noch nicht bei Sites veröffentlicht. Level 7 ist Konzeptentwurf. Eine unabhängige Zeitmessung liegt nicht vor.
 
 ## Lokal ausführen
 
@@ -50,7 +50,7 @@ Die Hashliste ist eine Momentaufnahme der Übergabe. Nach absichtlichen Änderun
 
     node make-offline.mjs ABSOLUTER_AUSGABEPFAD
 
-Der Zielname sollte auf .html enden. Die erzeugte Einzeldatei enthält alle 15 Bilder und alle drei Sprachen und die Spiellogik und ist für das direkte Öffnen am Laptop gedacht. Große erzeugte Einzeldateien und ZIP-Dateien gehören in Veröffentlichungen oder einen Ausgabeordner, nicht bei jeder Änderung erneut in Git.
+Der Zielname sollte auf .html enden. Die erzeugte Einzeldatei enthält alle 16 Bilder und alle drei Sprachen und die Spiellogik und ist für das direkte Öffnen am Laptop gedacht. Große erzeugte Einzeldateien und ZIP-Dateien gehören in Veröffentlichungen oder einen Ausgabeordner, nicht bei jeder Änderung erneut in Git.
 
 Auf dem iPhone ist die Web-App über Safari und den Home-Bildschirm vorgesehen. Vor dem Offline-Spielen vollständig laden und auf „Offline bereit“ warten. Chromium-Durchläufe mit tatsächlichem Offline-Neuladen wurden bestanden. Eine echte iPhone-Prüfung steht aus. Der direkte Dateiaufruf der HTML wurde hier durch eine Browserrichtlinie blockiert; technische Exportprüfung und echter Service-Worker-Offline-Betrieb sind davon getrennte Nachweise.
 

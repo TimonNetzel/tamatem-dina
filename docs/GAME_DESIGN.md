@@ -177,7 +177,7 @@ Realitätsnaher Medizin- und Wirtschaftsthriller, ohne objektive Magie. Eine erf
 5. Eine überprüfbare Fassung gelingt. Auf dem Rückweg drohen rechtlicher Druck und eine persönliche Belastungsprobe.
 6. Beide müssen eine voreilige Heilungsbehauptung begrenzen und dennoch die Versorgungshürde benennen. Hilfe wird möglich; nicht jede betroffene Person ist sofort gesund.
 
-Entwicklung: Verantwortung bedeutet, eine wirksame Handlung zu wählen und ihre Kosten nicht anderen zu verschweigen. Medizinische und rechtliche Einzelheiten werden vor dem Episodenskript fachlich recherchiert.
+Entwicklung: Verantwortung bedeutet, eine wirksame Handlung zu wählen und ihre Kosten nicht anderen zu verschweigen. In 0.9 umgesetzt: zwölf konkrete Stationen, fachliche Recherche und Belegregeln in episodes/06-preis-der-heilung.md; tatsächliche Prüfungen und offene Fachabnahmen in STATUS.md.
 
 ### Level 7 · 18 Jahre · Die letzte Ausgabe
 
