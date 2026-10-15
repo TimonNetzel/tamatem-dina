@@ -2,9 +2,22 @@
 
 ## Entwicklungsstand und getrennte Veröffentlichung
 
-GitHub-Entwicklung 0.8 enthält fünf vollständige Level. 0.6–0.8 wurden nicht bei Sites veröffentlicht. Dieses Level-5-Paket wird ohne Force nach GitHub main gesichert; die nachfolgend dokumentierte private Bereitstellung bleibt unverändert 0.5. Ein späterer Sites-Auftrag muss den dann freigegebenen Quellstand gesondert übernehmen und prüfen.
+GitHub und die bestehende private Site enthalten Version 0.8 mit fünf vollständigen Leveln. Die Aktualisierung wurde am 15. Oktober 2026 gesondert beauftragt und erfolgreich veröffentlicht. Künftige GitHub-Pushes veröffentlichen die Site weiterhin nicht automatisch.
 
-## Aktueller Veröffentlichungsstand
+## Aktueller Veröffentlichungsstand 0.8
+
+- Spielversion: **0.8, Level 1–5 vollständig dreisprachig**.
+- Private Spieladresse: https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site
+- Bestehende Site-ID appgprj_6ad06b66e5dc8191b14285faeba4d396 und Zugriff nur für das Eigentümerkonto vorab über get_site bestätigt; unverändert beibehalten.
+- Geprüfter GitHub-Quellstand: **d9a7f72539138235e5fc701889770ca53207018b**.
+- Gepushter Sites-Quellcommit: **1cb01fb00d6139b43ba6a723d78d4d6c087d770a**. Vollständiger Quellbaum identisch mit GitHub d9a7f72: **d81ab1fa57632ad86546875fe55e4f1c44e62cd9**.
+- Beide Git-Historien erhalten: neuer Sites-Commit folgt auf 96659c6, ohne Force-Push. GitHub-origin unverändert.
+- Archiv enthält ausschließlich `.openai/hosting.json` und `dist`; alle **39 Dateien** bytegenau gegen den gepushten Sites-Commit geprüft. Keine Codeänderung gegenüber den bestandenen 62 Logik-/Exportprüfungen und dreisprachigen Browser-/Offline-Durchläufen aus STATUS.md.
+- Gespeicherte Sites-Version: **3**, **appgprj_6ad06b66e5dc8191b14285faeba4d396~appgver_ae9f3616ca30819181f328b78691cc38**; Provenienz durch get_site_version bestätigt.
+- Bereitstellung: **appgdep_6ad10cda4d308191a0adc8363d910480**. Native Antwort **succeeded** mit obiger URL, bestätigt am **15. Oktober 2026 um 19:27 Uhr Europe/Berlin**.
+- Keine zusätzliche Browserabnahme der authentifizierten Live-Seite und kein echter Handytest. Dokumentationspflege nach der Veröffentlichung verändert den Spielcode nicht.
+
+## Frühere Veröffentlichung 0.5
 
 - Spielversion: 0.5, Level 1 und 2 vollständig dreisprachig.
 - Private Spieladresse: https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site
@@ -66,4 +79,4 @@ Nach einer echten Änderung an der Site den Zugriff privat belassen, sofern der 
 
 ## Entwicklungsfassung 0.6
 
-Level 3 wurde auf Basis von GitHub-main 77176b6 entwickelt. GitHub-Sicherung des abgeschlossenen Pakets und Sites-Veröffentlichung bleiben getrennt. In diesem Level-3-Paket wurde keine neue Sites-Version gespeichert oder veröffentlicht. Die oben bestätigte private 0.5-Veröffentlichung mit Level 1 und 2 bleibt maßgeblich; .openai/hosting.json wurde nicht geändert.
+Level 3 wurde auf Basis von GitHub-main 77176b6 entwickelt. GitHub-Sicherung des abgeschlossenen Pakets und Sites-Veröffentlichung bleiben getrennt. In diesem Level-3-Paket wurde keine neue Sites-Version gespeichert oder veröffentlicht. Damals blieb die private 0.5-Veröffentlichung mit Level 1 und 2 maßgeblich; .openai/hosting.json wurde nicht geändert.

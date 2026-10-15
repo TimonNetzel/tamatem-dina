@@ -1,6 +1,6 @@
 # Neuer Chat: Level 6 – Der Preis der Heilung
 
-Repository: TimonNetzel/tamatem-dina, main. Entwicklungsfassung 0.8 mit fünf vollständigen dreisprachigen Leveln. Remote-Stand vor Beginn prüfen. Die bestehende private Site zeigt weiterhin 0.5; GitHub-Push veröffentlicht sie nicht.
+Repository: TimonNetzel/tamatem-dina, main. Entwicklungsfassung 0.8 mit fünf vollständigen dreisprachigen Leveln. Remote-Stand vor Beginn prüfen. Die bestehende private Site enthält ebenfalls 0.8 mit fünf Leveln; ein künftiger GitHub-Push veröffentlicht sie nicht automatisch.
 
 ```text
 Entwickle „Tamatem & Dina“ auf main weiter. Plane und implementiere Level 6 „Der Preis der Heilung“ mit sechzehnjährigem Tamatem und eigenständig spielbarer Dina. Lies AGENTS.md, docs/START_HERE.md, docs/STATUS.md und docs/WORKFLOW.md; nutze .agents/skills/tamatem-dina-entwicklung/SKILL.md. Lies CANON und gezielt Level 6 in GAME_DESIGN. Entwickle zwölf konkrete Stationen und nachvollziehbare Rätsel für den realitätsnahen Medizin- und Wirtschaftsthriller. Recherchiere medizinische und wirtschaftliche Zusammenhänge fachlich; die Krankheit bleibt erfunden. Lieferketten, Vertragsdaten, begrenzte Heilungsbehauptungen und Quellenschutz brauchen klare Belegregeln. Keine magische Beweisführung. Entwurfsdetails dürfen weiterentwickelt werden.

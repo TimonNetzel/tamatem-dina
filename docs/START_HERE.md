@@ -6,7 +6,7 @@ Das vorhandene farbige Comic-Adventure für Erwachsene weiterentwickeln. Sprache
 
 ## Stand
 
-Version 0.8 enthält fünf vollständige dreisprachige Level. Neu: „Die Stadt der Masken“ mit vierzehnjährigem Tamatem und eigenständig spielbarer Dina, festen Regeln für Bildausschnitt/Perspektive/Bildunterschrift und sichtbarer Berichtigung seines eigenen verbreiteten Fehlers. Direkter Anschluss ab morning-complete, Abschluss mask-complete. Alle vier vorherigen Level und Spielstände 1–7 bleiben erhalten; aktuelles Format 8. Die private Site zeigt weiterhin 0.5. Tatsächliche Prüfungen und Grenzen: STATUS.md.
+Version 0.8 enthält fünf vollständige dreisprachige Level. Neu: „Die Stadt der Masken“ mit vierzehnjährigem Tamatem und eigenständig spielbarer Dina, festen Regeln für Bildausschnitt/Perspektive/Bildunterschrift und sichtbarer Berichtigung seines eigenen verbreiteten Fehlers. Direkter Anschluss ab morning-complete, Abschluss mask-complete. Alle vier vorherigen Level und Spielstände 1–7 bleiben erhalten; aktuelles Format 8. Die private Site enthält seit 15. Oktober 2026 ebenfalls Version 0.8 mit allen fünf Leveln. Tatsächliche Prüfungen und Grenzen: STATUS.md.
 
 ## Gezielt nachlesen
 

@@ -26,7 +26,7 @@ Das Projekt ist lokal bereits vollständig vorhanden und hat ein eigenes Git-Rep
 
 [Private Spieladresse](https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site)
 
-Die private Adresse zeigt weiterhin Version 0.5 mit Level 1 und 2. Im Repository enthält Entwicklungsfassung 0.8 zusätzlich die vollständigen dreisprachigen Level 3–5. Alle bisherigen Inhalte und Spielstände bleiben erhalten. 0.6–0.8 wurden nicht bei Sites veröffentlicht; GitHub und Sites bleiben getrennte Schritte. Level 6–7 sind Konzeptentwürfe. Eine unabhängige Zeitmessung liegt nicht vor.
+Die private Adresse enthält seit 15. Oktober 2026 Version 0.8 mit allen fünf vollständigen dreisprachigen Leveln. Der veröffentlichte Spielcode entspricht dem geprüften GitHub-Stand d9a7f72. Alle bisherigen Inhalte und Spielstände bleiben erhalten. GitHub und Sites bleiben getrennte Schritte. Level 6–7 sind Konzeptentwürfe. Eine unabhängige Zeitmessung liegt nicht vor.
 
 ## Lokal ausführen
 

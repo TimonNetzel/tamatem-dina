@@ -19,7 +19,7 @@ Der Assistent beurteilt dies nach jedem abgeschlossenen Arbeitspaket und sagt de
 - Beim Übergang von Umsetzung zu einer größeren Gesamtabnahme kann ein eigener Chat sinnvoll sein.
 - Zuerst den laufenden Schritt stabil abschließen und die Übergabe sichern. Bei einem externen Blocker stattdessen den genauen Zwischenstand und den Blocker festhalten.
 
-Aktueller Übergabepunkt: Level 1–5 sind in Entwicklungsfassung 0.8 vollständig spielbar. Prüfgrenzen stehen in STATUS.md. Vor Level 6 einen neuen Chat beginnen; der passende Prompt steht in CODEX_STARTPROMPT.md. Die bestehende private Site zeigt weiterhin 0.5 mit zwei Leveln. GitHub-Push und eine spätere Sites-Veröffentlichung bleiben getrennte Schritte.
+Aktueller Übergabepunkt: Level 1–5 sind in Entwicklungsfassung 0.8 vollständig spielbar. Prüfgrenzen stehen in STATUS.md. Vor Level 6 einen neuen Chat beginnen; der passende Prompt steht in CODEX_STARTPROMPT.md. Die bestehende private Site enthält seit 15. Oktober 2026 Version 0.8 mit fünf Leveln. GitHub-Push und künftige Sites-Veröffentlichungen bleiben getrennte Schritte.
 
 ## Übergabe vorbereiten
 
