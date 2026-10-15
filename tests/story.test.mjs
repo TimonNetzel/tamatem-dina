@@ -22,7 +22,7 @@ test('Version-1-Spielstände setzen ohne Neustart am Fluss fort; Entscheidungen 
   const modern=apply(ready(choice),{type:'DEPART'},{type:'OWL_CHOICE',id:owlChoice});
   const legacy={...modern,version:1,stage:'complete'};delete legacy.river;
   const original=structuredClone(legacy),migrated=validateState(legacy);
-  assert.equal(migrated.stage,'river');assert.equal(migrated.version,6);
+  assert.equal(migrated.stage,'river');assert.equal(migrated.version,7);
   assert.equal(migrated.choice,choice);assert.equal(migrated.owlChoice,owlChoice);
   assert.deepEqual(migrated.packed,legacy.packed);assert.deepEqual(legacy,original);
  }

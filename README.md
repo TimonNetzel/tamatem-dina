@@ -1,8 +1,8 @@
 # Tamatem & Dina – Zwischen den Zeilen
 
-Entwicklungsfassung 0.6 · 15. Oktober 2026 · Level 1–3 vollständig spielbar
+Entwicklungsfassung 0.7 · 15. Oktober 2026 · Level 1–4 vollständig spielbar
 
-Ein Comic- und Point-and-Click-Abenteuer für Erwachsene, wahlweise auf Deutsch, Englisch und ägyptischem Arabisch. Geplant sind sieben Episoden von Tamatems sechstem bis achtzehntem Lebensjahr. Level 1 ist vom gemeinsamen Arbeitstisch bis zum Heilungsfinale vollständig spielbar. Level 2 schließt ohne Neustart an: ein realistischer journalistischer Kleinstadtfall mit dem achtjährigen Tamatem und spielbarer Dina. Level 3 ergänzt Umweltrecherche mit dem zehnjährigen Tamatem, fantastischer Quelle und spielbarer Korrektur seiner öffentlichen Beschuldigung.
+Ein Comic- und Point-and-Click-Abenteuer für Erwachsene, wahlweise auf Deutsch, Englisch und ägyptischem Arabisch. Geplant sind sieben Episoden von Tamatems sechstem bis achtzehntem Lebensjahr. Level 1 ist vom gemeinsamen Arbeitstisch bis zum Heilungsfinale vollständig spielbar. Level 2 schließt ohne Neustart an: ein realistischer journalistischer Kleinstadtfall mit dem achtjährigen Tamatem und spielbarer Dina. Level 3 ergänzt Umweltrecherche mit dem zehnjährigen Tamatem, fantastischer Quelle und spielbarer Korrektur seiner öffentlichen Beschuldigung. Level 4 führt als realistischer Recherchethriller mit zwölfjährigem Tamatem und eigenständiger Dina-Recherche über falsche Beschuldigung, Uhrvergleich, Gruppendruck und begrenzte Veröffentlichung weiter.
 
 Private Entwicklungsablage: [TimonNetzel/tamatem-dina](https://github.com/TimonNetzel/tamatem-dina). Hauptzweig: main. Die bestehende Sites-Adresse bleibt der Veröffentlichungsweg.
 
@@ -26,7 +26,7 @@ Das Projekt ist lokal bereits vollständig vorhanden und hat ein eigenes Git-Rep
 
 [Private Spieladresse](https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site)
 
-Die private Adresse zeigt weiterhin Version 0.5 mit Level 1 und 2. Im Repository enthält Entwicklungsfassung 0.6 zusätzlich das vollständige dreisprachige Level 3 „Der kranke Fluss“. Alle bisherigen Inhalte und Spielstände bleiben erhalten. 0.6 wurde nicht bei Sites veröffentlicht; GitHub und Sites bleiben getrennte Schritte. Level 4–7 sind Konzeptentwürfe. Eine unabhängige Zeitmessung liegt nicht vor.
+Die private Adresse zeigt weiterhin Version 0.5 mit Level 1 und 2. Im Repository enthält Entwicklungsfassung 0.7 zusätzlich die vollständigen dreisprachigen Level 3 und 4. Alle bisherigen Inhalte und Spielstände bleiben erhalten. 0.6 und 0.7 wurden nicht bei Sites veröffentlicht; GitHub und Sites bleiben getrennte Schritte. Level 5–7 sind Konzeptentwürfe. Eine unabhängige Zeitmessung liegt nicht vor.
 
 ## Lokal ausführen
 
@@ -38,7 +38,7 @@ Danach ist die Vorschau unter http://127.0.0.1:4173 erreichbar. Der Server binde
 
     npm test
 
-Die 47 automatischen Einzelprüfungen (acht Testdateien) decken Spielregeln, alte Spielstände, Übersetzungen, Offline-Cache und HTML-Export ab. Zusätzliche Browserprüfung mit installiertem Python-Playwright und Chromium gegen den laufenden Server: `python tests/browser-smoke.py` für die bisherigen Level und `python tests/browser-eco.py` für Level 3.
+Die 55 automatischen Einzelprüfungen (neun Testdateien) decken Spielregeln, alte Spielstände, Übersetzungen, Offline-Cache und HTML-Export ab. Zusätzliche Browserprüfung mit installiertem Python-Playwright und Chromium gegen den laufenden Server: `python tests/browser-smoke.py` für die bisherigen Level und `python tests/browser-eco.py` für Level 3, `python tests/browser-morning.py` für Level 4 und `python tests/browser-legacy.py` für historische Feldsätze 1–6.
 
 Die ursprüngliche Übergabe-Momentaufnahme prüft:
 
@@ -50,7 +50,7 @@ Die Hashliste ist eine Momentaufnahme der Übergabe. Nach absichtlichen Änderun
 
     node make-offline.mjs ABSOLUTER_AUSGABEPFAD
 
-Der Zielname sollte auf .html enden. Die erzeugte Einzeldatei enthält alle 13 Bilder und alle drei Sprachen und die Spiellogik und ist für das direkte Öffnen am Laptop gedacht. Große erzeugte Einzeldateien und ZIP-Dateien gehören in Veröffentlichungen oder einen Ausgabeordner, nicht bei jeder Änderung erneut in Git.
+Der Zielname sollte auf .html enden. Die erzeugte Einzeldatei enthält alle 14 Bilder und alle drei Sprachen und die Spiellogik und ist für das direkte Öffnen am Laptop gedacht. Große erzeugte Einzeldateien und ZIP-Dateien gehören in Veröffentlichungen oder einen Ausgabeordner, nicht bei jeder Änderung erneut in Git.
 
 Auf dem iPhone ist die Web-App über Safari und den Home-Bildschirm vorgesehen. Vor dem Offline-Spielen vollständig laden und auf „Offline bereit“ warten. Chromium-Durchläufe mit tatsächlichem Offline-Neuladen wurden bestanden. Eine echte iPhone-Prüfung steht aus. Der direkte Dateiaufruf der HTML wurde hier durch eine Browserrichtlinie blockiert; technische Exportprüfung und echter Service-Worker-Offline-Betrieb sind davon getrennte Nachweise.
 

@@ -63,3 +63,11 @@ html[dir=rtl]{--serif:Tahoma,Arial,sans-serif;--sans:Tahoma,Arial,sans-serif}htm
 .eco-game .portrait.tamatem{background-image:url('./assets/eco-river.png');background-size:418px 235px;background-position:-72px -64px}
 .eco-game .paper-panel>.button{margin-top:14px}
 .eco-game .chapter-progress{direction:ltr;unicode-bidi:isolate}
+
+/* Level 4 uses the same touch controls; evidence stays readable in all languages. */
+.morning-options{border:0;border-block-start:1px solid var(--line);padding:16px 0 4px;margin:12px 0;min-width:0}
+.morning-options legend{font-weight:700;padding-inline-end:8px;max-width:100%;overflow-wrap:anywhere}
+.morning-game .case-article{line-height:1.75;padding:20px}
+.morning-game .scene img{object-fit:cover}
+.morning-game .paper-panel{min-width:0}
+body:has(.morning-game) .portrait.tamatem{background-image:url('./assets/morning-investigation.png');background-size:400%;background-position:17% 23%}

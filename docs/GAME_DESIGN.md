@@ -140,6 +140,8 @@ Entwicklung: Ein Fehler macht ihn verantwortlich, nicht wertlos. Die Entschuldig
 
 ### Level 4 · 12 Jahre · Das gestohlene Morgen
 
+In 0.7 umgesetzt. Verbindlicher Implementierungsstand mit zwölf konkreten Stationen, Rätseln und Beleggrenzen: episodes/04-gestohlenes-morgen.md; tatsächliche Prüfungen: STATUS.md. Der folgende frühere Bogen wurde dafür konkretisiert.
+
 Vollständig realistischer Recherchethriller um eine falsche Beschuldigung. Farben: kühles Blau, Beton, zurückhaltendes Alarmrot.
 
 1. Eine Person soll durch einen angeblichen Beweis überführt werden. Dina erkennt einen Widerspruch.

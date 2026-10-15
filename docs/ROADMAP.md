@@ -32,6 +32,10 @@ Fiktive Lichtapparatur, notwendige spielbare Dina-Beobachtung und Stabilitätsbe
 
 „Der kranke Fluss“ ist dreisprachig spielbar: Ursachenvergleich, eigenständige Dina-Recherche, notwendige Richtigstellung, Einleitungsstopp, Quellenöffnung und getrennte Nachprüfungen. Konkrete zwölf Stationen: episodes/03-kranker-fluss.md. Kein Neustart ab case-complete, gespeicherter Abschluss eco-complete. Prüfgrenzen in STATUS.md.
 
-## 9. Episoden 4–7 — nächster Chat für Level 4
+## 9. Level 4 — umgesetzt
 
-Je Episode erst den relevanten Handlungsbogen und die konkreten Rätsel ausarbeiten, dann umsetzen und prüfen. Themen und Altersfolge stehen im CANON, Entwürfe in GAME_DESIGN.md. Vor „Das gestohlene Morgen“ neuer Chat nach CODEX_STARTPROMPT.md. Unabhängige Geräte-, Sprach-, Einzeldatei- und Spieldauerabnahme bleibt separat.
+„Das gestohlene Morgen“ ist dreisprachig spielbar: unabhängige Quellen, Original-Sicherung als Dina, begrenzter Uhrvergleich, Ereignisfolge, Widerlegung und Datenminimierung. Tamatems Widerspruch kostet vorerst Zugehörigkeit. Direkter Einstieg ab eco-complete, Abschluss morning-complete. Zwölf konkrete Stationen: episodes/04-gestohlenes-morgen.md. Prüfgrenzen in STATUS.md.
+
+## 10. Episoden 5–7 — nächster Chat für Level 5
+
+Je Episode erst den relevanten Handlungsbogen und die konkreten Rätsel ausarbeiten, dann umsetzen und prüfen. Themen und Altersfolge stehen im CANON, Entwürfe in GAME_DESIGN.md. Vor „Die Stadt der Masken“ neuer Chat nach CODEX_STARTPROMPT.md. Unabhängige Geräte-, Sprach-, Einzeldatei- und Spieldauerabnahme bleibt separat.

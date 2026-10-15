@@ -40,3 +40,20 @@ export function finishEco(s,reflection='error',approach='warning',observe=()=>{}
  if(at('verify')){for(const id of ['water','roots'])act({type:'ECO_READ',id});act('ECO_PUBLISH');act('ECO_FINISH');}
  return s;
 }
+export function finishMorning(s,pressure='open',naming='anonymous',observe=()=>{}){
+ const act=a=>{s=reduce(s,typeof a==='string'?{type:a}:a);observe(s);};
+ const at=phase=>s.stage==='morning-'+phase,pick=(id,value)=>act({type:'MORNING_PICK',id,value}),read=id=>act({type:'MORNING_READ',id}),next=()=>act('MORNING_NEXT'),check=()=>act('MORNING_CHECK');
+ if(s.stage==='eco-complete')act('MORNING_START');
+ if(at('opening')){read('allegation');next();}
+ if(at('pressure')){pick('pressure',pressure);act('MORNING_DISSENT');next();}
+ if(at('method')){read('ruth');pick('method','original');check();next();}
+ if(at('sources')){for(const id of ['camera','stockSource','receiptSource','collage']){read(id);pick(id,id==='collage'?'derived':'independent');}check();next();}
+ if(at('preserve')){read('custody');for(const [index,id] of ['copy','compare','log'].entries())act({type:'MORNING_ORDER',index,id});check();next();}
+ if(at('clock')){read('calibration');pick('time','1810');pick('scope','interval');check();next();}
+ if(at('timeline')){for(const id of ['inventory','transport','receipt'])read(id);for(const [index,id] of ['clip','stock','move','safe'].entries())act({type:'MORNING_ORDER',index,id});check();next();}
+ if(at('model')){read('inspection');for(const [id,value] of Object.entries({clip:'box',stock:'later',safe:'found'}))pick(id,value);check();next();}
+ if(at('responses')){for(const id of ['manager','editor','mara'])read(id);next();}
+ if(at('privacy')){read('consent');for(const [id,value] of Object.entries({times:'publish',seal:'publish',neighbours:'mask',message:'omit',address:'omit'}))pick(id,value);pick('naming',naming);check();next();}
+ if(at('publish')){act('MORNING_REVISE');act('MORNING_GROUP');act('MORNING_PUBLISH');next();}
+ return s;
+}

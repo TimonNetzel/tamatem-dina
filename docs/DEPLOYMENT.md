@@ -1,5 +1,9 @@
 # GitHub, Sites und Herkunft
 
+## Entwicklungsstand und getrennte Veröffentlichung
+
+GitHub-Entwicklung 0.7 enthält vier vollständige Level. 0.6 und 0.7 wurden nicht bei Sites veröffentlicht. Dieses Level-4-Paket wird ohne Force nach GitHub main gesichert; die nachfolgend dokumentierte private Bereitstellung bleibt unverändert 0.5. Ein späterer Sites-Auftrag muss den dann freigegebenen Quellstand gesondert übernehmen und prüfen.
+
 ## Aktueller Veröffentlichungsstand
 
 - Spielversion: 0.5, Level 1 und 2 vollständig dreisprachig.

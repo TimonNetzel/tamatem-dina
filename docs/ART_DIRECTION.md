@@ -88,3 +88,7 @@ Zwei neue referenzgestützte Illustrationen: case-library.png und case-courtyard
 ## Level 3 · Der kranke Fluss
 
 Referenzgestützte Flussrecherche mit zehnjährigem Tamatem, Dina und Neri (eco-river.png); eigenständige Dina-Recherche am Depot (eco-depot.png). Moosgrün, Türkis und Rostorange, kräftige Tuschekonturen und Schraffuren. Beide tatsächlich als Bilder geöffnet und auf Figurenkontinuität geprüft. Szenenmontagen: genaue Probenorte, Messwerte und Quellzustände als übersetzbarer HTML-Text, nicht aus dekorativen Bilddetails ableiten. Vollständige Prompts und Grenzen: art/prompts/07-sick-river.md. Neues Tamatem-Porträt als Ausschnitt desselben Flussbilds; CSS-Referenz im Offline-Export eingebettet.
+
+## Level 4 · Das gestohlene Morgen
+
+Ein neues referenzgestütztes Jugendhausbild mit zwölfjährigem Tamatem, Dina und Mara: morning-investigation.png. Kühler Beton, Blau/Petrol, zurückhaltendes Rot und warme Tischlampe. Illustration und Figurenreferenz tatsächlich geöffnet; Beweise bleiben HTML. Szenenmontage über zwölf Stationen, keine Echtzeitaufnahme. Vollständiger Prompt und Grenzen: art/prompts/08-stolen-tomorrow.md.

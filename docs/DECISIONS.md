@@ -39,3 +39,12 @@ Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen geh�
 - Tamatems voreilige öffentliche Beschuldigung hat eine konkrete Folge: Salma sperrt ihren Zugang. Nach belegbarer öffentlicher Richtigstellung ist seine eigene Entschuldigung nötig; Vertrauen wird nicht als sofort gewonnen behauptet.
 - Dina steuert eine eigene Recherche und die Maßnahmenkoordination; Warnmeldung zuerst oder Behördentermin zuerst bleibt als Entscheidung erhalten. Beide Varianten informieren Redaktion und Wasserteam.
 - Version 6 ergänzt eco ohne Änderung früherer Entscheidungen. An case-complete direkt fortsetzen; nach Level 3 bleibt eco-complete für Level 4 erhalten. Alle alten Notizbucheinträge bleiben auch in der neuen Episode sichtbar.
+
+## Level 4 · Das gestohlene Morgen (0.7)
+
+- Ein beschnittener Clip und seine Wiederholungen sind keine unabhängigen Bestätigungen. Original, Inventar und getrenntes Empfangsbuch brauchen eigene Herkunfts-/Inhaltsprüfung; aktuelle gemeinsame Kontrolle schließt die Belegkette. Uhrvergleich gilt nur zwischen zwei geprüften Ereignissen desselben Abends.
+- Falsche Diebstahlsbeschuldigung wird widerlegt, ohne einen neuen Täter oder Absicht zu erfinden. Zeitdruck vor Sponsorengespräch bleibt Erklärung einer Dynamik, kein Vorsatzbeweis.
+- Tamatem muss den Gruppendruck spielbar beantworten. Öffentlicher oder direkter Widerspruch bleiben eigenständige gespeicherte Wege mit vorerst verlorener Einladung; keine sofortige Belohnung durch neue Anerkennung.
+- Dina entscheidet und handelt bei Methode, erlaubter Original-Sicherung, Stellungnahmen, Publikationsprüfung und Korrektur. Keine heimliche Datenbeschaffung und kein Reflex-Countdown. Fiktive Gruppenkorrektur erreicht ausdrücklich den ursprünglichen Empfängerkreis.
+- Nennung mit begrenzter Freigabe: Vorname oder Anonymität. Private Familien-/Kliniknachricht und Anschrift fehlen in beiden Ausgaben; Unbeteiligte werden verdeckt. Die Nachricht bleibt ungeöffnet und ihre intimen Daten werden auch zur Einsicht nicht ausgeschrieben.
+- Format 7 ergänzt morning, erhält 1–6 und alle alten Notizbücher. Level 4 beginnt optional an eco-complete; morning-complete ist Anschluss für Level 5. GitHub-Sicherung bleibt getrennt von Sites.

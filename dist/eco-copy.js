@@ -656,9 +656,9 @@ export const ECO_COPY={
   "تماتم: «أول جملة كانت أقصر.» دينا: «التانية شالت أكتر.» بيفتح صفحة جديدة: القياس الجاي، والزيارة الجاية. المرّة دي فيه علامة استفهام جنب المعاد."
  ],
  "endNote": [
-  "Level 3 abgeschlossen. Der Spielstand bleibt hier erhalten. Level 4 beginnt in einem späteren Arbeitspaket.",
-  "Level 3 complete. Your save stays here. Level 4 begins in a later update.",
-  "المستوى التالت خلص. تقدّمك محفوظ هنا. المستوى الرابع هيبدأ في تحديث جاي."
+  "Level 3 abgeschlossen. Der Spielstand bleibt hier erhalten. Level 4 kannst du jetzt ohne Neustart beginnen.",
+  "Level 3 complete. Your save stays here. You can now begin Level 4 without restarting.",
+  "المستوى التالت خلص. تقدّمك محفوظ هنا. تقدر تبدأ المستوى الرابع دلوقتي من غير ما تعيد اللعبة."
  ],
  "notes": [
   "Flussnotizen · Vermutung und Prüfung",
@@ -866,8 +866,8 @@ export const ECO_COPY={
   "الكشكول فاصل بين الكلام الأول والمقارنة والتصحيح."
  ],
  "h11c": [
-  "Sichere bei Bedarf deinen Spielstand als Datei. Level 4 wird hier noch nicht gestartet.",
-  "Export your save if needed. Level 4 does not start here yet.",
-  "احفظ تقدّمك في ملف لو محتاج. المستوى الرابع لسه مش بيبدأ هنا."
+  "Sichere bei Bedarf deinen Spielstand als Datei. Level 4 kannst du hier ohne Neustart beginnen.",
+  "Export your save if needed. You can begin Level 4 here without restarting.",
+  "احفظ تقدّمك في ملف لو محتاج. تقدر تبدأ المستوى الرابع هنا من غير ما تعيد اللعبة."
  ]
 };

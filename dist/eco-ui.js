@@ -1,3 +1,4 @@
+import {morningText} from './morning-ui.js';
 import {ECO_STAGES,SAMPLE_IDS,INTERVIEW_IDS,ECO_MODEL,STOP_ORDER} from './eco-state.js';
 import {ECO_COPY} from './eco-copy.js';
 import {getLanguage,t} from './i18n.js';
@@ -35,13 +36,13 @@ export function ecoView(s,h){
  case 'eco-source':
   story=p('sourceText');panel=b('inspect','inspect')+(c.inspected?p('inspected'):'')+b('clear','clear',c.inspected&&!c.cleared)+(c.cleared?p('cleared'):'')+options('inlet','inlet',[['clean','clean'],['depot','depot']],c.inlet,c.restored)+b('restore','restore');if(c.restored)panel+=success('restored')+b('verify','toVerify');break;
  case 'eco-verify':story=p('verifyText');panel=documents(['water','roots'])+b('publish','publish',c.checks.length===2&&!c.published);if(c.published){story+=`<article class="case-article">${p('article')}</article>`;panel+=b('finish','finish');}break;
- case 'eco-complete':story=p('ending')+p('finalTalk');panel=p('endNote')+button('notebook',C('notes'),'button wide')+button('export',t('Spielstand als Datei sichern'),'button secondary wide');break;
+ case 'eco-complete':story=p('ending')+p('finalTalk');panel=button('morning-start',esc(morningText('start')),'button wide')+p('endNote')+button('notebook',C('notes'),'button wide')+button('export',t('Spielstand als Datei sichern'),'button secondary wide');break;
  }
  const m=ecoMeta(s.stage),depot=['eco-interviews','eco-response','eco-stop','eco-verify'].includes(s.stage);
  return `<div class="chapter-heading"><div><p class="eyebrow">${C('age')}</p><h1>${m[1]}</h1></div><span class="chapter-progress">${m[0]}<span> / 12</span></span></div><div class="game-grid eco-game"><section class="stage-column">${actor()}${scene(depot?'eco-depot':'eco-river',C(depot?'depotAlt':'riverAlt'))}<div class="scene-tools">${button('hint',t('Hinweis'),'tool-button')}</div><div class="case-story">${story}</div></section><aside class="paper-panel"><p class="chapter-label">${C('title')}</p>${panel}${feedback?`<p class="feedback" role="status">${esc(feedback)}</p>`:''}</aside></div>`;
 }
 export function ecoNotebook(s,esc){
- if(!ECO_STAGES.includes(s.stage))return '';
+ if(!ECO_STAGES.includes(s.stage)&&!s.eco.published)return '';
  const c=s.eco,C=ecoText,entry=(title,body)=>`<article><h3>${esc(title)}</h3><p>${esc(body)}</p></article>`;
  let out=`<h2>${C('notes')}</h2>`;
  if(c.briefed)out+=entry(C('briefTitle'),C('briefText'));
