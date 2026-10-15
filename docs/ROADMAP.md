@@ -1,18 +1,18 @@
 # Nächste Entwicklungsabschnitte
 
-## 1. Projektübernahme
+## 1. Projektübernahme — erledigt
 
 Dateiintegrität, zwölf vorhandene Tests und lokale Startfähigkeit prüfen. Den Projektordner als primäre Arbeitsbasis nutzen. Das private GitHub-Repository TimonNetzel/tamatem-dina ist eingerichtet. Auf anderen Rechnern das bestehende Repository klonen. Der Kontext des alten Chats ist dafür nicht erforderlich.
 
-## 2. Bestehenden Prolog absichern
+## 2. Bestehenden Prolog absichern — Browser geprüft, Gerätetest offen
 
-Visueller Browserdurchlauf, Tastaturbedienung, schmaler Bildschirm, Dialoge, Speichern und Import prüfen. Echte iPhone- und Offline-Prüfung ergänzen, sobald das Gerät verfügbar ist. Aus Toolbeschränkungen keine bestandenen Prüfungen ableiten.
+Dreisprachiger Prolog und Fluss wurden in Chromium durchgespielt: Sprachwechsel, Tastatureinstieg, schmale Bildschirme, Dialoge, Speichern, Import und echtes Offline-Neuladen. Echte iPhone- und Offline-Prüfung ergänzen, sobald das Gerät verfügbar ist. Aus Toolbeschränkungen keine bestandenen Prüfungen ableiten.
 
-## 3. Fluss
+## 3. Fluss — umgesetzt
 
 Tamatem und Oris erreichen den unsicheren Stamm. Spielbare Untersuchung, Erkundung der Gegenseite durch Oris und Verwendung der Stoffschlinge. Weitergehen erst bei gesichertem Übergang. Vorhandene Prolog-Spielstände anschließen. Details: episodes/01-lumenbluete.md, Station 6 und Rätsel B.
 
-## 4. Quellgarten
+## 4. Quellgarten — nächster Inhaltsabschnitt
 
 Hüter, sechs drehbare Kanalstücke, sichtbarer Wasserweg und Erfolgsszene. Geplante Lösung: Quelle → A → B → C → F → E → D → Wurzelbecken. Kein verbrauchbarer Wasservorrat oder unsichtbarer Countdown. Details im Episodendokument.
 

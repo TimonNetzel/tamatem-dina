@@ -1,52 +1,42 @@
 # Entwicklungsstand
 
-Übergabestand: 15. Oktober 2026. Ausgangsversion: Prolog 0.1.
+Stand: 15. Oktober 2026. Entwicklungsfassung 0.2: dreisprachiger Prolog und Flussübergang.
 
-## Entwicklungsablage
+## Entwicklungsablage und Veröffentlichung
 
-Privates GitHub-Repository: https://github.com/TimonNetzel/tamatem-dina, Hauptzweig main. Der Nutzer hat Einrichtung und Upload ausdrücklich erlaubt. Der Projektordner ist als eigenes Git-Repository eingerichtet und mit origin verbunden. Die bestehende Sites-Veröffentlichung wird durch die Repository-Einrichtung nicht neu bereitgestellt.
+Privates GitHub-Repository: TimonNetzel/tamatem-dina, Hauptzweig main. Die bisherige Sites-Veröffentlichung enthält Prolog 0.1. Die neue Fassung wird als abgeschlossenes Arbeitspaket auf main gesichert; den bestätigten GitHub-Stand anhand von Git-Historie und Remote prüfen. Die spielbare Site wurde hier nicht aktualisiert. Identität und vorheriger Veröffentlichungsstand: DEPLOYMENT.md.
 
 ## Implementiert
 
-- Einstieg mit fertiger Arbeitstischillustration.
-- Spielbare Dina; vier Quellen lesen und drei Belegfelder zuordnen.
-- Bestätigung der korrekten Recherche, hilfreiche Rückmeldungen bei Fehlern.
-- Krankheitsszene; Wechsel zu Tamatem; Gespräche mit Dina und der Ärztin.
-- Entscheidung: Angst benennen oder sich auf den Bericht konzentrieren.
-- Recherchekarte ins Notizbuch übernehmen, vier Gegenstände einpacken.
-- Aufbruch erst bei vollständiger Ausrüstung und übernommener Karte.
-- Begegnung mit Oris, zwei Antwortmöglichkeiten und klar markiertes Prologende.
-- Notizbuch, drei Hinweisstufen, Fundstückmarkierungen, lokale Speicherung, Spielstandexport und -import mit Bestätigung.
-- Service Worker und Bereitschaftsanzeige für vollständig vorhandene Offline-Dateien.
-- Erzeugung einer vollständig eingebetteten HTML-Datei für den Laptop.
-
-## Noch nicht implementiert
-
-Flussübergang, Quellgarten mit Kanalrätsel, Blütenkammer, Rückweg und gemeinsames Heilungsfinale. Level 2–7 sind Konzeptentwürfe. Auch Ton und Musik sind derzeit nicht implementiert.
+- Vorhandener Prolog: Dinas Quellenrecherche, Krankheitsszene, Wechsel zu Tamatem, beide frühen Entscheidungen, Karte übernehmen, vier Gegenstände packen und Oris begegnen.
+- Sprachwahl vor Spielbeginn und im Menü: Deutsch, Englisch, natürliches ägyptisches Arabisch in arabischer Schrift. Dialoge, Quellen, Notizbuch, Hilfen, Menüs, Rückmeldungen und zugängliche Beschriftungen werden übersetzt. Die arabische Oberfläche liest von rechts nach links; Bildkoordinaten bleiben erhalten.
+- Sprachpräferenz getrennt vom Spielfortschritt gespeichert. Bei nicht verfügbarer Speicherung bleiben Sprachwahl und Spielen während der Sitzung möglich.
+- Neue Flussillustration anhand der vorhandenen Figuren- und Stilreferenzen. Stamm untersuchen, Oris die Gegenseite prüfen lassen, Stoffschlinge auswählen, Halteschlaufe und Öse verbinden. Sichtbare Sicherung mit reduzierbarer Animation, dreistufige Hilfe, Fehlversuche ohne Gegenstandsverlust.
+- Gesicherte Überquerung als zwei fortsetzbare Comic-Panels; Entwicklungsabschluss am anderen Ufer mit Ausblick auf den Quellgarten.
+- Spielstandformat 2. Alte Prolog-Spielstände setzen ohne Neustart fort; das frühere Ende wird zum Flussanschluss. Inventar und Entscheidungen bleiben erhalten. Lokaler Speicherschlüssel und Exportkennung bleiben unverändert.
+- Web-App-Offline-Cache und eigenständige Laptop-HTML enthalten neue Illustration und alle drei Sprachen.
 
 ## Tatsächlich geprüft
 
-- Zwölf automatische Prüfungen für Spielzustände und simuliertes Offline-Cache-Verhalten bestanden.
-- Alle vier Kombinationen der beiden Entscheidungen erreichen das Prologende und überstehen den Speicher-Rundlauf.
-- JavaScript-Syntax geprüft; keine externen Laufzeitpakete erforderlich.
-- Offline-Einzeldatei auf eingebettete Bilder, fehlende externe Skript-/Stylesheet-Abhängigkeiten und syntaktisch gültiges zusammengeführtes Skript geprüft.
-- Private Veröffentlichung durch Sites als erfolgreich bestätigt. Identität und Ausgangscommit: DEPLOYMENT.md.
-- Nutzer hat die sichtbare Gestaltung positiv beurteilt.
-- Die zwölf Tests wurden im neuen Übergabeordner erneut ausgeführt und bestanden. Die 17 übernommenen Anwendungs-, Bild- und Testdateien stimmen bytegenau mit dem ursprünglichen Quellstand überein.
+- `npm test`: 20 Prüfungen bestanden, keine fehlgeschlagen oder übersprungen. Darunter alle vier Entscheidungskombinationen bis nach der Überquerung, Spielstandmigration, Rundlauf jedes Flussschritts, ungültige Fortschritte, Übersetzungsvollständigkeit, simuliertes Cache-Verhalten und HTML-Export einschließlich eingebetteter Bilder, Skriptsyntax und Ausführung der eingebetteten Module gegen ein minimales Dokument in allen drei Sprachen. Diese Modulausführung ist kein visueller Dateiaufruf im Browser.
+- `python tests/browser-smoke.py`: vollständiger Durchlauf von Prolog und Fluss in Chromium auf Deutsch, Englisch und ägyptischem Arabisch. Fehlversuche, Hilfen, Dialoge, Notizbuch, Export, bestätigter Import alter Spielstände und Fortsetzung nach Neuladen geprüft. Sprachwechsel lässt den Spielfortschritt unverändert.
+- Echtes Offline-Neuladen über den Service Worker in allen drei Browserdurchläufen; das Flussrätsel einschließlich zwischengespeicherter Befestigung und Überquerung wurde bei abgeschaltetem Netzwerk abgeschlossen.
+- Ansichten bei 320 und 390 CSS-Pixel Breite ohne horizontalen Überlauf; deutscher Desktopdurchlauf bei 1440 Pixeln. Arabische Leserichtung, sichtbare Texte und zugängliche Beschriftungen geprüft; Screenshots der Desktop- und mobilen Flussansicht visuell kontrolliert.
+- Tastatureinstieg und Dialogschließen mit Escape geprüft. Fokus bleibt bei wiederholten Aktionen im Fluss erhalten. Sitzung mit blockierter lokaler Speicherung bleibt spielbar und umschaltbar.
 
 ## Offene Prüfungen und bekannte Grenzen
 
-- Keine abgeschlossene visuelle Browserprüfung durch das Browserwerkzeug. Die lokale Vorschau scheiterte zunächst an der Netzwerksandbox; ein späterer Versuch, die Fehlerseite zu beobachten, wurde durch die Browser-URL-Richtlinie abgelehnt. Diesen Richtlinienblock nicht umgehen.
-- Kein Test auf einem echten iPhone. Safari-Installation, Offline-Neuladen, Speicherung und Touchbedienung sind offen.
-- Die geplanten etwa fünf Minuten sind noch nicht durch einen unvorbereiteten Spieldurchlauf gemessen.
-- Spielstände werden nicht automatisch zwischen Geräten synchronisiert.
-- Die Cache-Tests sind Simulationen und ersetzen keine reale Offline-Browserprüfung.
+- Kein Test auf einem echten iPhone. Safari-Installation, Offline-Neuladen und tatsächliche Touchbedienung bleiben offen. Chromium mit schmalem Fenster ersetzt diese Geräteprüfung nicht.
+- Die ägyptisch-arabischen Texte benötigen noch eine muttersprachliche Qualitätsprüfung; der Nutzer hat natürlichen ägyptischen Dialekt für Dialoge und Erzähltexte festgelegt.
+- Direkter Browseraufruf der exportierten HTML-Datei per file:// wird in dieser Umgebung mit ERR_BLOCKED_BY_ADMINISTRATOR abgelehnt. Die Richtlinie wurde nicht umgangen. Erzeugung, Einbettung und Skriptsyntax der Einzeldatei wurden geprüft; ihr direkter Browserbetrieb am Laptop bleibt separat zu prüfen.
+- Keine unabhängige Messung der tatsächlichen Spieldauer. Ziel für das vollständige Level: 15–30 Minuten.
+- Spielstände bleiben gerätelokal; keine automatische Synchronisierung.
+- Die Übergabe-Hashliste bleibt eine unveränderte Momentaufnahme von Prolog 0.1. Abweichungen durch diese absichtliche Weiterentwicklung sind erwartbar.
 
-## Nächste sinnvolle Schritte
+## Noch nicht implementiert / nächster Schritt
 
-1. Beim Öffnen auf einem neuen Rechner das vorhandene Repository klonen und die zwölf Tests ausführen. Für die Weiterentwicklung dieses Repository verwenden.
-2. Den vorhandenen Prolog mit zulässigem Browserzugriff visuell und funktional prüfen. Echte Geräteprüfung bei Verfügbarkeit ergänzen.
-3. Flussrätsel nach dem vorhandenen Episodenplan umsetzen, einschließlich nötiger Illustration, Zustände und Spielstandfortsetzung.
-4. Anschließend Quellgarten, Blütenkammer, Rückweg und Finale ergänzen.
+Als Nächstes: Quellgarten mit Hüter, sechs drehbaren Kanalplatten und sichtbarer Wiederbewässerung. Den aktuellen Flussabschluss anschließen und neue Texte unmittelbar in allen drei Sprachen pflegen. Danach Blütenkammer, Rückweg und gemeinsames Heilungsfinale. Level 2–7 bleiben Konzeptentwürfe; Ton und Musik sind nicht implementiert.
 
-Bei Abschluss einer Aufgabe diese Datei knapp aktualisieren: Umsetzung, tatsächlich ausgeführte Prüfungen, offene Punkte, nächste konkrete Aufgabe. Die Übergabe-Hashliste ist nur eine Momentaufnahme vor weiteren Änderungen.
+## Arbeitsablauf und Chatübergabe
+
+Der Assistent übernimmt künftig Commit und Push abgeschlossener Arbeitspakete sowie die Pflege der Übergabe. Verbindlicher Ablauf: WORKFLOW.md, Einstieg über AGENTS.md. Den nächsten Chatwechsel nach dem Quellgarten selbst ankündigen und den passenden Prompt in CODEX_STARTPROMPT.md speichern und direkt ausgeben.

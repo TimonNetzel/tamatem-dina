@@ -2,11 +2,11 @@
 
 ## Ziel
 
-Das vorhandene farbige Comic-Adventure für Erwachsene auf Deutsch weiterentwickeln. Browser, Laptop und iPhone; nach Erstdownload offline. Sieben Episoden, jeweils 15–30 Minuten, Tamatem ist 6, 8, 10, 12, 14, 16 und 18. Beide Hauptfiguren sind spielbar.
+Das vorhandene farbige Comic-Adventure für Erwachsene weiterentwickeln. Sprachen: Deutsch, Englisch und natürliches ägyptisches Arabisch. Browser, Laptop und iPhone; nach Erstdownload offline. Sieben Episoden, jeweils 15–30 Minuten, Tamatem ist 6, 8, 10, 12, 14, 16 und 18. Beide Hauptfiguren sind spielbar.
 
 ## Stand
 
-Prolog 0.1 bis zur ersten Begegnung mit Oris ist implementiert und privat veröffentlicht. Weiterer Spielinhalt ist geplant. Details und offene Prüfungen stehen in STATUS.md.
+Version 0.2 enthält den dreisprachigen Prolog und den Flussübergang mit Oris. Die frühere private Veröffentlichung enthält noch Prolog 0.1; die Erweiterung wurde hier nicht veröffentlicht. Weiterer Spielinhalt ist geplant. Details und offene Prüfungen stehen in STATUS.md.
 
 ## Gezielt nachlesen
 
@@ -21,7 +21,7 @@ Prolog 0.1 bis zur ersten Begegnung mit Oris ist implementiert und privat veröf
 
 ## Nächste Aufgabe
 
-Zuerst Übernahme und vorhandene Tests prüfen. Danach den Prolog visuell im Browser kontrollieren und die Fortsetzung am Fluss vorbereiten. Fehlende Browser- oder iPhone-Zugriffe offen festhalten; unabhängige Inhaltsarbeit kann weitergehen. Keinen kompletten Neubau beginnen.
+Als Nächstes den Quellgarten mit Hüter und sechs Kanalplatten umsetzen; Details im Episodendokument, Stationen 7–8 und Rätsel C. Den bisherigen Flussabschluss als Übergang anschließen und Spielstände erhalten. Neue Texte in allen drei Sprachen ergänzen. Browserdurchläufe für Prolog und Fluss sind vorhanden; echte iPhone-Prüfung und muttersprachliche arabische Prüfung stehen aus.
 
 ## Priorität der Unterlagen
 

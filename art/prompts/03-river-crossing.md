@@ -1,0 +1,11 @@
+# Flussübergang – Bildprompt und Verwendung
+
+Erstellt am 15. Oktober 2026 mit dem integrierten Bildwerkzeug. Spielasset: `dist/assets/river.png` (1672 × 941). Referenzen: `art/references/character-sheet-v1.png` und `dist/assets/threshold.png`. Die Bildreferenzen wurden vor der Generierung angesehen.
+
+## Verwendeter Prompt
+
+Create a NEW landscape game background illustration for the next scene of the existing illustrated adventure Tamatem & Dina. Use the attached character sheet and existing threshold scene as strict style and character references. Save the resulting image locally for use as a game asset. Wide landscape 16:9 composition, no text, no letters, no UI. Scene: a woodland river at blue twilight, rushing teal water, a large fallen tree trunk crossing diagonally from the near bank in the lower left toward the opposite bank in the upper right. Make the entire tree trunk clearly visible and long enough to reach the firm far shore. On the NEAR bank a large old iron anchoring eye fixed in a rock, and a distinct old holding loop around the near end of the trunk. They are near each other but currently UNCONNECTED, no safety sling attached. These are visible puzzle objects. Tamatem, a visibly SIX YEAR OLD small boy, platinum blond hair, BROWN eyebrows and BROWN eyes, fair skin, beige field jacket, petrol sweater vest, brown shorts, travel backpack, stands safely on the near shore at the left, thoughtfully observing the crossing. His broad cloth sling is still packed, not attached. Oris the barn owl perches above him on a branch; no Dina present. Match the warm parchment highlights, dark ink contours, delicate hatching, expressive faces and petrol shadows of the references. Mature European adventure comic art, richly illustrated but readable game composition. Show the river as dangerous but no one in danger or falling. Important interaction targets (trunk, near holding loop, iron eye, owl) distinct. No embedded captions or words.
+
+## Umsetzung
+
+Das erzeugte Bild wurde visuell mit den Referenzen abgeglichen. Der gesicherte Zustand wird mit einer separaten SVG-Stoffschlinge dargestellt. Text, Objektauswahl und Rückmeldungen bleiben HTML. Zwei Ausschnitte mit getrennten Texten erzählen die Überquerung ohne Zeitdruck. Bei arabischer Oberfläche bleiben Bild und Objektkoordinaten unverändert.

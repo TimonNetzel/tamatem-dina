@@ -4,7 +4,7 @@ Stand: Nutzerfestlegungen und Rückmeldungen bis zur Projektübergabe am 15. Okt
 
 ## Spiel
 
-- Erwachsene Zielgruppe, deutsche Texte.
+- Erwachsene Zielgruppe. Spielsprache wählbar: Deutsch, Englisch und natürliches ägyptisches Arabisch in arabischer Schrift für Dialoge und Erzähltexte. Ruhiger Humor und Figurencharakter bleiben erhalten. Diese Nutzerfestlegung erweitert die ursprünglich deutsche Fassung.
 - Farbiger, angenehmer Comic-Look nach den beiden beigefügten Storyboards; Comic und Point-and-Click als Spielform.
 - Browser auf Laptop und iPhone, Hochformat vollständig spielbar. Offline nach vollständigem Erstdownload.
 - Sieben Level, je ungefähr 15–30 Minuten. Tamatem ist 6, 8, 10, 12, 14, 16 und 18 Jahre alt. Die frühere Angabe „ein Jahr pro Level“ wurde ausdrücklich durch Zweierschritte geklärt.

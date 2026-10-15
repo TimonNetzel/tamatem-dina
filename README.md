@@ -2,7 +2,7 @@
 
 Vollständige Projektübergabe für Codex · 15. Oktober 2026 · Prolog 0.1
 
-Ein deutsches Comic- und Point-and-Click-Abenteuer für Erwachsene. Geplant sind sieben Episoden von Tamatems sechstem bis achtzehntem Lebensjahr. Der erste Prolog ist vorhanden; seine Weiterentwicklung beginnt auf dieser Basis.
+Ein Comic- und Point-and-Click-Abenteuer für Erwachsene, wahlweise auf Deutsch, Englisch und ägyptischem Arabisch. Geplant sind sieben Episoden von Tamatems sechstem bis achtzehntem Lebensjahr. Der Prolog und der Flussübergang sind vorhanden; darauf baut die Weiterentwicklung auf.
 
 Private Entwicklungsablage: [TimonNetzel/tamatem-dina](https://github.com/TimonNetzel/tamatem-dina). Hauptzweig: main. Die bestehende Sites-Adresse bleibt der Veröffentlichungsweg.
 
@@ -26,7 +26,7 @@ Das Projekt ist lokal bereits vollständig vorhanden und hat ein eigenes Git-Rep
 
 [Private Spieladresse](https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site)
 
-Enthalten: Dinas Quellenrätsel, Krankheitsszene und Perspektivwechsel, Tamatems Entscheidung, Packen und Begegnung mit Oris. Die folgende Reise, Heilung und die übrigen sechs Episoden sind noch nicht implementiert. Vorgesehen sind etwa fünf Minuten für den Prolog; keine unabhängige Zeitmessung liegt vor.
+Die private Adresse zeigt den früheren Prolog 0.1. Der aktuelle Entwicklungsstand 0.2 ergänzt Sprachwahl und Flussrätsel; er wurde noch nicht neu veröffentlicht. Enthalten sind Dinas Quellenrätsel, Krankheitsszene und Perspektivwechsel, Tamatems Entscheidung, Packen, Oris und der gesicherte Flussübergang. Quellgarten, Heilungsfinale und die übrigen sechs Episoden sind noch nicht implementiert. Eine unabhängige Zeitmessung liegt nicht vor.
 
 ## Lokal ausführen
 
@@ -36,9 +36,11 @@ Benötigt wird eine aktuelle Node.js-Laufzeit. Der bestehende Code benötigt kei
 
 Danach ist die Vorschau unter http://127.0.0.1:4173 erreichbar. Der Server bindet an den eigenen Rechner; diese Adresse ist auf dem iPhone kein Link zum Laptop.
 
-    node --test tests/story.test.mjs tests/offline.test.mjs
+    npm test
 
-Die zwölf Prüfungen wurden vor der Übergabe bereits bestanden. Den Übernahmestand prüft zusätzlich, einmal vor Änderungen:
+Die 20 automatischen Prüfungen decken Spielregeln, alte Spielstände, Übersetzungen, Offline-Cache und HTML-Export ab. Zusätzliche Browserprüfung mit installiertem Python-Playwright und Chromium gegen den laufenden Server: `python tests/browser-smoke.py`.
+
+Die ursprüngliche Übergabe-Momentaufnahme prüft:
 
     node scripts/verify-handoff.mjs
 
@@ -48,9 +50,9 @@ Die Hashliste ist eine Momentaufnahme der Übergabe. Nach absichtlichen Änderun
 
     node make-offline.mjs ABSOLUTER_AUSGABEPFAD
 
-Der Zielname sollte auf .html enden. Die erzeugte Einzeldatei enthält alle vier Bilder und die Spiellogik und ist für das direkte Öffnen am Laptop gedacht. Große erzeugte Einzeldateien und ZIP-Dateien gehören in Veröffentlichungen oder einen Ausgabeordner, nicht bei jeder Änderung erneut in Git.
+Der Zielname sollte auf .html enden. Die erzeugte Einzeldatei enthält alle fünf Bilder und alle drei Sprachen und die Spiellogik und ist für das direkte Öffnen am Laptop gedacht. Große erzeugte Einzeldateien und ZIP-Dateien gehören in Veröffentlichungen oder einen Ausgabeordner, nicht bei jeder Änderung erneut in Git.
 
-Auf dem iPhone ist die Web-App über Safari und den Home-Bildschirm vorgesehen. Vor dem Offline-Spielen vollständig laden und auf „Offline bereit“ warten. Eine echte iPhone-Prüfung steht aus.
+Auf dem iPhone ist die Web-App über Safari und den Home-Bildschirm vorgesehen. Vor dem Offline-Spielen vollständig laden und auf „Offline bereit“ warten. Chromium-Durchläufe mit tatsächlichem Offline-Neuladen wurden bestanden. Eine echte iPhone-Prüfung steht aus.
 
 ## Was das Paket enthält
 

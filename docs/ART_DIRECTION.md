@@ -43,6 +43,10 @@ Dina und Tamatem vergleichen botanische Unterlagen an einem gemeinsamen Tisch. F
 
 Für die spätere Interaktion relevante Bildbereiche sind Quellenmappe, Reiseaufzeichnung, Pflanzenzeichnung, Werbeprospekt und Notizbuch. Im fertigen Spiel werden diese Gegenstände als eigene Ebenen beziehungsweise klar definierte Interaktionsbereiche aufgebaut. Dekorative Schrift in einer Illustration ersetzt keine lesbaren Quellenkarten.
 
+## Neue Szene: Flussübergang
+
+`dist/assets/river.png` ergänzt den vorhandenen Stil. Öse, Halteschlaufe, Stamm und Oris sind getrennt anwählbar. Eine SVG-Ebene zeigt die Befestigung; Text und Rätselzustand sind nicht in das Bild eingebrannt. Referenzen und vollständiger Prompt: `art/prompts/03-river-crossing.md`.
+
 ## Übertragung in die Spieloberfläche
 
 - Dialoge werden als echter, skalierbarer Text über oder neben den Bildern angezeigt.
@@ -59,7 +63,7 @@ Der erste spielbare Prolog ist inzwischen umgesetzt. Spieladresse, Offline-Datei
 
 1. Die Figurenansichten als gemeinsame Referenz verwenden.
 2. Arbeitszimmer und Quellenkarten für den Prolog in getrennten Ebenen vorbereiten.
-3. Die Oberfläche mit echten deutschen Texten aufbauen.
+3. Die Oberfläche mit echten Texten auf Deutsch, Englisch und ägyptischem Arabisch aufbauen.
 4. Dinas Quellenrätsel, Perspektivwechsel zu Tamatem, Krankheitsszene und Packen des Rucksacks umsetzen.
 5. Touchbedienung, Fortsetzen und Offline-Laden am tatsächlich ausführbaren Prototyp prüfen.
 
