@@ -1,0 +1,15 @@
+node_modules/
+.sites-runtime/
+.sites-publish/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log
+*.tar.gz
+*.zip
+releases/
+generated/
+Thumbs.db
+.DS_Store

@@ -1,0 +1,73 @@
+{
+  "published_source_commit": "8753dcebaefc00fd7f80b95c14b3d9e2452d2ac5",
+  "files": [
+    {
+      "path": "dist/app.js",
+      "sha256": "a4a43859d6b98f8ae4ffef5bcb216f2750ac08d3e892cbfa1a13cc5a005a44fc"
+    },
+    {
+      "path": "dist/assets/characters.png",
+      "sha256": "80dc9524ec8e92b8659ed2edcaf310192f7dcbacec6f47d24bdd951fca780179"
+    },
+    {
+      "path": "dist/assets/icon.svg",
+      "sha256": "4a14d09a488a40fcfa1dd909647af190651b26f2ba2fe6518874ad0fc3dee8f2"
+    },
+    {
+      "path": "dist/assets/illness.png",
+      "sha256": "c089f87077318f0fe4f84cd74ed6c16b3eaeea365562d430dc22654d5ba7c4c9"
+    },
+    {
+      "path": "dist/assets/threshold.png",
+      "sha256": "e553c978fc4a37fdc428a5df8b025d3495a0548f08b690239420a057f6e2127c"
+    },
+    {
+      "path": "dist/assets/workroom.png",
+      "sha256": "4a31207c9711518a556f3a9c64b61fdbd3aa46ec675791c5be662e5a5d1f1dde"
+    },
+    {
+      "path": "dist/data.js",
+      "sha256": "0596d0b94b6ea605f08db6b3e62eda614dc8a05aad8b12fbf8c0d1a08bc5fb42"
+    },
+    {
+      "path": "dist/index.html",
+      "sha256": "f33f7ce5d967a901127505a5502e0f5ff46b854573e41853a878a0fb1938a7a9"
+    },
+    {
+      "path": "dist/manifest.webmanifest",
+      "sha256": "192abe39460cc1249a26920f863e8af76ac1904a64efc6364964518076298862"
+    },
+    {
+      "path": "dist/state.js",
+      "sha256": "478d2c6d7a250d9d524c92828b45a76d0f6687c424a0113c682bb80d2ca94671"
+    },
+    {
+      "path": "dist/style.css",
+      "sha256": "d699316429413b458d6ac3916bdbdd79a9f4c2bc59062a3b8fb3b21c1b67e613"
+    },
+    {
+      "path": "dist/sw.js",
+      "sha256": "cdbae7aae1b12eb4d3721d503cf66fdc493831363123cddc65fe1dc1383c3339"
+    },
+    {
+      "path": "make-offline.mjs",
+      "sha256": "229cc634d60e2adaf2d8d7d41b5e1b5e86b62c77795940d01f1a37c578329419"
+    },
+    {
+      "path": "package.json",
+      "sha256": "7be3ab30e67ac84bd320734360cf134d890ad51021efc3767cd5b14a7cec46e9"
+    },
+    {
+      "path": "server.mjs",
+      "sha256": "b07e6be43a73d5801b1bc5b2c089e40f82a82558835a1105518d48a26716d436"
+    },
+    {
+      "path": "tests/offline.test.mjs",
+      "sha256": "5cc19d434cda374eacb71e306849d9433ee76cdb0a66da13ae6456ab8673faa2"
+    },
+    {
+      "path": "tests/story.test.mjs",
+      "sha256": "c8d7e4b70a527bb2abc9068283d0832df1748d789de71354a871d33a0aa743ac"
+    }
+  ]
+}

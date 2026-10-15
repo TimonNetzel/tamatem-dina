@@ -1,0 +1,216 @@
+{
+  "snapshot": "2026-10-15-github-initial-v1",
+  "note": "Momentaufnahme des initialen GitHub-Projektstands; nach Weiterentwicklung sind Abweichungen erwartbar.",
+  "files": [
+    {
+      "path": ".agents/skills/tamatem-dina-entwicklung/SKILL.md",
+      "bytes": 2722,
+      "sha256": "9647556ab307eef01306558721f7af91fb58db953cad56caf1e3b664f2b3266f"
+    },
+    {
+      "path": ".gitattributes",
+      "bytes": 197,
+      "sha256": "a3257a1b37fa1691d14a4d995dfbc396279aa8ea6cb608cd375605d81fef1f91"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 146,
+      "sha256": "644caa8b36ebb0a43955eca42144c4f3b4e1e2ef4eb9e65295f6a8a0be09e071"
+    },
+    {
+      "path": ".openai/hosting.json",
+      "bytes": 100,
+      "sha256": "578d2b23584824a0da5e1ad24fc33d50ef6b224900ee3c671c699b65c656d41d"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2252,
+      "sha256": "dae7b228500a072b7fdd1519f79eeedd80672500d34d90d2a6d42b9d8f41534d"
+    },
+    {
+      "path": "art/prompts/01-model-sheet-and-workroom.md",
+      "bytes": 7739,
+      "sha256": "f59f02647f5c7c370636bd3404152e6534a0916be7de06f53bb55badefa63546"
+    },
+    {
+      "path": "art/prompts/02-bedroom-and-forest.md",
+      "bytes": 3387,
+      "sha256": "f4633341453ae3c67b3b5eff78437a8aa5d71f240c255ca100127b8f434164d3"
+    },
+    {
+      "path": "art/README.md",
+      "bytes": 984,
+      "sha256": "41c77296eea13f6ee08041e67453358dcaa3470b5df2b5127f630c26d99631a4"
+    },
+    {
+      "path": "art/references/character-sheet-v1.png",
+      "bytes": 2985013,
+      "sha256": "80dc9524ec8e92b8659ed2edcaf310192f7dcbacec6f47d24bdd951fca780179"
+    },
+    {
+      "path": "art/storyboards/dina-is-journalist-reference.jpg",
+      "bytes": 2935195,
+      "sha256": "d8967ced49a400497e756e835bd1d4ba08f2343ac44a3c231e557bdd5a3d45e0"
+    },
+    {
+      "path": "art/storyboards/dina-is-sick-reference.jpg",
+      "bytes": 2507226,
+      "sha256": "0879a3b8b9771bf04f35deeee0f1caf017175cf4dab96c5a3833d372db93f7ee"
+    },
+    {
+      "path": "CODEX_STARTPROMPT.md",
+      "bytes": 2202,
+      "sha256": "b4ae3235914862dfb4dc7254750d6a32638bbc2d923f1a6ed42c41297729cab2"
+    },
+    {
+      "path": "dist/app.js",
+      "bytes": 27641,
+      "sha256": "a4a43859d6b98f8ae4ffef5bcb216f2750ac08d3e892cbfa1a13cc5a005a44fc"
+    },
+    {
+      "path": "dist/assets/characters.png",
+      "bytes": 2985013,
+      "sha256": "80dc9524ec8e92b8659ed2edcaf310192f7dcbacec6f47d24bdd951fca780179"
+    },
+    {
+      "path": "dist/assets/icon.svg",
+      "bytes": 390,
+      "sha256": "4a14d09a488a40fcfa1dd909647af190651b26f2ba2fe6518874ad0fc3dee8f2"
+    },
+    {
+      "path": "dist/assets/illness.png",
+      "bytes": 2810637,
+      "sha256": "c089f87077318f0fe4f84cd74ed6c16b3eaeea365562d430dc22654d5ba7c4c9"
+    },
+    {
+      "path": "dist/assets/threshold.png",
+      "bytes": 3051205,
+      "sha256": "e553c978fc4a37fdc428a5df8b025d3495a0548f08b690239420a057f6e2127c"
+    },
+    {
+      "path": "dist/assets/workroom.png",
+      "bytes": 2736748,
+      "sha256": "4a31207c9711518a556f3a9c64b61fdbd3aa46ec675791c5be662e5a5d1f1dde"
+    },
+    {
+      "path": "dist/data.js",
+      "bytes": 6601,
+      "sha256": "0596d0b94b6ea605f08db6b3e62eda614dc8a05aad8b12fbf8c0d1a08bc5fb42"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 2015,
+      "sha256": "f33f7ce5d967a901127505a5502e0f5ff46b854573e41853a878a0fb1938a7a9"
+    },
+    {
+      "path": "dist/manifest.webmanifest",
+      "bytes": 299,
+      "sha256": "192abe39460cc1249a26920f863e8af76ac1904a64efc6364964518076298862"
+    },
+    {
+      "path": "dist/state.js",
+      "bytes": 4112,
+      "sha256": "478d2c6d7a250d9d524c92828b45a76d0f6687c424a0113c682bb80d2ca94671"
+    },
+    {
+      "path": "dist/style.css",
+      "bytes": 24576,
+      "sha256": "d699316429413b458d6ac3916bdbdd79a9f4c2bc59062a3b8fb3b21c1b67e613"
+    },
+    {
+      "path": "dist/sw.js",
+      "bytes": 1567,
+      "sha256": "cdbae7aae1b12eb4d3721d503cf66fdc493831363123cddc65fe1dc1383c3339"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 2694,
+      "sha256": "91a1746c6e3120a05a1142222fafa81a5542b6e0edd392afbfa3d734d6e8b880"
+    },
+    {
+      "path": "docs/ART_DIRECTION.md",
+      "bytes": 5690,
+      "sha256": "2a63655a9f4f9b840438d3a409d5f7e181cef288b9e101fc96ac3d4f19a71653"
+    },
+    {
+      "path": "docs/CANON.md",
+      "bytes": 3327,
+      "sha256": "704d4f39d3b28b326c9e5cf483e4c0305ff367bd6df61eebfa92020963808c64"
+    },
+    {
+      "path": "docs/DECISIONS.md",
+      "bytes": 1787,
+      "sha256": "2601837bb832d9ec267e1feab57becbc202c524f417601b189ee93fe34dc8498"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "bytes": 4438,
+      "sha256": "cc3a2289b7bec6f12621fd88f18e7a1e3a1110b910e570131959085a26235375"
+    },
+    {
+      "path": "docs/episodes/01-lumenbluete.md",
+      "bytes": 28500,
+      "sha256": "d5afa995b00e384b116438a40337581686198449502de02eea8063a587fc83c7"
+    },
+    {
+      "path": "docs/GAME_DESIGN.md",
+      "bytes": 24365,
+      "sha256": "2a508bf1cb7b12bdd1992b578d20fa548af5821479fbef32e0d739fcd96ae5cb"
+    },
+    {
+      "path": "docs/HANDOFF_BASELINE.json",
+      "bytes": 2329,
+      "sha256": "e0ccd2a14824107269ff31fbff0418e9abc72ae8d38ed19538402dc851783d2e"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "bytes": 2021,
+      "sha256": "f56a4c2dc65ed1b7c89cef1ff4da360f00c625495c6e67ea9c552235bc626270"
+    },
+    {
+      "path": "docs/START_HERE.md",
+      "bytes": 1763,
+      "sha256": "0e80f7e5a55c2bd50e976f4dc290519ebb8eb7ec5953ad70ad933e0c14e5f185"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "bytes": 3891,
+      "sha256": "476cf7b889e1b5ce6ff21a35eca53530a24e3b0ae4ef66d5098d6f700df1c6f0"
+    },
+    {
+      "path": "make-offline.mjs",
+      "bytes": 1549,
+      "sha256": "229cc634d60e2adaf2d8d7d41b5e1b5e86b62c77795940d01f1a37c578329419"
+    },
+    {
+      "path": "package.json",
+      "bytes": 131,
+      "sha256": "7be3ab30e67ac84bd320734360cf134d890ad51021efc3767cd5b14a7cec46e9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4503,
+      "sha256": "eb2d66ab8f6a30a1e7fba871a12da01e84c89566902b04d555ddb3a3e1655c36"
+    },
+    {
+      "path": "scripts/verify-handoff.mjs",
+      "bytes": 989,
+      "sha256": "77357049c2702cd3ee854c2990dfa4ad7c244835e914e870c2db1420c3edc761"
+    },
+    {
+      "path": "server.mjs",
+      "bytes": 1045,
+      "sha256": "b07e6be43a73d5801b1bc5b2c089e40f82a82558835a1105518d48a26716d436"
+    },
+    {
+      "path": "tests/offline.test.mjs",
+      "bytes": 2247,
+      "sha256": "5cc19d434cda374eacb71e306849d9433ee76cdb0a66da13ae6456ab8673faa2"
+    },
+    {
+      "path": "tests/story.test.mjs",
+      "bytes": 4090,
+      "sha256": "c8d7e4b70a527bb2abc9068283d0832df1748d789de71354a871d33a0aa743ac"
+    }
+  ]
+}

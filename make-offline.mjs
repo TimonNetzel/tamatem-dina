@@ -1,0 +1,14 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import path from 'node:path';
+const root=path.resolve('dist');
+const output=process.argv[2];if(!output||!path.isAbsolute(output))throw Error('Absoluten Ausgabepfad angeben.');
+const read=async name=>readFile(path.join(root,name),'utf8');
+const assets={};for(const name of ['workroom.png','characters.png','illness.png','threshold.png'])assets[name]='data:image/png;base64,'+(await readFile(path.join(root,'assets',name))).toString('base64');
+const icon='data:image/svg+xml;base64,'+(await readFile(path.join(root,'assets/icon.svg'))).toString('base64');
+let css=await read('style.css');css=css.replaceAll("url('./assets/characters.png')",`url('${assets['characters.png']}')`);
+const modules=await Promise.all(['state.js','data.js','app.js'].map(read));
+const script=modules.map(s=>s.replace(/^import .*?;\r?\n/gm,'').replace(/^export /gm,'')).join('\n');
+let html=await read('index.html');html=html.replace('<link rel="icon" href="./assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">',`<link rel="icon" href="${icon}" type="image/svg+xml">`);
+html=html.replace('<link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>',`<style>${css}</style>`);
+html=html.replace('</body>',`<script type="module">globalThis.TD_STANDALONE=true;globalThis.TD_ASSETS=${JSON.stringify(assets)};\n${script.replace(/<\/script/gi,'<\\/script')}</script></body>`);
+await writeFile(output,html,'utf8');console.log('Offline-Datei erstellt: '+output);

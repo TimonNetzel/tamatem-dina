@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="de">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+ <meta name="theme-color" content="#172b30"><meta name="description" content="Tamatem & Dina – ein farbiges Comic-Adventure. Spiele den Prolog zur Lumenblüte.">
+ <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+ <title>Tamatem & Dina – Zwischen den Zeilen</title>
+ <link rel="icon" href="./assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="./manifest.webmanifest">
+ <link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
+</head>
+<body>
+ <a class="skip-link" href="#main">Zum Spiel</a>
+ <div class="app-shell">
+  <header class="topbar"><a class="brand" href="#main" aria-label="Tamatem und Dina – Zum Spiel"><span class="brand-mark" aria-hidden="true">T<span>&</span>D</span><span class="brand-name">Tamatem & Dina<small>Zwischen den Zeilen</small></span></a><nav aria-label="Spielmenü"><button class="quiet-button" id="notebook-button" aria-label="Notizbuch öffnen">Notizbuch</button><button class="quiet-button" id="menu-button" aria-label="Spielmenü öffnen">Menü</button></nav></header>
+  <main id="main" tabindex="-1"></main>
+  <footer class="page-footer"><span>Ein Abenteuer in sieben Lebensabschnitten.</span><span class="offline-status" id="offline-status" role="status">Offline-Version wird vorbereitet …</span></footer>
+ </div>
+ <dialog id="modal" aria-labelledby="modal-title"><div id="modal-body"></div><button class="modal-x" aria-label="Schließen" id="modal-close">×</button></dialog>
+ <div class="toast" id="toast" role="status" aria-live="polite"></div>
+ <input type="file" id="import-file" accept="application/json,.json" hidden>
+ <noscript>Zum Spielen muss JavaScript im Browser aktiviert sein. Nach dem vollständigen Laden funktioniert der Prolog auch ohne Internet.</noscript>
+</body></html>
