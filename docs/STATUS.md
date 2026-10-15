@@ -4,7 +4,7 @@ Stand: 15. Oktober 2026. Entwicklungsfassung 0.5: Level 1 „Die Lumenblüte“ 
 
 ## Entwicklungsablage und Veröffentlichung
 
-Privates GitHub-Repository: TimonNetzel/tamatem-dina, Hauptzweig main. Ausgangspunkt dieses Pakets ist der von GitHub übernommene vollständige 0.4-Stand f636972. Abgeschlossene Arbeitspakete werden ohne Force nach main gepusht; den bestätigten Commit anhand von Git-Historie und Remote prüfen. Die bestehende Sites-Veröffentlichung enthält weiterhin Prolog 0.1. Dieses Paket veröffentlicht keine Site. Identität und veröffentlichter Stand: DEPLOYMENT.md.
+Privates GitHub-Repository: TimonNetzel/tamatem-dina, Hauptzweig main. Ausgangspunkt dieses Pakets ist der von GitHub übernommene vollständige 0.4-Stand f636972. Abgeschlossene Arbeitspakete werden ohne Force nach main gepusht; den bestätigten Commit anhand von Git-Historie und Remote prüfen. Version 0.5 mit beiden Leveln ist seit 15. Oktober 2026, 16:22 Uhr Europe/Berlin, auf der bestehenden privaten Site veröffentlicht. Die native Sites-Antwort bestätigt succeeded und die Spieladresse. Sites-Version 2 basiert auf Quellcommit 96659c6, dessen Quellbaum dem geprüften GitHub-Spielstand c178cc4 entspricht. Identität und veröffentlichter Stand: DEPLOYMENT.md.
 
 ## Implementiert
 
@@ -28,7 +28,7 @@ Privates GitHub-Repository: TimonNetzel/tamatem-dina, Hauptzweig main. Ausgangsp
 - Mobile Ansichten mit 320 und 390 CSS-Pixeln ohne horizontalen Überlauf, deutscher Desktop mit 1440 Pixeln. Deutsche Redaktion, arabisches Hofgespräch und englische mobile Ausgabe anhand tatsächlicher Screenshots visuell geprüft. Neue Auswahlfelder, Auswahlkarten und Radiobeschriftungen mindestens 44 CSS-Pixel hoch. Mobile Durchläufe verwenden emulierte Touchfähigkeit; die abschließenden Durchläufe lösen Spielknöpfe per tap aus. Kein echtes iPhone.
 - Tastatureinstieg, Escape, reduzierte Bewegung und spielbare Sitzung bei blockiertem lokalem Speicher bleiben im Browserdurchlauf geprüft. Sprachwechsel verändert die Fallentscheidungen nicht.
 - Offline-Einzeldatei erzeugt; alle elf eingebetteten Bilder, keine externen Skript-/Stylesheet-Abhängigkeiten, gültiges zusammengeführtes Skript und Ausführung gegen minimales Dokument in allen drei Sprachen geprüft, einschließlich neuer Fallansichten mit geladenen Spielständen. `python tests/browser-standalone.py` hat den tatsächlichen direkten Dateiaufruf versucht; Chromium verweigert ihn mit ERR_BLOCKED_BY_ADMINISTRATOR. Keine Richtlinie umgangen; kein direkter Einzeldatei-Spielnachweis.
-- Syntaxprüfungen und `git diff --check` ausgeführt. Bestehende Sites-Identität unverändert.
+- Syntaxprüfungen und `git diff --check` ausgeführt. Vor Veröffentlichung `npm test` erneut bestanden (39 Prüfungen). Veröffentlichungsarchiv dateigenau gegen den gepushten Quellcommit geprüft; private Bereitstellung durch native Sites-Antwort bestätigt. Bestehende Sites-Identität und Zugriff nur für das Eigentümerkonto unverändert. Keine zusätzliche Browserabnahme der authentifizierten Live-Seite.
 
 ## Offene Prüfungen und Grenzen
 
@@ -42,4 +42,4 @@ Privates GitHub-Repository: TimonNetzel/tamatem-dina, Hauptzweig main. Ausgangsp
 
 ## Nächste Aufgabe / Chatübergabe
 
-Vor Level 3 einen neuen Chat öffnen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. „Der kranke Fluss“ gezielt planen und umsetzen; beide vorhandenen Level und Spielstände der Versionen 1–5 erhalten. Anschluss: case-complete. Tamatem ist zehn, Dina bleibt eigenständig spielbar; Umweltrecherche und fantastische Ebene brauchen nachvollziehbare Ursachen. Offene Geräte-, Sprach- und Spieldauerprüfungen bei Verfügbarkeit ergänzen. Sites-Veröffentlichung bleibt ein gesonderter Auftrag.
+Vor Level 3 einen neuen Chat öffnen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. „Der kranke Fluss“ gezielt planen und umsetzen; beide vorhandenen Level und Spielstände der Versionen 1–5 erhalten. Anschluss: case-complete. Tamatem ist zehn, Dina bleibt eigenständig spielbar; Umweltrecherche und fantastische Ebene brauchen nachvollziehbare Ursachen. Offene Geräte-, Sprach- und Spieldauerprüfungen bei Verfügbarkeit ergänzen. Künftige Sites-Veröffentlichungen bleiben ein gesonderter Auftrag.

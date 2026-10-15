@@ -26,7 +26,7 @@ Das Projekt ist lokal bereits vollständig vorhanden und hat ein eigenes Git-Rep
 
 [Private Spieladresse](https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site)
 
-Die private Adresse zeigt den früheren Prolog 0.1. Entwicklungsfassung 0.5 enthält das vollständige dreisprachige Level 1: Prolog, Fluss, Quellgarten, Blütenkammer, Rückweg und gemeinsames Finale mit notwendigem spielbarem Beitrag von Dina. Level 2 ergänzt Adressvergleich, Interviews, Zeitachse und redaktionelle Korrektur. Diese Fassung wurde noch nicht neu veröffentlicht. Level 3–7 sind Konzeptentwürfe. Eine unabhängige Zeitmessung liegt nicht vor.
+Die private Adresse zeigt seit 15. Oktober 2026 Version 0.5 mit beiden Leveln. Entwicklungsfassung 0.5 enthält das vollständige dreisprachige Level 1: Prolog, Fluss, Quellgarten, Blütenkammer, Rückweg und gemeinsames Finale mit notwendigem spielbarem Beitrag von Dina. Level 2 ergänzt Adressvergleich, Interviews, Zeitachse und redaktionelle Korrektur. Die private Veröffentlichung wurde erfolgreich bestätigt. Level 3–7 sind Konzeptentwürfe. Eine unabhängige Zeitmessung liegt nicht vor.
 
 ## Lokal ausführen
 

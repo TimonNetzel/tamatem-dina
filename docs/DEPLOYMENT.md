@@ -1,6 +1,19 @@
 # GitHub, Sites und Herkunft
 
-## Veröffentlichter Ausgangsstand
+## Aktueller Veröffentlichungsstand
+
+- Spielversion: 0.5, Level 1 und 2 vollständig dreisprachig.
+- Private Spieladresse: https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site
+- Bestehende Site und Zugriff nur für das Eigentümerkonto beibehalten.
+- Geprüfter GitHub-Quellstand: c178cc479a2696ba1c9983f130ec6b4cdf48a28c.
+- Gepushter Sites-Quellcommit: 96659c69cad8668dbf7248b49fe444ddbcfbd27f. Dessen vollständiger Quellbaum ist identisch mit dem GitHub-Quellstand (Git-Tree ee5bfaea72b4adcf1155d8a634783983ad256efb). Getrennte Git-Historien wurden erhalten, kein Force-Push.
+- Gespeicherte Sites-Version: 2, appgprj_6ad06b66e5dc8191b14285faeba4d396~appgver_fbce93539cf081918226678991965899.
+- Erfolgreiche Bereitstellung: appgdep_6ad0e1a3b7c081919f538f774114f3b7, bestätigt am 15. Oktober 2026 um 16:22 Uhr Europe/Berlin.
+- Native Sites-Antwort: succeeded mit obiger URL; keine zusätzliche Browserabnahme der authentifizierten Live-Seite. Die vorhandenen lokalen Browser-/Offline-Prüfungen stehen in STATUS.md.
+- Das Archiv wurde aus dem gepushten Sites-Commit erzeugt; alle 26 Dateien gegen diesen Commit geprüft. Es enthält ausschließlich .openai/hosting.json und dist.
+- Anschließende Dokumentationspflege auf GitHub ändert den veröffentlichten Laufzeitcode nicht. Ein weiterer GitHub-Push veröffentlicht die Site weiterhin nicht automatisch.
+
+## Ursprüngliche Prolog-Veröffentlichung
 
 - Private Spieladresse: https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site
 - Sites-Projekt-ID: appgprj_6ad06b66e5dc8191b14285faeba4d396

@@ -6,7 +6,7 @@ Das vorhandene farbige Comic-Adventure für Erwachsene weiterentwickeln. Sprache
 
 ## Stand
 
-Version 0.5 enthält Level 1 vollständig: dreisprachiger Prolog, Fluss, Quellgarten, Blütenkammer, Rückweg und gemeinsames Heilungsfinale mit spielbarer Dina. Neu: Level 2 „Die verschwundenen Stimmen“ ist vollständig dreisprachig spielbar, mit Adressvergleich, Interviews als Dina, Zeitachse und redaktioneller Korrektur. Anschluss an level-complete ohne Neustart. Die frühere private Veröffentlichung enthält weiterhin Prolog 0.1. Details und offene Prüfungen stehen in STATUS.md.
+Version 0.5 enthält Level 1 vollständig: dreisprachiger Prolog, Fluss, Quellgarten, Blütenkammer, Rückweg und gemeinsames Heilungsfinale mit spielbarer Dina. Neu: Level 2 „Die verschwundenen Stimmen“ ist vollständig dreisprachig spielbar, mit Adressvergleich, Interviews als Dina, Zeitachse und redaktioneller Korrektur. Anschluss an level-complete ohne Neustart. Die bestehende private Spieladresse enthält seit 15. Oktober 2026 ebenfalls Version 0.5 mit beiden Leveln. Details und offene Prüfungen stehen in STATUS.md.
 
 ## Gezielt nachlesen
 
