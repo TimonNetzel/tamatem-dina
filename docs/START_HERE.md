@@ -6,7 +6,7 @@ Das vorhandene farbige Comic-Adventure für Erwachsene weiterentwickeln. Sprache
 
 ## Stand
 
-Version 0.7 enthält vier vollständige dreisprachige Level. Neu: „Das gestohlene Morgen“, realistischer Recherchethriller mit zwölfjährigem Tamatem, eigener Dina-Recherche, unabhängigen Quellen, begrenztem Uhrvergleich und notwendiger Publikationsprüfung. Direkter Anschluss ab eco-complete, Abschluss morning-complete. Alle drei vorherigen Level bleiben erhalten. Die private Site zeigt weiterhin 0.5; 0.6/0.7 wurden nicht veröffentlicht. Tatsächliche Prüfungen und Grenzen: STATUS.md.
+Version 0.8 enthält fünf vollständige dreisprachige Level. Neu: „Die Stadt der Masken“ mit vierzehnjährigem Tamatem und eigenständig spielbarer Dina, festen Regeln für Bildausschnitt/Perspektive/Bildunterschrift und sichtbarer Berichtigung seines eigenen verbreiteten Fehlers. Direkter Anschluss ab morning-complete, Abschluss mask-complete. Alle vier vorherigen Level und Spielstände 1–7 bleiben erhalten; aktuelles Format 8. Die private Site zeigt weiterhin 0.5. Tatsächliche Prüfungen und Grenzen: STATUS.md.
 
 ## Gezielt nachlesen
 
@@ -18,13 +18,14 @@ Version 0.7 enthält vier vollständige dreisprachige Level. Neu: „Das gestohl
 | Level 2 ändern | episodes/02-verschwundene-stimmen.md und dist/case-*.js |
 | Level 3 ändern | episodes/03-kranker-fluss.md und dist/eco-*.js |
 | Level 4 ändern | episodes/04-gestohlenes-morgen.md und dist/morning-*.js |
+| Level 5 ändern | episodes/05-stadt-der-masken.md und dist/mask-*.js |
 | Gesamtbogen oder spätere Episode | GAME_DESIGN.md, CANON.md und ROADMAP.md |
 | Spielstände oder Offline | dist/state.js, dist/sw.js, tests und ARCHITECTURE.md |
 | GitHub oder Veröffentlichung | DEPLOYMENT.md und .openai/hosting.json |
 
 ## Nächste Aufgabe
 
-Vor Level 5 einen neuen Chat beginnen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Alle vier bisherigen Level, Sprachen und Spielstände 1–7 erhalten. „Die Stadt der Masken“ anhand CANON und gezielt GAME_DESIGN ausarbeiten; an morning-complete anschließen. Echte iPhone-, muttersprachliche, direkte Einzeldatei- und unabhängige Zeitprüfung bleiben offen.
+Vor Level 6 einen neuen Chat beginnen. Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Alle fünf bisherigen Level, Sprachen und Spielstände 1–8 erhalten. „Der Preis der Heilung“ anhand CANON und gezielt GAME_DESIGN ausarbeiten; an mask-complete anschließen. Realitätsnah ohne magische Beweisführung; medizinische und wirtschaftliche Zusammenhänge fachlich recherchieren. Echte iPhone-, muttersprachliche, direkte Einzeldatei- und unabhängige Zeitprüfung bleiben offen.
 
 ## Priorität der Unterlagen
 

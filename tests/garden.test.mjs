@@ -33,7 +33,7 @@ test('Version-2-Spielstände am alten Flussabschluss erreichen den Garten ohne v
  for(const choice of ['fear','research'])for(const owlChoice of ['ask','directions']){
   const legacy={...checkpoint(choice,owlChoice),version:2};delete legacy.garden;
   const before=structuredClone(legacy),s=validateState(legacy);
-  assert.equal(s.version,7);assert.equal(s.stage,'river-complete');assert.equal(s.choice,choice);assert.equal(s.owlChoice,owlChoice);
+  assert.equal(s.version,8);assert.equal(s.stage,'river-complete');assert.equal(s.choice,choice);assert.equal(s.owlChoice,owlChoice);
   assert.deepEqual(s.river,legacy.river);assert.deepEqual(s.garden.rotations,CHANNEL_START);assert.deepEqual(legacy,before);
   assert.equal(reduce(s,{type:'GARDEN_START'}).stage,'garden');
  }

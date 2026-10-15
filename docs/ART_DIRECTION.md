@@ -92,3 +92,7 @@ Referenzgestützte Flussrecherche mit zehnjährigem Tamatem, Dina und Neri (eco-
 ## Level 4 · Das gestohlene Morgen
 
 Ein neues referenzgestütztes Jugendhausbild mit zwölfjährigem Tamatem, Dina und Mara: morning-investigation.png. Kühler Beton, Blau/Petrol, zurückhaltendes Rot und warme Tischlampe. Illustration und Figurenreferenz tatsächlich geöffnet; Beweise bleiben HTML. Szenenmontage über zwölf Stationen, keine Echtzeitaufnahme. Vollständiger Prompt und Grenzen: art/prompts/08-stolen-tomorrow.md.
+
+## Level 5 · Die Stadt der Masken
+
+mask-city.png: tatsächlich geöffnetes Figurenblatt als Identitätsreferenz, vierzehnjähriger Tamatem mit längeren Jugendproportionen und braunen Augenbrauen, Dina weiterhin ungefähr dreißig, ältere Archivarin Leila. Ergebnis tatsächlich geöffnet und geprüft. Magenta/Nachtblau, gebrochenes Gold und Papierarchitektur; Bild als Szenenmontage. Präzise Bildbelege, Ausschnitt, Seitenansicht und Papierstege als lokales HTML/SVG mit gleichwertigen deutschen/englischen/ägyptisch-arabischen Texten. Vollständiger Originalprompt samt Namensänderung der Archivarin: art/prompts/09-city-of-masks.md. Porträt als CSS-Ausschnitt; Einzeldatei bettet es ein.

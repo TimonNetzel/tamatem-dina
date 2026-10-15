@@ -57,3 +57,20 @@ export function finishMorning(s,pressure='open',naming='anonymous',observe=()=>{
  if(at('publish')){act('MORNING_REVISE');act('MORNING_GROUP');act('MORNING_PUBLISH');next();}
  return s;
 }
+export function finishMask(s,approach='public',naming='role',crowd='boundary',observe=()=>{}){
+ const act=a=>{s=reduce(s,typeof a==='string'?{type:a}:a);observe(s);};
+ const at=p=>s.stage==='mask-'+p,read=id=>act({type:'MASK_READ',id}),pick=(id,value)=>act({type:'MASK_PICK',id,value}),next=()=>act('MASK_NEXT'),check=()=>act('MASK_CHECK');
+ if(s.stage==='morning-complete')act('MASK_START');
+ if(at('opening')){read('acclaim');next();}
+ if(at('doubt')){read('dinaMessage');pick('approach',approach);act('MASK_QUESTION');next();}
+ if(at('archive')){for(const id of ['rules','original','repost','permission'])read(id);pick('provenance','original');pick('naming',naming);check();next();}
+ if(at('crop')){read('contact');pick('crop','full');check();next();}
+ if(at('perspective')){read('sites');pick('view','side');pick('observation','gap');check();next();}
+ if(at('caption')){read('sequence');pick('caption','lift');check();next();}
+ if(at('network')){read('ledger');read('reply');for(const [index,id] of ['photo','cut','label','post'].entries())act({type:'MASK_ORDER',index,id});check();next();}
+ if(at('correction')){read('receipt');for(const [id,value] of Object.entries({frame:'full',angle:'side',caption:'lift'}))pick(id,value);check();act('MASK_ADMIT');act('MASK_REPOST');next();}
+ if(at('mirror')){read('offer');read('authorship');pick('credit','shared');check();next();}
+ if(at('return')){read('crowdNote');pick('crowd',crowd);pick('kit','evidence');check();next();}
+ if(at('publish')){read('response');for(const [id,value] of Object.entries({image:'observed',chain:'documented',master:'open'}))pick(id,value);check();act('MASK_APPROVE');act('MASK_PUBLISH');next();}
+ return s;
+}

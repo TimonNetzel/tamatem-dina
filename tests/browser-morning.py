@@ -103,7 +103,7 @@ with sync_playwright() as p:
         action('import')
         page.locator('#import-file').set_input_files({'name': 'river-v6.json', 'mimeType': 'application/json', 'buffer': json.dumps(seed).encode()})
         action('confirm-import')
-        assert state()['version'] == 7 and state()['stage'] == 'eco-complete'
+        assert state()['version'] == 8 and state()['stage'] == 'eco-complete'
         previous = {key: value for key, value in state().items() if key not in ['morning', 'stage', 'hints', 'version']}
         if not STANDALONE:
             page.wait_for_function('document.querySelector("#offline-status").classList.contains("ready")')
@@ -229,6 +229,6 @@ with sync_playwright() as p:
         assert state() == end
         assert not errors, errors
         assert not external, external
-        print(f'PASS {locale}: Level 4, actual {"file" if STANDALONE else "service-worker"} offline, v6 import, v7 export/import, all puzzles, disclosure, touch 320/390, RTL, reloads', flush=True)
+        print(f'PASS {locale}: Level 4, actual {"file" if STANDALONE else "service-worker"} offline, v6 import, v8 export/import, all puzzles, disclosure, touch 320/390, RTL, reloads', flush=True)
         context.close()
     browser.close()

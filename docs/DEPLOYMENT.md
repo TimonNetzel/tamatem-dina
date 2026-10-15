@@ -2,7 +2,7 @@
 
 ## Entwicklungsstand und getrennte Veröffentlichung
 
-GitHub-Entwicklung 0.7 enthält vier vollständige Level. 0.6 und 0.7 wurden nicht bei Sites veröffentlicht. Dieses Level-4-Paket wird ohne Force nach GitHub main gesichert; die nachfolgend dokumentierte private Bereitstellung bleibt unverändert 0.5. Ein späterer Sites-Auftrag muss den dann freigegebenen Quellstand gesondert übernehmen und prüfen.
+GitHub-Entwicklung 0.8 enthält fünf vollständige Level. 0.6–0.8 wurden nicht bei Sites veröffentlicht. Dieses Level-5-Paket wird ohne Force nach GitHub main gesichert; die nachfolgend dokumentierte private Bereitstellung bleibt unverändert 0.5. Ein späterer Sites-Auftrag muss den dann freigegebenen Quellstand gesondert übernehmen und prüfen.
 
 ## Aktueller Veröffentlichungsstand
 

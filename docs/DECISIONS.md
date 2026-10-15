@@ -48,3 +48,12 @@ Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen geh�
 - Dina entscheidet und handelt bei Methode, erlaubter Original-Sicherung, Stellungnahmen, Publikationsprüfung und Korrektur. Keine heimliche Datenbeschaffung und kein Reflex-Countdown. Fiktive Gruppenkorrektur erreicht ausdrücklich den ursprünglichen Empfängerkreis.
 - Nennung mit begrenzter Freigabe: Vorname oder Anonymität. Private Familien-/Kliniknachricht und Anschrift fehlen in beiden Ausgaben; Unbeteiligte werden verdeckt. Die Nachricht bleibt ungeöffnet und ihre intimen Daten werden auch zur Einsicht nicht ausgeschrieben.
 - Format 7 ergänzt morning, erhält 1–6 und alle alten Notizbücher. Level 4 beginnt optional an eco-complete; morning-complete ist Anschluss für Level 5. GitHub-Sicherung bleibt getrennt von Sites.
+
+## Level 5 · Die Stadt der Masken (0.8)
+
+- Die fantastische Papierarchitektur besitzt lokale sichtbare Baukonventionen für Ausschnitt, Standort und begrenzte Beschriftung. Sie ist kein Wahrheitsdetektor. Original, Seitenansicht, Sequenz und Trocknungsbuch tragen die inhaltliche Korrektur.
+- Neue Archivarin Leila, eigenständige Figur neben Salma aus Level 3. Namensänderung nach Bildprompt vermeidet eine unbeabsichtigte Umdeutung der Färberin. Leila erlaubt Vorname oder Berufsrolle für die Veröffentlichung.
+- Tamatem hat das falsche Plakat selbst bereits verbreitet. Korrektur prüfen, eigenen Fehler unterschreiben und an den ursprünglichen Kiosk senden sind drei notwendige Schritte. Der alte Satz bleibt durchgestrichen daneben sichtbar. Zustellung bedeutet keine universelle Rückholung oder Vergebung.
+- Dina prüft eigene Quellen, Standort, Verbreitung und Publikation. Ihre verlockende Alleinretterinnen-Erzählung muss sie selbst durch die dokumentierte gemeinsame Arbeit ersetzen. Sie ist keine bloße Begleitfigur.
+- Netzwerkkette belegt arbeitsteilige Zuspitzung und wirtschaftlichen Anreiz; ein zentraler Gesamtauftraggeber wird nicht erfunden. Bild zeigt Handlung, Dokumente belegen Weitergabe, Gesamtsteuerung bleibt offen.
+- Format 8 ergänzt mask, erhält 1–7 und alle Notizbücher. Optionaler Einstieg ab morning-complete; mask-complete als Anschluss für Level 6. GitHub-Push bleibt getrennt von Sites.

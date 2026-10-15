@@ -1,3 +1,4 @@
+import {maskText} from './mask-ui.js';
 import {MORNING_STAGES,MORNING_DOCS,SOURCE_MODEL,CLAIM_MODEL,PRIVACY_MODEL,PRESERVE_ORDER,MORNING_ORDER,morningReady} from './morning-state.js';
 import {MORNING_COPY} from './morning-copy.js';
 import {getLanguage,t} from './i18n.js';
@@ -24,7 +25,7 @@ export function morningView(s,h){
  case 'model':panel+=Object.keys(CLAIM_MODEL).map(id=>options(id,id,Object.keys(CLAIM_MODEL).map(k=>[CLAIM_MODEL[k],CLAIM_MODEL[k]]),c.model[id],ready)).join('');break;
  case 'privacy':panel+=Object.keys(PRIVACY_MODEL).map(id=>options(id,id,[['publish','publishChoice'],['mask','mask'],['omit','omit']],c.privacy[id],ready)).join('')+options('naming','namingQuestion',[['name','name'],['anonymous','anonymous']],c.naming,ready);break;
  case 'publish':story+=`<article class="case-article">${esc(morningArticle(c))}</article>`;panel+=b('revise','revise',!c.revised)+(c.revised?p('revised'):'')+b('group','group',c.revised&&!c.groupCorrected)+(c.groupCorrected?p('groupDone'):'')+b('publish','release',c.groupCorrected&&!c.published);break;
- case 'complete':story+=p('finalTalk');panel+=p('endNote')+button('notebook',C('notes'),'button wide')+button('export',t('Spielstand als Datei sichern'),'button secondary wide');break;
+ case 'complete':story+=p('finalTalk');panel+=button('mask-start',esc(maskText('start')),'button wide')+p('endNote')+button('notebook',C('notes'),'button wide')+button('export',t('Spielstand als Datei sichern'),'button secondary wide');break;
  }
  if(['method','sources','preserve','clock','timeline','model','privacy'].includes(phase))panel+=b('check','check',!ready)+(ready?`<p class="success-line" role="status">${esc(C('good'))}</p>`:'');
  if(phase!=='complete')panel+=b('next','next',ready);
@@ -32,7 +33,7 @@ export function morningView(s,h){
  return `<div class="chapter-heading"><div><p class="eyebrow">${C('age')}</p><h1>${m[1]}</h1></div><span class="chapter-progress">${m[0]}<span> / 12</span></span></div><div class="game-grid morning-game"><section class="stage-column">${actor()}${scene('morning-investigation',C('alt'))}<div class="scene-tools">${button('hint',t('Hinweis'),'tool-button')}</div><div class="case-story">${story}</div></section><aside class="paper-panel"><p class="chapter-label">${C('title')}</p>${panel}${feedback?`<p class="feedback" role="status">${esc(feedback)}</p>`:''}</aside></div>`;
 }
 export function morningNotebook(s,esc){
- if(!MORNING_STAGES.includes(s.stage))return '';
+ if(!MORNING_STAGES.includes(s.stage)&&!s.morning.published)return '';
  const c=s.morning,C=morningText,entry=(title,text)=>`<article><h3>${esc(title)}</h3><p>${esc(text)}</p></article>`;
  let out=`<h2>${C('notes')}</h2>`;
  for(const id of c.read){const d=morningDocument(id);out+=entry(d.title,d.text);}

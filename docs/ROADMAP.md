@@ -36,6 +36,10 @@ Fiktive Lichtapparatur, notwendige spielbare Dina-Beobachtung und Stabilitätsbe
 
 „Das gestohlene Morgen“ ist dreisprachig spielbar: unabhängige Quellen, Original-Sicherung als Dina, begrenzter Uhrvergleich, Ereignisfolge, Widerlegung und Datenminimierung. Tamatems Widerspruch kostet vorerst Zugehörigkeit. Direkter Einstieg ab eco-complete, Abschluss morning-complete. Zwölf konkrete Stationen: episodes/04-gestohlenes-morgen.md. Prüfgrenzen in STATUS.md.
 
-## 10. Episoden 5–7 — nächster Chat für Level 5
+## 10. Level 5 — umgesetzt
 
-Je Episode erst den relevanten Handlungsbogen und die konkreten Rätsel ausarbeiten, dann umsetzen und prüfen. Themen und Altersfolge stehen im CANON, Entwürfe in GAME_DESIGN.md. Vor „Die Stadt der Masken“ neuer Chat nach CODEX_STARTPROMPT.md. Unabhängige Geräte-, Sprach-, Einzeldatei- und Spieldauerabnahme bleibt separat.
+„Die Stadt der Masken“ ist dreisprachig spielbar: Ausschnitt, Standort und begrenzte Bildunterschrift verändern Papierwege. Eigene Falschdarstellung, sichtbare Kiosk-Korrektur und getrennte Zustellung; Dina prüft Herkunft und Verbreitung und korrigiert ihre eigene Alleinretterinnen-Erzählung. Direkter Einstieg ab morning-complete, Abschluss mask-complete. Zwölf konkrete Stationen: episodes/05-stadt-der-masken.md. Prüfgrenzen in STATUS.md.
+
+## 11. Episoden 6–7 — nächster Chat für Level 6
+
+Je Episode den relevanten Handlungsbogen und konkrete Rätsel ausarbeiten, dann umsetzen und prüfen. Themen und Altersfolge im CANON, Entwürfe in GAME_DESIGN.md. Vor „Der Preis der Heilung“ neuer Chat nach CODEX_STARTPROMPT.md. Medizinische und wirtschaftliche Zusammenhänge fachlich recherchieren. Unabhängige Geräte-, Sprach-, Einzeldatei- und Spieldauerabnahme bleibt separat.
