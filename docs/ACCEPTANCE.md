@@ -1,6 +1,6 @@
 # Gesamtabnahme · 0.10 / sieben Level
 
-Technische Nachweise und ihr Stand: STATUS.md. Diese Liste bereitet externe Prüfungen vor; kein Eintrag wird durch Simulation oder diese Dokumentation als bestanden markiert.
+Technische Nachweise und ihr Stand: STATUS.md. Aktuelle Gesamtabnahme und konkrete Befunde: [ACCEPTANCE_REPORT.md](ACCEPTANCE_REPORT.md). Diese Liste bereitet externe Prüfungen vor; kein externer Eintrag wird durch Simulation oder diese Dokumentation als bestanden markiert. Die [Zeitvorlage](acceptance-timing.csv) enthält bewusst keine erfundenen Messwerte.
 
 | Offene Abnahme | Konkreter Auftrag | Nachweis für Abschluss |
 |---|---|---|
@@ -9,6 +9,6 @@ Technische Nachweise und ihr Stand: STATUS.md. Diese Liste bereitet externe Prü
 | Direkte Einzeldatei | `node make-offline.mjs /absoluter/pfad/spiel.html`; Datei auf freigegebenem Laptop-Browser direkt öffnen, Netz aus, alle Sprachen, v9→v10 importieren, Finale spielen, exportieren/importieren und neu laden. | Tatsächlicher file://-Durchlauf mit Browser/Version. Lokaler HTTP-Server, VM und Service Worker zählen dafür nicht. Richtlinienblockaden dokumentieren, nicht umgehen. |
 | Fach-/Betroffenenprüfung | Journalistische Quellen- und Korrekturregeln übergreifend; Level 3 ökologisch, Level 6 medizinisch/wirtschaftlich, Level 7 Vertrags-/Frist-/Einwilligungslogik juristisch und journalistisch; dramaturgisch/psychologisch beide Figuren und Erwachsene als Zielgruppe. | Unabhängige qualifizierte Rückmeldung mit Namen/Rolle soweit erlaubt, Quellen, Prüfgegenstand und Grenzen; Recherche des Entwicklers reicht nicht. |
 | Unabhängige Zeitprüfung | Unvorbereitete erwachsene Spielende je Level ohne Lösungswissen. Start/Ende, Hilfen, Unterbrechungen und Sprache erfassen. Ziel 15–30 Minuten pro Level. | Menschlich gemessene Netto-/Bruttozeiten, Stichprobe und Beobachtungen. Automatisierte Laufzeit nicht als Spielzeit ausgeben. |
-| Gesamtkampagne | Eine neue Partie über alle sieben Level, ergänzend alternative Entscheidungen; Canon/Alter 6–18, Figuren, Gegenstände, Notizbücher, Beziehungen, Grenzen und Schluss vergleichen. | Tatsächlicher Durchlauf am geprüften Commit, dokumentierte Varianten/Fehler und erneute Prüfung von Korrekturen. Bisherige technische Episodenläufe separat halten. |
+| Gesamtkampagne · menschlich offen | Eine neue Partie über alle sieben Level, ergänzend alternative Entscheidungen; Canon/Alter 6–18, Figuren, Gegenstände, Notizbücher, Beziehungen, Grenzen und Schluss vergleichen. | Tatsächlicher Durchlauf am geprüften Commit, dokumentierte Varianten/Fehler und erneute Prüfung von Korrekturen. Technischen vollständigen Kampagnenlauf und Episodenläufe aus ACCEPTANCE_REPORT.md separat von menschlicher Abnahme halten. |
 
 Für jede Rückmeldung festhalten: Sprache, Commit, Gerät/Browser, Ausgangsspielstand und genaue Handlung, Erwartung und Beobachtung. Keine Zugangstoken oder privaten Nutzerdaten in Prüfprotokolle übernehmen. GitHub-Push veröffentlicht Sites nicht; die private Site ist separat auf 0.8 dokumentiert.

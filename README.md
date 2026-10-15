@@ -26,7 +26,7 @@ Das Projekt ist lokal bereits vollständig vorhanden und hat ein eigenes Git-Rep
 
 [Private Spieladresse](https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site)
 
-Die private Adresse enthält seit 15. Oktober 2026 Version 0.8 mit allen fünf vollständigen dreisprachigen Leveln. Der veröffentlichte Spielcode entspricht dem geprüften GitHub-Stand d9a7f72. Alle bisherigen Inhalte und Spielstände bleiben erhalten. GitHub und Sites bleiben getrennte Schritte. Die Entwicklung enthält zusätzlich Level 6 und 7 (0.10), noch nicht bei Sites veröffentlicht. Gesamt- und externe Abnahmen stehen in docs/ACCEPTANCE.md. Eine unabhängige Zeitmessung liegt nicht vor.
+Die private Adresse enthält seit 15. Oktober 2026 Version 0.8 mit allen fünf vollständigen dreisprachigen Leveln. Der veröffentlichte Spielcode entspricht dem geprüften GitHub-Stand d9a7f72. Alle bisherigen Inhalte und Spielstände bleiben erhalten. GitHub und Sites bleiben getrennte Schritte. Die Entwicklung enthält zusätzlich Level 6 und 7 (0.10), noch nicht bei Sites veröffentlicht. Ergebnisse der technischen Gesamtabnahme stehen in docs/ACCEPTANCE_REPORT.md; offene externe Abnahmen in docs/ACCEPTANCE.md. Eine unabhängige Zeitmessung liegt nicht vor.
 
 ## Lokal ausführen
 
@@ -38,7 +38,14 @@ Danach ist die Vorschau unter http://127.0.0.1:4173 erreichbar. Der Server binde
 
     npm test
 
-Die 62 automatischen Einzelprüfungen (zehn Testdateien) decken Spielregeln, alte Spielstände, Übersetzungen, Offline-Cache und HTML-Export ab. Zusätzliche Browserprüfung mit installiertem Python-Playwright und Chromium gegen den laufenden Server: `python tests/browser-smoke.py` für die bisherigen Level und `python tests/browser-eco.py` für Level 3, `python tests/browser-morning.py` für Level 4 und `python tests/browser-legacy.py` für historische Feldsätze 1–7; `python tests/browser-mask.py` prüft Level 5 mit tatsächlichem Offline-Spiel.
+Die zwölf automatischen Testdateien decken Spielregeln, alte Spielstände 1–10, Übersetzungen, Offline-Cache und HTML-Export ab. Zusätzliche Browserprüfungen mit installiertem Python-Playwright und Chromium gegen den laufenden Server:
+
+- `python tests/browser-campaign.py`: neue Partie durch alle sieben Level, drei Sprachen, Netz vor Spielbeginn aus, echte Export-/Importdateien nach jedem Level, gespeicherte Vergangenheit und 320/390-Touchansichten.
+- `python tests/browser-smoke.py`: Level 1/2 mit zusätzlichen Alternativen und Fehlversuchen.
+- `python tests/browser-eco.py`, `python tests/browser-morning.py`, `python tests/browser-mask.py`, `python tests/browser-healing.py` und `python tests/browser-edition.py`: einzelne Level 3–7 mit historischen Importen, Teilständen und tatsächlichem Offline-Spiel.
+- `python tests/browser-legacy.py`: historische Feldsätze 1–9 als Dateien über den Bestätigungsdialog.
+
+Diese Automatisierung ersetzt keine echten iPhone-, Muttersprach-, unabhängigen Fach- oder menschlichen Zeitprüfungen.
 
 Die ursprüngliche Übergabe-Momentaufnahme prüft:
 
@@ -50,7 +57,7 @@ Die Hashliste ist eine Momentaufnahme der Übergabe. Nach absichtlichen Änderun
 
     node make-offline.mjs ABSOLUTER_AUSGABEPFAD
 
-Der Zielname sollte auf .html enden. Die erzeugte Einzeldatei enthält alle 16 Bilder und alle drei Sprachen und die Spiellogik und ist für das direkte Öffnen am Laptop gedacht. Große erzeugte Einzeldateien und ZIP-Dateien gehören in Veröffentlichungen oder einen Ausgabeordner, nicht bei jeder Änderung erneut in Git.
+Der Zielname sollte auf .html enden. Die erzeugte Einzeldatei enthält alle 17 PNG-Bilder, das SVG-Symbol, alle drei Sprachen und die Spiellogik und ist für das direkte Öffnen am Laptop gedacht. Große erzeugte Einzeldateien und ZIP-Dateien gehören in Veröffentlichungen oder einen Ausgabeordner, nicht bei jeder Änderung erneut in Git.
 
 Auf dem iPhone ist die Web-App über Safari und den Home-Bildschirm vorgesehen. Vor dem Offline-Spielen vollständig laden und auf „Offline bereit“ warten. Chromium-Durchläufe mit tatsächlichem Offline-Neuladen wurden bestanden. Eine echte iPhone-Prüfung steht aus. Der direkte Dateiaufruf der HTML wurde hier durch eine Browserrichtlinie blockiert; technische Exportprüfung und echter Service-Worker-Offline-Betrieb sind davon getrennte Nachweise.
 

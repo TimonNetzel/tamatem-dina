@@ -27,7 +27,7 @@ Version 0.10 enthält alle sieben vollständigen dreisprachigen Level. Neu: „D
 
 ## Nächste Aufgabe
 
-Neuen Chat zur Gesamtabnahme öffnen; kopierfertiger Auftrag in ../CODEX_STARTPROMPT.md. Alle sieben Level und Spielstände 1–10 erhalten. Technische Gesamtkampagne und offene echte iPhone-, muttersprachliche, direkte Einzeldatei-, Fach- und unabhängige Zeitprüfungen anhand ACCEPTANCE.md fortführen. Sites-Veröffentlichung bleibt ein gesonderter Auftrag.
+Technische Gesamtabnahme und behobener 320-Pixel-Fehler: [ACCEPTANCE_REPORT.md](ACCEPTANCE_REPORT.md). Offene echte iPhone-/Safari-, muttersprachliche, direkte Einzeldatei-, unabhängige Fach- und menschliche Zeitprüfungen anhand ACCEPTANCE.md fortführen. Vorlagen und genaue Prüfgrenzen dort lesen; Ziel 15–30 Minuten je Level bleibt menschlich zu messen. Kopierfertiger Folgeauftrag in ../CODEX_STARTPROMPT.md. Alle sieben Level und Spielstände 1–10 erhalten; keine Sites-Veröffentlichung, private Site weiterhin 0.8.
 
 ## Priorität der Unterlagen
 

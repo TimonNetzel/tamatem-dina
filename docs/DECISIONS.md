@@ -75,3 +75,9 @@ Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen geh�
 - Dina wählt und unterschreibt ihr Archivprojekt selbst. Tamatem wählt seinen Arbeitsplatz und berichtigt seinen eigenen unveröffentlichten Gesamtvorwurf selbst. Vier neue freie Entscheidungen, alle Kombinationen abschließbar. Getrennte Berufswege sind kein Scheitern der Verbindung, keine romantische Beziehung oder erzwungene Versöhnung.
 - Getrennte Pflichtaktionen: Quellenschutz, gemeinsames Treffen, Dinas Planunterschrift, Tamatems eigene Korrektur/Unterschrift, Dinas Freigabe und Druckauftrag. Tatsächliche Druckquittung folgt erst später; keine Behauptung, dass eine Bestellung schon Lieferung sei.
 - Format 10 erhält Versionen 1–9, sämtliche sechs Level und alte Notizbücher; optionaler direkter Einstieg ab healing-complete. Veröffentlichung bei Sites ist weiterhin ein eigener Auftrag. Nach diesem Paket neuer Chat zur Gesamtabnahme.
+
+## Technische Gesamtabnahme 0.10
+
+- Episodenimporte werden durch einen durchgängigen Browserlauf ab neuer Partie ergänzt. Vor Spielbeginn Netz aus; alte Geschichten nach jedem Level eingefroren und verglichen, eigene Exportdateien bestätigt wieder importiert. Gekreuzte Vorgeschichten prüfen Kontaktbedingungen unabhängig voneinander.
+- Konkrete 320-Pixel-Korrektur am frühen Quellenraster, keine Änderung von Spieltexten, Bildern oder Speicherformat. Cachekennung für die aktualisierte Oberfläche erhöht.
+- Technische Ergebnisse in ACCEPTANCE_REPORT.md; externe Geräte-, Muttersprach-, Fach- und Zeitnachweise separat offen. Leere Zeitvorlage statt erfundener Messwerte. Direkter Dateiaufruf weiterhin durch beobachtete Browserrichtlinie blockiert. Kein Sites-Auftrag.

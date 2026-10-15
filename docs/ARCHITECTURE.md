@@ -25,6 +25,8 @@ Die Dateien in dist sind direkt gepflegter Quellcode und zugleich die veröffent
 | dist/mask-state.js | Level-5-Zustand, Bildregeln, Korrektur und Validierung |
 | dist/mask-copy.js | Alle Level-5-Texte und Hilfen als de/en/ar-EG-Tripel |
 | dist/mask-ui.js | Level-5-Szenen, SVG-Vorschauen, Dokumente und Notizbuch |
+| dist/healing-state.js, dist/healing-copy.js, dist/healing-ui.js | Level-6-Zustand, dreisprachige Texte, Beleg-/Schutz-/Publikationsansichten |
+| dist/edition-state.js, dist/edition-copy.js, dist/edition-ui.js | Level-7-Historien, dreisprachige Texte, getrennte Zukunftspläne und Finale |
 | dist/app.js | Darstellung, Klickaktionen, Dialoge, Speichern, Import/Export |
 | dist/sw.js | Offline-Cache, Navigation ohne Netz, Vollständigkeitsmeldung |
 | dist/manifest.webmanifest | Installierbare Web-App |
@@ -76,7 +78,7 @@ finale speichert inserted, collected, bound, lanternOn, attempted, stable, dinaO
 
 Die aktive Figur wird aus dem Abschnitt bestimmt: Dina im Prolog und im Abschnitt dina; Tamatem in den übrigen Spielszenen. Notizbuch, Hinweise und Darstellung verwenden diese gespeicherten Zustände. Die dritte Apparaturhilfe benennt den nächsten gültigen Schritt; bereits abgeschlossene Kammer-/Sturmaufgaben verweisen zum Übergang. Laternen-, Faden- und Spiegelanzeigen verwenden lokale HTML/SVG-Symbole und Text. Animationen sind rein visuell.
 
-Die Zustandsraumprüfung in tests/finale.test.mjs prüft jeden erreichbaren Zustand ab dem Gartenabschluss für alle vier Kombinationen der frühen Entscheidungen: Speicherung/Validierung, Erhalt der Vergangenheit und Erreichbarkeit des Endes. Die Browserdurchläufe spielen alle fünf Level offline weiter und prüfen Neuladen/Sprachwechsel. browser-legacy.py importiert historische Feldsätze der Versionen 1–7. Der Exporttest verwendet asynchronen Prozessaufruf und vm.Script für die Syntax des eingebetteten Skripts; damit ist kein synchroner Kindprozess für die Syntaxprüfung erforderlich.
+Die Zustandsraumprüfung in tests/finale.test.mjs prüft jeden erreichbaren Zustand ab dem Gartenabschluss für alle vier Kombinationen der frühen Entscheidungen: Speicherung/Validierung, Erhalt der Vergangenheit und Erreichbarkeit des Endes. browser-campaign.py spielt eine neue Partie durch alle sieben Level ohne eingesetzten Fortschritt, mit abgeschaltetem Netz ab dem Einstieg, Reload/Sprachwechsel und Export/Reimport nach jedem Level. Die einzelnen Episodenläufe ergänzen Fehlversuche und Teilstände. browser-legacy.py importiert historische Feldsätze der Versionen 1–9. Tatsächliche Ergebnisse und externe Grenzen stehen in ACCEPTANCE_REPORT.md. Der Exporttest verwendet asynchronen Prozessaufruf und vm.Script für die Syntax des eingebetteten Skripts; damit ist kein synchroner Kindprozess für die Syntaxprüfung erforderlich.
 
 ## Level 2 · realistischer Fall
 
@@ -88,7 +90,7 @@ case-copy.js nutzt stabile Textkennungen mit je drei vollständigen Fassungen. c
 
 case-state.js kennt keine Magie und keine verbrauchten Ressourcen. Falsche Prüfungen ändern keine Bestätigungen. Vor Weitergabe änderbare Auswahlen, danach feste Interviewentscheidungen; beide Widerrufswege erhalten den öffentlichen Registerbeleg. Veröffentlichte Zitate schließen Emils zurückgezogene Aussage aus. Die anonyme Ausgabe enthält auch in der Korrektur keinen Namen der Mieterin. Ein Artikel endet mit belegtem Widerspruch und offenen Motiven, nicht mit einer automatischen Lösung der Wohnungsfrage.
 
-Seit Level 6 enthält die Offline-CORE-Liste 42 Einträge. Der Einzeldatei-Export bettet auch die drei Fallmodule ein und löst lokale Modulnamen mit Bindestrichen auf. tests/case.test.mjs prüft alle 16 Kombinationen alter/neuer Entscheidungen, jeden Schritt eines vollständigen Level-1-Durchlaufs als Version-4-Migration, 16 Adressauswahlen, 34 partielle Zeitachsen und 64 Einstufungen samt Fortsetzbarkeit. Der Browser-Smoke-Test spielt beide Level bei abgeschaltetem Netz; tests/browser-standalone.py prüft die erzeugte Einzeldatei direkt, sofern die Browserrichtlinie file:// erlaubt. Ergebnisse und Grenzen stehen in STATUS.md.
+Level 6 erweiterte die Offline-CORE-Liste auf 42 Einträge; seit Level 7 sind es 46. Der Einzeldatei-Export bettet auch die drei Fallmodule ein und löst lokale Modulnamen mit Bindestrichen auf. tests/case.test.mjs prüft alle 16 Kombinationen alter/neuer Entscheidungen, jeden Schritt eines vollständigen Level-1-Durchlaufs als Version-4-Migration, 16 Adressauswahlen, 34 partielle Zeitachsen und 64 Einstufungen samt Fortsetzbarkeit. Der Browser-Smoke-Test spielt beide Level bei abgeschaltetem Netz; tests/browser-standalone.py prüft die erzeugte Einzeldatei direkt, sofern die Browserrichtlinie file:// erlaubt. Ergebnisse und Grenzen stehen in STATUS.md.
 
 ## Level 3 · Umweltrecherche und fantastische Quelle (0.6)
 
@@ -96,7 +98,7 @@ Nach case-complete bieten UI und Reducer ECO_START an. Neue Abschnitte: eco-open
 
 eco-state.js exportiert initialEco, reduceEco, validateEco und gemeinsame Konstanten. eco enthält Briefing, Einzelprobe/Beschuldigung, Reflexion, gelesene Proben und Quellen, veränderbare Auswahlfelder, bestätigten Vergleich und Ursachenmodell, öffentliche Richtigstellung und Entschuldigung, beide Stellungnahmen, Dinas Vorgehensentscheidung, Eingriffsreihenfolge, Quellgitter/Zulauf, beide Nachkontrollen und Veröffentlichung. Abschnittsvoraussetzungen und frühester Zeitpunkt jedes Feldes werden getrennt geprüft. Probenindex und Silberatem sind fiktiv.
 
-Für Level 3 wurde Format 6 eingeführt (aktuell 9). Für Versionen 1–5 wird initialEco ergänzt, vorhandene Migrationen bleiben unverändert. Version 5 darf nur die bisherigen 26 Abschnitte enthalten. Nach Eintritt in ein ECO_STAGE validiert validateCase die Vergangenheit ausdrücklich als case-complete; dadurch kann Level 3 keinen unfertigen Fall überschreiben oder umgehen. Alle früheren Felder und Speicherschlüssel bleiben gleich. Alte Notizbücher bleiben auch außerhalb der Fallabschnitte vollständig abrufbar.
+Für Level 3 wurde Format 6 eingeführt (aktuell 10). Für Versionen 1–5 wird initialEco ergänzt, vorhandene Migrationen bleiben unverändert. Version 5 darf nur die bisherigen 26 Abschnitte enthalten. Nach Eintritt in ein ECO_STAGE validiert validateCase die Vergangenheit ausdrücklich als case-complete; dadurch kann Level 3 keinen unfertigen Fall überschreiben oder umgehen. Alle früheren Felder und Speicherschlüssel bleiben gleich. Alte Notizbücher bleiben auch außerhalb der Fallabschnitte vollständig abrufbar.
 
 Physische Karte A→B→C steht in einem eigenen LTR-Grid; sprachabhängige Beschriftungen sind mit bdi isoliert. Alle Aktionen über Buttons, Radio-Labels oder nummerierte Selects. Keine notwendige Animation, Ziehbewegung oder Reflexanforderung. Drei Hilfestufen in allen zwölf Phasen; kein automatisches Übernehmen einer Lösung. Übersetzungen in eco-copy.js werden nach derselben getrennten Sprachpräferenz ausgewählt; Fehler im bisherigen messages.js-Katalog mitgeführt.
 

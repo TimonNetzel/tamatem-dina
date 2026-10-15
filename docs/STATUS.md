@@ -8,6 +8,16 @@ Privates GitHub-Repository TimonNetzel/tamatem-dina, Hauptzweig main. Ausgangspu
 
 Die bestehende private Site enthält seit **15. Oktober 2026, 19:27 Uhr Europe/Berlin, Version 0.8 mit allen fünf Leveln**. Native Bereitstellung **succeeded**, Sites-Version **3**. Quellcommit 1cb01fb00d6139b43ba6a723d78d4d6c087d770a hat denselben vollständigen Quellbaum wie der geprüfte GitHub-Stand d9a7f72539138235e5fc701889770ca53207018b. Alle 39 Archivdateien dateigenau gegen den gepushten Sites-Commit geprüft. Hosting-Identität und Zugriff ausschließlich für das Eigentümerkonto unverändert. Details und frühere Veröffentlichungen: DEPLOYMENT.md. Die anschließende Dokumentationspflege ändert den veröffentlichten Spielcode nicht.
 
+## Gesamtabnahme 0.10
+
+Ausgangspunkt dieser Prüfung: bestätigter GitHub-main **d8a8032**. Der bereitgestellte Checkout d9a7f72 war sauber; aktueller main wurde übernommen, keine Nutzerarbeit überschrieben. Ergebnisse, Varianten und Prüfgrenzen: [ACCEPTANCE_REPORT.md](ACCEPTANCE_REPORT.md).
+
+- Neuer Browserlauf `python tests/browser-campaign.py`: neue Partie ohne eingesetzten Fortschritt, alle sieben Level in drei Sprachen mit gekreuzten Kontaktvorgeschichten. Netzwerk vor Spielbeginn aus; nach jedem Level echte Exportdatei und bestätigter Reimport. Neuladen, Sprachwechsel, Notizbücher, Hilfen, beide Figuren, Altersfolge und Touchansichten 320/390 übergreifend geprüft: **alle drei vollständigen Kampagnen mit je 87 erreichten Abschnitten bestanden**. Details im Abnahmebericht.
+- Konkreter Fehler behoben: Das Quellenraster am ersten Recherchetisch erzwang bei 320 Pixeln horizontales Auslaufen. Mobile Spielspalte und Quellenspalten können nun schrumpfen, Beschriftungen umbrechen. Dokumentbreite danach 320 bei Viewport 320; Vorher-/Nachher-Screenshots visuell geprüft. Cachekennung erhöht, Format 10 und Spielinhalte unverändert.
+- **npm test vor und nach der Korrektur: zwölf Testdateien bestanden.** Sämtliche bisherigen Episodenläufe (Level 1–7) und historische Dateiimporte 1–9 erneut dreisprachig bestanden; v10-Export/Reimport in allen sieben Leveln bestanden. Einzelergebnisse im Abnahmebericht. Keine automatisierte Laufzeit als menschliche Spielzeit gewertet.
+- Echte iPhone-/Safari-, muttersprachliche ägyptisch-arabische, unabhängige Fach- und menschliche Zeitabnahmen bleiben offen. Direkter Dateiaufruf erneut tatsächlich versucht: **ERR_BLOCKED_BY_ADMINISTRATOR**, keine Umgehung. Konkrete externe Prüfaufträge und leere Zeitvorlage ergänzt. Die technische Prüfung ist keine vollständige externe Freigabe.
+- Private Site weiterhin separat auf **0.8**. In diesem Abnahmepaket keine Sites-Veröffentlichung.
+
 ## Neu implementiert in 0.10 · Level 7
 
 - Zwölf konkrete Stationen in episodes/07-letzte-ausgabe.md. Überwiegend realistisches Finale mit **achtzehnjährigem Tamatem** und eigenständig spielbarer Dina, jeweils sechs Spielstationen. Optionaler direkter Einstieg ab **healing-complete**, Abschluss **edition-complete**; kein Neustart.
@@ -97,9 +107,9 @@ Die bestehende private Site enthält seit **15. Oktober 2026, 19:27 Uhr Europe/B
 - **Direkter file://-Betrieb** der erzeugten HTML auf einem freigegebenen Laptop-Browser bleibt offen; hier weiterhin richtlinienbedingt blockiert. Technischer Exporttest und tatsächliches Service-Worker-Spiel sind andere Nachweise.
 - **Keine unabhängige Spieldauermessung** der sieben Level. Ziel jeweils 15–30 Minuten. Automatisierte Durchlaufzeiten sind kein menschlicher Spieltest.
 - Keine unabhängige medizinische, wirtschaftliche oder juristische Fachabnahme von Level 6. Journalistisches und juristisches Gegenlesen von Level 7 ebenfalls offen. Keine unabhängige dramaturgische, journalistische, psychologische oder Betroffenen-/Fachabnahme der neuen Episode. Ökologische Fachprüfung von Level 3 ebenfalls offen; Silberatem, Messindex und fantastische Wurzelfunktion sind erfunden.
-- Spielstände gerätelokal, keine automatische Synchronisierung; Ton und Musik fehlen weiterhin. Alle sieben Level sind implementiert; Gesamtabnahme steht aus.
+- Spielstände gerätelokal, keine automatische Synchronisierung; Ton und Musik fehlen weiterhin. Alle sieben Level sind implementiert; technische Gesamtabnahme siehe ACCEPTANCE_REPORT.md, externe Gesamtfreigabe bleibt offen.
 - Keine zusätzliche Browserabnahme der authentifizierten Live-Site; die Veröffentlichung von 0.8 ist durch native succeeded-Antwort mit URL bestätigt. Übergabe-Hashliste bleibt ursprüngliche Momentaufnahme von Prolog 0.1; absichtliche Abweichungen sind erwartbar.
 
 ## Nächste Aufgabe / Chatübergabe
 
-**Neuen Chat zur Gesamtabnahme öffnen.** Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Alle sieben Level und Spielstände 1–10 erhalten; Gesamtkampagne, alternative Entscheidungen, echte Geräte-, muttersprachliche, direkte Einzeldatei-, unabhängige Fach- und menschliche Zeitprüfungen anhand ACCEPTANCE.md fortführen. Keine offene Abnahme als bestanden ausgeben. Sites-Veröffentlichung bleibt ein gesonderter Auftrag.
+**Für die externen Abnahmen einen neuen Chat empfehlen.** Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Ergebnisse der technischen Gesamtabnahme zuerst in ACCEPTANCE_REPORT.md lesen. Echte Geräte-, muttersprachliche, direkte Einzeldatei-, unabhängige Fach- und menschliche Zeitnachweise gemäß ACCEPTANCE.md sammeln und konkrete Befunde beheben. Alle sieben Level und Spielstände 1–10 erhalten. Keine offene Abnahme als bestanden ausgeben. Sites bleibt separat auf 0.8, Veröffentlichung nur bei gesondertem Auftrag.
