@@ -19,7 +19,7 @@ Der Assistent beurteilt dies nach jedem abgeschlossenen Arbeitspaket und sagt de
 - Beim Übergang von Umsetzung zu einer größeren Gesamtabnahme kann ein eigener Chat sinnvoll sein.
 - Zuerst den laufenden Schritt stabil abschließen und die Übergabe sichern. Bei einem externen Blocker stattdessen den genauen Zwischenstand und den Blocker festhalten.
 
-Aktueller Übergabepunkt: Der Quellgarten von Level 1 ist in Entwicklungsfassung 0.3 abgeschlossen. Jetzt einen neuen Chat für Blütenkammer, Rückweg und gemeinsames Finale beginnen; der passende Prompt steht in CODEX_STARTPROMPT.md. Level 2 erhält anschließend einen eigenen Chat.
+Aktueller Übergabepunkt: Level 1 ist in Entwicklungsfassung 0.4 vollständig spielbar und geprüft. Vor Level 2 einen neuen Chat beginnen; der passende Prompt steht in CODEX_STARTPROMPT.md. Die Sites-Veröffentlichung bleibt ein gesonderter Schritt.
 
 ## Übergabe vorbereiten
 

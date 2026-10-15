@@ -1,12 +1,14 @@
 import {CHANNEL_START,CHANNEL_SOLUTION,validChannels,traceChannels} from './channels.js';
-export const VERSION=3;
+export const VERSION=4;
 export const SOURCE_IDS=['field','travel','drawing','advert'];
 export const ITEM_IDS=['lens','lantern','sling','glass'];
 export const ANSWERS={property:'field',place:'travel',identity:'drawing'};
-export const STAGES=['intro','research','illness','resolve','pack','threshold','river','river-crossing','river-complete','garden','garden-complete'];
+export const STAGES=['intro','research','illness','resolve','pack','threshold','river','river-crossing','river-complete','garden','garden-complete','chamber','return','apparatus','dina','finale','healing','level-complete'];
 const riverState=()=>({inspected:false,farBankChecked:false,slingSelected:false,loopAttached:false,secured:false,crossingPanel:0});
 const gardenState=()=>({metGuardian:false,inspected:false,rotations:[...CHANNEL_START],tested:false,solutionPreview:false,watered:false});
-export function initialState(){return {version:VERSION,stage:'intro',read:[],assign:{property:null,place:null,identity:null},committed:false,talked:[],choice:null,noteTaken:false,packed:[],owlChoice:null,hints:{},river:riverState(),garden:gardenState()}}
+const bloomState=()=>({identified:false,collected:false,guardianTalked:false});
+const finaleState=()=>({inserted:false,collected:false,bound:false,lanternOn:false,attempted:false,stable:false,dinaObservation:'none',dinaReported:false,dinaConfirmed:false});
+export function initialState(){return {version:VERSION,stage:'intro',read:[],assign:{property:null,place:null,identity:null},committed:false,talked:[],choice:null,noteTaken:false,packed:[],owlChoice:null,hints:{},river:riverState(),garden:gardenState(),bloom:bloomState(),journey:{protected:false},finale:finaleState()}}
 export const correctResearch=s=>Object.entries(ANSWERS).every(([k,v])=>s.assign[k]===v);
 export const readyToLeave=s=>s.noteTaken&&ITEM_IDS.every(k=>s.packed.includes(k));
 export const heardEssentials=s=>['dina','doctor'].every(k=>s.talked.includes(k));
@@ -42,16 +44,34 @@ export function reduce(s,a){
  case 'GARDEN_PREVIEW':if(s.stage==='garden'&&(s.hints.garden||0)>=3)n.garden.solutionPreview=true;break;
  case 'GARDEN_HIDE_PREVIEW':if(s.stage==='garden')n.garden.solutionPreview=false;break;
  case 'GARDEN_APPLY_PREVIEW':if(s.stage==='garden'&&s.garden.solutionPreview&&s.garden.metGuardian&&s.garden.inspected){n.garden.rotations=[...CHANNEL_SOLUTION];n.garden.solutionPreview=false;n.garden.tested=false;}break;
- case 'HINT':if(['research','illness','resolve','pack','threshold','river','garden'].includes(s.stage))n.hints[s.stage]=Math.min(3,(s.hints[s.stage]||0)+1);break;
+ case 'CHAMBER_START':if(s.stage==='garden-complete')n.stage='chamber';break;
+ case 'BLOOM_IDENTIFY':if(s.stage==='chamber')n.bloom.identified=true;break;
+ case 'BLOOM_COLLECT':if(s.stage==='chamber'&&s.bloom.identified){n.bloom.collected=true;n.finale.lanternOn=true;}break;
+ case 'BLOOM_GUARDIAN':if(s.stage==='chamber')n.bloom.guardianTalked=true;break;
+ case 'RETURN_START':if(s.stage==='chamber'&&s.bloom.collected)n.stage='return';break;
+ case 'RETURN_PROTECT':if(s.stage==='return')n.journey.protected=true;break;
+ case 'RETURN_HOME':if(s.stage==='return'&&s.journey.protected)n.stage='apparatus';break;
+ case 'APP_INSERT':if(s.stage==='apparatus')n.finale.inserted=true;break;
+ case 'APP_COLLECT':if(s.stage==='apparatus'&&s.finale.inserted)n.finale.collected=true;break;
+ case 'APP_BIND':if(s.stage==='apparatus'&&s.finale.collected)n.finale.bound=true;break;
+ case 'APP_LANTERN':if(['apparatus','finale'].includes(s.stage)&&s.finale.bound&&!s.finale.stable)n.finale.lanternOn=!s.finale.lanternOn;break;
+ case 'APP_CALM':if(['apparatus','finale'].includes(s.stage)&&s.finale.bound&&!s.finale.stable){n.finale.attempted=true;n.finale.stable=!s.finale.lanternOn;if(!s.finale.dinaReported||n.finale.stable)n.stage='dina';}break;
+ case 'DINA_OBSERVE':if(s.stage==='dina')n.finale.dinaObservation=s.finale.stable?'steady':'flicker';break;
+ case 'DINA_REPORT':if(s.stage==='dina'&&s.finale.dinaObservation===(s.finale.stable?'steady':'flicker')){n.finale.dinaReported=true;n.finale.dinaConfirmed=s.finale.stable;n.stage='finale';}break;
+ case 'HEAL':if(s.stage==='finale'&&s.finale.stable&&s.finale.dinaConfirmed)n.stage='healing';break;
+ case 'MORNING':if(s.stage==='healing')n.stage='level-complete';break;
+ case 'HINT':if(['research','illness','resolve','pack','threshold','river','garden','chamber','return','apparatus','dina','finale','healing'].includes(s.stage))n.hints[s.stage]=Math.min(3,(s.hints[s.stage]||0)+1);break;
  }
  return n;
 }
 export function validateState(input){
- if(!input||![1,2,VERSION].includes(input.version)||(input.version===1&&!['intro','research','illness','resolve','pack','threshold','complete'].includes(input.stage)))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
+ if(!input||![1,2,3,VERSION].includes(input.version)||(input.version===1&&!['intro','research','illness','resolve','pack','threshold','complete'].includes(input.stage)))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
  // Version 1 ended at Oris. Continue at the river without losing decisions or equipment.
  const legacy=input.version===1?{...input,stage:input.stage==='complete'?'river':input.stage,river:riverState()}:input;
  if(input.version===2&&!STAGES.slice(0,9).includes(input.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
- const x=input.version<3?{...legacy,version:VERSION,garden:gardenState()}:input;
+ if(input.version===3&&!STAGES.slice(0,11).includes(input.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
+ const gardenLegacy=input.version<3?{...legacy,garden:gardenState()}:legacy;
+ const x=input.version<4?{...gardenLegacy,version:VERSION,bloom:bloomState(),journey:{protected:false},finale:finaleState()}:input;
  if(!STAGES.includes(x.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
  const s=initialState();s.stage=x.stage;
  for(const [key,allowed] of [['read',SOURCE_IDS],['packed',ITEM_IDS],['talked',['dina','doctor','hand']]]){if(!Array.isArray(x[key])||x[key].some(v=>!allowed.includes(v)))throw Error('Der Spielstand enthält ungültige Einträge.');s[key]=[...new Set(x[key])];}
@@ -77,6 +97,17 @@ export function validateState(input){
  for(const key of ['metGuardian','inspected','tested','solutionPreview','watered']){if(typeof x.garden[key]!=='boolean')throw Error('Ungültiger Gartenzustand.');s.garden[key]=x.garden[key];}
  if(!validChannels(x.garden.rotations))throw Error('Ungültige Kanalstellungen.');s.garden.rotations=[...x.garden.rotations];
  const g=s.garden,changed=g.rotations.some((value,index)=>value!==CHANNEL_START[index]);
- if((stageIndex<9&&(changed||g.metGuardian||g.inspected||g.tested||g.solutionPreview||g.watered))||((changed||g.tested)&&(!g.metGuardian||!g.inspected))||(g.solutionPreview&&(s.hints.garden||0)<3)||(g.watered&&(!g.tested||!traceChannels(g.rotations).solved))||(g.tested&&traceChannels(g.rotations).solved&&!g.watered)||(g.watered&&s.stage!=='garden-complete')||(s.stage==='garden-complete'&&(!g.watered||g.solutionPreview)))throw Error('Der Gartenzustand überspringt eine notwendige Handlung.');
+ if((stageIndex<9&&(changed||g.metGuardian||g.inspected||g.tested||g.solutionPreview||g.watered))||((changed||g.tested)&&(!g.metGuardian||!g.inspected))||(g.solutionPreview&&(s.hints.garden||0)<3)||(g.watered&&(!g.tested||!traceChannels(g.rotations).solved))||(g.tested&&traceChannels(g.rotations).solved&&!g.watered)||(g.watered&&stageIndex<10)||(stageIndex>=10&&(!g.watered||g.solutionPreview)))throw Error('Der Gartenzustand überspringt eine notwendige Handlung.');
+ for(const key of ['bloom','journey','finale']){
+  if(!x[key]||typeof x[key]!=='object')throw Error('Der Zustand der Lumenblüte fehlt.');
+  for(const field of Object.keys(s[key])){
+   if(field==='dinaObservation'){if(!['none','flicker','steady'].includes(x[key][field]))throw Error('Ungültiger Finalzustand.');}
+   else if(typeof x[key][field]!=='boolean')throw Error('Ungültiger Finalzustand.');
+   s[key][field]=x[key][field];
+  }
+ }
+ const b=s.bloom,f=s.finale,j=s.journey;
+ if((stageIndex<11&&Object.values(b).some(Boolean))||(b.collected&&!b.identified)||(stageIndex>=12&&!b.collected)||(j.protected&&stageIndex<12)||(stageIndex>=13&&!j.protected))throw Error('Der Zustand der Lumenblüte überspringt eine notwendige Handlung.');
+ if((f.lanternOn&&!b.collected)||(b.collected&&!f.bound&&!f.lanternOn)||(stageIndex<13&&Object.entries(f).some(([k,v])=>k!=='lanternOn'&&k!=='dinaObservation'&&v))||(f.inserted&&stageIndex<13)||(f.collected&&!f.inserted)||(f.bound&&!f.collected)||(f.attempted&&!f.bound)||(f.stable&&(!f.attempted||f.lanternOn))||(f.dinaObservation!=='none'&&!f.attempted)||(f.dinaObservation==='steady'&&!f.stable)||(f.dinaReported&&f.dinaObservation==='none')||(f.dinaConfirmed&&(!f.stable||f.dinaObservation!=='steady'||!f.dinaReported))||(stageIndex<14&&f.attempted)||(stageIndex>=14&&!f.attempted)||(stageIndex>=15&&!f.dinaReported)||(stageIndex>=16&&(!f.stable||!f.dinaConfirmed))||(s.stage==='finale'&&f.stable&&!f.dinaConfirmed))throw Error('Der Finalzustand überspringt eine notwendige Handlung.');
  return s;
 }

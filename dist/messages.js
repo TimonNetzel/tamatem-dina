@@ -1,4 +1,3 @@
-// German source strings are stable translation keys. Keep both translations complete.
 export const MESSAGES={
   "Deutsch": {
     "en": "German",
@@ -1727,5 +1726,585 @@ export const MESSAGES={
   "Der Gartenzustand überspringt eine notwendige Handlung.": {
     "en": "The garden state skips a required action.",
     "ar-EG": "حالة الجنينة بتتخطّى خطوة ضرورية."
+  },
+  "Was muss laut Bericht lebendig bleiben?": {
+    "en": "What does the report say must stay alive?",
+    "ar-EG": "إيه اللي لازم يفضل عايش حسب التقرير؟"
+  },
+  "Du brauchst ihren Staub, nicht ihre Wurzel. Vergleiche zuerst die Blüte mit der Recherchekarte.": {
+    "en": "You need its dust, not its roots. First compare the flower with the research card.",
+    "ar-EG": "إنت محتاج غبارها، مش جذورها. قارن الزهرة ببطاقة البحث الأول."
+  },
+  "Vergleiche die Blüte mit der Recherchekarte und verwende dann das Lichtglas.": {
+    "en": "Compare the flower with the research card, then use the light jar.",
+    "ar-EG": "قارن الزهرة ببطاقة البحث، وبعدين استخدم برطمان النور."
+  },
+  "Welche Regel hat der Hüter für den Lichtstaub genannt?": {
+    "en": "What rule did the Guardian give you about the light dust?",
+    "ar-EG": "الحارس قال إيه عن غبار النور؟"
+  },
+  "Im Dunkeln wird der Staub schwächer. Du hast eine brennende Laterne.": {
+    "en": "The dust grows weaker in darkness. You have a lit lantern.",
+    "ar-EG": "الغبار بيضعف في الضلمة. ومعاك فانوس منوّر."
+  },
+  "Halte das Lichtglas an die brennende Laterne. Danach geht es zum Dorf.": {
+    "en": "Hold the light jar beside the lit lantern. Then head for the village.",
+    "ar-EG": "قرّب برطمان النور من الفانوس المنوّر. وبعد كده ارجع للقرية."
+  },
+  "Die Archivskizze unterscheidet drei Zustände.": {
+    "en": "The archive sketch shows three states.",
+    "ar-EG": "رسمة الأرشيف بتوضّح تلات حالات."
+  },
+  "Das fremde Licht hilft zuerst und stört später.": {
+    "en": "The other light helps at first, then interferes.",
+    "ar-EG": "النور اللي من برّه بيساعد في الأول، وبعدين بيعطّل."
+  },
+  "Der nächste Schritt steht in der Archivskizze.": {
+    "en": "The archive sketch shows the next step.",
+    "ar-EG": "الخطوة الجاية موضّحة في رسمة الأرشيف."
+  },
+  "Dina sieht die Apparatur aus einem anderen Winkel.": {
+    "en": "Dina sees the apparatus from a different angle.",
+    "ar-EG": "دينا شايفة الجهاز من زاوية تانية."
+  },
+  "Vergleiche die Lichter im Spiegel. Danach muss Tamatem davon erfahren.": {
+    "en": "Compare the lights in the mirror. Then tell Tamatem what you see.",
+    "ar-EG": "قارن النورين في المراية. وبعدها لازم تحكي لتماتم اللي شفته."
+  },
+  "Untersuche das Spiegelbild und sprich mit Tamatem.": {
+    "en": "Examine the reflection and speak to Tamatem.",
+    "ar-EG": "بص على الانعكاس في المراية واتكلم مع تماتم."
+  },
+  "Die Archivskizze erklärt, wann die Laterne ausgehen darf.": {
+    "en": "The archive sketch explains when the lantern can be put out.",
+    "ar-EG": "رسمة الأرشيف بتشرح إمتى ينفع تطفي الفانوس."
+  },
+  "Gebundenes Licht braucht keine Laterne. Dina prüft anschließend die Stabilität.": {
+    "en": "Bound light needs no lantern. Dina then checks its stability.",
+    "ar-EG": "النور لما يترابط مش بيحتاج الفانوس. وبعدها دينا بتتأكد إنه ثابت."
+  },
+  "Die Ärztin übernimmt jetzt die Versorgung.": {
+    "en": "The doctor takes over the care now.",
+    "ar-EG": "الدكتورة هتتولّى العناية بيها دلوقتي."
+  },
+  "Tamatem muss keine weitere Apparatur bedienen.": {
+    "en": "Tamatem has no more apparatus to operate.",
+    "ar-EG": "تماتم مش محتاج يشغّل أي جهاز تاني."
+  },
+  "Warte den Morgen ab.": {
+    "en": "Wait for morning.",
+    "ar-EG": "استنّى الصبح."
+  },
+  "Die lebende Blüte": {
+    "en": "The living blossom",
+    "ar-EG": "الزهرة الحيّة"
+  },
+  "Ein Licht durch den Sturm.": {
+    "en": "A light through the storm.",
+    "ar-EG": "نور وسط العاصفة."
+  },
+  "Das Licht kippt": {
+    "en": "The light falters",
+    "ar-EG": "النور بيختل"
+  },
+  "Dinas Blick": {
+    "en": "Dina's perspective",
+    "ar-EG": "من عين دينا"
+  },
+  "Ein anderer Morgen": {
+    "en": "A different morning",
+    "ar-EG": "صبح مختلف"
+  },
+  "Abschnitt {number} von 12": {
+    "en": "Section {number} of 12",
+    "ar-EG": "الجزء {number} من 12"
+  },
+  "Die Lumenblüte · Level 1 vollständig spielbar": {
+    "en": "The Lumen Blossom · Complete Level 1",
+    "ar-EG": "زهرة النور · المستوى الأول كامل"
+  },
+  "Die Blütenkammer betreten": {
+    "en": "Enter the blossom chamber",
+    "ar-EG": "ادخل حجرة الزهرة"
+  },
+  "Ruhiger Lichtfaden": {
+    "en": "Steady thread of light",
+    "ar-EG": "خيط نور ثابت"
+  },
+  "Flackernder Lichtfaden": {
+    "en": "Flickering thread of light",
+    "ar-EG": "خيط نور بيرعش"
+  },
+  "Gesammelter Lichtstaub": {
+    "en": "Gathered light dust",
+    "ar-EG": "غبار نور متجمّع"
+  },
+  "Lichtstaub im Glas": {
+    "en": "Light dust in the jar",
+    "ar-EG": "غبار نور في البرطمان"
+  },
+  "Spiegelbild: {condition}. Laterne: {light}.": {
+    "en": "Reflection: {condition}. Lantern: {light}.",
+    "ar-EG": "في المراية: {condition}. الفانوس: {light}."
+  },
+  "an": {
+    "en": "on",
+    "ar-EG": "منوّر"
+  },
+  "aus": {
+    "en": "off",
+    "ar-EG": "مطفي"
+  },
+  "Lichtglas: {condition}. Laterne: {light}.": {
+    "en": "Light jar: {condition}. Lantern: {light}.",
+    "ar-EG": "برطمان النور: {condition}. الفانوس: {light}."
+  },
+  "Eine lebende Blüte. Fünf goldene Blätter, ein dunkler Ring.": {
+    "en": "A living blossom. Five golden petals, a dark ring.",
+    "ar-EG": "زهرة حيّة. خمس بتلات دهبي، وحلقة غامقة."
+  },
+  "Die Blüte bleibt hier. Ihr Licht kommt mit.": {
+    "en": "The flower stays here. Its light comes with me.",
+    "ar-EG": "الزهرة هتفضل هنا. نورها هو اللي هييجي معايا."
+  },
+  "Dinas Zeichnung. Jetzt muss ich prüfen, ob sie zu dieser Pflanze gehört.": {
+    "en": "Dina's drawing. Now I need to check whether it matches this plant.",
+    "ar-EG": "رسمة دينا. دلوقتي لازم أتأكد إنها مطابقة للنبتة دي."
+  },
+  "Der Vergleich stimmt: fünf Blütenblätter und ein dunkler Ring. Das abgefallene Blatt leuchtet nicht mehr. Die Wurzeln müssen unversehrt bleiben.": {
+    "en": "It matches: five petals and a dark ring. The fallen petal no longer glows. The roots must stay intact.",
+    "ar-EG": "المواصفات مطابقة: خمس بتلات وحلقة غامقة. البتلة اللي وقعت مبقتش بتنور. لازم الجذور تفضل سليمة."
+  },
+  "Mitnehmen, ohne wegzunehmen.": {
+    "en": "Take a little. Leave it living.",
+    "ar-EG": "تاخد منها، وتسيبها عايشة."
+  },
+  "Im Notizbuch steht: Nur die lebende Lumenblüte gibt Lichtstaub ab. Vergleiche ihre Merkmale mit Dinas Recherchekarte.": {
+    "en": "The notebook says: only a living Lumen Blossom gives off light dust. Compare its features with Dina's research card.",
+    "ar-EG": "في الكشكول مكتوب: زهرة النور وهي حيّة بس اللي بتطلّع غبار نور. قارن علاماتها ببطاقة بحث دينا."
+  },
+  "Blüte mit Recherchekarte vergleichen": {
+    "en": "Compare the flower with the research card",
+    "ar-EG": "قارن الزهرة ببطاقة البحث"
+  },
+  "Blüte pflücken versuchen": {
+    "en": "Try to pick the flower",
+    "ar-EG": "حاول تقطف الزهرة"
+  },
+  "Lichtstaub gesammelt": {
+    "en": "Light dust gathered",
+    "ar-EG": "غبار النور اتجمّع"
+  },
+  "Lichtglas an der Blüte verwenden": {
+    "en": "Use the light jar on the flower",
+    "ar-EG": "استخدم برطمان النور مع الزهرة"
+  },
+  "Den Hüter nach dem Licht fragen": {
+    "en": "Ask the Guardian about the light",
+    "ar-EG": "اسأل الحارس عن النور"
+  },
+  "Lichtstaub im Glas · Blüte unversehrt": {
+    "en": "Dust in the jar · Flower unharmed",
+    "ar-EG": "الغبار في البرطمان · الزهرة سليمة"
+  },
+  "Der Hüter zeigt auf die Laterne. Tamatem zündet sie an. „Solange Licht in seiner Nähe ist, erinnert der Staub sich an die Blüte.“ Diese Regel gilt, bis der Staub gebunden ist.": {
+    "en": "The Guardian points to the lantern. Tamatem lights it. “As long as light is near, the dust remembers the blossom.” This rule holds until the dust is bound.",
+    "ar-EG": "الحارس بيشاور على الفانوس، وتماتم بينوّره. «طول ما فيه نور جنبه، الغبار بيفتكر الزهرة.» القاعدة دي بتفضل سارية لحد ما الغبار يترابط."
+  },
+  "Mit Oris nach Hause": {
+    "en": "Head home with Oris",
+    "ar-EG": "ارجع البيت مع أوريس"
+  },
+  "Sturm auf dem Höhenweg. Der alte Flussübergang ist überflutet.": {
+    "en": "A storm on the high path. The old river crossing is flooded.",
+    "ar-EG": "عاصفة على الطريق العالي. الميّة غطّت معبر النهر القديم."
+  },
+  "An der Laterne bleibt das Glas hell. Weiter, Oris.": {
+    "en": "The jar stays bright beside the lantern. On we go, Oris.",
+    "ar-EG": "البرطمان بيفضل منوّر جنب الفانوس. يلا يا أوريس."
+  },
+  "Das Licht im Glas wird schwächer. Ich muss es schützen.": {
+    "en": "The light in the jar is fading. I need to protect it.",
+    "ar-EG": "النور في البرطمان بيضعف. لازم أحافظ عليه."
+  },
+  "Der Rückweg": {
+    "en": "The way home",
+    "ar-EG": "طريق الرجوع"
+  },
+  "„Bleib bei mir“, sagt Tamatem. Oris führt ihn über den höheren Pfad.": {
+    "en": "“Stay with me,” says Tamatem. Oris leads him along the higher path.",
+    "ar-EG": "«خليكي جنبي»، بيقول تماتم. أوريس بتاخده من الطريق العالي."
+  },
+  "„Welcher Weg bleibt offen?“ Oris weist zum höheren Pfad.": {
+    "en": "“Which path is still open?” Oris points to the higher trail.",
+    "ar-EG": "«أنهي طريق لسه مفتوح؟» أوريس بتشاور على الطريق العالي."
+  },
+  "Der Sturm wartet auf deine Handlung. Kein Countdown läuft im Hintergrund.": {
+    "en": "The storm waits for your move. There is no hidden countdown.",
+    "ar-EG": "العاصفة مستنية قرارك. مفيش عدّ تنازلي شغّال في الخفا."
+  },
+  "Glas dunkel im Rucksack verstauen": {
+    "en": "Put the jar in the dark backpack",
+    "ar-EG": "حط البرطمان في ضلمة الشنطة"
+  },
+  "Lichtglas an die brennende Laterne halten": {
+    "en": "Hold the light jar beside the lit lantern",
+    "ar-EG": "قرّب برطمان النور من الفانوس المنوّر"
+  },
+  "Das Glas leuchtet wieder ruhig neben der Laterne.": {
+    "en": "The jar glows steadily beside the lantern again.",
+    "ar-EG": "البرطمان رجع ينور بهدوء جنب الفانوس."
+  },
+  "Die Lichter des Dorfes erreichen": {
+    "en": "Reach the village lights",
+    "ar-EG": "اوصل لأنوار القرية"
+  },
+  "Zuhause · Die Lichtapparatur": {
+    "en": "Home · The light apparatus",
+    "ar-EG": "في البيت · جهاز النور"
+  },
+  "Das Licht hält.": {
+    "en": "The light holds steady.",
+    "ar-EG": "النور ثابت."
+  },
+  "Sammeln. Binden. Beruhigen.": {
+    "en": "Gather. Bind. Settle.",
+    "ar-EG": "تجميع. ربط. تهدئة."
+  },
+  "Glas eingesetzt": {
+    "en": "Jar in place",
+    "ar-EG": "البرطمان في مكانه"
+  },
+  "Staub gesammelt": {
+    "en": "Dust gathered",
+    "ar-EG": "الغبار متجمّع"
+  },
+  "Licht gebunden": {
+    "en": "Light bound",
+    "ar-EG": "النور مترابط"
+  },
+  "Licht beruhigt": {
+    "en": "Light settled",
+    "ar-EG": "النور هادي"
+  },
+  "Wir haben es beide gesehen. Jetzt hole ich die Ärztin.": {
+    "en": "We've both seen it. I'll get the doctor now.",
+    "ar-EG": "إحنا الاتنين شوفناه. هجيب الدكتورة دلوقتي."
+  },
+  "Die Laterne … Ich habe auf die falsche Stelle gestarrt.": {
+    "en": "The lantern… I was staring at the wrong thing.",
+    "ar-EG": "الفانوس… كنت مركّز في المكان الغلط."
+  },
+  "Die Ärztin bleibt bei Dina. Ich bringe das Glas zur Apparatur.": {
+    "en": "The doctor is staying with Dina. I'll take the jar to the apparatus.",
+    "ar-EG": "الدكتورة قاعدة مع دينا. هاخد البرطمان للجهاز."
+  },
+  "Dina: „Das Glas ist nicht das Einzige, das flackert. Im Spiegel bewegen sich beide Lichter zusammen.“": {
+    "en": "Dina: “The jar isn't the only thing flickering. Both lights move together in the mirror.”",
+    "ar-EG": "دينا: «البرطمان مش لوحده اللي نوره بيرعش. النورين بيتحركوا مع بعض في المراية.»"
+  },
+  "Archivskizze": {
+    "en": "Archive sketch",
+    "ar-EG": "رسمة الأرشيف"
+  },
+  "Sammeln: Das eingesetzte Glas gibt den Staub in den inneren Lichtkörper ab.": {
+    "en": "Gather: the jar releases its dust into the inner light vessel.",
+    "ar-EG": "تجميع: البرطمان اللي في مكانه بينقل الغبار لقلب الجهاز."
+  },
+  "Binden: Der Staub wird zu einem Lichtfaden. Erst dann braucht er die Laterne nicht mehr.": {
+    "en": "Bind: the dust becomes a thread of light. Only then can it do without the lantern.",
+    "ar-EG": "ربط: الغبار بيتحوّل لخيط نور. ساعتها بس مش هيحتاج الفانوس."
+  },
+  "Beruhigen: Zum Beruhigen muss der Lichtkörper von fremdem Licht getrennt sein.": {
+    "en": "Settle: to settle the light, separate the vessel from other light sources.",
+    "ar-EG": "تهدئة: علشان النور يهدى، لازم قلب الجهاز يبعد عن أي نور من برّه."
+  },
+  "Gefülltes Lichtglas einsetzen": {
+    "en": "Insert the filled light jar",
+    "ar-EG": "حط برطمان النور المليان في مكانه"
+  },
+  "Sammeln": {
+    "en": "Gather",
+    "ar-EG": "تجميع"
+  },
+  "Binden": {
+    "en": "Bind",
+    "ar-EG": "ربط"
+  },
+  "Laterne ausschalten": {
+    "en": "Put out the lantern",
+    "ar-EG": "اطفي الفانوس"
+  },
+  "Laterne einschalten": {
+    "en": "Light the lantern",
+    "ar-EG": "نوّر الفانوس"
+  },
+  "Beruhigen": {
+    "en": "Settle",
+    "ar-EG": "تهدئة"
+  },
+  "Dina hat die Stabilität im Spiegel bestätigt.": {
+    "en": "Dina has confirmed the steady light in the mirror.",
+    "ar-EG": "دينا أكّدت من المراية إن النور ثابت."
+  },
+  "Die Ärztin mit dem fertigen Mittel rufen": {
+    "en": "Call the doctor with the finished remedy",
+    "ar-EG": "نادي الدكتورة وخلي العلاج الجاهز معاها"
+  },
+  "Keine Zutaten gehen verloren. Eine früh ausgeschaltete Laterne bleibt ausgeschaltet.": {
+    "en": "Nothing is lost. If you put the lantern out early, it stays out.",
+    "ar-EG": "مفيش حاجة بتضيع. لو طفيت الفانوس بدري، هيفضل مطفي."
+  },
+  "Dina sieht durch die offene Tür das Spiegelbild der Apparatur.": {
+    "en": "Through the open door, Dina sees the apparatus reflected in a mirror.",
+    "ar-EG": "من الباب المفتوح، دينا شايفة انعكاس الجهاز في المراية."
+  },
+  "Von hier sehe ich mehr als nur das Glas.": {
+    "en": "From here, I can see more than the jar.",
+    "ar-EG": "من هنا أنا شايفة أكتر من البرطمان بس."
+  },
+  "Nur ein Lichtfaden. Er steht ruhig, auch im Spiegel.": {
+    "en": "Just one thread of light. Steady, even in the mirror.",
+    "ar-EG": "خيط نور واحد بس. ثابت، حتى في المراية."
+  },
+  "Das Glas ist nicht das Einzige, das flackert.": {
+    "en": "The jar isn't the only thing flickering.",
+    "ar-EG": "البرطمان مش لوحده اللي نوره بيرعش."
+  },
+  "Stabilität braucht einen zweiten Blick.": {
+    "en": "A second pair of eyes.",
+    "ar-EG": "عين تانية تتأكد."
+  },
+  "Zwei Lichter im selben Takt.": {
+    "en": "Two lights in the same rhythm.",
+    "ar-EG": "نورين على نفس الإيقاع."
+  },
+  "Tamatem hat die Laterne bereits ausgeschaltet. Prüfe selbst im Spiegel, ob das Licht wirklich ruhig bleibt.": {
+    "en": "Tamatem has already put out the lantern. Check the mirror yourself to see whether the light stays steady.",
+    "ar-EG": "تماتم طفى الفانوس خلاص. اتأكدي بنفسك من المراية إن النور بيفضل ثابت."
+  },
+  "Im Spiegel über der Apparatur siehst du Glas und Laterne zugleich. Untersuche, was sich gemeinsam verändert.": {
+    "en": "The mirror above the apparatus shows both jar and lantern. Examine what changes in unison.",
+    "ar-EG": "في المراية فوق الجهاز، شايفة البرطمان والفانوس مع بعض. بصّي على اللي بيتغيّر في الاتنين في نفس الوقت."
+  },
+  "Spiegelbild untersuchen": {
+    "en": "Examine the reflection",
+    "ar-EG": "بصّي على الانعكاس في المراية"
+  },
+  "Der Faden bleibt ruhig. Kein zweites Licht stört ihn.": {
+    "en": "The thread stays steady. No second light disturbs it.",
+    "ar-EG": "الخيط ثابت. مفيش نور تاني بيشوّشه."
+  },
+  "Das zweite Spiegellicht kommt von der Reiselaterne. Beide Lichtpunkte flackern gleichzeitig.": {
+    "en": "The second reflected light comes from the travel lantern. Both points flicker together.",
+    "ar-EG": "النور التاني في المراية جاي من فانوس الرحلة. النقطتين بيرعشوا في نفس الوقت."
+  },
+  "Tamatem die Stabilität bestätigen": {
+    "en": "Confirm the steady light to Tamatem",
+    "ar-EG": "أكّدي لتماتم إن النور ثابت"
+  },
+  "Tamatem auf die Laterne hinweisen": {
+    "en": "Tell Tamatem about the lantern",
+    "ar-EG": "نبّهي تماتم للفانوس"
+  },
+  "Die Ärztin übernimmt. Eine lange Nacht beginnt.": {
+    "en": "The doctor takes over. A long night begins.",
+    "ar-EG": "الدكتورة بتتولّى العناية بيها. وليلة طويلة بتبدأ."
+  },
+  "Gemeinsam geschafft": {
+    "en": "Together, we did it",
+    "ar-EG": "قدرنا نعملها مع بعض"
+  },
+  "Jetzt darf jemand anderes übernehmen.": {
+    "en": "Now someone else can take over.",
+    "ar-EG": "دلوقتي ينفع حد تاني يكمّل."
+  },
+  "Die Ärztin nimmt das stabilisierte Mittel entgegen und kümmert sich um Dina. Tamatem legt das Notizbuch ab. Oris wartet am Fenster. In der Nacht lässt das Fieber nach.": {
+    "en": "The doctor takes the stabilised remedy and cares for Dina. Tamatem puts down his notebook. Oris waits at the window. During the night, the fever eases.",
+    "ar-EG": "الدكتورة بتاخد العلاج بعد ما استقر وبتعتني بدينا. تماتم بيحط الكشكول، وأوريس مستنية عند الشباك. وخلال الليل، الحرارة بتقل."
+  },
+  "Den Morgen abwarten": {
+    "en": "Wait for morning",
+    "ar-EG": "استنّى الصبح"
+  },
+  "Du darfst mir auch das erzählen, was nicht in den Bericht passt.": {
+    "en": "You can tell me the things that don't fit in the report, too.",
+    "ar-EG": "ممكن تحكيلي كمان الحاجات اللي ملهاش مكان في التقرير."
+  },
+  "Ich dachte, wenn ich stehen bleibe, ist alles vorbei.": {
+    "en": "I thought if I stopped, it would all be over.",
+    "ar-EG": "كنت فاكر إني لو وقفت، كل حاجة هتخلص."
+  },
+  "Dann üben wir irgendwann das Stehenbleiben.": {
+    "en": "Then one day we'll practise stopping.",
+    "ar-EG": "يبقى نتدرّب يوم على إننا نقف شوية."
+  },
+  "Du hast jeden Schritt aufgeschrieben.": {
+    "en": "You wrote down every step.",
+    "ar-EG": "إنت كتبت كل خطوة."
+  },
+  "Fast jeden.": {
+    "en": "Almost every step.",
+    "ar-EG": "كل خطوة تقريبًا."
+  },
+  "Für den Rest ist noch Papier da.": {
+    "en": "There's still paper for the rest.",
+    "ar-EG": "ولسه فيه ورق للباقي."
+  },
+  "Ein anderer Morgen. Dina sitzt wieder aufrecht und braucht noch Ruhe.": {
+    "en": "A different morning. Dina is sitting up again and still needs rest.",
+    "ar-EG": "صبح مختلف. دينا قدرت تقعد تاني، ولسه محتاجة ترتاح."
+  },
+  "Level 1 abgeschlossen": {
+    "en": "Level 1 complete",
+    "ar-EG": "المستوى الأول خلص"
+  },
+  "Was wir gemeinsam tragen.": {
+    "en": "What we carry together.",
+    "ar-EG": "اللي بنشيله مع بعض."
+  },
+  "Die grauen Muster sind verblasst. Dina geht es deutlich besser; heute bleibt sie im Bett. Im Notizbuch liegt eine Zeichnung der Blüte. Ihre Wurzeln wachsen weiter am Glasberg.": {
+    "en": "The grey patterns have faded. Dina is much better; today she'll stay in bed. A drawing of the flower rests in the notebook. Its roots still grow at Glass Mountain.",
+    "ar-EG": "العلامات الرمادي بهتت. دينا أحسن بكتير، بس النهارده هتفضل في السرير. في الكشكول رسمة للزهرة، وجذورها لسه بتنمو في جبل الإزاز."
+  },
+  "Oris: „Du hast um Begleitung gebeten. Das war leichtes Gepäck.“": {
+    "en": "Oris: “You asked for company. That was light luggage.”",
+    "ar-EG": "أوريس: «إنت طلبت حد يمشي معاك. دي كانت أخف حاجة شيلتها.»"
+  },
+  "Oris: „Jetzt kennst du den Weg. Und jemanden, der ihn mit dir geht.“": {
+    "en": "Oris: “Now you know the way. And someone who'll walk it with you.”",
+    "ar-EG": "أوريس: «دلوقتي عرفت الطريق. وعرفت كمان حد يمشيه معاك.»"
+  },
+  "Ein Brief auf Dinas Tisch": {
+    "en": "A letter on Dina's desk",
+    "ar-EG": "جواب على مكتب دينا"
+  },
+  "Die verschwundenen Stimmen": {
+    "en": "The missing voices",
+    "ar-EG": "الأصوات اللي اختفت"
+  },
+  "Die Lokalzeitung bittet um ein Gespräch. Level 2 ist noch nicht spielbar.": {
+    "en": "The local newspaper asks for a conversation. Level 2 is not yet playable.",
+    "ar-EG": "الجريدة المحلية طالبة تتكلم معاها. المستوى التاني لسه مش متاح للعب."
+  },
+  "Gib Tamatem jetzt deine Beobachtung weiter.": {
+    "en": "Tell Tamatem what you've observed.",
+    "ar-EG": "احكي لتماتم دلوقتي اللي لاحظتيه."
+  },
+  "Untersuche als Dina das Spiegelbild.": {
+    "en": "As Dina, examine the reflection.",
+    "ar-EG": "وإنتِ بتلعبي بدينا، بصّي على الانعكاس في المراية."
+  },
+  "Warte den Morgen ab. Die Ärztin versorgt Dina.": {
+    "en": "Wait for morning. The doctor is caring for Dina.",
+    "ar-EG": "استنّى الصبح. الدكتورة بتعتني بدينا."
+  },
+  "Setze das gefüllte Lichtglas ein.": {
+    "en": "Insert the filled light jar.",
+    "ar-EG": "حط برطمان النور المليان في مكانه."
+  },
+  "Wähle Sammeln. Das Glas muss zuerst in der Halterung stehen.": {
+    "en": "Choose Gather. The jar must be in its holder first.",
+    "ar-EG": "اختار تجميع. لازم البرطمان يبقى في حامله الأول."
+  },
+  "Wähle Binden. Danach darf die Laterne ausgehen.": {
+    "en": "Choose Bind. Then the lantern can go out.",
+    "ar-EG": "اختار ربط. بعدها ينفع تطفي الفانوس."
+  },
+  "Rufe die Ärztin mit dem fertigen Mittel.": {
+    "en": "Call the doctor with the finished remedy.",
+    "ar-EG": "نادي الدكتورة علشان تاخد العلاج الجاهز."
+  },
+  "Schalte die Laterne aus und wähle Beruhigen.": {
+    "en": "Put out the lantern and choose Settle.",
+    "ar-EG": "اطفي الفانوس واختار تهدئة."
+  },
+  "Wähle Beruhigen. Anschließend prüft Dina das Spiegelbild.": {
+    "en": "Choose Settle. Dina will then check the reflection.",
+    "ar-EG": "اختار تهدئة. وبعدها دينا هتراجع الانعكاس في المراية."
+  },
+  "Tamatem & Dina – ein farbiges Comic-Adventure. Spiele Level 1: Die Lumenblüte.": {
+    "en": "Tamatem & Dina — a colourful comic adventure. Play Level 1: The Lumen Blossom.",
+    "ar-EG": "تماتم ودينا — مغامرة كوميكس بالألوان. العب المستوى الأول: زهرة النور."
+  },
+  "Fünf goldene Blütenblätter, dunkler Ring. Nur die lebende Pflanze gibt Lichtstaub ab.": {
+    "en": "Five golden petals, a dark ring. Only the living plant releases light dust.",
+    "ar-EG": "خمس بتلات دهبي وحلقة غامقة. النبتة وهي حيّة بس اللي بتطلّع غبار النور."
+  },
+  "Licht und Laterne": {
+    "en": "Light and lantern",
+    "ar-EG": "النور والفانوس"
+  },
+  "Bis zum Binden braucht der Staub Licht. Zum Beruhigen muss fremdes Licht verschwinden.": {
+    "en": "Until bound, the dust needs light. To settle it, remove other light sources.",
+    "ar-EG": "الغبار محتاج نور لحد ما يترابط. وعلشان يهدى، لازم النور اللي من برّه يختفي."
+  },
+  "Dina hat den ruhigen Lichtfaden im Spiegel geprüft und bestätigt.": {
+    "en": "Dina has checked and confirmed the steady thread of light in the mirror.",
+    "ar-EG": "دينا راجعت خيط النور الهادي في المراية وأكّدت إنه ثابت."
+  },
+  "Dina hat entdeckt, dass Glas und Laterne gleichzeitig flackern.": {
+    "en": "Dina noticed that the jar and lantern flicker together.",
+    "ar-EG": "دينا لاحظت إن البرطمان والفانوس نورهم بيرعش في نفس الوقت."
+  },
+  "Halt. Am abgefallenen Blatt ist das Licht erloschen. Die Pflanze muss verwurzelt bleiben.": {
+    "en": "Stop. The fallen petal has lost its light. The plant must stay rooted.",
+    "ar-EG": "استنّى. البتلة اللي وقعت نورها انطفى. لازم النبتة تفضل بجذورها."
+  },
+  "„Nimm, was die Blüte abgibt. Lass ihr, was sie am Leben hält. Solange Licht in seiner Nähe ist, erinnert der Staub sich an die Blüte.“": {
+    "en": "“Take what the flower gives. Leave what keeps it alive. As long as light is near, the dust remembers the blossom.”",
+    "ar-EG": "«خد اللي الزهرة بتدّيه. وسيبلها اللي بيخلّيها عايشة. طول ما فيه نور جنبه، الغبار بيفتكر الزهرة.»"
+  },
+  "Das Glas flackert im Dunkeln. Oris: „Was hat der Hüter über das Licht gesagt?“ Es geht kein Staub verloren.": {
+    "en": "The jar flickers in the dark. Oris: “What did the Guardian say about light?” No dust is lost.",
+    "ar-EG": "نور البرطمان بيرعش في الضلمة. أوريس: «الحارس قال إيه عن النور؟» مفيش غبار بيضيع."
+  },
+  "Zuerst gehört das gefüllte Lichtglas in die Halterung.": {
+    "en": "First put the filled light jar in its holder.",
+    "ar-EG": "حط برطمان النور المليان في حامله الأول."
+  },
+  "Sammle zuerst den Staub im inneren Lichtkörper.": {
+    "en": "First gather the dust in the inner light vessel.",
+    "ar-EG": "جمّع الغبار في قلب الجهاز الأول."
+  },
+  "Noch nicht: Ungebundener Staub braucht das Laternenlicht. Binde ihn zuerst.": {
+    "en": "Not yet: unbound dust needs the lantern's light. Bind it first.",
+    "ar-EG": "مش دلوقتي: الغبار قبل ما يترابط محتاج نور الفانوس. اربطه الأول."
+  },
+  "Der Lichtstaub muss zuerst gesammelt und gebunden sein.": {
+    "en": "The light dust must be gathered and bound first.",
+    "ar-EG": "لازم غبار النور يتجمّع ويترابط الأول."
+  },
+  "Der Zustand der Lumenblüte fehlt.": {
+    "en": "The Lumen Blossom state is missing.",
+    "ar-EG": "بيانات حالة زهرة النور ناقصة."
+  },
+  "Ungültiger Finalzustand.": {
+    "en": "Invalid finale state.",
+    "ar-EG": "بيانات حالة النهاية مش سليمة."
+  },
+  "Der Zustand der Lumenblüte überspringt eine notwendige Handlung.": {
+    "en": "The Lumen Blossom state skips a required action.",
+    "ar-EG": "حالة زهرة النور بتتخطّى خطوة ضرورية."
+  },
+  "Der Finalzustand überspringt eine notwendige Handlung.": {
+    "en": "The finale state skips a required action.",
+    "ar-EG": "حالة النهاية بتتخطّى خطوة ضرورية."
+  },
+  "Der Weg zum ruhigen Licht.": {
+    "en": "The path to steady light.",
+    "ar-EG": "الطريق لنور ثابت."
+  },
+  "Die Skizze zeigt die Zustände des Lichtstaubs. Die Ärztin bleibt bei Dina.": {
+    "en": "The sketch shows the states of the light dust. The doctor stays with Dina.",
+    "ar-EG": "الرسمة بتوضّح حالات غبار النور. والدكتورة بتفضل مع دينا."
+  },
+  "Der Lichtstaub ist gesammelt. Geh mit Oris nach Hause.": {
+    "en": "The light dust is gathered. Head home with Oris.",
+    "ar-EG": "غبار النور اتجمّع. ارجع البيت مع أوريس."
+  },
+  "Das Glas ist geschützt. Folge Oris zu den Dorflichtern.": {
+    "en": "The jar is protected. Follow Oris to the village lights.",
+    "ar-EG": "البرطمان في أمان. امشي ورا أوريس لأنوار القرية."
   }
 };

@@ -5,7 +5,7 @@ const output=process.argv[2];
 if(!output||!path.isAbsolute(output))throw Error('Absoluten Ausgabepfad angeben.');
 const read=async name=>readFile(path.join(root,name),'utf8');
 const assets={};
-for(const name of ['workroom.png','characters.png','illness.png','threshold.png','river.png','garden-dry.png','garden-wet.png'])assets[name]='data:image/png;base64,'+(await readFile(path.join(root,'assets',name))).toString('base64');
+for(const name of ['workroom.png','characters.png','illness.png','threshold.png','river.png','garden-dry.png','garden-wet.png','chamber.png','morning.png'])assets[name]='data:image/png;base64,'+(await readFile(path.join(root,'assets',name))).toString('base64');
 const icon='data:image/svg+xml;base64,'+(await readFile(path.join(root,'assets/icon.svg'))).toString('base64');
 const css=(await read('style.css')).replaceAll("url('./assets/characters.png')",`url('${assets['characters.png']}')`);
 // Give each ES module its own scope, including import aliases. All modules are local;

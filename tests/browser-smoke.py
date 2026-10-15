@@ -199,6 +199,82 @@ with sync_playwright() as playwright:
         page.evaluate('scrollTo({top:0,behavior:"instant"})')
         page.evaluate('Promise.all(document.getAnimations().map(animation=>animation.finished.catch(()=>{})))')
         page.screenshot(path=f'/tmp/tamatem-garden-wet-{locale}.png', full_page=True)
+        garden_checkpoint = saved(page)
+        # Continue the complete episode while the browser network remains disabled.
+        def checkpoint_scene(name):
+            before = saved(page)
+            page.reload()
+            assert saved(page) == before
+            page.locator('.language-select').select_option('en' if locale != 'en' else 'ar-EG')
+            assert saved(page) == before
+            page.locator('.language-select').select_option(locale)
+            for narrow in [320, 390]:
+                page.set_viewport_size({'width': narrow, 'height': 844})
+                layout(page)
+            page.set_viewport_size({'width': width, 'height': 900})
+            page.locator('#main').focus()
+            page.evaluate('scrollTo({top:0,behavior:"instant"})')
+            page.screenshot(path=f'/tmp/tamatem-{name}-{locale}.png', full_page=True)
+            assert page.locator('img').evaluate_all('(images)=>images.every(img=>img.complete && img.naturalWidth>0)')
+
+        action(page, 'chamber-start')
+        checkpoint_scene('chamber')
+        before = saved(page)
+        action(page, 'bloom-pick')
+        assert saved(page) == before
+        assert page.locator('.feedback').inner_text()
+        action(page, 'bloom-identify')
+        action(page, 'bloom-guardian')
+        page.keyboard.press('Escape')
+        action(page, 'bloom-collect')
+        assert saved(page)['bloom']['collected']
+        assert saved(page)['finale']['lanternOn']
+        action(page, 'return-start')
+        before = saved(page)
+        action(page, 'return-hide')
+        assert saved(page) == before
+        action(page, 'return-protect')
+        checkpoint_scene('return')
+        action(page, 'return-home')
+        before = saved(page)
+        for incorrect in ['app-bind', 'app-calm', 'app-lantern', 'app-collect']:
+            action(page, incorrect)
+            assert saved(page) == before
+            assert page.locator('.feedback').inner_text()
+        action(page, 'app-insert')
+        action(page, 'app-collect')
+        checkpoint_scene('apparatus')
+        action(page, 'app-bind')
+        if locale == 'en':
+            action(page, 'app-lantern')
+        action(page, 'app-calm')
+        assert saved(page)['stage'] == 'dina'
+        assert saved(page)['finale']['stable'] == (locale == 'en')
+        checkpoint_scene('dina-first')
+        assert page.locator('[data-action="dina-report"]').is_disabled()
+        for _ in range(3):
+            action(page, 'hint')
+        page.keyboard.press('Escape')
+        action(page, 'dina-observe')
+        checkpoint_scene('dina-observed')
+        action(page, 'dina-report')
+        if locale != 'en':
+            assert saved(page)['stage'] == 'finale'
+            assert page.locator('[data-action="heal"]').count() == 0
+            action(page, 'app-lantern')
+            action(page, 'app-calm')
+            assert saved(page)['stage'] == 'dina'
+            assert saved(page)['finale']['stable']
+            assert page.locator('[data-action="dina-report"]').is_disabled()
+            action(page, 'dina-observe')
+            action(page, 'dina-report')
+        assert saved(page)['finale']['dinaConfirmed']
+        checkpoint_scene('finale-ready')
+        action(page, 'heal')
+        checkpoint_scene('healing')
+        action(page, 'morning')
+        assert saved(page)['stage'] == 'level-complete'
+        checkpoint_scene('morning')
         action(page, 'notebook')
         layout(page)
         page.keyboard.press('Escape')
@@ -207,8 +283,20 @@ with sync_playwright() as playwright:
         exported = f'/tmp/tamatem-save-{locale}.json'
         download.value.save_as(exported)
         payload = json.loads(Path(exported).read_text())
-        assert payload['state']['stage'] == 'garden-complete'
+        assert payload['state']['stage'] == 'level-complete'
         assert payload['state']['owlChoice'] == original['owlChoice']
+        # Restore an actual current export, then the old v3 garden checkpoint.
+        for imported in [payload['state'], {**garden_checkpoint, 'version': 3}]:
+            page.locator('#menu-button').click()
+            action(page, 'import')
+            if imported['version'] == 3:
+                for field in ['bloom', 'journey', 'finale']:
+                    del imported[field]
+            page.locator('#import-file').set_input_files({'name': 'checkpoint.json', 'mimeType': 'application/json', 'buffer': json.dumps({'game': 'tamatem-dina-prolog', 'state': imported}).encode()})
+            action(page, 'confirm-import')
+            assert saved(page)['stage'] == imported['stage']
+            assert saved(page)['choice'] == original['choice']
+        assert page.locator('[data-action="chamber-start"]').count() == 1
         # Import a genuine old-format completed prologue using the existing confirmation flow.
         legacy = {**original, 'version': 1, 'stage': 'complete'}
         del legacy['river']
@@ -235,7 +323,7 @@ with sync_playwright() as playwright:
         assert saved(page)['choice'] == original['choice']
         assert not errors, errors
         context.close()
-        print(f'PASS {locale}: full prologue + river + garden, manual/assisted solution, RTL geometry, offline play, v1/v2 migration', flush=True)
+        print(f'PASS {locale}: full Level 1, regular/early lantern solution, necessary Dina contribution, mobile RTL/LTR, offline reloads, v1/v2/v3/v4 import', flush=True)
     context = browser.new_context(viewport={'width': 390, 'height': 844})
     context.add_init_script("Storage.prototype.getItem=function(){throw Error('Storage unavailable')};Storage.prototype.setItem=function(){throw Error('Storage unavailable')}")
     page = context.new_page()

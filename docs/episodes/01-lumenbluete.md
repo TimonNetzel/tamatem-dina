@@ -1,10 +1,10 @@
 # Level 1 – Die Lumenblüte
 
-Vollständiger Episodenentwurf. Prolog, Flussübergang und Quellgarten mit Kanalrätsel sind dreisprachig implementiert; Blütenkammer, Rückweg und Heilungsfinale sind noch geplant. Aktueller Nachweis: [STATUS.md](../STATUS.md).
+Episodenentwurf und Umsetzungsreferenz. Die Stationen 1–12 sind in Entwicklungsfassung 0.4 spielbar. Tatsächliche Prüfungen und Grenzen: [STATUS.md](../STATUS.md).
 
 Ausgearbeiteter Ablauf und Rätselentwurf, Version 0.1 · 15. Oktober 2026
 
-Zugehöriges Konzept: „Tamatem & Dina – Zwischen den Zeilen“. Dieses Dokument beschreibt den spielbaren Entwurf. Es enthält noch keine fertigen Grafiken und keinen ausführbaren Spielcode.
+Zugehöriges Konzept: „Tamatem & Dina – Zwischen den Zeilen“. Dieses Dokument beschreibt den spielbaren Entwurf. Die ausführbare Umsetzung liegt in dist; das Dokument beschreibt weiterhin auch dramaturgische Richtzeiten und Gestaltungsvorschläge.
 
 ## 1. Dramatischer Kern
 
@@ -391,3 +391,9 @@ Zu prüfen sind: erwachsener Dialogton, Figurenkonsistenz, lesbare Comic-Oberfl�
 - Die tatsächliche Dauer wird mit einem ersten unvorbereiteten Durchlauf gemessen; bei deutlicher Abweichung werden Umfang oder Lesetempo angepasst.
 
 Die genannten Prüfungen sind geplante Abnahmekriterien. Sie wurden in dieser Konzeptphase noch nicht an einem Spiel ausgeführt.
+
+## Umsetzungsstand 0.4
+
+An garden-complete schließen chamber → return → apparatus → dina/finale → healing → level-complete an. Der reguläre Finalweg erhält nach Tamatems Korrektur eine zusätzliche kurze spielbare Dina-Prüfung des nun ruhigen Spiegelbilds. Diese abschließende Stabilitätsbestätigung ist in beiden Lösungswegen erforderlich; bei früh ausgeschalteter Laterne wird sofort stabilisiert und direkt zu dieser Prüfung gewechselt. Die frühe Lösung wird nicht zurückgesetzt.
+
+Pflückversuch und dunkles Verstauen im Sturm sind verlustfreie Fehlhandlungen. Die Apparatur bewahrt jeden abgeschlossenen Schritt. Dreistufige Hilfen benennen zuletzt den nächsten zustandsabhängigen Schritt. Nacht und Morgen sind getrennte fortsetzbare Abschnitte. Neue Zustände werden in Spielstandformat 4 gespeichert, Altversionen 1–3 migrieren ohne Neustart.

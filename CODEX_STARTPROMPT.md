@@ -1,15 +1,13 @@
-# Neuer Chat: Level 1 abschließen
+# Neuer Chat: Level 2 – Die verschwundenen Stimmen
 
-Repository: TimonNetzel/tamatem-dina. Verwende den aktuellen gesicherten main-Stand und diesen Prompt:
+Repository: TimonNetzel/tamatem-dina, gesicherter Hauptzweig main.
 
 ```text
-Entwickle „Tamatem & Dina“ weiter. Prolog, Fluss und Quellgarten sind dreisprachig spielbar. Setze jetzt Blütenkammer, Rückweg und gemeinsames Finale von Level 1 um; schließe an garden-complete an.
+Entwickle „Tamatem & Dina“ weiter. Level 1 „Die Lumenblüte“ ist in Entwicklungsfassung 0.4 vollständig dreisprachig spielbar. Plane und implementiere jetzt Level 2 „Die verschwundenen Stimmen“ als realistischen journalistischen Kleinstadtfall mit Tamatem im Alter von acht Jahren und einer eigenständig spielbaren Dina.
 
-Lies AGENTS.md, docs/START_HERE.md, docs/STATUS.md und docs/WORKFLOW.md. Nutze den lokalen Projektskill. Lies im Episodenplan die Stationen 9–12 und Aufgaben D/E sowie passende Abschnitte von CANON und ARCHITECTURE.
+Lies AGENTS.md, docs/START_HERE.md, docs/STATUS.md und docs/WORKFLOW.md. Nutze den lokalen Projektskill. Lies CANON und gezielt die Level-2-Abschnitte in GAME_DESIGN; arbeite daraus einen konkreten Episodenplan aus. Die Entwurfsdetails dürfen passend weiterentwickelt werden. Keine magische Auflösung des realistischen Falls.
 
-Erhalte Figuren, Gestaltung, Entscheidungen und Spielstände der Versionen 1–3. Alle neuen Inhalte müssen Deutsch, Englisch und natürliches ägyptisches Arabisch unterstützen, einschließlich RTL, Hilfen, Notizbuch und Offline-Fassungen. Neue Bilder anhand der vorhandenen Referenzen erstellen.
+Erhalte das vollständige Level 1, Figuren, Entscheidungen und Spielstände der Versionen 1–4. Schließe an level-complete an, ohne einen Spielneustart zu erzwingen. Alle neuen Inhalte einschließlich Hilfen, Notizbuch und Offline-Fassungen auf Deutsch, Englisch und natürlichem ägyptischem Arabisch; RTL und Touchbedienung erhalten. Neue Illustrationen an vorhandenen Figurenreferenzen ausrichten.
 
-Dina braucht einen notwendigen spielbaren Beitrag im Finale. Akzeptiere eine früh erkannte richtige Laternenlösung. Kein Reflexzwang und kein versteckter Countdown.
-
-Prüfe mit npm test und passenden Browserdurchläufen einschließlich Speichern/Laden und tatsächlichem Offline-Spiel. Beachte die offenen Prüfgrenzen in STATUS.md. Aktualisiere die Dokumentation, committe das abgeschlossene Paket und pushe ohne Force nach main. GitHub-Push und Sites-Veröffentlichung bleiben getrennte Schritte. Bereite vor Level 2 wieder einen neuen Chat samt Prompt vor.
+Prüfe mit npm test und passenden Browserdurchläufen einschließlich Speichern/Laden, Altspielständen und tatsächlichem Offline-Spiel. Offene Geräte-, Sprach- und Zeitprüfungen in STATUS.md ehrlich fortführen. Aktualisiere die Dokumentation, committe das abgeschlossene Arbeitspaket und pushe ohne Force nach main. GitHub-Push und Sites-Veröffentlichung bleiben getrennte Schritte. Vor Level 3 wieder einen neuen Chat samt kopierfertigem Prompt vorbereiten.
 ```

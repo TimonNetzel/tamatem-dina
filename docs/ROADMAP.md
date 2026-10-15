@@ -16,14 +16,14 @@ Tamatem und Oris erreichen den unsicheren Stamm. Spielbare Untersuchung, Erkundu
 
 Hüter, sechs drehbare Kanalstücke, sichtbarer Wasserweg, Lösungsvorschau und Erfolgsszene sind umgesetzt. Lösung: Quelle → A → B → C → F → E → D → Wurzelbecken. Kein verbrauchbarer Wasservorrat oder unsichtbarer Countdown. Details im Episodendokument.
 
-## 5. Blüte und Rückweg — nächster Chat
+## 5. Blüte und Rückweg — umgesetzt
 
 Identifikation anhand der Recherchekarte, Lichtstaub sammeln, Pflanze erhalten. Regel des Laternenlichts sichtbar einführen; Sturm als angehaltene interaktive Panels ohne Reflexzwang.
 
-## 6. Gemeinsames Finale
+## 6. Gemeinsames Finale — umgesetzt
 
-Fiktive Lichtapparatur; Dina steuert eine notwendige Beobachtung bei. Eine früh erkannte richtige Lösung akzeptieren. Genesung und Morgenbild, danach Anschluss an Level 2. Zielzeit für das volle Level: 15–30 Minuten, durch tatsächlichen Spieldurchlauf prüfen.
+Fiktive Lichtapparatur, notwendige spielbare Dina-Beobachtung und Stabilitätsbestätigung, beide Laternenwege, Nacht und Morgen sind umgesetzt. Level 1 endet mit level-complete und dem Brief als Ausblick auf Level 2. Zielzeit für das volle Level: 15–30 Minuten, durch tatsächlichen Spieldurchlauf prüfen.
 
-## 7. Episoden 2–7
+## 7. Episoden 2–7 — nächster Chat für Level 2
 
 Je Episode erst den relevanten Handlungsbogen und die konkreten Rätsel ausarbeiten, dann umsetzen und prüfen. Themen und Altersfolge stehen im CANON, ausführliche Entwürfe in GAME_DESIGN.md. Kein gleichzeitiger vollständiger Neubau aller Episoden.

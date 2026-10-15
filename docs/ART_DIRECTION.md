@@ -74,3 +74,9 @@ Der erste spielbare Prolog ist inzwischen umgesetzt. Spieladresse, Offline-Datei
 ## Erzeugung und Nachvollziehbarkeit
 
 Die Konzeptbilder wurden mit der integrierten Bildgenerierung erstellt. Die vollständigen verwendeten Bildprompts sind als separate Textdatei neben den Bildern gespeichert. Für den Szenenentwurf diente das Figurenblatt als Identitätsreferenz. Die Storyboards geben die Stilrichtung vor; die festgelegten Haar-, Augen- und Hautmerkmale haben bei Abweichungen Vorrang.
+
+## Level-1-Abschluss
+
+Kammer und Morgen in dist/assets/chamber.png und morning.png führen Figurenblatt, Garten und Dinas Zimmer fort. Das abgefallene Blatt in der Kammer ist erloschen; die lebende Blüte besitzt fünf goldene Blütenblätter und einen dunklen Ring. Die zunächst ausgeschaltete Laterne wird beim Sammeln spielmechanisch angezündet. Das Morgenbild zeigt Besserung und Ruhebedarf. Prompts und Korrekturen: art/prompts/05-level-one-finale.md.
+
+Rückweg als angehaltene Montage mit bestehender Waldillustration und Regenebene. Apparatur, Lichtzustände und Spiegel sind echte skalierbare HTML/SVG-Elemente mit lokalisierten Beschriftungen. Kein Hinweis hängt ausschließlich an Animation oder Farbe.

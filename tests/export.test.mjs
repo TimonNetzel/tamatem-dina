@@ -4,7 +4,8 @@ import {mkdtemp,readFile,rm} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {execFileSync,spawnSync} from 'node:child_process';
+import {execFile} from 'node:child_process';
+import {promisify} from 'node:util';
 import vm from 'node:vm';
 
 test('Offline-Einzeldatei enthält alle Bilder und Sprachmodule in getrennten gültigen Modulbereichen',async()=>{
@@ -12,11 +13,11 @@ test('Offline-Einzeldatei enthält alle Bilder und Sprachmodule in getrennten g�
  try{
   const output=path.join(temporary,'spiel.html');
   const cwd=fileURLToPath(new URL('../',import.meta.url));
-  execFileSync(process.execPath,['make-offline.mjs',output],{cwd});
+  await promisify(execFile)(process.execPath,['make-offline.mjs',output],{cwd});
   const html=await readFile(output,'utf8');
   assert.ok(!/<script[^>]+src=/.test(html));
   assert.ok(!/<link[^>]+rel="(?:stylesheet|manifest)"/.test(html));
-  for(const name of ['workroom','characters','illness','threshold','river','garden-dry','garden-wet']){
+  for(const name of ['workroom','characters','illness','threshold','river','garden-dry','garden-wet','chamber','morning']){
    const encoded=(await readFile(path.join(cwd,'dist/assets',name+'.png'))).toString('base64');
    assert.ok(html.includes('data:image/png;base64,'+encoded),name);
   }
@@ -25,8 +26,7 @@ test('Offline-Einzeldatei enthält alle Bilder und Sprachmodule in getrennten g�
   const script=scripts[0][1];
   assert.ok(!/^import /m.test(script));assert.ok(!/^export /m.test(script));
   for(const module of ['channels.js','state.js','data.js','messages.js','i18n.js','app.js'])assert.ok(script.includes('__TD_MODULES["'+module+'"]'));
-  const result=spawnSync(process.execPath,['--input-type=module','--check'],{input:script,encoding:'utf8',maxBuffer:1024*1024});
-  assert.equal(result.status,0,result.stderr);
+  new vm.Script(script);
   // Execute the actual embedded modules against a minimal document. This checks
   // runtime import aliases as well as syntax, without claiming a browser file:// test.
   for(const locale of ['de','en','ar-EG']){

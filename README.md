@@ -1,8 +1,8 @@
 # Tamatem & Dina – Zwischen den Zeilen
 
-Vollständige Projektübergabe für Codex · 15. Oktober 2026 · Prolog 0.1
+Entwicklungsfassung 0.4 · 15. Oktober 2026 · Level 1 vollständig spielbar
 
-Ein Comic- und Point-and-Click-Abenteuer für Erwachsene, wahlweise auf Deutsch, Englisch und ägyptischem Arabisch. Geplant sind sieben Episoden von Tamatems sechstem bis achtzehntem Lebensjahr. Der Prolog, der Flussübergang und der Quellgarten sind vorhanden; darauf baut die Weiterentwicklung auf.
+Ein Comic- und Point-and-Click-Abenteuer für Erwachsene, wahlweise auf Deutsch, Englisch und ägyptischem Arabisch. Geplant sind sieben Episoden von Tamatems sechstem bis achtzehntem Lebensjahr. Level 1 ist vom gemeinsamen Arbeitstisch bis zum Heilungsfinale vollständig spielbar; darauf baut die Weiterentwicklung auf.
 
 Private Entwicklungsablage: [TimonNetzel/tamatem-dina](https://github.com/TimonNetzel/tamatem-dina). Hauptzweig: main. Die bestehende Sites-Adresse bleibt der Veröffentlichungsweg.
 
@@ -26,7 +26,7 @@ Das Projekt ist lokal bereits vollständig vorhanden und hat ein eigenes Git-Rep
 
 [Private Spieladresse](https://tamatem-dina-zwischen-den-zeilen.timonnetzel.chatgpt.site)
 
-Die private Adresse zeigt den früheren Prolog 0.1. Der aktuelle Entwicklungsstand 0.3 ergänzt Sprachwahl, Flussrätsel und Quellgarten; er wurde noch nicht neu veröffentlicht. Enthalten sind Dinas Quellenrätsel, Krankheitsszene und Perspektivwechsel, Tamatems Entscheidung, Packen, Oris, der gesicherte Flussübergang und das Kanalrätsel im Quellgarten. Blütenkammer, Rückweg, Heilungsfinale und die übrigen sechs Episoden sind noch nicht implementiert. Eine unabhängige Zeitmessung liegt nicht vor.
+Die private Adresse zeigt den früheren Prolog 0.1. Entwicklungsfassung 0.4 enthält das vollständige dreisprachige Level 1: Prolog, Fluss, Quellgarten, Blütenkammer, Rückweg und gemeinsames Finale mit notwendigem spielbarem Beitrag von Dina. Sie wurde noch nicht neu veröffentlicht. Die übrigen sechs Episoden sind Konzeptentwürfe. Eine unabhängige Zeitmessung liegt nicht vor.
 
 ## Lokal ausführen
 
@@ -38,7 +38,7 @@ Danach ist die Vorschau unter http://127.0.0.1:4173 erreichbar. Der Server binde
 
     npm test
 
-Die 27 automatischen Prüfungen decken Spielregeln, alte Spielstände, Übersetzungen, Offline-Cache und HTML-Export ab. Zusätzliche Browserprüfung mit installiertem Python-Playwright und Chromium gegen den laufenden Server: `python tests/browser-smoke.py`.
+Die 32 automatischen Prüfungen decken Spielregeln, alte Spielstände, Übersetzungen, Offline-Cache und HTML-Export ab. Zusätzliche Browserprüfung mit installiertem Python-Playwright und Chromium gegen den laufenden Server: `python tests/browser-smoke.py`.
 
 Die ursprüngliche Übergabe-Momentaufnahme prüft:
 
@@ -50,7 +50,7 @@ Die Hashliste ist eine Momentaufnahme der Übergabe. Nach absichtlichen Änderun
 
     node make-offline.mjs ABSOLUTER_AUSGABEPFAD
 
-Der Zielname sollte auf .html enden. Die erzeugte Einzeldatei enthält alle sieben Bilder und alle drei Sprachen und die Spiellogik und ist für das direkte Öffnen am Laptop gedacht. Große erzeugte Einzeldateien und ZIP-Dateien gehören in Veröffentlichungen oder einen Ausgabeordner, nicht bei jeder Änderung erneut in Git.
+Der Zielname sollte auf .html enden. Die erzeugte Einzeldatei enthält alle neun Bilder und alle drei Sprachen und die Spiellogik und ist für das direkte Öffnen am Laptop gedacht. Große erzeugte Einzeldateien und ZIP-Dateien gehören in Veröffentlichungen oder einen Ausgabeordner, nicht bei jeder Änderung erneut in Git.
 
 Auf dem iPhone ist die Web-App über Safari und den Home-Bildschirm vorgesehen. Vor dem Offline-Spielen vollständig laden und auf „Offline bereit“ warten. Chromium-Durchläufe mit tatsächlichem Offline-Neuladen wurden bestanden. Eine echte iPhone-Prüfung steht aus.
 

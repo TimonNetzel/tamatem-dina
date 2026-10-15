@@ -24,9 +24,9 @@ Die Offline-Datei wird aus dem Quellstand neu erzeugt. Änderungen an ihrer Kopi
 
 ## Spielzustände
 
-Aktuelle Abschnitte: intro → research → illness → resolve → pack → threshold → river → river-crossing → river-complete → garden → garden-complete. Der letzte Abschnitt ist der aktuelle Entwicklungsabschluss nach dem Quellgarten, nicht das Ende von Level 1.
+Aktuelle Abschnitte: intro → research → illness → resolve → pack → threshold → river → river-crossing → river-complete → garden → garden-complete → chamber → return → apparatus → dina/finale → healing → level-complete. Dina und Tamatem wechseln während der letzten Prüfung die Perspektive; level-complete ist der Abschluss von Level 1.
 
-state.js definiert VERSION=3. Der lokale Speicherschlüssel bleibt tamatem-dina-prolog-v1; die Dateisicherung behält die Kennung tamatem-dina-prolog. validateState akzeptiert Version 1 und 2. Das Version-1-Ende complete wird zu river migriert. Version-2-Spielstände bleiben an ihrem bisherigen Abschnitt; river-complete bietet den Weg zum Garten. Bei beiden Altversionen wird ein frischer Gartenzustand ergänzt. Frühere Abschnitte, Inventar und Entscheidungen bleiben erhalten. Unbekannte Versionen und unmögliche Flusszustände werden abgelehnt.
+state.js definiert VERSION=4. Der lokale Speicherschlüssel bleibt tamatem-dina-prolog-v1; die Dateisicherung behält die Kennung tamatem-dina-prolog. validateState akzeptiert Versionen 1–4. Das Version-1-Ende complete wird zu river migriert. Version-2-Spielstände bleiben an ihrem bisherigen Abschnitt; für Versionen 1/2 wird ein frischer Gartenzustand ergänzt. Version 3 behält auch den Garten vollständig. Für alle Altversionen werden ausschließlich die neuen Blüten-, Rückweg- und Finalzustände ergänzt. Frühere Abschnitte, Inventar und Entscheidungen bleiben erhalten. Unbekannte Versionen und unmögliche Fortschritte werden abgelehnt. Ein altes garden-complete bietet die Handlung zum Betreten der Kammer.
 
 river speichert Untersuchung, Prüfung der Gegenseite, Auswahl der Stoffschlinge, Verbindung zur Halteschlaufe, Sicherung an der Öse und das aktuelle Überquerungspanel. Die Schlinge bleibt als mitgenommener Gegenstand dokumentiert, ist nach Sicherung jedoch am Stamm gebunden und nicht nochmals verwendbar.
 
@@ -38,7 +38,7 @@ html.lang und html.dir sowie die Oberfläche werden beim Wechsel aktualisiert. B
 
 ## Bilder
 
-characters.png: Figurenblatt als Porträtreferenz; workroom.png: Arbeitstisch; illness.png: Dinas Zimmer; threshold.png: Waldrand mit Oris; river.png: Fluss, Stamm, Schlaufe, Öse und Oris; garden-dry.png und garden-wet.png: derselbe Garten vor/nach der Bewässerung. Neue Bilder werden im verfügbaren Bildwerkzeug anhand des Figurenblatts erstellt. Hinweise und Dialoge bleiben skalierbarer Text; notwendiger Inhalt wird nicht nur in eine Illustration eingebrannt.
+characters.png: Figurenblatt als Porträtreferenz; workroom.png: Arbeitstisch; illness.png: Dinas Zimmer; threshold.png: Waldrand mit Oris; river.png: Fluss, Stamm, Schlaufe, Öse und Oris; garden-dry.png und garden-wet.png: derselbe Garten vor/nach der Bewässerung; chamber.png: lebende Blüte und erloschenes Blatt; morning.png: gemeinsame Erholung am Morgen. Neue Bilder werden im verfügbaren Bildwerkzeug anhand des Figurenblatts erstellt. Hinweise und Dialoge bleiben skalierbarer Text; notwendiger Inhalt wird nicht nur in eine Illustration eingebrannt.
 
 ## Offline und Veröffentlichungen
 
@@ -46,7 +46,7 @@ Alle benötigten Dateien stehen in der CORE-Liste von sw.js. Bei neuen Szenen di
 
 Die Browser-Anwendung lädt keine externen Schriftdateien. Bei künftigen Medien auch notwendige Töne lokal beilegen. npm test prüft Spielregeln, Migration, Übersetzungsvollständigkeit, simuliertes Cache-Verhalten und den Offline-Export. python tests/browser-smoke.py führt mit installiertem Python-Playwright und Chromium gegen den laufenden lokalen Server zusätzliche Browserdurchläufe aus. Es ist ein optionales Entwicklungswerkzeug, keine Laufzeitabhängigkeit des Spiels.
 
-make-offline.mjs bettet sieben Bilder und alle Sprachmodule ein. Die Module erhalten getrennte Bereiche, damit Import-Aliase und gleichnamige Variablen korrekt funktionieren. Die Web-App legt Bilder und beide Sprachmodule im Service-Worker-Cache ab. Bei geänderten Dateien die Cache-Version erhöhen.
+make-offline.mjs bettet neun Bilder und alle Sprachmodule ein. Die Module erhalten getrennte Bereiche, damit Import-Aliase und gleichnamige Variablen korrekt funktionieren. Die Web-App legt Bilder und beide Sprachmodule im Service-Worker-Cache ab. Bei geänderten Dateien die Cache-Version erhöhen.
 
 ## Quellgarten und Kanäle
 
@@ -55,3 +55,13 @@ garden speichert metGuardian, inspected, sechs rotations (Ganzzahlen 0–3), tes
 channels.js verwendet eine physisch unveränderte Matrix mit drei Spalten und zwei Reihen. Richtungen 0–3 sind oben, rechts, unten, links. Kanaltypen und Startstellungen entsprechen dem Episodenplan. traceChannels verfolgt den Weg vom linken Einlass der ersten Platte bis zum unteren Auslass der vierten. Nur ein durchgängiger Weg über alle sechs Platten gilt als gelöst. Gerade Platten haben zwei geometrisch gleiche Rotationsstellungen; diese werden beide akzeptiert. Die Quelle/Wurzelbecken-Markierungen, Fließrichtung und Unterbrechung sind auch in RTL dieselben.
 
 Nach der dritten Hilfe kann der Nutzer eine getrennte Lösungsvorschau öffnen. Sie verändert die eigenen Stellungen nicht. Erst „Vorschau übernehmen“ setzt die Platten; danach muss das Wasser weiterhin ausdrücklich geprüft werden. Der Zustand und die Vorschau überstehen Speichern/Laden. Animationen haben keine spielmechanische Zeitbedingung und werden bei prefers-reduced-motion abgeschaltet.
+
+## Blüte, Rückweg und Finale
+
+bloom speichert identified, collected und das optionale guardianTalked. Sammeln setzt die Laterne an; Pflücken ist keine schädigende Zustandsaktion. journey.protected dokumentiert die richtige Sturmhandlung. Erst danach ist die Rückkehr zur Apparatur möglich.
+
+finale speichert inserted, collected, bound, lanternOn, attempted, stable, dinaObservation (none/flicker/steady), dinaReported und dinaConfirmed. Vor bound bleibt die Laterne an. APP_CALM bei brennender Laterne führt zu Dinas Flackerbeobachtung; APP_CALM bei ausgeschalteter Laterne stabilisiert sofort. Anschließend bleibt in beiden Wegen eine eigene Prüfung des ruhigen Spiegelbilds nötig. Eine frühere flicker-Beobachtung reicht für die Bestätigung von steady nicht aus. HEAL setzt stable und dinaConfirmed voraus. MORNING führt zum gespeicherten Levelabschluss.
+
+Die aktive Figur wird aus dem Abschnitt bestimmt: Dina im Prolog und im Abschnitt dina; Tamatem in den übrigen Spielszenen. Notizbuch, Hinweise und Darstellung verwenden diese gespeicherten Zustände. Die dritte Apparaturhilfe benennt den nächsten gültigen Schritt; bereits abgeschlossene Kammer-/Sturmaufgaben verweisen zum Übergang. Laternen-, Faden- und Spiegelanzeigen verwenden lokale HTML/SVG-Symbole und Text. Animationen sind rein visuell.
+
+Die Zustandsraumprüfung in tests/finale.test.mjs prüft jeden erreichbaren Zustand ab dem Gartenabschluss für alle vier Kombinationen der frühen Entscheidungen: Speicherung/Validierung, Erhalt der Vergangenheit und Erreichbarkeit des Endes. Der Browser-Smoke-Test spielt das gesamte Level offline weiter, prüft Neuladen/Sprachwechsel in den neuen Szenen und importiert Spielstände der Versionen 1–4. Der Exporttest verwendet asynchronen Prozessaufruf und vm.Script für die Syntax des eingebetteten Skripts; damit ist kein synchroner Kindprozess für die Syntaxprüfung erforderlich.

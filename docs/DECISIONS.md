@@ -20,5 +20,7 @@
 | Version-1-Prologende automatisch zum Fluss migrieren | Bestehende Durchläufe ohne Neustart fortsetzen; Speicherschlüssel und Exportkennung beibehalten |
 | Kanalrätsel berechnet Verbindungen statt nur eine Stellungsliste zu vergleichen | Alle sechs Platten müssen verbunden sein; auch gleichwertige 180°-Stellungen gerader Kanäle gelten |
 | Lösungsvorschau separat, Übernahme ausdrücklich, danach Wasser prüfen | Dreistufige Hilfe unterstützt ohne unbeabsichtigtes automatisches Lösen |
+| Dina bestätigt in beiden Finalwegen selbst die Stabilität | Frühe Laternenlösung sofort anerkennen und dennoch Dinas eigene spielbare Beobachtung für den Abschluss benötigen; beim regulären Weg nach der Korrektur kurz zu ihr zurückkehren. |
+| Spielstandformat 4 ergänzt Blüte, Rückweg und Finale | Vorhandenes garden-complete als Anschluss erhalten; Migration aus 1–3 ohne Verlust von Entscheidungen, Ausrüstung oder Kanalstellungen. |
 
 Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen gehören in Git und den aktuellen Status.
