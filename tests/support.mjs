@@ -19,7 +19,17 @@ export function finishCase(s,consent='anonymous',withdrawal='omit',observe=()=>{
   if(s.case.selected.includes('missing'))act({type:'CASE_SELECT',id:'missing'});
   act('CASE_ADDRESS');act('CASE_INTERVIEWS');
  }
- if(has('case-interviews')){act({type:'CASE_CONSENT',id:consent});act('CASE_NORA');act('CASE_EMIL');act({type:'CASE_WITHDRAW',id:withdrawal});act('CASE_MEET');}
+ if(has('case-interviews')){
+  if(s.case.yard.actor!=='dina')act('YARD_SWITCH');
+  act({type:'CASE_CONSENT',id:consent});act('CASE_NORA');act('CASE_EMIL');act({type:'CASE_WITHDRAW',id:withdrawal});
+  // Default courtyard route: Tamatem's traces. The conversation route is covered separately in tests/yard.test.mjs.
+  if(!s.case.yard.proven){
+   act({type:'YARD_LOOK',id:'notice'});act('YARD_SWITCH');act({type:'YARD_LOOK',id:'edge'});act({type:'YARD_LOOK',id:'pin'});act('YARD_PASS');act('YARD_SWITCH');
+   for(const [index,id] of ['notice','print','scrap'].entries())act({type:'YARD_PROOF',index,id});act('YARD_CHECK');
+  }
+  if(!s.case.yard.worded){if(s.case.yard.actor!=='tamatem')act('YARD_SWITCH');act({type:'YARD_WORD',id:'precise'});}
+  act('CASE_MEET');
+ }
  if(has('case-timeline')){for(const [index,id] of ['sale','rent','complaint'].entries())act({type:'CASE_ORDER',index,id});act('CASE_LINK');act('CASE_RESPONSE_START');}
  if(has('case-response')){act({type:'CASE_RESPONSE',id:'owner'});act({type:'CASE_RESPONSE',id:'office'});act('CASE_EDITOR');}
  if(has('case-editor')){for(const [id,value] of Object.entries({abduction:'false',complaints:'verified',motive:'open'}))act({type:'CASE_CLAIM',id,value});act('CASE_CHECK');act('CASE_CORRECT');act('CASE_PRINT');}

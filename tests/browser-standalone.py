@@ -47,11 +47,23 @@ with sync_playwright() as p:
         checkpoint()
         action('case-address')
         action('case-interviews')
-        action('case-consent', 'anonymous' if locale == 'de' else 'name')
-        action('case-nora')
+        # Courtyard (format 11): conversation route in the single-file build.
+        for name, item in [('yard-spot', 'bench'), ('yard-consent', 'anonymous' if locale == 'de' else 'name'), ('yard-nora', None), ('yard-ask', 'gentle')]:
+            action(name, item)
         page.keyboard.press('Escape')
-        action('case-emil')
-        action('case-withdraw', 'omit' if locale == 'en' else 'document')
+        for name, item in [('yard-spot', 'flowers'), ('yard-emil', None), ('yard-withdraw', 'omit' if locale == 'en' else 'document')]:
+            action(name, item)
+        page.keyboard.press('Escape')
+        action('yard-spot', 'board')
+        action('yard-look', 'notice')
+        page.keyboard.press('Escape')
+        checkpoint()
+        action('yard-spot', 'dina')
+        for index, item in enumerate(['notice', 'photo', 'statement']):
+            page.locator(f'#modal-body [data-action="yard-proof"][data-index="{index}"]').select_option(item)
+        action('yard-check')
+        action('yard-switch', 'word')
+        action('yard-word', 'precise')
         checkpoint()
         action('case-meet')
         for index, item in enumerate(['sale', 'rent', 'complaint']):

@@ -1,5 +1,6 @@
 """Imports actual v1–v9 field sets through the browser confirmation UI."""
 import json
+import os
 import subprocess
 from playwright.sync_api import sync_playwright
 
@@ -9,10 +10,10 @@ const points={};const collect=s=>{points[s.stage]??=s;};
 const one=levelOne('research','directions',collect),two=finishCase(one,'anonymous','document',collect),three=finishEco(two,'doubt','visit',collect),four=finishMorning(three,'direct','anonymous',collect),five=finishMask(four,'quiet','role','boundary',collect),six=finishHealing(five,'together','meeting',collect);
 const stages=['river','river-complete','garden-complete','level-complete','case-complete','eco-complete','morning-complete','mask-complete','healing-complete'];
 const added={river:2,garden:3,bloom:4,journey:4,finale:4,case:5,eco:6,morning:7,mask:8,healing:9,edition:10};
-console.log(JSON.stringify(stages.map((stage,i)=>{const s=structuredClone(points[stage]);s.version=i+1;for(const [key,v] of Object.entries(added))if(v>s.version)delete s[key];if(s.version===1)s.stage='complete';return {game:'tamatem-dina-prolog',state:s};})));
+console.log(JSON.stringify(stages.map((stage,i)=>{const s=structuredClone(points[stage]);s.version=i+1;for(const [key,v] of Object.entries(added))if(v>s.version)delete s[key];if(s.case)delete s.case.yard;if(s.version===1)s.stage='complete';return {game:'tamatem-dina-prolog',state:s};})));
 """]))
 with sync_playwright() as p:
-    browser = p.chromium.launch(executable_path='/usr/bin/chromium', headless=True, args=['--no-sandbox'])
+    browser = p.chromium.launch(executable_path=os.environ.get('TD_CHROMIUM', '/usr/bin/chromium'), headless=True, args=['--no-sandbox'])
     for locale in ['de', 'en', 'ar-EG']:
         context = browser.new_context()
         page = context.new_page()
@@ -26,10 +27,13 @@ with sync_playwright() as p:
             page.locator('#import-file').set_input_files({'name': 'legacy.json', 'mimeType': 'application/json', 'buffer': json.dumps(fixture).encode()})
             page.locator('[data-action="confirm-import"]').click()
             saved = page.evaluate('JSON.parse(localStorage.getItem("tamatem-dina-prolog-v1")).state')
-            assert saved['version'] == 10 and saved['stage'] == expected
+            assert saved['version'] == 11 and saved['stage'] == expected
             assert saved['choice'] == 'research' and saved['owlChoice'] == 'directions'
             for key, value in fixture['state'].items():
-                if key not in ['version', 'stage']:
+                if key == 'case':
+                    # Format 11 adds only case.yard; a courtyard already passed is marked as not played.
+                    assert {k: v for k, v in saved['case'].items() if k != 'yard'} == value and saved['case']['yard']['legacy'] is True, (fixture['state']['version'], key)
+                elif key not in ['version', 'stage']:
                     assert saved[key] == value, (fixture['state']['version'], key)
             if expected == 'morning-complete':
                 assert page.locator('[data-action="mask-start"]').count() == 1

@@ -313,16 +313,49 @@ with sync_playwright() as playwright:
         checkpoint_scene('case-records')
         action(page, 'case-address')
         action(page, 'case-interviews')
-        assert page.locator('[data-action="case-nora"]').is_disabled()
+        # Courtyard (format 11): markers open detail dialogs; the finding is needed before the meeting.
+        def yard(*steps):
+            for name, item in steps:
+                action(page, name, item)
+            if page.locator('#modal').evaluate('(d)=>d.open'):
+                page.keyboard.press('Escape')
+        def card(*items):
+            action(page, 'yard-spot', 'dina')
+            for index, item in enumerate(items):
+                page.locator(f'#modal-body [data-action="yard-proof"][data-index="{index}"]').select_option(item)
         assert page.locator('[data-action="case-meet"]').is_disabled()
-        action(page, 'case-consent', 'name' if locale == 'de' else 'anonymous')
-        action(page, 'case-nora')
+        action(page, 'yard-spot', 'bench')
+        assert page.locator('[data-action="yard-nora"]').is_disabled()
+        action(page, 'yard-consent', 'name' if locale == 'de' else 'anonymous')
+        action(page, 'yard-nora')
         layout(page)
         page.keyboard.press('Escape')
         checkpoint_scene('case-consent')
-        action(page, 'case-emil')
+        yard(('yard-spot', 'flowers'), ('yard-emil', None))
         checkpoint_scene('case-withdrawal-pending')
-        action(page, 'case-withdraw', 'document' if locale == 'en' else 'omit')
+        yard(('yard-spot', 'flowers'), ('yard-withdraw', 'document' if locale == 'en' else 'omit'))
+        assert page.locator('[data-action="case-meet"]').is_disabled()
+        yard(('yard-spot', 'board'), ('yard-look', 'notice'))
+        card('notice', 'letter')
+        action(page, 'yard-check')
+        assert page.locator('#modal-body .yard-reply.bad').inner_text()
+        layout(page)
+        page.keyboard.press('Escape')
+        if locale == 'en':
+            yard(('yard-spot', 'bench'), ('yard-ask', 'gentle'))
+            card('notice', 'photo', 'statement')
+        else:
+            yard(('yard-switch', None), ('yard-spot', 'board'), ('yard-look', 'edge'), ('yard-look', 'pin'))
+            checkpoint_scene('case-yard-pocket')
+            yard(('yard-spot', 'tamatem'), ('yard-pass', None))
+            yard(('yard-switch', None))
+            card('notice', 'print', 'scrap')
+        action(page, 'yard-check')
+        action(page, 'yard-switch', 'word')
+        action(page, 'yard-word', 'forgery')
+        assert not saved(page)['case']['yard']['worded']
+        action(page, 'yard-word', 'precise')
+        assert saved(page)['case']['yard']['worded'] and page.locator('.yard-sheet').count() == 1
         checkpoint_scene('case-interviews')
         action(page, 'case-meet')
         action(page, 'case-link')

@@ -29,6 +29,24 @@ Vier lesbare Karten, drei gehören zum Mühlenhof 4: Brief mit Poststempel 2. Ju
 
 Dina holt Einverständnis ein, wählt mit Nora Namensnennung oder anonyme Darstellung (beides erlaubt), fragt offen nach Ablauf und Belegen und spricht mit Emil. Kein Fortgang ohne Noras Fakten und Emils Widerruf. Die Widerrufsentscheidung bestimmt die später sichtbare Eingangsnummernnotiz; beide Wege erhalten den öffentlichen Registerbeleg. Beim Treffen werden Unterlagen weitergegeben. Drei Ereignisse über ausdrücklich benannte Positionsfelder auswählen, ohne Ziehen. Jede Karte nur einmal; Umwahl bleibt möglich. Prüfung gegen drei datierte Dokumente. Fehlversuche bleiben kostenfrei, Hilfen benennen die Abfolge.
 
+### B2 · Der Hof als erkundbare Sequenz (umgesetzt, Format 11)
+
+Ersetzt die frühere Schaltflächenfolge von Station 6–8; Nennung, Interview, Emils Widerruf und Dinas Reaktion bleiben inhaltlich gleich und liegen jetzt bei Nora (Bank) und Emil (Geranien). Gestaltungsziel etwa zehn Minuten beim ersten Durchlauf, nicht gemessen.
+
+**Widerspruch:** Aushang am Brett „Stand: 15. Mai … bei der Neuordnung lagen keine Mitteilungen von Mietern vor“ gegen den Brief („unsere Beschwerden hingen neben dem Tor“). **Befund:** „Der Aushang beschreibt das Brett falsch: Bevor es neu geordnet wurde, hingen dort Mieterbriefe.“ Absicht und Verbleib bleiben offen.
+
+| Hinweis | Fundort | Wer |
+|---|---|---|
+| Aushang (Behauptung) | Brett | Dina oder Tamatem |
+| Druckzeile „Druck 24.05.“ | Unterkante hinter der Hortensie | nur Tamatem |
+| Papierecke „… vom 18. Mai“ | rostige Nadel unten rechts | Tamatem; Dina erst nach Noras Hinweis |
+| Foto mit Aufdruck 19.05. und Aussage | Nora, behutsam gefragt | Dina |
+| Aussage und Fundort der Papierecke | Nora, Widerspruch angesprochen (setzt gelesenen Aushang voraus) | Dina |
+
+**Weg A · Spuren:** Aushang + Druckzeile + Papierecke; Tamatem übergibt per Heftseite. **Weg B · Gespräch:** Aushang + Foto + Aussage nach Nennung und Interview. Mischungen sind gültig, solange Zeile 2 den Aushang datiert (Druckzeile oder Foto) und Zeile 3 Mieterbriefe am Brett belegt (Papierecke, Aussage oder Foto). Aussage + Papierecke allein genügt nicht. Nie tragend: Emils zurückgezogener Satz, anonymer Brief, Reklame, unlesbares Flurbrett.
+
+Danach liest Tamatem gegen und wählt den tragfähigen Satz („gefälscht“ und „vernichtet“ werden erklärt abgewiesen). Folge: Nora pinnt eine Abschrift ans Brett (im Bild und in der Detailansicht lesbar), spricht anders; Emil reagiert wortlos; Notizbuch erhält den Befund mit den verwendeten Belegen. Das Treffen am Lesetisch braucht Interview, Widerrufsentscheidung und Befund; Reihenfolge frei.
+
 ### C · Redaktionelle Prüfung (Dina)
 
 Eigentümerantwort und Verwaltungsantwort ausdrücklich lesen, dann drei Behauptungen als belegt/offen/falsch einstufen. „Entführt“ = falsch für unseren Entwurf (kein Beleg, Nora erreichbar); „Beschwerden eingegangen und später abgehängt“ = belegt durch Register plus Verwaltungsantwort; „Verkauf sollte gezielt Beschwerden beseitigen“ = offen. Alle Antworten änderbar bis zur richtigen Prüfung. Eigene Überschrift anschließend ausdrücklich korrigieren, dann veröffentlichen. Freigabe benötigt alle drei Schritte. Keine Zitate aus Widerruf, keine private Adresse in Ausgabe.

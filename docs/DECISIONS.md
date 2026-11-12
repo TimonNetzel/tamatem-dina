@@ -86,3 +86,12 @@ Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen geh�
 
 - Auf neuen ausdrücklichen Auftrag bestehende Site auf den geprüften GitHub-Spielstand c18e48e aktualisiert und öffentlich freigegeben. Identität, alte Spielstände und beide Git-Historien erhalten; Sites-Version 4 nativ erfolgreich, Zugriff public erneut bestätigt.
 - GitHub-Repository-Sichtbarkeit getrennt behandelt: Änderungsversuch vom Verwaltungszugang mit Forbidden abgewiesen, weiterhin privat bestätigt. Keine Umstellung behaupten; Eigentümerschritt in DEPLOYMENT.md offenhalten. Externe Abnahmen bleiben unverändert offen.
+
+## Pilotumbau Hof · Level 2 (Format 11)
+
+- Der Hof wird auf dem vorhandenen Bild erkundet; kein neues Bild. Marker liegen in Bildprozenten bei festem Seitenverhältnis, jede Fläche hat zusätzlich einen Listeneintrag. Detailansichten als Dialoge, das Brett als HTML/SVG-Zeichnung.
+- Kernbefund in beiden Wegen gleich und bewusst klein: Der Aushang beschreibt das Brett falsch; Absicht und Verbleib der Briefe bleiben offen. Das stützt die bestehende Auflösung (Register 47, Verwaltungsantwort) und nimmt sie nicht vorweg. Der Blick in den Flur bleibt unlesbar und ist ausdrücklich kein Beleg.
+- Wissen ist figurengebunden: clues (Dina) und pocket (Tamatem); Übergabe nur per Zettel. Emils zurückgezogener Satz, anonymer Brief, Reklame und Flurbrett sind wählbare, aber nie tragende Einträge.
+- Beide Gesprächszugänge bleiben nacheinander möglich; keine neue unumkehrbare Entscheidung. Nennung und Widerruf behalten ihre bisherigen Regeln.
+- Alte Stände nach dem Hof werden als nicht gespielt markiert (legacy), statt einen Lösungsweg zu erfinden. Stände im Hof müssen den Befund nachholen; das ist gewollt und keine Sackgasse.
+- Hilfen im Hof zählen je Teilziel (yard.help), damit ein neuer Schritt nicht mit der deutlichsten Hilfe beginnt.
