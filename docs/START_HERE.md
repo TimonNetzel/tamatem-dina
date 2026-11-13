@@ -10,7 +10,7 @@ Version 0.10 enthält alle sieben vollständigen dreisprachigen Level. Neu: „D
 
 Lokaler Pilot vom 12. November 2026: Der Hof in Level 2 ist eine erkundbare Sequenz mit zwei Lösungswegen; Speicherformat 11, Spielstände 1–10 migrieren. Am 13. November 2026 über Pull Request #1 nach main gemergt; der Pages-Workflow lief dabei automatisch. Ob das so bleiben soll, ist offen. Details und Prüfgrenzen: STATUS.md, Abschnitt „Pilotumbau Hof“.
 
-Animationen Level 1 (13. November 2026): Paket 1 „Pilotszene Garten“ liegt auf dem Zweig `level1-animationen`, nicht auf main und nicht veröffentlicht. Es wartet auf die Nutzerabnahme von Stil, Tempo und Menge. Plan: plans/level-1-animationen.md; Stand: STATUS.md; Code: dist/scene-fx.js.
+Animationen Level 1 (13. November 2026): Paket 1 (Garten, vom Nutzer abgenommen) und Paket 2 (alle übrigen Szenen und Szenenwechsel) liegen auf dem Zweig `level1-animationen`, nicht auf main und nicht veröffentlicht. Offen sind das Nutzerurteil zu den neuen Szenen, das echte iPhone und die ausdrückliche Freigabe zum Merge. Plan: plans/level-1-animationen.md; Stand: STATUS.md; Code: dist/scene-fx.js.
 
 ## Gezielt nachlesen
 

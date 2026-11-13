@@ -1,10 +1,42 @@
 # Entwicklungsstand
 
-Stand: 13. November 2026 (Animationen Level 1, Paket 1 auf Zweig `level1-animationen`, siehe nächster Abschnitt; Hofpilot Level 2 mit Format 11 auf main). Veröffentlicht bleibt der Stand vom 15. Oktober 2026. Entwicklungsfassung **0.10** enthält alle sieben vollständigen dreisprachigen Level von „Die Lumenblüte“ bis „Die letzte Ausgabe“. Tamatem wächst von sechs bis achtzehn; Dina bleibt ungefähr dreißig und eigenständig spielbar. Technische Implementierung ist keine abgeschlossene externe Gesamtabnahme.
+Stand: 13. November 2026 (Animationen Level 1, Paket 1 und 2 auf Zweig `level1-animationen`, siehe die nächsten beiden Abschnitte; Hofpilot Level 2 mit Format 11 auf main). Veröffentlicht bleibt der Stand vom 15. Oktober 2026. Entwicklungsfassung **0.10** enthält alle sieben vollständigen dreisprachigen Level von „Die Lumenblüte“ bis „Die letzte Ausgabe“. Tamatem wächst von sechs bis achtzehn; Dina bleibt ungefähr dreißig und eigenständig spielbar. Technische Implementierung ist keine abgeschlossene externe Gesamtabnahme.
+
+## Animationen Level 1 · Paket 2 Übrige Szenen (13. November 2026)
+
+Zweig `level1-animationen`. Nicht auf main, nicht veröffentlicht, kein Workflow gestartet. Nutzerrückmeldung zur Pilotszene: „Passt so“ – der Garten blieb unverändert, die übrigen Szenen folgen demselben Stil. **Freigabe und Merge nach main nur auf ausdrückliche Anweisung des Nutzers.**
+
+Umgesetzt (nur Darstellung; Ablauf, Rätsel, Spieltexte, Entscheidungen und Speicherformat 11 unverändert, keine Migration, keine neue Zeichenkette, keine neuen Bilder oder Pakete):
+- Station 1 Arbeitstisch: Lampenschein, Staub im Lampen- und Fensterlicht, Glanzpunkte; jede gelesene Quelle erhält einen ruhigen Schimmer am Papier (steht zusätzlich wie bisher in der Quellenleiste).
+- Station 2 Fieber, Dinas Blick (11) und die Nacht vor dem Morgen (12): flackernder Lampenschein, langsames „Atmen“ als Lichtfleck über der Decke, Fensterlichter und Mond.
+- Stationen 3–4 Abend am Arbeitstisch: Lampenschein; beim Einpacken fliegen drei Lichtpunkte zur Tasche (0,8–1,1 s), je eingepacktem Gegenstand bleibt ein Schimmer an der Tasche.
+- Station 5 Schwelle: Ankunft mit Kamerafahrt vom Dorf zum Wald (3,6 s, überspringbar per Knopf oder Tippen aufs Bild), schwingender Laternenschein, Dorflichter, danach Nebelbänder und Glühwürmchen.
+- Station 6 Fluss: Wasserfall, treibender Schaum, Glitzern; beim ersten Untersuchen und bei einem Fehlversuch wackelt das Bild kurz (0,9 s); beim Sichern wird die Schlinge gezeichnet und strafft sich (1,3 s); kurzer Kameraschub bei jedem Schritt der Überquerung.
+- Station 10 Sturm: 26 Regenstreifen, zwei Windböen, flackernde Laterne; das Licht am Glas ist klein und flackert, solange es ungeschützt ist, und leuchtet nach dem Schützen ruhig neben der helleren Laterne (Text unverändert daneben).
+- Station 11 Apparatur: kein Szenenbild, die vorhandene Lichtanzeige (ruhig/flackernd nach Rätselstand) bleibt unverändert.
+- Station 12 Morgen: Nachtbild blendet in das Morgenbild über, mit warmem Licht vom Fenster und Kamerafahrt (4,4 s, überspringbar); danach Lichtstrahlen, Staub im Fensterlicht, Glanzpunkte.
+- Szenenwechsel: das vorherige Bild blendet in 0,6 s aus (auch Garten und Kammer); bei gleichem Bild und gleicher Stimmung kein Effekt.
+- Reduzierte Bewegung: keine Animation, kein Überspringen-Knopf, sofort der Endzustand. Neuladen zeigt immer den Endzustand.
+- Service-Worker-Cache `tamatem-dina-prolog-v11-20261113-level1-fx`, weiter 47 Dateien.
+
+Abweichungen und Eingriffe in Bestehendes:
+- Das Startbild (Titelseite) ist nicht animiert.
+- „Atmen der Decke“, „Stamm bewegt sich“ und „Laterne schwingt“ sind wegen der flachen Bilder Lichtflecken bzw. eine Bewegung des ganzen Bildes, keine getrennt bewegten Bildteile.
+- Die Schlinge am Fluss wurde bisher bei jedem Neuzeichnen neu eingezeichnet; jetzt nur noch einmal beim Sichern. In den vergrößerten Überquerungsbildern lag die Schlinge bisher neben dem Stamm; sie folgt jetzt dem Bildausschnitt.
+- Die Lage der Ebene über beschnittenen Bildern (Kammer und alle neuen Szenen) wird ohne `transform` berechnet; Keyframes nutzen neben `transform`/`opacity` die Einzeleigenschaften `scale`, `translate` und neu `rotate` (per Test abgesichert).
+- Nicht überspringbar, aber länger als 1,5 s bleiben wie in Paket 1 das Testwasser (2,1 s) und der feuchte Schimmer (1,8 s); beide sperren nichts.
+
+Prüfungen am 13. November 2026 auf dem Endstand:
+- **Ausgeführt:** `npm test` 87 von 87 (85 bisherige, 2 neue in `tests/scene-fx.test.mjs`; die drei vorhandenen dort um die neuen Ebenen erweitert).
+- **Ausgeführt (Chromium 1243 headless, `node server.mjs`):** `tests/browser-fx.py`, erweitert um Arbeitstisch, Fieber, Packen, Schwelle, Fluss, Überquerung, Sturm, Dinas Blick und Morgen – Deutsch, Englisch, Arabisch × 1440 Maus/Tastatur, 390 und 320 Touch × mit und ohne reduzierte Bewegung (18 Läufe, je Garten- und Restteil): kein horizontales Auslaufen, Marker durch die Ebene bedienbar, Speicherstand nach jedem Schritt identisch mit dem reinen Reducer-Ergebnis, nächste Aktion sofort möglich, Neuladen mitten in Ankunft und Morgen, Überspringen per Knopf und per Bild, Sprachwechsel während der Animation, Ebene deckt den Bildausschnitt. Offline über den Service Worker (390, Deutsch) einschließlich Morgenwechsel.
+- **Ausgeführt:** `tests/browser-smoke.py` (Level 1+2, drei Sprachen) und `tests/browser-standalone.py` (neu erzeugte Einzeldatei, `file://`) bestanden. Die neuen Szenen wurden in der Einzeldatei nicht gesondert durchgespielt.
+- **Nicht ausgeführt:** browser-campaign, -legacy, -yard und die Level-3–7-Läufe (deren Code ist unverändert).
+- **Simuliert:** „Handy“ heißt Chromium mit 390/320 px und Touch, kein iPhone. Standbilder und GIF-Mitschnitte wurden angesehen.
+- **Offen:** echtes iPhone/Safari (Flüssigkeit, Akku, Wärme; WebKit nicht ausgeführt, Container-Einheiten ab Safari 16, `scale`/`translate`/`rotate` ab Safari 14.1), Nutzerurteil zum Aussehen der neuen Szenen, menschliche Spielzeit, muttersprachliche Prüfung.
 
 ## Animationen Level 1 · Paket 1 Pilotszene Garten (13. November 2026)
 
-Zweig `level1-animationen` (ab main ab8a8cd, `claude/serene-allen-2fw6gh` eingemergt). Nicht auf main, nicht veröffentlicht, kein Workflow gestartet. Plan: [plans/level-1-animationen.md](plans/level-1-animationen.md). **Wartet auf die Nutzerabnahme von Stil, Tempo und Menge; vorher keine weiteren Szenen.**
+Zweig `level1-animationen` (ab main ab8a8cd, `claude/serene-allen-2fw6gh` eingemergt). Nicht auf main, nicht veröffentlicht, kein Workflow gestartet. Plan: [plans/level-1-animationen.md](plans/level-1-animationen.md). Vom Nutzer am 13. November 2026 mit „Passt so“ abgenommen (Stil, Tempo, Menge).
 
 Umgesetzt (nur Darstellung; Ablauf, Rätsel, Spieltexte, Entscheidungen und Speicherformat 11 unverändert, keine Migration):
 - Grundlage `dist/scene-fx.js` und Abschnitt „Scene animation layers“ in `dist/style.css`: Ebene `.scene-fx` (`aria-hidden`, ohne Zeigerereignisse, `direction:ltr`) über dem Szenenbild, Geometrie in Bildpixeln 1672 × 941. Bausteine: Überblendung, Lichtstaub/Staub, Wasserlauf, Glitzern, Schimmer/Glühen, fallende Blätter, Kamerafahrt. Auslöser werden rein aus dem Zustandswechsel abgeleitet (`fxTransition`) und nur im Arbeitsspeicher gehalten.

@@ -106,3 +106,10 @@ Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen geh�
 - Überspringen nur für Abläufe über etwa 1,5 s (Bewässerung, Lichtstaub ins Glas); Knopf plus Tippen aufs Bild. Kein Ablauf sperrt eine Schaltfläche.
 - Die Kammer behält ihren bisherigen Bildausschnitt; die Ebene wird über Container-Einheiten auf den beschnittenen Bildausschnitt gelegt, mit 100 % als Rückfall.
 
+## Animationen Level 1 · Paket 2 (13. November 2026)
+
+- Nutzerabnahme der Pilotszene: „Passt so“. Die übrigen Szenen verwenden dieselben Bausteine, dieselbe Menge und dasselbe Tempo; der Garten blieb unverändert.
+- Auslöser bleiben reine Ableitungen aus dem Zustandswechsel (`fxTransition`); einzige Ausnahme ist der Fehlversuch am Fluss, der den Zustand nicht ändert und das Wackeln direkt startet.
+- Szenenwechsel blenden das vorherige Bild 0,6 s aus; der Morgen und die Bewässerung haben ihre eigene längere Überblendung statt der kurzen.
+- Alle neuen Ebenen liegen als Deckebene über dem beschnittenen Bild (16:10 auf dem Handy, Abschlussansicht); die Lage wird ohne `transform` berechnet, damit vergrößerte Ausschnitte (Überquerung) dieselbe Vergrößerung wie das Bild tragen können.
+- Station 11 (Apparatur) erhält keine neue Ebene: Die vorhandene Lichtanzeige zeigt den Rätselstand bereits; ein zusätzliches gemeinsames Flackern von Glas und Laterne würde Dinas Beobachtung vorwegnehmen.

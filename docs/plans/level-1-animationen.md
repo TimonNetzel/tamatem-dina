@@ -1,6 +1,6 @@
 # Plan · Animationen für Level 1 „Lumenblüte“
 
-Stand: 13. November 2026. Paket 1 ist auf `level1-animationen` umgesetzt und wartet auf die Nutzerabnahme (Stand und Prüfgrenzen: ../STATUS.md); Paket 2 ist nicht begonnen. Festlegungen des Nutzers vom selben Tag:
+Stand: 13. November 2026. Paket 1 ist vom Nutzer abgenommen („Passt so“), Paket 2 ist auf `level1-animationen` umgesetzt (Stand, Abweichungen und Prüfgrenzen: ../STATUS.md). Offen: Nutzerurteil zu den neuen Szenen, echtes iPhone, Freigabe und Merge nach main nur auf ausdrückliche Anweisung. Festlegungen des Nutzers vom selben Tag:
 
 - **Umfang:** nur Animationen. Ablauf, Rätsel, Texte, Entscheidungen und Speicherformat 11 von Level 1 bleiben unverändert; keine Migration nötig.
 - **Bildmaterial:** CSS/SVG-Ebenen über den neun vorhandenen Gesamtbildern. Keine neuen PNG-Bilder, keine neuen Laufzeitpakete.
