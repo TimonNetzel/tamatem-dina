@@ -96,3 +96,13 @@ Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen geh�
 - Alte Stände nach dem Hof werden als nicht gespielt markiert (legacy), statt einen Lösungsweg zu erfinden. Stände im Hof müssen den Befund nachholen; das ist gewollt und keine Sackgasse.
 - Hilfen im Hof zählen je Teilziel (yard.help), damit ein neuer Schritt nicht mit der deutlichsten Hilfe beginnt.
 - Browserläufe über `file://` setzen Startstände einmalig und laden dann neu; kein Init-Skript mit Speicherzugriff bei jedem Laden, kurze Pause vor dem Neuladen. Grund: Headless-Chromium liefert sonst nach dem Neuladen zeitweise einen älteren Speicherstand (Messung in STATUS.md).
+
+## Animationen Level 1 · Paket 1 (13. November 2026)
+
+- Animationen sind eine reine Darstellungsebene: `dist/scene-fx.js` baut Markup und leitet Auslöser aus dem Vergleich alter/neuer Zustand ab. Nichts davon steht im Spielstand; Format 11 bleibt, Neuladen zeigt den Endzustand.
+- HTML/CSS-Ebene statt SVG-Animation, damit transform und opacity auf dem iPhone vom Kompositor laufen können. Teilchen sitzen in Trägern von einem Zehntel der Ebene, damit Prozentwege bei jeder Breite zum Bild passen.
+- Dauerschleifen bleiben über Neuzeichnungen im Takt (`--now`), Einmalabläufe laufen über die verstrichene Zeit weiter (`--el`); deshalb startet ein Sprachwechsel oder Plattendreh nichts neu.
+- Ruhezustand ist immer der Endzustand: Ohne Animation (reduzierte Bewegung) sind Schwebeteilchen unsichtbar, Schimmer, Glühen und das Kreuz an der Lücke sichtbar.
+- Überspringen nur für Abläufe über etwa 1,5 s (Bewässerung, Lichtstaub ins Glas); Knopf plus Tippen aufs Bild. Kein Ablauf sperrt eine Schaltfläche.
+- Die Kammer behält ihren bisherigen Bildausschnitt; die Ebene wird über Container-Einheiten auf den beschnittenen Bildausschnitt gelegt, mit 100 % als Rückfall.
+

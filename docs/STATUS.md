@@ -1,10 +1,31 @@
 # Entwicklungsstand
 
-Stand: 12. November 2026 (Hofpilot Level 2, lokal, Format 11; siehe nächster Abschnitt). Veröffentlicht bleibt der Stand vom 15. Oktober 2026. Entwicklungsfassung **0.10** enthält alle sieben vollständigen dreisprachigen Level von „Die Lumenblüte“ bis „Die letzte Ausgabe“. Tamatem wächst von sechs bis achtzehn; Dina bleibt ungefähr dreißig und eigenständig spielbar. Technische Implementierung ist keine abgeschlossene externe Gesamtabnahme.
+Stand: 13. November 2026 (Animationen Level 1, Paket 1 auf Zweig `level1-animationen`, siehe nächster Abschnitt; Hofpilot Level 2 mit Format 11 auf main). Veröffentlicht bleibt der Stand vom 15. Oktober 2026. Entwicklungsfassung **0.10** enthält alle sieben vollständigen dreisprachigen Level von „Die Lumenblüte“ bis „Die letzte Ausgabe“. Tamatem wächst von sechs bis achtzehn; Dina bleibt ungefähr dreißig und eigenständig spielbar. Technische Implementierung ist keine abgeschlossene externe Gesamtabnahme.
 
-## Geplant · Animationen Level 1 (13. November 2026)
+## Animationen Level 1 · Paket 1 Pilotszene Garten (13. November 2026)
 
-Noch nichts umgesetzt. Plan mit Nutzerfestlegungen (nur Animationen, CSS/SVG über Bestandsbildern, erst Pilotszene Garten, eigener Zweig `level1-animationen`, Hofpilot bleibt auf main): [plans/level-1-animationen.md](plans/level-1-animationen.md). Folgeauftrag in ../CODEX_STARTPROMPT.md.
+Zweig `level1-animationen` (ab main ab8a8cd, `claude/serene-allen-2fw6gh` eingemergt). Nicht auf main, nicht veröffentlicht, kein Workflow gestartet. Plan: [plans/level-1-animationen.md](plans/level-1-animationen.md). **Wartet auf die Nutzerabnahme von Stil, Tempo und Menge; vorher keine weiteren Szenen.**
+
+Umgesetzt (nur Darstellung; Ablauf, Rätsel, Spieltexte, Entscheidungen und Speicherformat 11 unverändert, keine Migration):
+- Grundlage `dist/scene-fx.js` und Abschnitt „Scene animation layers“ in `dist/style.css`: Ebene `.scene-fx` (`aria-hidden`, ohne Zeigerereignisse, `direction:ltr`) über dem Szenenbild, Geometrie in Bildpixeln 1672 × 941. Bausteine: Überblendung, Lichtstaub/Staub, Wasserlauf, Glitzern, Schimmer/Glühen, fallende Blätter, Kamerafahrt. Auslöser werden rein aus dem Zustandswechsel abgeleitet (`fxTransition`) und nur im Arbeitsspeicher gehalten.
+- Station 7 Garten ohne Wasser: flirrende Luft, Staub, drei fallende Blätter, bewegter Wasserfall, Glühen der Hüteraugen; nach dem Untersuchen feuchter Schimmer an der Anlage.
+- Kanalrätsel: Platte dreht sichtbar (0,3 s); Testwasser läuft Platte für Platte (0,28 s je Platte), Häkchen folgen, an der Lücke ein Spritzer und danach das bisherige Kreuz.
+- Station 8 Bewässerung (etwa 4,4 s, überspringbar per Knopf „Animation überspringen“ oder Tippen aufs Bild): Tropfen laufen zum Becken, Überblendung trocken → nass mit warmem Licht und leichter Kamerafahrt, danach aufsteigender Lichtstaub, Wasserfälle, Glitzern, Türschein.
+- Station 9 Blütenkammer: Blüte pulsiert langsam, Lichtstaub, Glitzern, kleine Wasserläufe; beim Lichtglas wandern zehn Lichtpunkte im Bogen ins Glas (etwa 3 s, überspringbar), danach leuchten Glas und Laterne.
+- Reduzierte Bewegung: keine Animation, kein Überspringen-Knopf, sofort der Endzustand. Neuladen zeigt immer den Endzustand. Jede Information steht weiterhin im vorhandenen Text.
+- Einzige neue Zeichenkette: „Animation überspringen“ (de/en/ar-EG). Service-Worker-Cache `tamatem-dina-prolog-v11-20261113-garden-fx`, 47 Dateien; `make-offline.mjs` bündelt `scene-fx.js`.
+
+Abweichungen und Eingriffe in Bestehendes:
+- Das Testwasser im Rätselbrett nutzt weiter die schon vorhandene Strichversatz-Animation (`channel-flow`); alle neuen `fx-`Animationen bewegen nur transform/opacity (per Test abgesichert).
+- `tests/browser-smoke.py`: die Wartezeile vor dem Gartenfoto wartet nur noch auf endliche Animationen (Dauerschleifen enden nie). `tests/offline.test.mjs`: 47 statt 46 Dateien.
+- Die globale Regel für reduzierte Bewegung erfasste keine Pseudoelemente; für `.scene-fx` ergänzt.
+
+Prüfungen am 13. November 2026 auf dem Endstand:
+- **Ausgeführt:** `npm test` 85 von 85 (82 bisherige, 3 neue in `tests/scene-fx.test.mjs`).
+- **Ausgeführt (Chromium 1243 headless, `node server.mjs`):** neues `tests/browser-fx.py` – Deutsch, Englisch, Arabisch × 1440 Tastatur/Maus, 390 und 320 Touch × mit und ohne reduzierte Bewegung (18 Läufe): kein horizontales Auslaufen, Marker durch die Ebene bedienbar, Speicherstand nach jedem Schritt identisch mit dem reinen Reducer-Ergebnis, nächste Aktion sofort nach dem Lösen möglich, Neuladen mitten in der Bewässerung, Überspringen per Knopf und per Bild, Sprachwechsel während der Animation, Ebene deckt den Kammerausschnitt. Dazu ein Offline-Lauf über den Service Worker (390, Deutsch).
+- **Ausgeführt:** `tests/browser-smoke.py` (Level 1+2, drei Sprachen) und `tests/browser-standalone.py` (Einzeldatei, `file://`) bestanden. Der Einzeldatei-Test spielt den Garten nicht; die Bewässerung in der Einzeldatei wurde einmal gesondert geprüft (390, Deutsch, keine Fehler).
+- **Simuliert:** „Handy“ heißt hier Chromium mit 390/320 px Breite und Touch, kein iPhone. Standbilder und GIF-Mitschnitte wurden angesehen.
+- **Offen:** echtes iPhone/Safari (Flüssigkeit, Akku, Wärme; WebKit wurde gar nicht ausgeführt – die Kammerebene nutzt Container-Einheiten ab Safari 16, die Kamerafahrt `scale`/`translate` ab Safari 14.1), Nutzerurteil zum Aussehen, menschliche Spielzeit, muttersprachliche Prüfung von „عدّي الحركة“.
 
 ## Pilotumbau Hof · Level 2 (12. November 2026, Format 11)
 
@@ -146,5 +167,7 @@ Ausgangspunkt dieser Prüfung: bestätigter GitHub-main **d8a8032**. Der bereitg
 - Keine zusätzliche Browserabnahme der öffentlichen Live-Site; die Veröffentlichung von 0.10 und der öffentliche Zugriff sind nativ bestätigt. Übergabe-Hashliste bleibt ursprüngliche Momentaufnahme von Prolog 0.1; absichtliche Abweichungen sind erwartbar.
 
 ## Nächste Aufgabe / Chatübergabe
+
+**Zuerst (13. November 2026):** Nutzerabnahme der Pilotszene Garten auf `level1-animationen`. Danach Paket 2 (übrige Szenen von Level 1) in einem neuen Chat; der kopierfertige Auftrag dafür steht jetzt in ../CODEX_STARTPROMPT.md und hat eine Stelle für die Rückmeldung. Der folgende ältere Auftrag zu den externen Abnahmen bleibt offen, steht aber nicht mehr in der Promptdatei.
 
 **Für die externen Abnahmen einen neuen Chat empfehlen.** Kopierfertiger Auftrag: ../CODEX_STARTPROMPT.md. Ergebnisse der technischen Gesamtabnahme zuerst in ACCEPTANCE_REPORT.md lesen. Echte Geräte-, muttersprachliche, direkte Einzeldatei-, unabhängige Fach- und menschliche Zeitnachweise gemäß ACCEPTANCE.md sammeln und konkrete Befunde beheben. Alle sieben Level und Spielstände 1–10 erhalten. Keine offene Abnahme als bestanden ausgeben. Öffentliche Site separat auf 0.10 dokumentiert; Repository-Sichtbarkeit noch privat/gesperrt. Künftige Veröffentlichung nur bei gesondertem Auftrag.

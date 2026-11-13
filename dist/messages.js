@@ -1,4 +1,5 @@
 export const MESSAGES={
+ "Animation überspringen":{"en":"Skip animation","ar-EG":"عدّي الحركة"},
  "Die Heilungsrecherche überspringt eine notwendige Handlung.":{"en":"The treatment investigation skips a required action.","ar-EG":"تحقيق العلاج بيعدّي خطوة لازمة."},
  "Die Maskenstadt überspringt eine notwendige Handlung.":{"en":"The City of Masks skips a required action.","ar-EG":"مدينة الأقنعة بتعدّي خطوة لازمة."},
  "Der Morgenfall überspringt eine notwendige Handlung.":{"en":"The youth-centre investigation skips a required action.","ar-EG":"تحقيق مركز الشباب بيعدّي خطوة لازمة."},

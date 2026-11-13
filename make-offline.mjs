@@ -12,7 +12,7 @@ for(const [name,data] of Object.entries(assets))css=css.replaceAll(`url('./asset
 // Give each ES module its own scope, including import aliases. All modules are local;
 // the generated file needs no network imports, fetches or extra runtime packages.
 let script='const __TD_MODULES=Object.create(null);\n';
-for(const name of ['channels.js','case-state.js','eco-state.js','morning-state.js','mask-state.js','healing-state.js','edition-state.js','state.js','data.js','messages.js','i18n.js','case-copy.js','eco-copy.js','morning-copy.js','mask-copy.js','healing-copy.js','edition-copy.js','edition-ui.js','healing-ui.js','mask-ui.js','morning-ui.js','eco-ui.js','case-ui.js','app.js']){
+for(const name of ['channels.js','scene-fx.js','case-state.js','eco-state.js','morning-state.js','mask-state.js','healing-state.js','edition-state.js','state.js','data.js','messages.js','i18n.js','case-copy.js','eco-copy.js','morning-copy.js','mask-copy.js','healing-copy.js','edition-copy.js','edition-ui.js','healing-ui.js','mask-ui.js','morning-ui.js','eco-ui.js','case-ui.js','app.js']){
  let code=await read(name);
  const exported=[...code.matchAll(/^export (?:const|function) (\w+)/gm)].map(match=>match[1]);
  code=code.replace(/^import \{([^}]+)\} from '\.\/([\w-]+\.js)';\r?\n/gm,(_,bindings,dependency)=>`const {${bindings.replace(/\s+as\s+/g,':')}}=__TD_MODULES[${JSON.stringify(dependency)}];\n`).replace(/^export /gm,'');

@@ -206,7 +206,8 @@ with sync_playwright() as playwright:
         layout(page)
         page.locator('#main').focus()
         page.evaluate('scrollTo({top:0,behavior:"instant"})')
-        page.evaluate('Promise.all(document.getAnimations().map(animation=>animation.finished.catch(()=>{})))')
+        # Endless ambient scene loops never finish; wait only for finite animations.
+        page.evaluate('Promise.all(document.getAnimations().filter(animation=>animation.effect.getComputedTiming().iterations!==Infinity).map(animation=>animation.finished.catch(()=>{})))')
         page.screenshot(path=f'/tmp/tamatem-garden-wet-{locale}.png', full_page=True)
         garden_checkpoint = saved(page)
         # Continue the complete episode while the browser network remains disabled.

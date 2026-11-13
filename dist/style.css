@@ -120,3 +120,71 @@ html[dir=rtl] .yard-reply,html[dir=rtl] .yard-muted{font-family:var(--sans)}
 #modal .case-order select{font-size:15px;text-overflow:ellipsis}
 /* Narrow screens: keep the 44px touch area but draw a smaller disc so faces stay visible. */
 @media(max-width:600px){.yard-spot{background:none;border:0;box-shadow:none}.yard-spot span{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#172b30d9;color:var(--white);border:1px solid #f7e5b9;font-size:14px;box-shadow:0 1px 8px #0008}.yard-spot.visited{background:none}.yard-spot.visited span{background:#f0e3c5f0;color:#1d3033}.yard-spot.yard-me{outline:0;animation:none}.yard-spot.yard-me span{outline:2px solid #e2bd81;outline-offset:3px}.yard-scene .scene-caption{display:none}}
+
+/* Scene animation layers (Level 1 pilot: garden and bloom chamber).
+   Decoration only: aria-hidden, no pointer events, transform and opacity animations.
+   Without animation (reduced motion) every element rests in its settled state.
+   --now keeps endless loops in phase across re-renders; --el is the elapsed time of a one-shot. */
+.scene-fx{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;direction:ltr;contain:layout paint style}
+.scene-fx *{position:absolute;display:block;pointer-events:none}
+.scene.fx-host{container-type:size}
+.scene-fx.fx-cover{inset:auto;left:50%;top:50%;width:100%;height:100%;width:max(100cqw,100cqh*1672/941);height:max(100cqh,100cqw*941/1672);transform:translate(-50%,-50%)}
+.fx-late,.fx-jar,.fx-moist-group{inset:0}
+.fx-p,.fx-leaf,.fx-run,.fx-fly{width:10%;height:10%}
+.fx-p,.fx-leaf{opacity:0;animation:fx-drift var(--t,9s) linear infinite;animation-delay:calc(var(--d,0s) - var(--now,0s))}
+.fx-p::before,.fx-run::before,.fx-fly>i::before{content:'';position:absolute;left:0;top:0;width:var(--s,6%);aspect-ratio:1;border-radius:50%;margin:calc(var(--s,6%)/-2) 0 0 calc(var(--s,6%)/-2);background:radial-gradient(circle,#fffbe0 0 22%,#ffd866 46%,#ffbf4000 72%)}
+.fx-p::before{animation:fx-sway calc(var(--t,9s)*.37) ease-in-out infinite alternate;animation-delay:calc(var(--d,0s) - var(--now,0s))}
+.fx-dry{--o:.55}.fx-dry::before{background:radial-gradient(circle,#ecd6ab 0 30%,#c9a56a88 55%,#c9a56a00 75%)}
+.fx-leaf{--o:.9}.fx-leaf::before{content:'';position:absolute;left:0;top:0;width:14%;aspect-ratio:1.7;border-radius:0 80%;background:linear-gradient(135deg,#c2933f,#6f5a2a);animation:fx-flutter var(--f,2.6s) ease-in-out infinite alternate;animation-delay:calc(var(--d,0s) - var(--now,0s))}
+.fx-heat{border-radius:50%;background:radial-gradient(ellipse,#ffdca642,#ffdca600 68%);opacity:0;animation:fx-heat var(--t,8s) ease-in-out infinite;animation-delay:calc(var(--d,0s) - var(--now,0s))}
+.fx-stream{overflow:hidden}
+.fx-stream i{top:0;width:9%;min-width:1px;height:34%;border-radius:99px;background:linear-gradient(#fff0,#ffffffd9 55%,#fff0);opacity:0;animation:fx-fall var(--t,1.4s) linear infinite;animation-delay:calc(var(--d,0s) - var(--now,0s))}
+.fx-glint{aspect-ratio:1;background:#fffdf0;clip-path:polygon(50% 0,59% 41%,100% 50%,59% 59%,50% 100%,41% 59%,0 50%,41% 41%);transform:translate(-50%,-50%)}
+.fx-twinkle{opacity:0;animation:fx-twinkle var(--t,3s) ease-in-out infinite;animation-delay:calc(var(--d,0s) - var(--now,0s))}
+.fx-gold{background:#ffe9a0}
+.fx-moist{opacity:.8;background:#d9f6ff;animation:fx-shimmer var(--t,3s) ease-in-out infinite alternate;animation-delay:calc(var(--d,0s) - var(--now,0s))}
+.fx-arrive{animation:fx-appear 1.2s ease-out both;animation-delay:calc(0s - var(--el,0s))}
+.fx-glow{aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff3b8b0,#ffcb5a55 42%,#ffcb5a00 70%);opacity:.7;animation:fx-breathe var(--t,5s) ease-in-out infinite alternate;animation-delay:calc(0s - var(--now,0s))}
+.fx-eye{background:radial-gradient(circle,#ffd98ad0,#ffb84a66 45%,#ffb84a00 70%)}
+.fx-door{background:radial-gradient(circle,#ffe7a888,#ffc65c33 45%,#ffc65c00 70%)}
+.fx-jarlight{background:radial-gradient(circle,#fff6c8e0,#ffd56a77 45%,#ffd56a00 70%)}
+.fx-lantern{background:radial-gradient(circle,#ffcf73b0,#ff9d3a44 45%,#ff9d3a00 70%)}
+.fx-fade{inset:0;width:100%;height:100%;opacity:0}
+.fx-warm{inset:0;opacity:0;background:radial-gradient(ellipse 70% 80% at 80% 34%,#ffcf7a80,#ffae4a2e 50%,#ffae4a00 80%)}
+.fx-run,.fx-fly{opacity:0}
+.fx-run::before{background:radial-gradient(circle,#fff 0 30%,#9be8f0 55%,#9be8f000 75%)}
+.fx-fly>i{left:0;top:0;width:100%;height:100%}
+.fx-play .fx-fade{animation:fx-fade-out 2.5s ease-in-out both;animation-delay:calc(.9s - var(--el,0s))}
+.fx-play .fx-warm{animation:fx-warm 3.4s ease-in-out both;animation-delay:calc(.8s - var(--el,0s))}
+.fx-play .fx-late{animation:fx-appear 1.6s ease-out both;animation-delay:calc(2s - var(--el,0s))}
+.fx-play .fx-run{animation:fx-garden-run 1.5s cubic-bezier(.4,0,.7,1) both;animation-delay:calc(var(--d,0s) - var(--el,0s))}
+.fx-play .fx-fly{animation:fx-fly-x 1.7s cubic-bezier(.45,0,.6,1) both;animation-delay:calc(var(--d,0s) - var(--el,0s))}
+.fx-play .fx-fly>i{animation:fx-fly-y 1.7s cubic-bezier(.3,0,.8,.6) both;animation-delay:calc(var(--d,0s) - var(--el,0s))}
+.fx-play .fx-jar{animation:fx-appear 1s ease-out both;animation-delay:calc(1.6s - var(--el,0s))}
+.scene.fx-cam>img,.scene.fx-cam>.scene-fx{animation:fx-cam 4s cubic-bezier(.2,.6,.3,1) both;animation-delay:calc(0s - var(--cam-el,0s))}
+.fx-skippable{cursor:pointer}
+.fx-skip{position:absolute;top:10px;right:10px;z-index:4;min-height:44px;padding:8px 14px;border:1px solid #f7e5b9;border-radius:99px;background:#172b30d9;color:#fff;font:12px var(--sans)}
+html[dir=rtl] .fx-skip{right:auto;left:10px}
+@media(max-width:480px){.fx-skip{top:6px;right:6px;padding:4px 10px;font-size:11px;background:#172b30b3}html[dir=rtl] .fx-skip{left:6px}}
+.channel-water:not(.preview-water){animation:channel-flow .28s linear both;animation-delay:calc(var(--d,0s) - var(--el,99s))}
+.channel-check,.channel-break{animation:fx-appear .2s ease-out both;animation-delay:calc(var(--d,0s) - var(--el,99s))}
+.channel-splash circle{fill:#8fe0e8;opacity:0;animation:fx-splash .55s ease-out both;animation-delay:calc(var(--d,0s) - var(--el,99s))}
+.channel-tile.fx-turn{z-index:1}.channel-tile.fx-turn svg{animation:fx-turn .3s cubic-bezier(.34,1.45,.5,1) both}
+@media(prefers-reduced-motion:reduce){.scene-fx *::before{animation:none!important}}
+@keyframes fx-drift{0%{transform:translate(0,0);opacity:0}18%{opacity:var(--o,.95)}70%{opacity:var(--o,.95)}100%{transform:translate(var(--dx,0),var(--dy,-100%));opacity:0}}
+@keyframes fx-sway{to{transform:translateX(170%)}}
+@keyframes fx-flutter{from{transform:rotate(-35deg) translateX(-60%)}to{transform:rotate(50deg) translateX(60%)}}
+@keyframes fx-heat{0%{transform:translateY(12%) scaleX(.96);opacity:0}40%{opacity:1}100%{transform:translateY(-38%) scaleX(1.07);opacity:0}}
+@keyframes fx-fall{0%{transform:translateY(-100%);opacity:0}20%{opacity:.85}80%{opacity:.85}100%{transform:translateY(300%);opacity:0}}
+@keyframes fx-twinkle{0%,55%,100%{opacity:0;transform:translate(-50%,-50%) scale(.3)}78%{opacity:.95;transform:translate(-50%,-50%) scale(1)}}
+@keyframes fx-shimmer{from{opacity:.35;transform:translate(-50%,-50%) scale(.7)}to{opacity:.95;transform:translate(-50%,-50%) scale(1.1)}}
+@keyframes fx-breathe{from{opacity:.45;transform:scale(.93)}to{opacity:.95;transform:scale(1.07)}}
+@keyframes fx-appear{from{opacity:0}}
+@keyframes fx-fade-out{from{opacity:1}to{opacity:0}}
+@keyframes fx-warm{0%{opacity:0}45%{opacity:1}100%{opacity:0}}
+@keyframes fx-garden-run{0%{transform:translate(0,0);opacity:0}8%{opacity:1}22%{transform:translate(101.7%,-28.7%)}44%{transform:translate(197%,24%)}56%{transform:translate(182%,101%)}74%{transform:translate(257%,165%)}92%{opacity:1}100%{transform:translate(377%,197%);opacity:0}}
+@keyframes fx-fly-x{0%{transform:translateX(0);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translateX(var(--dx));opacity:0}}
+@keyframes fx-fly-y{0%{transform:translateY(0)}35%{transform:translateY(var(--up))}100%{transform:translateY(var(--dy))}}
+@keyframes fx-cam{from{scale:1.07;translate:1.5% 1.5%}}
+@keyframes fx-splash{0%{opacity:0;transform:translate(0,0)}25%{opacity:1}100%{opacity:0;transform:translate(var(--sx),var(--sy))}}
+@keyframes fx-turn{from{transform:rotate(-90deg)}}
