@@ -3,9 +3,9 @@ import {HEALING_STAGES,initialHealing,reduceHealing,validateHealing} from './hea
 import {MASK_STAGES,initialMask,reduceMask,validateMask} from './mask-state.js';
 import {MORNING_STAGES,initialMorning,reduceMorning,validateMorning} from './morning-state.js';
 import {ECO_STAGES,initialEco,reduceEco,validateEco} from './eco-state.js';
-import {CASE_STAGES,initialCase,reduceCase,validateCase} from './case-state.js';
+import {CASE_STAGES,initialCase,reduceCase,validateCase,migrateYard} from './case-state.js';
 import {CHANNEL_START,CHANNEL_SOLUTION,validChannels,traceChannels} from './channels.js';
-export const VERSION=10;
+export const VERSION=11;
 export const SOURCE_IDS=['field','travel','drawing','advert'];
 export const ITEM_IDS=['lens','lantern','sling','glass'];
 export const ANSWERS={property:'field',place:'travel',identity:'drawing'};
@@ -24,7 +24,7 @@ export function reduce(s,a){
  if(a.type.startsWith('MASK_')||(a.type==='HINT'&&MASK_STAGES.includes(s.stage)))return reduceMask(s,a);
  if(a.type.startsWith('MORNING_')||(a.type==='HINT'&&MORNING_STAGES.includes(s.stage)))return reduceMorning(s,a);
  if(a.type.startsWith('ECO_')||(a.type==='HINT'&&ECO_STAGES.includes(s.stage)))return reduceEco(s,a);
- if(a.type.startsWith('CASE_')||(a.type==='HINT'&&CASE_STAGES.includes(s.stage)))return reduceCase(s,a);
+ if(a.type.startsWith('CASE_')||a.type.startsWith('YARD_')||(a.type==='HINT'&&CASE_STAGES.includes(s.stage)))return reduceCase(s,a);
  const n=structuredClone(s);
  switch(a.type){
  case 'START':if(s.stage==='intro')n.stage='research';break;
@@ -77,7 +77,7 @@ export function reduce(s,a){
  return n;
 }
 export function validateState(input){
- if(!input||![1,2,3,4,5,6,7,8,9,VERSION].includes(input.version)||(input.version===1&&!['intro','research','illness','resolve','pack','threshold','complete'].includes(input.stage)))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
+ if(!input||![1,2,3,4,5,6,7,8,9,10,VERSION].includes(input.version)||(input.version===1&&!['intro','research','illness','resolve','pack','threshold','complete'].includes(input.stage)))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
  // Version 1 ended at Oris. Continue at the river without losing decisions or equipment.
  const legacy=input.version===1?{...input,stage:input.stage==='complete'?'river':input.stage,river:riverState()}:input;
  if(input.version===2&&!STAGES.slice(0,9).includes(input.stage))throw Error('Dieser Spielstand gehört nicht zu dieser Spielversion.');
@@ -133,7 +133,10 @@ export function validateState(input){
  const b=s.bloom,f=s.finale,j=s.journey;
  if((stageIndex<11&&Object.values(b).some(Boolean))||(b.collected&&!b.identified)||(stageIndex>=12&&!b.collected)||(j.protected&&stageIndex<12)||(stageIndex>=13&&!j.protected))throw Error('Der Zustand der Lumenblüte überspringt eine notwendige Handlung.');
  if((f.lanternOn&&!b.collected)||(b.collected&&!f.bound&&!f.lanternOn)||(stageIndex<13&&Object.entries(f).some(([k,v])=>k!=='lanternOn'&&k!=='dinaObservation'&&v))||(f.inserted&&stageIndex<13)||(f.collected&&!f.inserted)||(f.bound&&!f.collected)||(f.attempted&&!f.bound)||(f.stable&&(!f.attempted||f.lanternOn))||(f.dinaObservation!=='none'&&!f.attempted)||(f.dinaObservation==='steady'&&!f.stable)||(f.dinaReported&&f.dinaObservation==='none')||(f.dinaConfirmed&&(!f.stable||f.dinaObservation!=='steady'||!f.dinaReported))||(stageIndex<14&&f.attempted)||(stageIndex>=14&&!f.attempted)||(stageIndex>=15&&!f.dinaReported)||(stageIndex>=16&&(!f.stable||!f.dinaConfirmed))||(s.stage==='finale'&&f.stable&&!f.dinaConfirmed))throw Error('Der Finalzustand überspringt eine notwendige Handlung.');
- s.case=validateCase(x.case,(ECO_STAGES.includes(s.stage)||MORNING_STAGES.includes(s.stage)||MASK_STAGES.includes(s.stage)||HEALING_STAGES.includes(s.stage)||EDITION_STAGES.includes(s.stage))?'case-complete':s.stage);
+ const caseStage=(ECO_STAGES.includes(s.stage)||MORNING_STAGES.includes(s.stage)||MASK_STAGES.includes(s.stage)||HEALING_STAGES.includes(s.stage)||EDITION_STAGES.includes(s.stage))?'case-complete':s.stage;
+ // Format 11 adds case.yard. Formats 5–10 keep every earlier field; the courtyard is only replayed when the save is before or inside it.
+ const yardLegacy=input.version<11&&x.case&&typeof x.case==='object'&&!Object.hasOwn(x.case,'yard')?{...x.case,yard:migrateYard(caseStage)}:x.case;
+ s.case=validateCase(yardLegacy,caseStage);
  s.eco=validateEco(x.eco,(MORNING_STAGES.includes(s.stage)||MASK_STAGES.includes(s.stage)||HEALING_STAGES.includes(s.stage)||EDITION_STAGES.includes(s.stage))?'eco-complete':s.stage);
  s.morning=validateMorning(x.morning,(MASK_STAGES.includes(s.stage)||HEALING_STAGES.includes(s.stage)||EDITION_STAGES.includes(s.stage))?'morning-complete':s.stage);
  s.mask=validateMask(x.mask,(HEALING_STAGES.includes(s.stage)||EDITION_STAGES.includes(s.stage))?'mask-complete':s.stage);

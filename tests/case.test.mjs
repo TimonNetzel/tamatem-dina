@@ -19,7 +19,7 @@ test('Version 4: jeder Level-1-Schritt migriert verlustfrei; Abschluss öffnet L
  const old={...last,version:4};delete old.case;
  const next=step(validateState(old),'CASE_START');assert.equal(next.stage,'case-opening');assert.deepEqual(history(next),history(last));
  assert.deepEqual(step(initialState(),'CASE_START'),initialState());
- assert.throws(()=>validateState({...next,version:4}));assert.equal(VERSION,10);
+ assert.throws(()=>validateState({...next,version:4}));assert.equal(VERSION,11);
 });
 
 test('Alle 16 Kombinationen alter und neuer Entscheidungen: jede Handlung speicherbar und abgeschlossene Vergangenheit unverändert',()=>{
@@ -44,7 +44,9 @@ test('Dinas Einverständnis und Widerrufsentscheidung können nicht übersprunge
  let s=at('case-interviews');for(const type of ['CASE_NORA','CASE_MEET','CASE_WITHDRAW','CASE_EDITOR','CASE_PRINT'])assert.deepEqual(step(s,type,{id:'document'}),s);
  s=step(s,'CASE_CONSENT',{id:'anonymous'});s=step(s,'CASE_NORA');assert.deepEqual(step(s,'CASE_CONSENT',{id:'name'}),s);
  s=step(s,'CASE_EMIL');assert.equal(step(s,'CASE_MEET').stage,'case-interviews');
- s=step(s,'CASE_WITHDRAW',{id:'omit'});assert.deepEqual(step(s,'CASE_WITHDRAW',{id:'document'}),s);assert.equal(step(s,'CASE_MEET').stage,'case-timeline');
+ s=step(s,'CASE_WITHDRAW',{id:'omit'});assert.deepEqual(step(s,'CASE_WITHDRAW',{id:'document'}),s);
+ // Seit Format 11 braucht das Treffen zusätzlich den gemeinsam geprüften Brettbefund (tests/yard.test.mjs).
+ assert.equal(step(s,'CASE_MEET').stage,'case-interviews');assert.equal(finishCase(s).stage,'case-complete');assert.equal(finishCase(s).case.withdrawal,'omit');
 });
 
 test('Alle gültigen partiellen Zeitachsen und alle 64 redaktionellen Einstufungen bleiben lösbar',()=>{

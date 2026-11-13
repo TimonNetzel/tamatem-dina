@@ -179,10 +179,28 @@ with sync_playwright() as pw:
             act('case-select', doc)
         act('case-address')
         act('case-interviews')
-        act('case-consent', consent)
-        act('case-nora')
-        act('case-emil')
-        act('case-withdraw', 'document' if locale == 'en' else 'omit')
+        # Courtyard (format 11). Every step closes its dialog and passes the reload checkpoint.
+        for name, item in [('yard-spot', 'bench'), ('yard-consent', consent), ('yard-spot', 'bench'), ('yard-nora', None), ('yard-spot', 'flowers'), ('yard-emil', None), ('yard-spot', 'flowers'), ('yard-withdraw', 'document' if locale == 'en' else 'omit'), ('yard-spot', 'board'), ('yard-look', 'notice')]:
+            act(name, item, modal=name == 'yard-spot')
+        if locale == 'en':
+            act('yard-spot', 'bench', modal=True)
+            act('yard-ask', 'gentle')
+            proof = ['notice', 'photo', 'statement']
+        else:
+            act('yard-switch')
+            for sub in ['edge', 'pin']:
+                act('yard-spot', 'board', modal=True)
+                act('yard-look', sub)
+            act('yard-spot', 'tamatem', modal=True)
+            act('yard-pass')
+            act('yard-switch')
+            proof = ['notice', 'print', 'scrap']
+        act('yard-spot', 'dina', modal=True)
+        for i, item in enumerate(proof):
+            page.locator(f'#modal-body [data-action="yard-proof"][data-index="{i}"]').select_option(item)
+        act('yard-check', modal=True)
+        act('yard-switch', 'word', modal=True)
+        act('yard-word', 'precise')
         act('case-meet')
         order('case', ['sale', 'rent', 'complaint'])
         act('case-link')

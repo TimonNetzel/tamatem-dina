@@ -23,7 +23,7 @@ test('Exact v9 field sets migrate after every old action, retain all six histori
  const states=[initialState()],collect=s=>states.push(s);
  const one=levelOne('research','directions',collect),two=finishCase(one,'anonymous','document',collect),three=finishEco(two,'doubt','visit',collect),four=finishMorning(three,'direct','anonymous',collect),five=finishMask(four,'quiet','role','boundary',collect),six=finishHealing(five,'together','meeting',collect);
  for(const s of states){const old=structuredClone(s);old.version=9;delete old.edition;const before=structuredClone(old);assert.deepEqual(validateState(old),s);assert.deepEqual(old,before);}
- assert.equal(step(validateState({...six,version:9,edition:undefined}),'EDITION_START').stage,'edition-opening');assert.equal(VERSION,10);
+ assert.equal(step(validateState({...six,version:9,edition:undefined}),'EDITION_START').stage,'edition-opening');assert.equal(VERSION,11);
  assert.deepEqual(step(initialState(),'EDITION_START'),initialState());
  for(const version of [1,2,3,4,5,6,7,8,9])for(const stage of EDITION_STAGES)assert.throws(()=>validateState({...end,version,stage}));
 });

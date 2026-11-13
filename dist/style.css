@@ -92,3 +92,31 @@ body:has(.mask-game) .portrait.tamatem{background-image:url('./assets/mask-city.
 
 /* Source labels must shrink inside narrow research cards in every language. */
 .source-tab>span:nth-child(2){min-width:0}
+
+/* Level 2 courtyard: explorable scene, detail views and evidence card */
+.yard-scene{aspect-ratio:1672/941;direction:ltr}.yard-scene>img{object-fit:contain}
+html[dir=rtl] .yard-scene .scene-caption{direction:rtl}
+.yard-spot.yard-me{outline:2px solid #e2bd81;outline-offset:3px;animation:yard-pulse 2.6s ease-in-out infinite}
+.yard-spot:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@keyframes yard-pulse{50%{outline-offset:8px;outline-color:#e2bd8155}}
+.yard-sheet{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.yard-sheet rect{fill:#fbf6e6;stroke:#1d3033;stroke-width:2.5}.yard-sheet path{stroke:#52656a;stroke-width:2;fill:none}.yard-sheet circle{fill:#9b533b;stroke:#1d3033;stroke-width:1.5}
+.yard-drop{animation:yard-pin .8s ease-out}
+@keyframes yard-pin{from{opacity:0;transform:translateY(-22px)}}
+.yard-h{font:600 12px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:#5b6257;margin:24px 0 8px}
+html[dir=rtl] .yard-h{letter-spacing:normal}
+.yard-hand{margin:0 0 6px;padding-inline-start:20px;font-size:14px;line-height:1.6}
+.yard-muted{color:#676b60;font-style:italic;font-size:14px;line-height:1.6}
+.yard-reply{background:#f9f3e7;border-inline-start:3px solid #52746a;padding:14px 16px;margin:18px 0;font:17px/1.7 var(--serif)}
+.yard-reply:focus{outline:none}.yard-reply.bad{border-color:#ac684b;background:#f0e0ce}
+.yard-reply .document-sheet{margin:0 0 14px;padding:18px}.yard-reply .success-line{margin:12px 0 0;font-family:var(--sans)}
+.yard-board{display:block;width:100%;max-width:440px;margin:16px auto;direction:ltr}
+.yard-num circle{fill:#172b30;stroke:#f7e5b9}.yard-num text{fill:#fffaf0;font:600 12px var(--sans)}
+#modal .conversation{min-height:48px;text-align:start}#modal .conversation span{white-space:normal}
+#modal .choice{width:100%;min-height:48px;text-align:start}#modal .choice:disabled{opacity:.8}
+#modal .conversation-list,#modal .case-order{margin-block:16px}#modal .button.wide{margin-top:12px}
+html[dir=rtl] .yard-reply,html[dir=rtl] .yard-muted{font-family:var(--sans)}
+@media(max-width:480px){.yard-reply{font-size:16px;padding:12px 13px}}
+#modal .case-order select{font-size:15px;text-overflow:ellipsis}
+/* Narrow screens: keep the 44px touch area but draw a smaller disc so faces stay visible. */
+@media(max-width:600px){.yard-spot{background:none;border:0;box-shadow:none}.yard-spot span{display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#172b30d9;color:var(--white);border:1px solid #f7e5b9;font-size:14px;box-shadow:0 1px 8px #0008}.yard-spot.visited{background:none}.yard-spot.visited span{background:#f0e3c5f0;color:#1d3033}.yard-spot.yard-me{outline:0;animation:none}.yard-spot.yard-me span{outline:2px solid #e2bd81;outline-offset:3px}.yard-scene .scene-caption{display:none}}

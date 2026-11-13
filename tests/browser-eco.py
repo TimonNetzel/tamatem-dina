@@ -91,7 +91,7 @@ with sync_playwright() as p:
         action('import')
         page.locator('#import-file').set_input_files({'name': 'case-v5.json', 'mimeType': 'application/json', 'buffer': json.dumps(seed).encode()})
         action('confirm-import')
-        assert state()['version'] == 10 and state()['stage'] == 'case-complete'
+        assert state()['version'] == 11 and state()['stage'] == 'case-complete'
         previous = {key: value for key, value in state().items() if key not in ['eco', 'stage', 'hints', 'version']}
         if not STANDALONE:
             page.wait_for_function('document.querySelector("#offline-status").classList.contains("ready")')

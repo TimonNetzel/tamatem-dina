@@ -8,6 +8,8 @@ Das vorhandene farbige Comic-Adventure für Erwachsene weiterentwickeln. Sprache
 
 Version 0.10 enthält alle sieben vollständigen dreisprachigen Level. Neu: „Die letzte Ausgabe“ mit achtzehnjährigem Tamatem und eigenständig spielbarer Dina. Zwölf realistische Stationen, drei historienabhängige Kontaktwege, sichtbare eigene Berichtigung und unabhängig gewählte Zukunftspläne. Einstieg ab healing-complete, Abschluss edition-complete. Alle sechs bisherigen Level und Spielstände 1–9 bleiben erhalten; aktuelles Format 10. Die öffentliche Site zeigt seit der gesonderten Veröffentlichung 0.10; die angeforderte Öffentlichkeit des GitHub-Repositories bleibt wegen Forbidden offen. Tatsächliche Prüfungen und Grenzen: STATUS.md.
 
+Lokaler Pilot vom 12. November 2026: Der Hof in Level 2 ist eine erkundbare Sequenz mit zwei Lösungswegen; Speicherformat 11, Spielstände 1–10 migrieren. Nicht gepusht, nicht veröffentlicht. Details und Prüfgrenzen: STATUS.md, Abschnitt „Pilotumbau Hof“.
+
 ## Gezielt nachlesen
 
 | Aufgabe | Relevante Dateien |
