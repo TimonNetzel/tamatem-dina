@@ -1,0 +1,283 @@
+{
+  "game": "tamatem-dina-prolog",
+  "state": {
+    "version": 11,
+    "stage": "case-interviews",
+    "read": [
+      "field",
+      "travel",
+      "drawing"
+    ],
+    "assign": {
+      "property": "field",
+      "place": "travel",
+      "identity": "drawing"
+    },
+    "committed": true,
+    "talked": [
+      "dina",
+      "doctor"
+    ],
+    "choice": "fear",
+    "noteTaken": true,
+    "packed": [
+      "lens",
+      "lantern",
+      "sling",
+      "glass"
+    ],
+    "owlChoice": "ask",
+    "hints": {},
+    "river": {
+      "inspected": true,
+      "farBankChecked": true,
+      "slingSelected": false,
+      "loopAttached": true,
+      "secured": true,
+      "crossingPanel": 1
+    },
+    "garden": {
+      "metGuardian": true,
+      "inspected": true,
+      "rotations": [
+        1,
+        1,
+        2,
+        1,
+        1,
+        3
+      ],
+      "tested": true,
+      "solutionPreview": false,
+      "watered": true
+    },
+    "bloom": {
+      "identified": true,
+      "collected": true,
+      "guardianTalked": false
+    },
+    "journey": {
+      "protected": true
+    },
+    "finale": {
+      "inserted": true,
+      "collected": true,
+      "bound": true,
+      "lanternOn": false,
+      "attempted": true,
+      "stable": true,
+      "dinaObservation": "steady",
+      "dinaReported": true,
+      "dinaConfirmed": true
+    },
+    "case": {
+      "read": [
+        "letter",
+        "address",
+        "sale"
+      ],
+      "selected": [
+        "letter",
+        "address",
+        "sale"
+      ],
+      "addressChecked": true,
+      "consent": null,
+      "nora": false,
+      "emil": false,
+      "withdrawal": null,
+      "order": [
+        null,
+        null,
+        null
+      ],
+      "linked": false,
+      "responses": [],
+      "claims": {
+        "abduction": null,
+        "complaints": null,
+        "motive": null
+      },
+      "checked": false,
+      "corrected": false,
+      "published": false,
+      "yard": {
+        "actor": "dina",
+        "seen": [],
+        "clues": [],
+        "pocket": [],
+        "asked": [],
+        "proof": [
+          null,
+          null,
+          null
+        ],
+        "proven": false,
+        "worded": false,
+        "legacy": false,
+        "help": {}
+      }
+    },
+    "eco": {
+      "briefed": false,
+      "sampleSeen": false,
+      "accused": false,
+      "reflection": null,
+      "samples": [],
+      "rise": null,
+      "window": null,
+      "compared": false,
+      "interviews": [],
+      "contradiction": null,
+      "interviewChecked": false,
+      "model": {
+        "load": null,
+        "mist": null,
+        "blue": null
+      },
+      "linked": false,
+      "replacement": null,
+      "reposted": false,
+      "apologized": false,
+      "responses": [],
+      "approach": null,
+      "order": [
+        null,
+        null,
+        null
+      ],
+      "stopped": false,
+      "inspected": false,
+      "cleared": false,
+      "inlet": null,
+      "restored": false,
+      "checks": [],
+      "published": false
+    },
+    "morning": {
+      "read": [],
+      "pressure": null,
+      "dissented": false,
+      "method": null,
+      "methodChecked": false,
+      "sources": {
+        "camera": null,
+        "stockSource": null,
+        "receiptSource": null,
+        "collage": null
+      },
+      "sourcesChecked": false,
+      "preserve": [
+        null,
+        null,
+        null
+      ],
+      "preserved": false,
+      "time": null,
+      "scope": null,
+      "clockChecked": false,
+      "timeline": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "timelineChecked": false,
+      "model": {
+        "clip": null,
+        "stock": null,
+        "safe": null
+      },
+      "modelChecked": false,
+      "privacy": {
+        "times": null,
+        "seal": null,
+        "neighbours": null,
+        "message": null,
+        "address": null
+      },
+      "naming": null,
+      "privacyChecked": false,
+      "revised": false,
+      "groupCorrected": false,
+      "published": false
+    },
+    "mask": {
+      "read": [],
+      "approach": null,
+      "questioned": false,
+      "naming": null,
+      "provenance": null,
+      "archiveChecked": false,
+      "crop": null,
+      "cropChecked": false,
+      "view": null,
+      "observation": null,
+      "perspectiveChecked": false,
+      "caption": null,
+      "captionChecked": false,
+      "network": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "networkChecked": false,
+      "proof": {
+        "frame": null,
+        "angle": null,
+        "caption": null
+      },
+      "proofChecked": false,
+      "admitted": false,
+      "reposted": false,
+      "credit": null,
+      "mirrorChecked": false,
+      "crowd": null,
+      "kit": null,
+      "returnChecked": false,
+      "claims": {
+        "image": null,
+        "chain": null,
+        "master": null
+      },
+      "publishChecked": false,
+      "approved": false,
+      "published": false
+    },
+    "healing": {
+      "read": [],
+      "picks": {},
+      "checked": [],
+      "order": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "protected": false,
+      "met": false,
+      "revised": false,
+      "approved": false,
+      "published": false
+    },
+    "edition": {
+      "read": [],
+      "picks": {},
+      "checked": [],
+      "order": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "protected": false,
+      "met": false,
+      "dinaSigned": false,
+      "authored": false,
+      "approved": false,
+      "published": false
+    }
+  },
+  "savedAt": "2026-11-13T05:22:06.128Z"
+}
