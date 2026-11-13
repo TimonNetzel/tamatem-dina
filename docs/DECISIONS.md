@@ -95,3 +95,4 @@ Neue Einträge sollen eine echte Entscheidung erklären. Routineänderungen geh�
 - Beide Gesprächszugänge bleiben nacheinander möglich; keine neue unumkehrbare Entscheidung. Nennung und Widerruf behalten ihre bisherigen Regeln.
 - Alte Stände nach dem Hof werden als nicht gespielt markiert (legacy), statt einen Lösungsweg zu erfinden. Stände im Hof müssen den Befund nachholen; das ist gewollt und keine Sackgasse.
 - Hilfen im Hof zählen je Teilziel (yard.help), damit ein neuer Schritt nicht mit der deutlichsten Hilfe beginnt.
+- Browserläufe über `file://` setzen Startstände einmalig und laden dann neu; kein Init-Skript mit Speicherzugriff bei jedem Laden, kurze Pause vor dem Neuladen. Grund: Headless-Chromium liefert sonst nach dem Neuladen zeitweise einen älteren Speicherstand (Messung in STATUS.md).
